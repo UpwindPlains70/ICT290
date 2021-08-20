@@ -8,7 +8,6 @@
 #include "texturedPolygons.h"
 
 using namespace std;
-using namespace std;
 
 //--------------------------------------------------------------------------------------
 

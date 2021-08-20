@@ -66,7 +66,7 @@
       <Optimization>Disabled</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <MinimalRebuild>true</MinimalRebuild>
+      <MinimalRebuild>false</MinimalRebuild>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Debug\</AssemblerListingLocation>
@@ -75,6 +75,7 @@
       <ObjectFileName>.\Debug\</ObjectFileName>
       <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <AdditionalIncludeDirectories>..\CAMPUS TOUR\Dependencies\MSVC\include;..\CAMPUS TOUR\Dependencies\10.0.18362.0\cppwinrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\shared;..\CAMPUS TOUR\Dependencies\10.0.18362.0\um;..\CAMPUS TOUR\Dependencies\10.0.18362.0\ucrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl\wrappers;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Midl>
       <TypeLibraryName>.\Debug\houses.tlb</TypeLibraryName>
@@ -163,17 +164,17 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets" Condition="Exists('packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets')" />
-    <Import Project="packages\freeglut.2.8.1.15\build\native\freeglut.targets" Condition="Exists('packages\freeglut.2.8.1.15\build\native\freeglut.targets')" />
     <Import Project="packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets" Condition="Exists('packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets')" />
     <Import Project="packages\sdl2.2.0.5\build\native\sdl2.targets" Condition="Exists('packages\sdl2.2.0.5\build\native\sdl2.targets')" />
+    <Import Project="packages\freeglut.2.8.1.15\build\native\freeglut.targets" Condition="Exists('packages\freeglut.2.8.1.15\build\native\freeglut.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\freeglut.redist.2.8.1.15\build\native\freeglut.redist.targets'))" />
-    <Error Condition="!Exists('packages\freeglut.2.8.1.15\build\native\freeglut.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\freeglut.2.8.1.15\build\native\freeglut.targets'))" />
     <Error Condition="!Exists('packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\sdl2.redist.2.0.5\build\native\sdl2.redist.targets'))" />
     <Error Condition="!Exists('packages\sdl2.2.0.5\build\native\sdl2.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\sdl2.2.0.5\build\native\sdl2.targets'))" />
+    <Error Condition="!Exists('packages\freeglut.2.8.1.15\build\native\freeglut.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\freeglut.2.8.1.15\build\native\freeglut.targets'))" />
   </Target>
 </Project>
