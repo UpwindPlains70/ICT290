@@ -33,29 +33,29 @@ extern void mixaudio(void *unused, Uint8 *stream, int len);
  *
  * @author Shannon, Graham and Shay
  */
-class CEasySound  
+class CEasySound
 {
 public:
 	/**
   * Instance: Get CEasySound class before using any methods (Singleton Design Pattern)
   *
-  * @return static CEasySound* 
+  * @return static CEasySound*
   */
 	static CEasySound* Instance();
 	/**
   * ~CEasySound:
   *
-  * @return 
+  * @return
   */
 	virtual ~CEasySound();
 
 	/**
   * CallMixAudio: ? no idea eh
   *
-  * @param unused 
-  * @param stream 
-  * @param len 
-  * @return void 
+  * @param unused
+  * @param stream
+  * @param len
+  * @return void
   */
 	void CallMixAudio(void *unused, Uint8 *stream, int len);
 
@@ -70,14 +70,14 @@ public:
   * Unload: unload the sound and remove form the m_listSound list
   *
   * @param iSoundID - Sound's ID to find if there match ID in the m_listSound and unload it.
-  * @return void 
+  * @return void
   */
 	void Unload(int iSoundID);
 	/**
   * Unload: unload the sound and remove from the m_listSound list
   *
   * @param  sound - CSound class to find if there match ID in the m_listSound and unload it.
-  * @return void 
+  * @return void
   */
 	void Unload(CSound *sound);
 	/**
@@ -94,18 +94,18 @@ protected:
 	/**
   * CEasySound: The construction had to be protected because of Singleton Design Pattern
   *
-  * @return  
+  * @return
   */
 	CEasySound();
 private:
 	/**
   * _instance: pointer of CEasySound class as part of the Singleton Design Pattern
-  */ 
+  */
 	static CEasySound* _instance;
 
 	/**
   * m_listSound: list of Sound's object to store it. (STL's list object)
-  */ 
+  */
 	std::list<CSound*>m_listSound;
 
 	SDL_AudioSpec desired;

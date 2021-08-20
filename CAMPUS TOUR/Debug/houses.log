@@ -1,0 +1,322 @@
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  camera.cpp
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(19,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(20,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(21,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(210,21): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(210,14): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(221,20): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(221,13): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(252,21): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(252,14): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(262,20): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\camera.cpp(262,13): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+  Generating Code...
+  Compiling...
+  main.cpp
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(446,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(736,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(736,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(742,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(742,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(752,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(752,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(757,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(757,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(1656,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(1682,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(1699,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(1937,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2025,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2037,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2103,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2104,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2105,45): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2106,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2107,46): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2109,47): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2116,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2117,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2118,45): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2119,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2120,51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2122,52): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2130,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2131,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2132,45): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2133,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2134,51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2136,52): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2202,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2206,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2286,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2286,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2291,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2295,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2301,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2305,38): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2312,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2316,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2322,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2339,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2343,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2349,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2353,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2392,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2399,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2410,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2417,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2440,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2454,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2454,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2474,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2512,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2513,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2514,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2515,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2564,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2572,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2579,25): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2592,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2600,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2666,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2667,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2668,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2669,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2678,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2679,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2680,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2681,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(2970,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3171,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3186,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3202,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3222,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3245,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3249,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3268,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3272,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3292,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3296,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3316,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3320,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3381,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3382,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3383,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3384,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3386,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3393,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3394,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3395,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3396,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3397,56): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3406,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3408,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3409,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3410,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3411,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3412,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3420,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3421,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3422,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3423,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3424,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3425,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3435,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3436,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3437,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3438,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3448,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3449,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3450,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3451,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3459,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3460,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3461,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3462,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3463,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3464,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3474,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3475,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3476,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3477,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3487,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3488,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3489,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3490,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3497,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3498,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3499,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3500,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3501,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3502,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3503,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3510,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3512,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3513,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3514,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3515,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3516,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3523,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3525,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3526,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3527,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3528,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3529,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3537,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3538,67): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3539,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3540,67): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3541,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3552,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3554,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3565,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3567,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3611,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3611,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3611,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3613,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3613,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3613,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3614,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3615,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3615,35): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3616,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3617,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3617,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3623,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3623,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3623,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3625,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3625,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3625,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3626,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3627,41): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3627,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3628,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3629,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3629,35): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3639,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3639,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3639,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3641,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3641,25): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3641,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3642,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3643,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3644,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3645,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3651,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3651,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3651,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3653,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3653,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3653,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3654,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3655,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3656,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3657,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3686,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3686,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3690,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3690,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3745,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3772,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3786,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3814,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3814,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3841,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(3855,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4014,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4048,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4079,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4122,33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4127,33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4258,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4260,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4261,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4262,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4263,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4270,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4272,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4273,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4274,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4275,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4282,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4284,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4285,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4286,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4287,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4294,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4296,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4297,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4298,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4299,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4308,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4309,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4310,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4311,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4343,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4354,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4366,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4400,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4411,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4423,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4433,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4446,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4530,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4541,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4552,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4564,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4582,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4808,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4815,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4822,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4841,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4841,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4845,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4845,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4861,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4861,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4865,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4865,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4972,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4981,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4988,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(4995,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5001,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5002,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5003,44): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5014,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5021,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5028,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5034,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5035,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5036,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5048,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5049,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5051,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5052,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5054,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5055,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5057,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5058,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5060,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5061,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5066,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5071,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5076,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5082,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5084,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5085,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5086,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5087,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5088,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5089,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5090,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5091,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5092,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5093,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\markb\Desktop\ICT290\Exercise 1\main.cpp(5094,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+  Generating Code...
+  houses.vcxproj -> C:\Users\markb\Desktop\ICT290\Exercise 1\Debug\houses.exe

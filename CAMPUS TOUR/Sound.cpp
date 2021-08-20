@@ -4,6 +4,7 @@
 
 #include <memory.h>
 #include <malloc.h>
+#include <stdio.h>
 
 #include "Sound.h"
 #include "EasySound.h"
@@ -33,14 +34,14 @@ CSound::CSound(char *filename, int iSoundID)
 	cvt.len = m_len.GetSDLTime();
 	SDL_ConvertAudio(&cvt);
 	SDL_FreeWAV(m_data);
-	
+
 	SDL_LockAudio();
 	m_data = cvt.buf;
 	// the new length of sound after convert from 8bit to 16bit
 	m_len = CSoundTime( cvt.len_cvt );
 	m_pos = CSoundTime( 0 );
 	SDL_UnlockAudio();
-	
+
 }
 
 CSound::~CSound()
@@ -62,7 +63,7 @@ bool CSound::Play()
 	m_pos = CSoundTime(0);
 	m_stop = m_len;
 	SDL_PauseAudio(0);
-	
+
     return 0;
 }
 

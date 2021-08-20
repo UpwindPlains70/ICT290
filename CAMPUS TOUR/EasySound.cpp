@@ -2,6 +2,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 #include "EasySound.h"
+#include <stdio.h>
 
 extern void mixaudio(void *unused, Uint8 *stream, int len){
 	CEasySound::Instance()->CallMixAudio(unused,stream,len);
@@ -90,7 +91,7 @@ void CEasySound::CallMixAudio(void *unused, Uint8 *stream, int len)
 
 int CEasySound::Load(char *filename)
 {
-	// find ID for sound	
+	// find ID for sound
 	std::list<CSound*>::iterator cs;
 	int iSoundID = 0;
 	bool bFoundID = true;

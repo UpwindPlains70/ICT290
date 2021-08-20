@@ -59,7 +59,7 @@ private:
 	// (1: incline from z to y)
 	// (2: incline from x to y)
 	GLdouble m_type;
-	
+
 
 	// stores start and end co-ordinates of plane on x, y and z axis
 	GLdouble m_xPlainStart, m_xPlainEnd;

@@ -1,14 +1,16 @@
 #include <math.h>
 #include <GL/glut.h>
 #include <time.h>
+#include <iostream>
 
 //#include <windows.h> // only used if mouse is required (not portable)
 #include "camera.h"
 #include "texturedPolygons.h"
 
-//--------------------------------------------------------------------------------------
+using namespace std;
+using namespace std;
 
-int i, k, j = 0;
+//--------------------------------------------------------------------------------------
 
 #define PI 3.1415962654
 
@@ -16,6 +18,8 @@ int i, k, j = 0;
 // Set speed (steps)
 GLdouble movementSpeed = 10.0;
 GLdouble rotationSpeed = 0.005;
+
+int i, k, j = 0;
 
 // TEXTURE IMAGE AXISES
 #define XY		0
@@ -302,8 +306,6 @@ bool DisplayExit = false;
 bool lightsOn;
 // display ECL block
 bool displayECL = true;
-// control program closing
-bool closing = false;
 
 // varibles used for tarnslating graphics etc
 GLdouble step, step2, stepLength;
@@ -404,7 +406,7 @@ void CreatePlains();
 void DeleteImageFromMemory(unsigned char* tempImage);
 
 //--------------------------------------------------------------------------------------
-//  Main function 
+//  Main function
 //--------------------------------------------------------------------------------------
 int main(int argc, char **argv)
 {
@@ -425,7 +427,7 @@ int main(int argc, char **argv)
 	glutDisplayFunc(Display);
 	glutIdleFunc(Display);
 	glutMouseFunc(Mouse);
-	
+
 	// ONLY USE IF REQUIRE MOUSE MOVEMENT
 	//glutPassiveMotionFunc(mouseMove);
 	//ShowCursor(FALSE);
@@ -442,12 +444,12 @@ void myinit()
 {
 	// set background (sky colour)
 	glClearColor(97.0/255.0, 140.0/255.0, 185.0/255.0, 1.0);
-	
+
 	// set perpsective
-	gluLookAt(0.0, 1.75, 0.0, 
+	gluLookAt(0.0, 1.75, 0.0,
 		      0.0, 1.75, -1,
 			  0.0f,1.0f,0.0f);
-	
+
 	// settings for glut cylinders
 	glu_cylinder = gluNewQuadric();
     gluQuadricTexture(glu_cylinder, GL_TRUE );
@@ -459,16 +461,16 @@ void myinit()
 	// set number of bounding boxes required
 	cam.SetNoBoundingBoxes(19);
 	// set starting position of user
-	cam.Position(32720.0, 9536.0,	
+	cam.Position(32720.0, 9536.0,
 				 4800.0, 180.0);
-	
-	CreatePlains();	
-	
+
+	CreatePlains();
+
 	// creates bounding boxes and places in array
 	CreateBoundingBoxes();
 	// copies bounding boxes from array to linked lists (one fopr each quadrant)
 	cam.InitiateBoundingBoxes();
-	
+
 	// load texture images and create display lists
 	CreateTextureList();
 	CreateTextures();
@@ -481,16 +483,15 @@ void Display()
 {
 	// check for movement
 	cam.CheckCamera();
-	
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	if (closing) exit(0);
 	// DISPLAY TEXTURES
 	//enable texture mapping
 	glEnable (GL_TEXTURE_2D);
-	glPushMatrix();	
+	glPushMatrix();
 		// displays the welcome screen
-		if (DisplayWelcome) cam.DisplayWelcomeScreen (width, height, 1, tp.GetTexture(WELCOME));	
+		if (DisplayWelcome) cam.DisplayWelcomeScreen (width, height, 1, tp.GetTexture(WELCOME));
 		// displays the exit screen
 		if (DisplayExit) cam.DisplayWelcomeScreen (width, height, 0, tp.GetTexture(EXIT) );
 		// displays the map
@@ -508,7 +509,7 @@ void Display()
 		// display images
 		DrawBackdrop();
 	glPopMatrix();
-	glDisable (GL_TEXTURE_2D); 
+	glDisable (GL_TEXTURE_2D);
 
 	// clear buffers
 	glFlush();
@@ -529,7 +530,7 @@ void reshape(int w, int h)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	glViewport(0, 0, w, h);
-	gluPerspective(45,ratio,1,250000);	
+	gluPerspective(45,ratio,1,250000);
 	glMatrixMode(GL_MODELVIEW);
 }
 
@@ -538,21 +539,26 @@ void reshape(int w, int h)
 //--------------------------------------------------------------------------------------
 void movementKeys(int key, int x, int y)
 {
+	int m_x = 0;
+	int m_y = 0;
+	int m_z = 0;
+	cam.getPosition(m_x, m_y, m_z);
+	cout << "Position: " << m_x << " " << m_y << " " << m_z << endl;
 	switch (key)
 	{
 		case GLUT_KEY_LEFT :
 			cam.DirectionRotateLR(-1);
 			break;
 
-		case GLUT_KEY_RIGHT : 
+		case GLUT_KEY_RIGHT :
 			cam.DirectionRotateLR(1);
 			break;
 
-		case GLUT_KEY_UP : 
+		case GLUT_KEY_UP :
 			cam.DirectionFB(1);
 			break;
 
-		case GLUT_KEY_DOWN : 
+		case GLUT_KEY_DOWN :
 			cam.DirectionFB(-1);
 			break;
 	}
@@ -564,13 +570,13 @@ void releaseKey(int key, int x, int y)
 	switch (key)
 	{
 		// rotate left or right
-		case GLUT_KEY_LEFT : 
-		case GLUT_KEY_RIGHT : 
-			cam.DirectionRotateLR(0);			
+		case GLUT_KEY_LEFT :
+		case GLUT_KEY_RIGHT :
+			cam.DirectionRotateLR(0);
 		break;
 		// move backwards or forwards
-		case GLUT_KEY_UP : 
-		case GLUT_KEY_DOWN : 
+		case GLUT_KEY_UP :
+		case GLUT_KEY_DOWN :
 			cam.DirectionFB(0);
 		break;
 	}
@@ -655,7 +661,7 @@ void keys(unsigned char key, int x, int y)
 			}
 		}
 		break;
-		
+
 		case 'P':
 		case 'p':
 		{
@@ -670,7 +676,7 @@ void keys(unsigned char key, int x, int y)
 			}
 		}
 		break;
-		
+
 	}
 }
 
@@ -707,8 +713,8 @@ void Mouse(int button, int state, int x, int y)
 		if ((DisplayExit) && (x <= width/2.0 + 256.0) && (x >= width/2.0 - 256.0)
 			&& (y <= height/2.0 + 256.0) && (y >= height/2.0 - 256.0))
 		{
-			closing = true;
 			DeleteImageFromMemory(image);
+			exit(1);
 		}
   	 }
 }
@@ -806,7 +812,7 @@ void CreateBoundingBoxes()
 	cam.SetAABBMinX(7, 34704.0);
 	cam.SetAABBMaxZ(7, 25344.0);
 	cam.SetAABBMinZ(7, 24996.0);
-		
+
 	// bottom of steps
 	cam.SetAABBMaxX(8, 33808.0);
 	cam.SetAABBMinX(8, 0.0);
@@ -866,7 +872,7 @@ void CreateBoundingBoxes()
 // Set up co-ordinates of different plains
 //--------------------------------------------------------------------------------------
 void CreatePlains()
-{	
+{
 	// grass slope
 	cam.SetPlains (ZY_PLAIN, 4848.0 ,31568.0 ,9536.0, 10450.0 ,6200.0, 10000.0);
 
@@ -875,7 +881,7 @@ void CreatePlains()
 	cam.SetPlains (FLAT_PLAIN, 0.0, 6500.0 , 10450.0, 10450.0, 17000.0, 40000.0);
 	cam.SetPlains (FLAT_PLAIN, 27000.0, 36000.0 , 10450.0, 10450.0, 17000.0, 40000.0);
 	cam.SetPlains (FLAT_PLAIN, 0.0, 36000.0 , 10450.0, 10450.0, 40000.0, 50000.0);
-	
+
 	// top of lower hill
 	cam.SetPlains (FLAT_PLAIN, 9000.0, 22000.0 , 10650.0, 10650.0, 19000.0, 23000.0);
 	cam.SetPlains (FLAT_PLAIN, 9000.0, 10000.0 , 10650.0, 10650.0, 28000.0, 33000.0);
@@ -899,10 +905,10 @@ void CreatePlains()
 	stepLength = 9808.0;
 	for (int i = 0; i < 18 ; i ++)
 	{
-		cam.SetPlains (FLAT_PLAIN, 31582.0, 33835, step, step, stepLength, stepLength + 42.0);		
+		cam.SetPlains (FLAT_PLAIN, 31582.0, 33835, step, step, stepLength, stepLength + 42.0);
 		step -= 48.0;
 		stepLength -= 142.0;
-		if ((i+3) % 5 == 0) 
+		if ((i+3) % 5 == 0)
 		{
 			stepLength -= 500.0;
 			step -= 48.0;
@@ -934,7 +940,7 @@ void CreateTextures()
 {
 	glEnable(GL_DEPTH_TEST);
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-	
+
 	// set texture count
 	tp.SetTextureCount(250);
 
@@ -968,7 +974,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/aboveWindows2posts.raw", 128, 256);
 	tp.CreateTexture(ABOVE_UNDER_POSTS, image, 128, 256);
-	
+
 	image = tp.LoadTexture("data/aboveWindows2posts2.raw", 128, 256);
 	tp.CreateTexture(ABOVE_UNDER_POSTS_2, image, 256, 128);
 
@@ -1055,7 +1061,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/brickgap2.raw", 128, 32);
 	tp.CreateTexture(WALL_BRICK_GAP2_YZ, image, 128, 32);
-	
+
 	image = tp.LoadTexture("data/bricksecsign.raw", 256, 128);
 	tp.CreateTexture(WALL_BRICK_SEC_SIGN, image, 256, 128);
 
@@ -1094,7 +1100,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/drinksSide2.raw", 64, 64);
 	tp.CreateTexture(DRINKS_SIDE_2, image, 64, 64);
-	
+
 	image = tp.LoadTexture("data/drinksSidetop.raw", 64, 64);
 	tp.CreateTexture(DRINKS_TOP, image, 64, 64);
 
@@ -1151,7 +1157,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/KBLTside2.raw", 2, 2);
 	tp.CreateTexture(KBLT_SIDE_2, image, 2, 2);
-	
+
 	image = tp.LoadTexture("data/kblCorner.raw", 1, 1);
 	tp.CreateTexture(KBLT_EDGE_CORNER, image, 1, 1);
 
@@ -1178,7 +1184,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/mainPost.raw",  128, 256);
 	tp.CreateTexture(MAIN_POST, image, 128, 256);
-	
+
 	image = tp.LoadTexture("data/mainPost2.raw", 256, 128);
 	tp.CreateTexture(MAIN_POST_2, image, 256, 128);
 
@@ -1229,16 +1235,16 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/phonefront.raw", 512, 32);
 	tp.CreateTexture(TELEPHONE_FRONT, image, 512, 32);
-	
+
 	image = tp.LoadTexture("data/phoneside1.raw", 32, 256);
-	tp.CreateTexture(TELEPHONE_SIDE_1, image, 32, 256);	
+	tp.CreateTexture(TELEPHONE_SIDE_1, image, 32, 256);
 
 	image = tp.LoadTexture("data/phonefront2.raw", 512, 16);
-	tp.CreateTexture(TELEPHONE_FRONT_2, image, 512, 16);	
-	
+	tp.CreateTexture(TELEPHONE_FRONT_2, image, 512, 16);
+
 	image = tp.LoadTexture("data/phonemainside.raw", 512, 256);
 	tp.CreateTexture(TELEPHONE_MAIN_SIDE, image, 512, 256);
-	
+
 	image = tp.LoadTexture("data/phonetop1.raw", 512, 128);
 	tp.CreateTexture(TELEPHONE_TOP_1, image, 512, 128);
 
@@ -1259,19 +1265,19 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/PSCsign.raw", 256, 128);
 	tp.CreateTexture(PSC_SIGN, image, 256, 128);
-	
+
 	image = tp.LoadTexture("data/PSCsign2.raw", 256, 128);
 	tp.CreateTexture(PSC_SIGN_2, image, 256, 128);
 
 	image = tp.LoadTexture("data/purplepost.raw", 64, 128);
 	tp.CreateTexture(PURPLE_POST, image, 64 ,128);
-	
+
 	image = tp.LoadTexture("data/purplepostside.raw", 128, 64);
 	tp.CreateTexture(PURPLE_POSTSIDE, image, 128, 64);
 
 	image = tp.LoadTexture("data/redpost.raw", 64, 128);
 	tp.CreateTexture(RED_POST, image, 64 ,128);
-	
+
 	image = tp.LoadTexture("data/redpostside.raw", 64, 64);
 	tp.CreateTexture(RED_POSTSIDE, image, 64, 64);
 
@@ -1313,7 +1319,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/sign1.raw", 512, 256);
 	tp.CreateTexture(SIGN_1, image, 512, 256);
-	
+
 	image = tp.LoadTexture("data/sign1side1.raw", 16, 512);
 	tp.CreateTexture(SIGN_1_SIDE_1, image, 16, 512);
 
@@ -1349,7 +1355,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/stepbricksedge.raw", 64, 32);
 	tp.CreateTexture(WALL_BRICK_STEPS_EDGE, image, 64, 32);
-	
+
 	image = tp.LoadTexture("data/stepbricksedge2.raw", 64, 64);
 	tp.CreateTexture(WALL_BRICK_STEPS_EDGE_2, image, 64, 64);
 
@@ -1358,7 +1364,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/stepslibrary.raw", 128, 1024);
 	tp.CreateTexture(STEPS_LIBRARY, image, 128, 1024);
-	
+
 	image = tp.LoadTexture("data/stepslibrarytop.raw", 256, 1024);
 	tp.CreateTexture(STEPS_LIBRARY_TOP, image, 256, 1024);
 
@@ -1452,7 +1458,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/windowpostsmallside.raw", 64, 512);
 	tp.CreateTexture(WINDOWPOST_PHYSSCI_LEFT, image, 64, 512);
-	
+
 	image = tp.LoadTexture("data/windowpostLib.raw", 128, 512);
 	tp.CreateTexture(WINDOWPOST_LIB_FRONT, image, 128, 512);
 
@@ -1464,7 +1470,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/windowposthalf1.raw", 64, 1024);
 	tp.CreateTexture(WINDOWPOST_CHANC_RIGHT, image, 64, 1024);
-	
+
 	image = tp.LoadTexture("data/windowposthalf2.raw", 64, 1024);
 	tp.CreateTexture(WINDOWPOST_CHANC_LEFT, image, 64, 1024);
 
@@ -1472,7 +1478,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/windows/stepwindow.raw", 128, 256);
 	tp.CreateTexture(STEP_WINDOW, image, 128, 256);
-	
+
 	image = tp.LoadTexture("data/windows/chancDoor1.raw", 256, 256);
 	tp.CreateTexture(CHANC_DOOR_1, image, 256, 256);
 
@@ -1484,7 +1490,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/windows/entrance2.raw",512, 512);
 	tp.CreateTexture(ENTRANCE_2, image, 512, 512);
-	
+
 	image = tp.LoadTexture("data/windows/exiteast.raw", 512, 512);
 	tp.CreateTexture(EXIT_EAST, image, 512, 512);
 
@@ -1505,7 +1511,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/windows/window2c.raw", 256, 256);
 	tp.CreateTexture(WINDOW_2C, image, 256, 256);
-	
+
 	image = tp.LoadTexture("data/windows/window2d.raw", 256, 256);
 	tp.CreateTexture(WINDOW_2D, image, 256, 256);
 
@@ -1523,10 +1529,10 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/windows/window3b.raw", 256, 256);
 	tp.CreateTexture(WINDOW_3B, image, 256, 256);
-	
+
 	image = tp.LoadTexture("data/windows/window4.raw", 128, 256);
 	tp.CreateTexture(WINDOW_4, image, 128, 256);
-	
+
 	image = tp.LoadTexture("data/windows/window5.raw", 128, 256);
 	tp.CreateTexture(WINDOW_5, image, 128, 256);
 
@@ -1571,7 +1577,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/windows/windowLib1.raw", 256, 128);
 	tp.CreateTexture(WINDOW_LIB_1, image, 256, 128);
-	
+
 	image = tp.LoadTexture("data/windows/windowLib1a.raw", 256, 128);
 	tp.CreateTexture(WINDOW_LIB_1A, image, 256, 128);
 
@@ -1592,7 +1598,7 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/windows/windowLibDoor2.raw", 512, 256);
 	tp.CreateTexture(WINDOW_LIB_DOOR_2, image, 512, 256);
-	
+
 	image = tp.LoadTexture("data/windows/windowLibLong.raw", 256, 128);
 	tp.CreateTexture(WINDOW_LIB_LONG, image, 256, 128);
 
@@ -1603,10 +1609,10 @@ void CreateTextures()
 	image = tp.LoadTexture("data/thanks.raw", 512, 512);
 	tp.CreateTexture(219, image, 512, 512);
 
-	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);	
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 
-	
+
 }
 
 //--------------------------------------------------------------------------------------
@@ -1649,12 +1655,12 @@ void DisplayChancPosts ()
 		glPushMatrix();
 			glTranslatef(0.0, 0.0, step);
 			if ((i != 1) && (i != 2) && (i != 10) && (i != 11))
-			{			
+			{
 				glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWPOST_CHANC_FRONT));
 				glCallList(11);
 			}
 			if ((i != 1) && (i != 10))
-			{			
+			{
 				glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWPOST_CHANC_RIGHT));
 				glCallList(12);
 			}
@@ -1663,8 +1669,8 @@ void DisplayChancPosts ()
 				glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWPOST_CHANC_LEFT));
 				glCallList(13);
 			}
-				
-		glPopMatrix();		
+
+		glPopMatrix();
 		step += 960.0;
 	}
 
@@ -1676,9 +1682,9 @@ void DisplayChancPosts ()
 			glTranslatef(0.0, 0.0, step);
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWLEDGE_CHANC_FRONT));
 			glCallList(14);
-		
+
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWLEDGE_CHANC_TOP));
-			glCallList(15);		
+			glCallList(15);
 		glPopMatrix();
 		if ((i == 0) || (i == 8)) step += 960.0;
 		step += 960.0;
@@ -1693,17 +1699,17 @@ void DisplayChancPosts ()
 		glTranslatef(0.0, 0.0, step);
 		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWPOST_CHANC_FRONT));
 		glCallList(11);
-			
+
 		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWPOST_CHANC_RIGHT));
 		glCallList(12);
-	
+
 		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWPOST_CHANC_LEFT));
 		glCallList(13);
 		if (i != 13)
 		{
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWLEDGE_CHANC_FRONT));
 			glCallList(14);
-		
+
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWLEDGE_CHANC_TOP));
 			glCallList(15);
 		}
@@ -1797,7 +1803,7 @@ void DrawChancPosts ()
 
 	// Window ledges of Chanc
 	tp.CreateDisplayList (YZ, 14, 32.0, 1024.0, 33808.0, 10192.0, 9552.0, 1.0, 0.9375); // front ledge
-	glNewList(15, GL_COMPILE); 
+	glNewList(15, GL_COMPILE);
 		glBegin(GL_QUADS);
 			glTexCoord2f(0.0, 0.0);
 			glVertex3f(33808.0, 10224.0, 9552.0);
@@ -1813,7 +1819,7 @@ void DrawChancPosts ()
 	tp.CreateDisplayList (XY, 236, 64.0, 64.0, 33808.0, 10192.0, 22096.0, 1.35, 0.5); // front ledge
 
 	// Window Edges
-	glNewList(237, GL_COMPILE); 
+	glNewList(237, GL_COMPILE);
 		glBegin(GL_QUADS);
 			glTexCoord2f(0.0, 0.0);
 			glVertex3f(33808.0, 10225.0, 20112.0);
@@ -1839,7 +1845,7 @@ void DisplayDoorPosts ()
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(DOOR_POST_SECURITY));
 	glCallList(199);
 
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(DOOR_POST_CHANC));	
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(DOOR_POST_CHANC));
 	glPushMatrix();
 		glTranslatef(0.0, 0.0, 8640.0);
 		glCallList(25);
@@ -1848,11 +1854,11 @@ void DisplayDoorPosts ()
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(DOOR_POST_CHANC));
 	glCallList(26);
 	glPushMatrix();
-	glTranslatef(0.0, 0.0, 8640.0);				
+	glTranslatef(0.0, 0.0, 8640.0);
 		glCallList(26);
 	glPopMatrix();
 
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(DOOR_SIDEPOST_CHANC));	
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(DOOR_SIDEPOST_CHANC));
 	glCallList(27);
 	glPushMatrix();
 		glTranslatef(0.0, 0.0, 866.0);
@@ -1887,7 +1893,7 @@ void DisplayAboveWindowBlock ()
 	glCallList(20);
 	glCallList(223);
 	glCallList(229);
-	// Blocks containing text 
+	// Blocks containing text
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ABOVE_CHANC_TEXT));
 	glCallList(224);
 
@@ -1899,7 +1905,7 @@ void DisplayAboveWindowBlock ()
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ABOVE_PHYS_SCI_TEXT));
 	glCallList(226);
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(0.0, 0.0, 9728.0);
 		glCallList(226);
 	glPopMatrix();
@@ -1911,12 +1917,12 @@ void DisplayAboveWindowBlock ()
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ABOVE_WINDOW_BLOCK_CHANC));
 	glCallList(22);
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(0.0, 1024.0, 0.0);
 		glCallList(22);
 	glPopMatrix();
 	glCallList(24);
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(0.0, 1024.0, 0.0);
 		glCallList(24);
 	glPopMatrix();
@@ -1927,7 +1933,7 @@ void DisplayAboveWindowBlock ()
 	glCallList(21);
 	glCallList(23);
 	glCallList(95);
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(99.84, 0.0, 0.0);
 		glCallList(95);
 	glPopMatrix();
@@ -1935,7 +1941,7 @@ void DisplayAboveWindowBlock ()
 	glCallList(43);
 	glCallList(45);
 	glCallList(53);	// aboves posts
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(128.0, 0.0, 0.0);
 		glCallList(53);
 	glPopMatrix();
@@ -1950,15 +1956,15 @@ void DisplayAboveWindowBlock ()
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ABOVE_WINDOW_EDGE_3B));
 	glCallList(49);
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(0.0, 1024.0, 0.0);
 		glCallList(49);
 	glPopMatrix();
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(0.0, 1024.0, 15783.0);
 		glCallList(49);
 	glPopMatrix();
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(-2068.0, 310.0, -17244.0);
 		glCallList(49);
 	glPopMatrix();
@@ -1966,15 +1972,15 @@ void DisplayAboveWindowBlock ()
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ABOVE_WINDOW_BLOCK_XY_3));
 		glCallList(50);
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(0.0, 0.0, 807.0);
 		glCallList(50);
 	glPopMatrix();
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(0.0, 0.0, 9567.0);
 		glCallList(50);
 	glPopMatrix();
-	glPushMatrix();	
+	glPushMatrix();
 		glTranslatef(0.0, 0.0, 11103.0);
 		glCallList(50);
 	glPopMatrix();
@@ -2065,7 +2071,7 @@ void DrawAboveWindowBlock ()
 
 	tp.CreateDisplayList (YZ, 21, 256.0, 256.0, 33808.0, 11856.0, 9552.0, 0.56, 49.0);		// chanc above top window chanc
 	tp.CreateDisplayList (XZ, 22, 128.0, 256.0, 33808.0, 10832.0, 9552.0, 0.70, 49.0);		// chanc above under bottom window chanc
-	
+
 	tp.CreateDisplayList (YZ, 23, 256.0, 256.0, 33808.0, 10832.0, 25344.0, 0.75, 5.0);		// phys sci above bottom window
 	tp.CreateDisplayList (YZ, 231, 256.0, 256.0, 33808.0, 11856.0, 25344.0, 0.75, 61.652);	// phys sci above bottom window
 
@@ -2073,7 +2079,7 @@ void DrawAboveWindowBlock ()
 	tp.CreateDisplayList (YZ, 227, 256.0, 256.0, 33808.0, 10832.0, 27648.0, 0.75, 34.0);	// phys sci above bottom window
 	tp.CreateDisplayList (YZ, 228, 256.0, 256.0, 33808.0, 10832.0, 37376.0, 0.75, 14.652);	// phys sci above bottom window
 	tp.CreateDisplayList (XZ, 24, 128.0, 256.0, 33808.0, 10832.0, 25344.0, 0.78, 61.652);	// phys sci above under bottom window
-	
+
 	tp.CreateDisplayList (YZ, 95, 256.0, 256.0, 33835.0, 11856.0, 41127.0, 1.0, 7.6);		// phys sci above top window
 	tp.CreateDisplayList (XZ, 96, 128.0, 256.0, 33835.0, 11856.0, 41127.0, 0.78, 7.6);		// phys sci above under bottom
 
@@ -2145,7 +2151,7 @@ void DrawAboveWindowBlock ()
 	tp.CreateDisplayList (XY, 239, 1024.0, 256.0, 31504.96, 10768.0, 43056.0, 1.0, 1.0);	// (above KBLT)
 	tp.CreateDisplayList (XY, 238, 256.0, 256.0, 32528.96, 10768.0, 43056.0, 13.75, 1.0);	// (above KBLT)
 	tp.CreateDisplayList (XY, 55, 256.0, 256.0, 24264.0, 10768.0, 43056.0, 28.285, 1.0);	// (above KBLT)
-	tp.CreateDisplayList (XY, 416, 1024.0, 256.0, 9416.0, 10768.0, 43056.0, 1.0, 1.0);		// (above library text)	
+	tp.CreateDisplayList (XY, 416, 1024.0, 256.0, 9416.0, 10768.0, 43056.0, 1.0, 1.0);		// (above library text)
 	tp.CreateDisplayList (XY, 415, 256.0, 256.0, 10440.0, 10768.0, 43056.0, 49.0, 1.0);		// (above library)
 	tp.CreateDisplayList (XY, 417, 256.0, 256.0, 23240.0, 10768.0, 43056.0, 3.5, 1.0);		// (above library)
 	tp.CreateDisplayList (XY, 418, 256.0, 256.0, 22984.0, 10768.0, 43056.0, 1.0, 1.0);		// (above library ticket text)
@@ -2155,7 +2161,7 @@ void DrawAboveWindowBlock ()
 	tp.CreateDisplayList (YZ, 210, 256.0, 64.0, 6600.0, 10768.0, 43056.0, 1.0, 1.0);
 	tp.CreateDisplayList (XZ, 211, 256.0, 128.0, 8189.0, 10768.0, 43056.0, 62.3, 0.75);		// above under downstairs
 	tp.CreateDisplayList (XZ, 212, 256.0, 128.0, 32720.0, 10768.0, 43056.0, 3.5, 0.75);		// above under gcl1
-	
+
 	// ABOVE CANTEEN
 	tp.CreateDisplayList (YZ, 213, 256.0, 256.0, 2608.0, 10896.0, 10000.0, 0.78, 139.25);
 
@@ -2276,12 +2282,12 @@ void DisplayMainPosts ()
 	step2 = 0.0;
 	for (int j = 0; j < 2; j++)
 	{
-		glPushMatrix();	
+		glPushMatrix();
 			glTranslatef(stepLength, 0.0, step2);
 			for (int i = 0; i < 17; i++)
-			{		
+			{
 				glBindTexture(GL_TEXTURE_2D, tp.GetTexture(MAIN_POST));
-				glPushMatrix();	
+				glPushMatrix();
 					glTranslatef(0.0, 0.0, step);
 					glCallList(18);
 				glPopMatrix();
@@ -2291,7 +2297,7 @@ void DisplayMainPosts ()
 				glPopMatrix();
 				if ((i == 7) && (j ==0))	// between chanc and phys sci
 				{
-					glPushMatrix();	
+					glPushMatrix();
 						glTranslatef(4008.0, 0.0, step);
 						glCallList(18);
 					glPopMatrix();
@@ -2300,9 +2306,9 @@ void DisplayMainPosts ()
 						glCallList(18);
 					glPopMatrix();
 				}
-		
+
 				glBindTexture(GL_TEXTURE_2D, tp.GetTexture(MAIN_POST_2));
-				glPushMatrix();	
+				glPushMatrix();
 					glTranslatef(0.0, 0.0, step);
 					glCallList(19);
 				glPopMatrix();
@@ -2312,7 +2318,7 @@ void DisplayMainPosts ()
 				glPopMatrix();
 				if ((i == 7) && (j ==0))	// between chanc and phys sci
 				{
-					glPushMatrix();	
+					glPushMatrix();
 						glTranslatef(4008.0, 0.0, step);
 						glCallList(19);
 					glPopMatrix();
@@ -2327,9 +2333,9 @@ void DisplayMainPosts ()
 	// library front
 	step = -1940.0;
 	for (int i = 0; i < 13; i++)
-	{		
+	{
 		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(MAIN_POST));
-		glPushMatrix();	
+		glPushMatrix();
 			glTranslatef(step, 0.0, 30880.0);
 			glCallList(18);
 		glPopMatrix();
@@ -2337,7 +2343,7 @@ void DisplayMainPosts ()
 			glTranslatef(step, 0.0, 31008.0);
 			glCallList(18);
 		glPopMatrix();
-		
+
 		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(MAIN_POST_2));
 		glPushMatrix();
 			glTranslatef(step, 0.0, 30880.0);
@@ -2381,7 +2387,7 @@ void DisplayPhysSciPosts ()
 	step = 0.0;
 	for (int i = 0; i < 16; i++)
 	{
-		glPushMatrix();	
+		glPushMatrix();
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWPOST_PHYSSCI_FRONT));
 			glTranslatef(0.0, 0.0, step);
 			glCallList(36);
@@ -2399,7 +2405,7 @@ void DisplayPhysSciPosts ()
 	step = 960.0;
 	for (i = 0; i < 4; i++)
 	{
-		glPushMatrix();	
+		glPushMatrix();
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWPOST_PHYSSCI_FRONT));
 			glTranslatef(0.0, -1024.0, step);
 			glCallList(36);
@@ -2413,7 +2419,7 @@ void DisplayPhysSciPosts ()
 		glPopMatrix();
 		step += 960.0;
 	}
-		glPushMatrix();	
+		glPushMatrix();
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOWPOST_PHYSSCI_FRONT));
 			glTranslatef(0.0, -1024.0, 7718.0);
 			glCallList(36);
@@ -2439,7 +2445,7 @@ void DisplayPhysSciPosts ()
 		glPopMatrix();
 		step += 1920.0;
 	}
-	
+
 	step = 6758.0;
 	stepLength = -832.0;
 	for (i = 0; i < 2; i++)
@@ -2578,7 +2584,7 @@ void DisplayLibraryPosts ()
 			}
 		glPopMatrix();
 		stepLength += 1054;
-	}		
+	}
 	stepLength = 0.0;
 	for (j = 0; j < 2; j++)
 	{
@@ -2677,7 +2683,7 @@ void DrawLibraryPosts ()
 			glVertex3f(22440.0 , 10396.0, 43176.0);
 		glEnd();
 	glEndList();
-	
+
 	// Ticket Counter
 	tp.CreateDisplayList (XZ, 442, 128.0, 256.0, 22984.0, 10305.0, 42992.0, 9.0, 0.625);
 	tp.CreateDisplayList (YZ, 443, 64.0, 64.0, 22984.0, 10256.0, 43056.0, 0.766, 1.0);
@@ -2688,10 +2694,10 @@ void DrawLibraryPosts ()
 	tp.CreateAngledPolygon(446, 128.0, 256.0,  22984.0,  24136.0,  24136.0,  22984.0,
 	                                          10286.0, 10286.0, 10276.0, 10276.0,
 											  42992.0, 42992.0, 43088.0, 43088.0, 5, 1);
-	
+
 	tp.CreateAngledPolygon(447, 64.0, 64.0,  22984.0,  22984.0,  22984.0,  22984.0,
 	                                          10286.0, 10276.0, 10305.0, 10305.0,
-											  42992.0, 43056.0, 43056.0, 42992.0, 6, 1);	
+											  42992.0, 43056.0, 43056.0, 42992.0, 6, 1);
 }
 
 //--------------------------------------------------------------------------------------
@@ -2715,7 +2721,7 @@ void DisplayPavement ()
 	glPopMatrix();
 	glCallList(241);
 	glCallList(428);
-	
+
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(PAVEMENT_TOP));
 	for (i = 91; i < 93; i ++) glCallList(i);
 	glCallList(246);
@@ -2897,11 +2903,11 @@ void DisplayBricks ()
 	glCallList(394);
 	glCallList(396);
 	glCallList(397);
-	
+
 	// bricks with security sign
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_SEC_SIGN));
 	glCallList(398);
-	
+
 	// WALL_BRICK_USD_YZ
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_USD_YZ));
 	for (i = 200; i < 202; i ++) glCallList(i);
@@ -3022,10 +3028,10 @@ void DrawBricks ()
 	tp.CreateDisplayList (YZ, 222, 128.0, 128.0, 33840.0, 8976.0, 5840.0, 23.625, 5.0);		// panel 1 (before steps)
 	tp.CreateDisplayList (YZ, 102, 128.0, 128.0, 33808.0, 8976.0, 6480.0, 23.625, 24.0);	// panel 2 (below steps)
 	tp.CreateDisplayList (YZ, 103, 128.0, 128.0, 33808.0, 10000.0, 11472.0, 1.5, 60.0);		// panel 3 (below window 1)
-	tp.CreateDisplayList (YZ, 104, 128.0, 128.0, 33808.0, 10000.0, 20112.0, 1.5, 15.5);		// panel 4 (below window 2)	
+	tp.CreateDisplayList (YZ, 104, 128.0, 128.0, 33808.0, 10000.0, 20112.0, 1.5, 15.5);		// panel 4 (below window 2)
 	tp.CreateDisplayList (YZ_FLIP, 105, 128.0, 128.0, 33808.0, 10960.0, 9552.0, 2.0, 97.5);	// us panel 4
 	tp.CreateDisplayList (YZ, 120, 128.0, 128.0, 33808.0, 10960.0, 22032.0, 2.0, 0.5);		// us panel 4 (last 1/2 brick)
-	
+
 	// -------- (Face of Physical Science/Shops Block) --------
 	tp.CreateDisplayList (YZ, 106, 128.0, 128.0, 33808.0, 10000.0, 25344.0, 4.525, 11.0);	// panel 1 (around rusty man)
 	tp.CreateDisplayList (YZ, 107, 128.0, 128.0, 33808.0, 11024.0, 25344.0, 6.5, 10.0);		// us panel 1
@@ -3050,7 +3056,7 @@ void DrawBricks ()
 	tp.CreateDisplayList (YZ, 121, 128.0, 128.0, 34256.0, 9936.0, 27303.0, 3.0, 2.0);		// first doorway panel
 	tp.CreateDisplayList (YZ, 193, 128.0, 128.0, 34256.0, 10576.0, 27303.0, 2.0, 2.0);		// first doorway panel
 	tp.CreateDisplayList (YZ, 194, 128.0, 128.0, 34256.0, 10192.0, 27431.0, 3.5, 1.0);		// first doorway panel
-	
+
 	// -------- (Face of Canteen Block) --------
 	tp.CreateDisplayList (YZ, 122, 128.0, 128.0, 2608.0, 10000.0, 10000.0, 7.0, 243.5);		// long downstairs panel
 	tp.CreateDisplayList (YZ, 123, 128.0, 128.0, 2608.0, 10000.0, 42960.0, 7.0, 21.0);		// end downstairs panel
@@ -3126,7 +3132,7 @@ void DrawBricks ()
 	tp.CreateDisplayList (YZ, 390, 128.0, 128.0, 10952.0, 10000.0, 43056.0, 2.5, 0.75);		// side of library door
 	tp.CreateDisplayList (YZ, 391, 128.0, 128.0, 8189.0, 10000.0, 43056.0, 6.0, 0.5);		// side of library door
 	tp.CreateDisplayList (XY, 392, 128.0, 128.0, 10952.0, 10320.0, 43152.0, 0.25, 3.5);		// side edge of library door
-	
+
 	// --------  (Phys Sci Building very end wall by steps) --------
 	tp.CreateDisplayList (XY,  142, 128.0, 128.0, 33808.0, 10000.0, 41127.0, 11.5, 6.5);
 	tp.CreateDisplayList (XY,  150, 128.0, 128.0, 33808.0, 11024.0, 41127.0, 16.5, 2.5);
@@ -3135,7 +3141,7 @@ void DrawBricks ()
 	tp.CreateDisplayList (XY,  138, 128.0, 128.0, 35600.0, 10000.0, 41127.0, 3.5, 6.5);
 	tp.CreateDisplayList (XY,  139, 128.0, 128.0, 33872.0, 11216.0, 41127.0, 12.5, 6.0);
 	tp.CreateDisplayList (YZ_FLIP, 393, 128.0, 128.0, 33872.0, 11344.0, 41063.0, 4.0, 0.5);	// upstairs edge of window
-	
+
 	// WALL_BRICK_GAP_YZ
 	tp.CreateDisplayList (YZ, 180, 128.0, 32.0, 33895.0, 10192.0, 22079.0, 5.0, 0.530);	// end chanc
 	tp.CreateDisplayList (YZ, 181, 128.0, 32.0, 33872.0, 10512.0, 30542.0, 2.5, 0.80);	// toilets phys sci
@@ -3154,7 +3160,7 @@ void DisplayRoof()
 	// main roof planks
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ROOF_PLANKS));
 	for (int i = 250; i < 253; i++) glCallList(i);
-	
+
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ROOF_BEAM_1));
 	// corner beams
 	for (i = 1; i < 6; i ++) glCallList(i);
@@ -3214,7 +3220,7 @@ void DisplayRoof()
 	{
 		glPushMatrix();
 			glTranslatef(step, 0.0, 0.0);
-			glCallList(296);		
+			glCallList(296);
 		glPopMatrix();
 		step += 388.0;
 	}
@@ -3223,7 +3229,7 @@ void DisplayRoof()
 	for (i = 202; i < 204; i ++) glCallList(i);
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ROOF_BEAM_4));
-	for (i = 6; i < 11; i ++) 
+	for (i = 6; i < 11; i ++)
 	{
 		glCallList(i);
 		glPushMatrix();
@@ -3300,7 +3306,7 @@ void DisplayRoof()
 	glPushMatrix();
 		glTranslatef(0.0, 0.0, 1798.0);
 		glCallList(299);
-	glPopMatrix();	
+	glPopMatrix();
 
 	// Library Roof
 	step = 281.0;
@@ -3308,22 +3314,22 @@ void DisplayRoof()
 	{
 		glPushMatrix();
 			glTranslatef(step, 0.0, 0.0);
-			glCallList(297);		
+			glCallList(297);
 		glPopMatrix();
 		glPushMatrix();
 			glTranslatef(step + 32.0, 0.0, 0.0);
 			glCallList(297);
 		glPopMatrix();
-			
+
 		step += 388.0;
 	}
-	
+
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ROOF_PLANKS_2));
 	glCallList(257);
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ROOF_BEAM_3));
 	// corner beams
-	for (i = 170; i < 175; i ++) 
+	for (i = 170; i < 175; i ++)
 	{
 		glCallList(i + 5);
 		glPushMatrix();
@@ -3356,7 +3362,7 @@ void DisplayRoof()
 	for (i = 97; i < 101; i ++) glCallList(i);
 	// corner beams
 	for (i = 170; i < 175; i ++) glCallList(i);
-	
+
 
 	// Top of Roof
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ROOF_TOP));
@@ -3580,7 +3586,7 @@ void DrawRoof()
 	tp.CreateDisplayList (XZ, 426, 64.0, 128.0, 33848.0, 11954.0, 22096.0, 1.0, 25.375);
 	// top corner spacer
 	tp.CreateDisplayList (XY, 427, 64.0, 128.0, 33808.0, 11999.0, 22096.0, 0.75, 0.75);
-	
+
 	// Joins where roof slants
 	DrawAngledRoofBeam(1, 33848.0 - 1867.0, 12012.72 - 687.13, 41226.0, 15.21);
 	DrawAngledRoofBeam(2, 33848.0 - 1481.0, 12012.72 - 545.07, 41612.0, 12.0);
@@ -3660,7 +3666,7 @@ void DisplayEntranceSteps ()
 {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_PAVING_1));
 	for (int i = 258; i < 274 ; i ++) glCallList(i);
-	
+
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_EDGE));
 	for (i = 274; i < 290 ; i ++) glCallList(i);
 
@@ -3705,7 +3711,7 @@ void DrawEntranceSteps ()
 		tp.CreateDisplayList (XY,  i + 16, 64.0, 64.0, 31582.0, step - 64.0, stepLength, 35.0, 1.0);
 		step -= 48.0;
 		stepLength -= 142.0;
-		if ((i+3) % 4 == 0) 
+		if ((i+3) % 4 == 0)
 		{
 			stepLength -= 500.0;
 			step -= 48.0;
@@ -3724,7 +3730,7 @@ void DrawEntranceSteps ()
 	// steps next to GCL1
 	tp.CreateDisplayList (XZ, 206, 128.0, 1024.0, 34508.0, 10000.0, 41127, 1.0, 0.942);
 	tp.CreateDisplayList (XZ, 207, 256.0, 1024.0, 34352.0, 10000.0, 41127, 0.609, 0.942);
-	
+
 }
 
 //--------------------------------------------------------------------------------------
@@ -3734,13 +3740,13 @@ void DisplayBench ()
 {
 	step2 = 3860.0;
 	for (int j = 0; j < 11; j++)
-	{	
+	{
 		glPushMatrix();
 			glTranslatef(0.0, 0.0, step2);
 
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(BENCH_TOP));
 			glCallList(400);
-	
+
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(BENCH_SIDE));
 			glCallList(401);
 			glPushMatrix();
@@ -3763,7 +3769,7 @@ void DisplayBench ()
 			for (int i = 0; i < 2; i++)
 			{
 				glPushMatrix();
-					glTranslatef(0.0, 0.0, step);	
+					glTranslatef(0.0, 0.0, step);
 					glCallList(403);
 					glPushMatrix();
 						glTranslatef(192.0, 0.0, 0.0);
@@ -3794,7 +3800,7 @@ void DisplayBench ()
 					glTranslatef(192.0, 0.0, 0.0);
 					glCallList(406);
 				glPopMatrix();
-	
+
 		glPopMatrix();
 		step2 += 1930.0;
 		if (j == 4) step2 += 5790.0;
@@ -3803,13 +3809,13 @@ void DisplayBench ()
 	step2 = 1940.0;
 	GLdouble vertStep = 0.0;
 	for (j = 0; j < 8; j++)
-	{	
+	{
 		glPushMatrix();
 			glTranslatef(step2, 0.0, vertStep);
 
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(BENCH_TOP));
 			glCallList(407);
-	
+
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(BENCH_SIDE));
 			glCallList(408);
 			glPushMatrix();
@@ -3832,7 +3838,7 @@ void DisplayBench ()
 			for (int i = 0; i < 2; i++)
 			{
 				glPushMatrix();
-					glTranslatef(step, 0.0, 0.0);	
+					glTranslatef(step, 0.0, 0.0);
 					glCallList(410);
 					glPushMatrix();
 						glTranslatef(0.0, 0.0, 192.0);
@@ -3863,7 +3869,7 @@ void DisplayBench ()
 					glTranslatef(0.0, 0.0, 192.0);
 					glCallList(413);
 				glPopMatrix();
-	
+
 		glPopMatrix();
 		step2 += 1940.0;
 		if (j == 1) step2 += 1940.0;
@@ -4128,7 +4134,7 @@ void DisplayExtras ()
 				glTranslatef(269.0, 0.0, 0.0);
 				glCallList(395);
 			glPopMatrix();
-		
+
 		glPopMatrix();
 		step += 384.0;
 	}
@@ -4143,11 +4149,11 @@ void DisplayExtras ()
 	glPushMatrix();
 		glTranslatef(-2496.0, 0.0, 0.0);
 		glCallList(345);
-	glPopMatrix();	
+	glPopMatrix();
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(KBLT_SIDE_2));
 	glPushMatrix();
-		glTranslatef(-2316.0, 0.0, 0.0);			
+		glTranslatef(-2316.0, 0.0, 0.0);
 		glCallList(346);
 	glPopMatrix();
 
@@ -4156,7 +4162,7 @@ void DisplayExtras ()
 	glCallList(347);
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(TOILET_MEN));
 	glPushMatrix();
-		glTranslatef(0.0, 0.0, 1920.0);			
+		glTranslatef(0.0, 0.0, 1920.0);
 		glCallList(347);
 	glPopMatrix();
 
@@ -4164,7 +4170,7 @@ void DisplayExtras ()
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(TICKET_LEDGE));
 	glCallList(419);
 	glPushMatrix();
-		glTranslatef(0.0, 32.0, 0.0);			
+		glTranslatef(0.0, 32.0, 0.0);
 		glCallList(419);
 	glPopMatrix();
 
@@ -4174,7 +4180,7 @@ void DisplayExtras ()
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(TICKET_LEDGE_EDGE_2));
 	glCallList(421);
 	glPushMatrix();
-		glTranslatef(1208.0, 0.0, 0.0);			
+		glTranslatef(1208.0, 0.0, 0.0);
 		glCallList(421);
 	glPopMatrix();
 }
@@ -4214,7 +4220,7 @@ void DrawExtras ()
 	tp.CreateDisplayList (YZ, 321, 1.0, 1.0, 35458.0, 10000.0, 25016.0, 660.0, 300.0);		// Drinks Machine Sides
 	tp.CreateDisplayList (YZ, 322, 1.0, 1.0, 35163.0, 10000.0, 25016.0, 586.2, 300.0);		// Drinks Machine Sides
 	tp.CreateDisplayList (YZ, 323, 1.0, 1.0, 34778.0, 10000.0, 25016.0, 593.22, 300.0);		// Drinks Machine Sides
-	
+
 	tp.CreateDisplayList (XZ, 324, 32.0, 32.0, 34064.0, 10000.0, 26704.0, 6.0, 20.0);		// Carpet 1st doorway
 	tp.CreateDisplayList (XZ, 429, 32.0, 32.0, 34064.0, 10000.0, 36643.2, 9.0, 17.4);		// Carpet 2nd doorway
 
@@ -4236,7 +4242,7 @@ void DrawExtras ()
 	tp.CreateDisplayList (XZ, 348, 2.0, 2.0, 33918.0, 10697.84, 25201.6, 107.0, 56.9);		// telephone roof
 	tp.CreateDisplayList (XZ, 349, 2.0, 2.0, 33882.0, 10633.0, 25173.0, 142.6, 2.5);		// telephone roof
 	tp.CreateDisplayList (XZ, 388, 2.0, 2.0, 33882.0, 10633.0, 25173.0, 5.0, 89.6);			// telephone roof
-	
+
 	tp.CreateDisplayList (YZ,  345, 2.0, 128.0, 28104.0, 10000.0, 42756.0, 467.0, 1.0); // KBLT side
 	tp.CreateDisplayList (YZ,  346, 2.0, 2.0, 28014.0, 10000.0, 42866.0, 416.0, 98.0); // KBLT side
 
@@ -4331,7 +4337,7 @@ void DisplayLargerTextures ()
 	// Chanc Windows Downstairrs
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_2));
 	step = 1920.0;
-	for (int i = 0; i < 2; i ++) 
+	for (int i = 0; i < 2; i ++)
 	{
 		glPushMatrix();
 			glTranslatef(0.0, 0.0, step);
@@ -4342,7 +4348,7 @@ void DisplayLargerTextures ()
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_2B));
 	step = 2880.0;
-	for (i = 0; i < 3; i ++) 
+	for (i = 0; i < 3; i ++)
 	{
 		glPushMatrix();
 			glTranslatef(0.0, 0.0, step);
@@ -4354,7 +4360,7 @@ void DisplayLargerTextures ()
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_2C));
 	step = 6720.0;
-	for (i = 1; i < 3; i ++) 
+	for (i = 1; i < 3; i ++)
 	{
 		glPushMatrix();
 			glTranslatef(0.0, 0.0, step);
@@ -4380,7 +4386,7 @@ void DisplayLargerTextures ()
 		glTranslatef(0.0, 0.0, 7680.0);
 		glCallList(352);
 	glPopMatrix();
-		
+
 	//Chanc Windows Upstairs
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_2US));
 	glPushMatrix();
@@ -4388,7 +4394,7 @@ void DisplayLargerTextures ()
 		glCallList(352);
 	glPopMatrix();
 	step = 9600.0;
-	for (i = 0; i < 3; i ++) 
+	for (i = 0; i < 3; i ++)
 	{
 		glPushMatrix();
 			glTranslatef(0.0, 1023.0, step);
@@ -4399,7 +4405,7 @@ void DisplayLargerTextures ()
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_2USB));
 	step = 960;
-	for (i = 0; i < 9; i ++) 
+	for (i = 0; i < 9; i ++)
 	{
 		glPushMatrix();
 			glTranslatef(0.0, 1023.0, step);
@@ -4407,11 +4413,11 @@ void DisplayLargerTextures ()
 		glPopMatrix();
 		step += 960;
 	}
-	
+
 	// Physical Science upstairs
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_3));	
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_3));
 	step = 3840.0;
-	for (i = 4; i < 14; i ++) 
+	for (i = 4; i < 14; i ++)
 	{
 		glPushMatrix();
 			glTranslatef(0.0, 0.0, step);
@@ -4421,7 +4427,7 @@ void DisplayLargerTextures ()
 	}
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_3B));
 	step = 0.0;
-	for (i = 0; i < 6; i ++) 
+	for (i = 0; i < 6; i ++)
 	{
 		glPushMatrix();
 			glTranslatef(0.0, 0.0, step);
@@ -4434,7 +4440,7 @@ void DisplayLargerTextures ()
 	// toilets
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_4));
 	step = 0.0;
-	for (i = 0; i < 2; i ++) 
+	for (i = 0; i < 2; i ++)
 	{
 		glPushMatrix();
 			glTranslatef(0.0, 0.0, step);
@@ -4648,14 +4654,14 @@ void DrawLargerTextures ()
 	tp.CreateYtoZWindowList (361, 33865.0, 10000.0, 832.0, 39216.0, 839.0, 0.992, 1.0);		// 254.5x256
 	// second red window
 	tp.CreateYtoZWindowList (362, 33865.0, 10000.0, 832.0, 40151.0, 448.0, 1.0, 0.54);		// 256x138
-	
+
 	tp.CreateXtoYWindowList (363, 43040.0, 29512.0, 1280.0, 10288.0, 480.0, 1.0, 0.745);	// NEXUS
 	tp.CreateXtoYWindowList (364, 43040.0, 28360.0, 896.0, 10320.0, 448.0, 1.0, 1.0);		// Glassboard 1
 	tp.CreateXtoYWindowList (365, 43040.0, 24456.0, 896.0, 10320.0, 448.0, 1.0, 1.0);		// Glassboard 2
 	tp.CreateXtoYWindowList (366, 43040.0, 7304.0, 768.0, 10256.0, 384.0, 1.0, 1.0);		// Glassboard 2
 	tp.CreateXtoYWindowList (367, 42756.0, 25640.0, 2432.0, 10000.0, 902.0, 1.0, 0.742);	// KBLT
-	
-	tp.CreateYtoZWindowList (368, 33840.0, 9086.0, 2200.0, 4688.0, 1100.0, 1.0, 1.0);		
+
+	tp.CreateYtoZWindowList (368, 33840.0, 9086.0, 2200.0, 4688.0, 1100.0, 1.0, 1.0);
 	tp.CreateXtoYWindowList (369, 4688.0, 31632.0, 2208.0, 9086.0, 2208.0, 1.0, 1.0);
 
 	tp.CreateXtoYWindowList (370, 25016.0, 35458.0, 317.12, 10000.0, 660.0, 0.96, 1.0);		// Coke Machine
@@ -4668,7 +4674,7 @@ void DrawLargerTextures ()
 	// phys sci door 2
 	tp.CreateYtoZWindowList (375, 34342.0, 10000.0, 832.0, 36639.0, 1216, 0.68, 1.0);		// 256x175.16
 
-	tp.CreateXtoYWindowList (379, 43152.0, 33232.0, 384.0, 10000.0, 768.0, 1.0, 1.0);		// GCL1 doorway	
+	tp.CreateXtoYWindowList (379, 43152.0, 33232.0, 384.0, 10000.0, 768.0, 1.0, 1.0);		// GCL1 doorway
 	tp.CreateXtoYWindowList (380, 43152.0, 32720.0, 384.0, 10000.0, 768.0, 1.0, 1.0);		// GCL1 doorway
 
 	tp.CreateYtoZWindowList (381, 36047, 9422.0, 1410.0, 41127.0, 1929.0, 0.725, 1.0);	// Exit East  375x512
@@ -4703,7 +4709,7 @@ void DisplayGrass ()
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(GRASS_2));
 	glCallList(198);
-	
+
 	// USED IF REQUIRED DARKER HILL
 	//glBindTexture(GL_TEXTURE_2D, tp.GetTexture(GRASS_HILL));
 	//for (int i = 461; i < 477; i++) glCallList(i);
@@ -4739,7 +4745,7 @@ void DrawGrass ()
 	tp.CreateAngledPolygon(465, 64.0, 64.0,  9000.0,  9000.0,  9000.0,  6500.0,
 	                                        10000.0, 10000.0, 10200.0, 10000.0,
 											17000.0, 17000.0, 19000.0, 19000.0, 4, 1);
-	
+
 	tp.CreateAngledPolygon(466, 64.0, 64.0,  22000.0, 22000.0, 27000.0, 22000.0,
 	                                         10000.0, 10000.0, 10000.0, 10200.0,
 											 17000.0, 17000.0, 19000.0, 19000.0, 1, 1);
@@ -4754,7 +4760,7 @@ void DrawGrass ()
 
 	// higher hilltop
 	tp.CreateDisplayList (XZ, 477, 64.0, 64.0, 14000.0, 10425.0, 28000.0, 62.5, 78.125);
-	
+
 	tp.CreateAngledPolygon(469, 64.0, 64.0,  14000.0, 18000.0, 18000.0, 14000.0,
 	                                         10200.0, 10200.0, 10425.0, 10425.0,
 											 23000.0, 23000.0, 28000.0, 28000.0, 1, 1);
@@ -4785,7 +4791,7 @@ void DrawGrass ()
 
 	tp.CreateAngledPolygon(476, 64.0, 64.0,  10000.0, 14000.0, 14000.0, 14000.0,
 	                                         10200.0, 10425.0, 10200.0, 10200.0,
-											 33000.0, 33000.0, 36000.0, 36000.0, 1, 1);	
+											 33000.0, 33000.0, 36000.0, 36000.0, 1, 1);
 }
 
 // --------------------------------------------------------------------------------------
@@ -4820,7 +4826,7 @@ void DisplayLights ()
 		glPopMatrix();
 		beamstep += 8492.0;
 	}
-	
+
 	// Light Supports
 	beamstep = 0.0;
 	for (i = 0; i < 4; i++)
@@ -4864,8 +4870,8 @@ void DisplayLights ()
 			step += 80.0;
 		}
 		beamstep += 8492.0;
-	}	
-	
+	}
+
 }
 
 
@@ -4877,7 +4883,7 @@ void DrawLights ()
 			gluQuadricDrawStyle(glu_cylinder, GLU_LINE);
 			gluCylinder(glu_cylinder, 75.0, 75.0, 60.0, 15, 100);
 		glEnd();
-	glEndList();	
+	glEndList();
 
 	tp.CreateDisplayList (YZ, 377, 2.0, 8.0, 32900.0, 11330.0, 11150.0, 220.0, 1.0);	// supports
 	tp.CreateDisplayList (XY, 378, 8.0, 2.0, 32900.0, 11330.0, 11150.0, 1.0, 220.0);	// supports
@@ -4921,7 +4927,7 @@ void DisplayCylinders ()
 		glTranslatef(0.0, 0.0, 276.0);
 		glCallList(440);
 	glPopMatrix();
-	
+
 }
 
 void DrawCylinders ()
@@ -4947,7 +4953,7 @@ void DrawCylinders ()
 			gluDisk(glu_cylinder, 0.0, 138.0, 20, 50);
 		glEnd();
 	glEndList();
-	
+
 	tp.CreateDisplayList (XZ, 439, 1.0, 1.0, 33800.0, 10340.0, 34710.0, 120.0, 276.0);
 	tp.CreateDisplayList (XY, 440, 4.0, 16.0, 33800.0, 10324.0, 34710.0, 30.0, 1.0);
 
@@ -4966,7 +4972,7 @@ void DisplayStepBricks ()
 			glTranslatef(step, 0.0, 0.0);
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS));
 			for (int i = 478; i < 487; i ++) glCallList(i);
-	
+
 			glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
 			for (i = 488; i < 493; i ++) glCallList(i);
 
@@ -5000,7 +5006,7 @@ void DisplayStepBricks ()
 		glPopMatrix();
 		step += -64.0;
 	}
-	
+
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_COVER));
 	for (int i = 497; i < 502; i ++) glCallList(i);
 	glPushMatrix();
@@ -5042,12 +5048,12 @@ void DrawStepBricks ()
 	tp.CreateDisplayList (YZ,  478.0, 128.0, 128.0, 31582.0, 9914.0, 9872.0, 1.7188, 1.75);
 	tp.CreateDisplayList (YZ,  488.0, 32.0, 128.0, 31582.0, 10134.0, 9868.0, 1.0, 1.78);
 
-	tp.CreateDisplayList (YZ,  479.0, 128.0, 128.0, 31582.0, 9530.0, 9006.0, 3.21875, 6.0);	
+	tp.CreateDisplayList (YZ,  479.0, 128.0, 128.0, 31582.0, 9530.0, 9006.0, 3.21875, 6.0);
 	tp.CreateDisplayList (YZ,  489.0, 32.0, 128.0, 31582.0, 9942.0, 9004.0, 1.0, 2.55);
-	
+
 	tp.CreateDisplayList (YZ,  480.0, 128.0, 128.0, 31582.0, 9350.0, 7918.0, 2.90625, 6.0);
 	tp.CreateDisplayList (YZ,  490.0, 32.0, 128.0, 31582.0, 9722.0, 7916.0, 1.0, 3.0);
-	
+
 	tp.CreateDisplayList (YZ,  481.0, 128.0, 128.0, 31582.0, 9158.0, 6830.0, 2.375, 6.0);
 	tp.CreateDisplayList (YZ,  491.0, 32.0, 128.0, 31582.0, 9462.0, 6830.0, 1.0, 2.99);
 
@@ -5136,7 +5142,7 @@ void CreateTextureList()
 //--------------------------------------------------------------------------------------
 void IncrementFrameCount()
 {
-	double t = ((GLdouble)(clock()-lastClock))/(GLdouble)CLOCKS_PER_SEC;  
+	double t = ((GLdouble)(clock()-lastClock))/(GLdouble)CLOCKS_PER_SEC;
 	frameCount ++;
 
 	// reset after t

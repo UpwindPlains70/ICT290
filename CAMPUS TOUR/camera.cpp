@@ -10,6 +10,16 @@
 
 #include <math.h>
 #include <gl/glut.h>
+#include <iostream>
+
+using namespace std;
+
+void Camera::getPosition(int &x, int &y, int &z)
+{
+	x = m_x;
+	y = m_y;
+	z = m_z;
+}
 
 //--------------------------------------------------------------------------------------
 // Set initial values

@@ -8,8 +8,9 @@
 
 #include <iostream>
 #include "texturedPolygons.h"
-using namespace std;
 
+
+using namespace std;
 
 //--------------------------------------------------------------------------------------
 //  Declares datatype to store a raw image file and calls method to load image
@@ -88,8 +89,8 @@ void TexturedPolygons::CreateTexture(int textureNo, unsigned char* image, int im
 //  therefore I would probably create a better function for the purpose, but this works well.
 //--------------------------------------------------------------------------------------
 
-void TexturedPolygons::CreateDisplayList(const int &XYZ, const int &listNo, 
-		                                 const GLdouble &xImgSize, const GLdouble &zImgSize, 
+void TexturedPolygons::CreateDisplayList(const int &XYZ, const int &listNo,
+		                                 const GLdouble &xImgSize, const GLdouble &zImgSize,
 					                     const GLdouble &xStart, const GLdouble &yStart, const GLdouble &zStart,
 					                     const GLdouble &xTimes, const GLdouble &zTimes)
 {
@@ -126,7 +127,7 @@ void TexturedPolygons::CreateDisplayList(const int &XYZ, const int &listNo,
 //  Create display list with image plotted on X to Z axis
 //--------------------------------------------------------------------------------------
 
-void TexturedPolygons::CreateXtoZTextureList(const GLdouble &xImgSize, const GLdouble &zImgSize, 
+void TexturedPolygons::CreateXtoZTextureList(const GLdouble &xImgSize, const GLdouble &zImgSize,
 					                         const GLdouble &xStart, const GLdouble &yStart, const GLdouble &zStart,
 					                         const GLdouble &xTimes, const GLdouble &zTimes)
 {
@@ -144,7 +145,7 @@ void TexturedPolygons::CreateXtoZTextureList(const GLdouble &xImgSize, const GLd
 //  Create display list with image plotted on X to Y axis
 //--------------------------------------------------------------------------------------
 
-void TexturedPolygons::CreateXtoYTextureList(const GLdouble &xImgSize, const GLdouble &yImgSize, 
+void TexturedPolygons::CreateXtoYTextureList(const GLdouble &xImgSize, const GLdouble &yImgSize,
 							                 const GLdouble &xStart, const GLdouble &yStart, const GLdouble &zStart,
 							                 const GLdouble &xTimes, const GLdouble &yTimes, const bool &flip)
 {
@@ -158,7 +159,7 @@ void TexturedPolygons::CreateXtoYTextureList(const GLdouble &xImgSize, const GLd
 	}
 	glTexCoord2f(flipX, 0.0);
 	glVertex3f(xStart, yStart, zStart);
-	glTexCoord2f(flipX, yTimes);   
+	glTexCoord2f(flipX, yTimes);
 	glVertex3f(xStart, yStart + (yImgSize * yTimes), zStart);
 	glTexCoord2f(tempX, yTimes);
 	glVertex3f(xStart + (xImgSize * xTimes), yStart + (yImgSize * yTimes), zStart);
@@ -170,7 +171,7 @@ void TexturedPolygons::CreateXtoYTextureList(const GLdouble &xImgSize, const GLd
 //  Create display list with image plotted on Y to A axis
 //--------------------------------------------------------------------------------------
 
-void TexturedPolygons::CreateYtoZTextureList(const GLdouble &yImgSize, const GLdouble &zImgSize, 
+void TexturedPolygons::CreateYtoZTextureList(const GLdouble &yImgSize, const GLdouble &zImgSize,
 							                 const GLdouble &xStart, const GLdouble &yStart, const GLdouble &zStart,
 							                 const GLdouble &yTimes, const GLdouble &zTimes, const bool &flip)
 {
@@ -189,7 +190,7 @@ void TexturedPolygons::CreateYtoZTextureList(const GLdouble &yImgSize, const GLd
 	glTexCoord2f(yTimes, tempZ);
 	glVertex3f(xStart,yStart + (yImgSize * yTimes), zStart + (zImgSize * zTimes));
 	glTexCoord2f(yTimes, flipZ);
-	glVertex3f(xStart, yStart + (yImgSize * yTimes), zStart);	
+	glVertex3f(xStart, yStart + (yImgSize * yTimes), zStart);
 }
 
 //--------------------------------------------------------------------------------------
@@ -199,8 +200,8 @@ void TexturedPolygons::CreateYtoZTextureList(const GLdouble &yImgSize, const GLd
 //  where they are to large to keep to scale.
 //--------------------------------------------------------------------------------------
 
-void TexturedPolygons::CreateYtoZWindowList(const int &listNo, const GLdouble &xStart, 
-											const GLdouble &yStart, const GLdouble &ySize, 
+void TexturedPolygons::CreateYtoZWindowList(const int &listNo, const GLdouble &xStart,
+											const GLdouble &yStart, const GLdouble &ySize,
 											const GLdouble &zStart, const GLdouble &zSize,
 											const GLdouble &yImgSize, const GLdouble &zImgSize)
 {
@@ -213,15 +214,15 @@ void TexturedPolygons::CreateYtoZWindowList(const int &listNo, const GLdouble &x
 			glTexCoord2f(yImgSize, 0.0);
 			glVertex3f(xStart,yStart + ySize, zStart + zSize);
 			glTexCoord2f(yImgSize, zImgSize);
-			glVertex3f(xStart, yStart + ySize, zStart);	
+			glVertex3f(xStart, yStart + ySize, zStart);
 		glEnd();
 	glEndList();
 }
 
 //--------------------------------------------------------------------------------------
 
-void TexturedPolygons::CreateXtoYWindowList(const int &listNo, const GLdouble &zStart, 
-											const GLdouble &xStart, const GLdouble &xSize, 
+void TexturedPolygons::CreateXtoYWindowList(const int &listNo, const GLdouble &zStart,
+											const GLdouble &xStart, const GLdouble &xSize,
 											const GLdouble &yStart, const GLdouble &ySize,
 											const GLdouble &xImgSize, const GLdouble &yImgSize)
 {
@@ -234,7 +235,7 @@ void TexturedPolygons::CreateXtoYWindowList(const int &listNo, const GLdouble &z
 			glTexCoord2f(xImgSize, yImgSize);
 			glVertex3f(xStart + xSize, yStart + ySize, zStart);
 			glTexCoord2f(0.0, yImgSize);
-			glVertex3f(xStart, yStart + ySize, zStart);	
+			glVertex3f(xStart, yStart + ySize, zStart);
 		glEnd();
 	glEndList();
 }
@@ -249,9 +250,9 @@ void TexturedPolygons::CreateXtoYWindowList(const int &listNo, const GLdouble &z
 //      smallestZ = 5 to 8 for smallest y values (image angles on the XY)
 //--------------------------------------------------------------------------------------
 
-void TexturedPolygons::CreateAngledPolygon(const int &listNo, 
+void TexturedPolygons::CreateAngledPolygon(const int &listNo,
 										   const GLdouble &imageWidth, const GLdouble &imageHeight,
-										   const GLdouble &x1, const GLdouble &x2, 
+										   const GLdouble &x1, const GLdouble &x2,
 										   const GLdouble &x3, const GLdouble &x4,
 										   const GLdouble &y1, const GLdouble &y2,
 										   const GLdouble &y3, const GLdouble &y4,
@@ -306,7 +307,7 @@ void TexturedPolygons::CreateAngledPolygon(const int &listNo,
 		{
 			CreateTextureScale(xImage4, xImage1, xImage2, xImage3, imageWidth);
 		}
-	}	
+	}
 	if (smallestZ == 1)
 	{
 		CreateTextureScale(zImage1, zImage2, zImage3, zImage4, imageHeight);
@@ -366,7 +367,7 @@ void TexturedPolygons::CreateAngledPolygon(const int &listNo,
 //  Called from	CreateAngledPolygon determine how images are displayed
 //--------------------------------------------------------------------------------------
 
-void TexturedPolygons::CreateTextureScale(GLdouble & xzImage1, GLdouble & xzImage2, 
+void TexturedPolygons::CreateTextureScale(GLdouble & xzImage1, GLdouble & xzImage2,
 										  GLdouble & xzImage3, GLdouble & xzImage4,
 										  const GLdouble &imageSize)
 {

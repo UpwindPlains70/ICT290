@@ -21,6 +21,9 @@ class Camera
 {
 public:
 
+	// Get Position
+	void getPosition(int&, int&, int&);
+
 	Camera();
 	virtual ~Camera() {es->Unload(stepSound);}
 
