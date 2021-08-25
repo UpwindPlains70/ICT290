@@ -80,6 +80,7 @@ void CEasySound::CallMixAudio(void *unused, Uint8 *stream, int len)
 		amount = (data_len - data_pos);
 		if ( amount > len) {
 			amount = len;
+			SDL_PauseAudio(1);
 		}
 		Uint8 *data = &(*cs)->m_data[data_pos];
 		SDL_MixAudio(stream, data, amount, SDL_MIX_MAXVOLUME);

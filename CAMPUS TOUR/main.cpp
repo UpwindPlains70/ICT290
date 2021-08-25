@@ -359,6 +359,7 @@ void DisplayRoof();
 void DisplayStepBricks ();
 void DisplayLights ();
 void DisplayECL ();
+void DisplayRoom();
 
 // calls functions to create display lists (below)
 void CreateTextureList();
@@ -461,8 +462,7 @@ void myinit()
 	// set number of bounding boxes required
 	cam.SetNoBoundingBoxes(19);
 	// set starting position of user
-	cam.Position(32720.0, 9536.0,
-				 4800.0, 180.0);
+	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
 
 	CreatePlains();
 
@@ -790,19 +790,24 @@ void CreateBoundingBoxes()
 	cam.SetAABBMinZ(3, 26752.0);
 
 	// phy sci block 2nd panel
-	cam.SetAABBMaxX(4, 35879.0);
+	cam.SetAABBMaxX(4, 35375.0);
 	cam.SetAABBMinX(4, 33808.0);
 	cam.SetAABBMaxZ(4, 36319.0);
 	cam.SetAABBMinZ(4, 27559.0);
 
-	// phy sci block 2nd doorway
-	cam.SetAABBMaxX(5, 35879.0);
-	cam.SetAABBMinX(5, 34260.0);
-	cam.SetAABBMaxZ(5, 37855.0);
-	cam.SetAABBMinZ(5, 36319.0);
+
+	////////////////////////////////////////////////////////START
+	//cam.SetAABBMaxX(5, 40000.0);
+	//cam.SetAABBMinX(5, 36050.0);
+	//cam.SetAABBMaxZ(5, 37855.0);
+	//cam.SetAABBMinZ(5, 36319.0);
+
+
+
+	////////////////////////////////////////////////////////END
 
 	// phy sci block 3rd panel
-	cam.SetAABBMaxX(6, 35879.0);
+	cam.SetAABBMaxX(6, 35375.0);
 	cam.SetAABBMinX(6, 33808.0);
 	cam.SetAABBMaxZ(6, 41127.0);
 	cam.SetAABBMinZ(6, 37855.0);
@@ -1640,6 +1645,7 @@ void DrawBackdrop()
 	DisplayRoof();
 	DisplayStepBricks ();
 	if (lightsOn) DisplayLights ();
+	DisplayRoom();
 }
 
 
@@ -2882,10 +2888,40 @@ void DrawPavement ()
 	tp.CreateDisplayList (XZ, 86, 128.0, 64.0,  33744.0, 10000.0, 28624.0, 2.5, 13.5);	//phys sci toilet doorways
 }
 
+
+//--------------------------------------------------------------------------------------
+//  New Room
+//--------------------------------------------------------------------------------------
+void DisplayRoom() {
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
+	glCallList(666);		//XY left left
+	glCallList(667);		//XY left right
+	glCallList(668);		//XY right right
+	glCallList(669);		//XY right left
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
+	glCallList(670);
+	glCallList(671);
+	glCallList(672);
+	glCallList(673);
+}
+void DrawRoom() {
+	//XY
+    tp.CreateDisplayList(XY, 666, 300, 128.0, 35500.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 667, 50, 128.0, 37400.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 668, 300, 128.0, 35390.0, 9936.0, 39000.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 669, 50, 128.0, 37400.0, 9936.0, 39000.0, 3.0, 7.0);
+
+	//ZY
+	tp.CreateDisplayList(YZ, 670, 300, 145.0, 35500.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 671, 300, 370.0, 37550.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 672, 300, 200.0, 35390.0, 9936.0, 37850.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 673, 300, 40.0, 37528.0, 9936.0, 38720.0, 3.0, 7.0);
+}
+
 //--------------------------------------------------------------------------------------
 // Display Wall Bricks
 //--------------------------------------------------------------------------------------
-
 void DisplayBricks ()
 {
 	// WALL_BRICK_YZ
@@ -2929,10 +2965,10 @@ void DisplayBricks ()
 	for (i = 195; i < 198; i++) glCallList(i);
 	glCallList(392);
 	for (i = 430; i < 434; i++) glCallList(i);
+
 	// Brick with map on
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(MAP_2));
 	glCallList(434);
-
 
 	// WALL_BRICK_GAP_YZ
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_GAP_YZ));
@@ -3019,7 +3055,6 @@ void DisplayBricks ()
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
 	glCallList(190);
 }
-
 void DrawBricks ()
 {
 	// WALL_BRICK_YZ
@@ -3083,8 +3118,9 @@ void DrawBricks ()
 	tp.CreateDisplayList (XY,  190, 128.0, 128.0, 34704.0, 10000.0, 25344.0, 9.5, 5.75);	// end wall behind drinks machine
 	tp.CreateDisplayList (XY,  189, 128.0, 128.0, 34704.0, 10736.0, 25344.0, 9.5, 0.75);	// end wall above drinks machine
 	tp.CreateDisplayList (XY,  144, 128.0, 128.0, 33808.0, 10000.0, 25344.0, 7.0, 1.6);		// end wall
-	tp.CreateDisplayList (XY,  145, 128.0, 128.0, 33876.0, 9936.0, 36319.0, 3.0, 7.0);		// ps 2nd door(leftside entrance)
-	tp.CreateDisplayList (XY,  146, 128.0, 128.0, 33808.0, 9936.0, 37855.0, 4.25, 7.0);		// ps 2nd door(rightside entrance)
+						tp.CreateDisplayList (XY,  145, 550, 128.0, 33876.0, 9936.0, 36319.0, 3.0, 7.0);		// ps 2nd door(leftside entrance)
+
+						tp.CreateDisplayList (XY,  146, 375.0, 128.0, 33808.0, 9936.0, 37855.0, 4.25, 7.0);		// ps 2nd door(rightside entrance)
 	tp.CreateDisplayList (XY,  147, 128.0, 128.0, 33808.0, 9936.0, 26752, 4.0, 7.0);		// ps first door (left bottom)
 	tp.CreateDisplayList (XY,  148, 128.0, 128.0, 33808.0, 9936.0, 27559.0, 3.5, 4.5);		// ps first door (right bottom)
 	tp.CreateDisplayList (XY,  149, 128.0, 128.0, 33872.0, 10384.0, 27559.0, 3.0, 3.5);		// ps first door (right top)
@@ -4498,7 +4534,7 @@ void DisplayLargerTextures ()
 		glTranslatef(0.0, 0.0, 1920.0);
 		glCallList(374);
 	glPopMatrix();
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_15));
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(CHANC_DOOR_1));
 	glCallList(375);
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_16));
 	glCallList(379);
@@ -4671,8 +4707,8 @@ void DrawLargerTextures ()
 	tp.CreateYtoZWindowList (373, 34320.0, 10000.0, 832.0, 26752.0, 552.0, 1.0, 0.66);		// 256x169.85
 	// phys sci toilets
 	tp.CreateYtoZWindowList (374, 33872.0, 10000.0, 768.0, 28646.0, 322.0, 1.0, 0.833);		// 256x106.67 toilet doors
-	// phys sci door 2
-	tp.CreateYtoZWindowList (375, 34342.0, 10000.0, 832.0, 36639.0, 1216, 0.68, 1.0);		// 256x175.16
+	//////////////////////// phys sci door 2
+	tp.CreateYtoZWindowList (375, 37600.0, 10000.0, 832.0, 36639.0, 1216, 0.68, 1.0);		// 256x175.16
 
 	tp.CreateXtoYWindowList (379, 43152.0, 33232.0, 384.0, 10000.0, 768.0, 1.0, 1.0);		// GCL1 doorway
 	tp.CreateXtoYWindowList (380, 43152.0, 32720.0, 384.0, 10000.0, 768.0, 1.0, 1.0);		// GCL1 doorway
@@ -5131,6 +5167,7 @@ void CreateTextureList()
 	DrawStepBricks ();			// 478-507
 	DrawCylinders ();			// 437-441
 	DrawMapExit ();				// 448-449, 454
+	DrawRoom();
 	// 455-459
 }
 
