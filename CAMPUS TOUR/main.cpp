@@ -2904,19 +2904,36 @@ void DisplayRoom() {
 	glCallList(671);
 	glCallList(672);
 	glCallList(673);
+
+	//floor
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
+	glCallList(674);		//main room floor
+	glCallList(675);		//enterance floor
+
+	//roof
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
+	glCallList(676);		//main room roof
+	glCallList(677);		//enterance roof
 }
 void DrawRoom() {
 	//XY
-    tp.CreateDisplayList(XY, 666, 300, 128.0, 35500.0, 9936.0, 35319.0, 3.0, 7.0);
-	tp.CreateDisplayList(XY, 667, 50, 128.0, 37400.0, 9936.0, 35319.0, 3.0, 7.0);
-	tp.CreateDisplayList(XY, 668, 300, 128.0, 35390.0, 9936.0, 39000.0, 3.0, 7.0);
-	tp.CreateDisplayList(XY, 669, 50, 128.0, 37400.0, 9936.0, 39000.0, 3.0, 7.0);
+    tp.CreateDisplayList(XY, 666, 300, 143.0, 35500.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 667, 50, 143.0, 37400.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 668, 300, 143.0, 35390.0, 9936.0, 39000.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 669, 50, 143.0, 37400.0, 9936.0, 39000.0, 3.0, 7.0);
 
 	//ZY
-	tp.CreateDisplayList(YZ, 670, 300, 145.0, 35500.0, 9936.0, 35319.0, 3.0, 7.0);
-	tp.CreateDisplayList(YZ, 671, 300, 370.0, 37550.0, 9936.0, 35319.0, 3.0, 7.0);
-	tp.CreateDisplayList(YZ, 672, 300, 200.0, 35390.0, 9936.0, 37850.0, 3.0, 7.0);
-	tp.CreateDisplayList(YZ, 673, 300, 40.0, 37528.0, 9936.0, 38720.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 670, 333, 145.0, 35500.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 671, 333, 370.0, 37550.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 672, 333, 200.0, 35390.0, 9936.0, 37850.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 673, 333, 40.0, 37528.0, 9936.0, 38720.0, 3.0, 7.0);
+
+	//XZ
+	tp.CreateDisplayList(XZ, 674, 770, 700, 35300.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 675, 435, 500, 34000.0, 9936.0, 35319.0, 3.0, 7.0);
+
+	tp.CreateDisplayList(XZ, 676, 770, 700, 35300.0, 10936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 677, 435, 500, 34000.0, 10936.0, 35319.0, 3.0, 7.0);
 }
 
 //--------------------------------------------------------------------------------------
@@ -3118,9 +3135,9 @@ void DrawBricks ()
 	tp.CreateDisplayList (XY,  190, 128.0, 128.0, 34704.0, 10000.0, 25344.0, 9.5, 5.75);	// end wall behind drinks machine
 	tp.CreateDisplayList (XY,  189, 128.0, 128.0, 34704.0, 10736.0, 25344.0, 9.5, 0.75);	// end wall above drinks machine
 	tp.CreateDisplayList (XY,  144, 128.0, 128.0, 33808.0, 10000.0, 25344.0, 7.0, 1.6);		// end wall
-						tp.CreateDisplayList (XY,  145, 550, 128.0, 33876.0, 9936.0, 36319.0, 3.0, 7.0);		// ps 2nd door(leftside entrance)
+						tp.CreateDisplayList (XY,  145, 550, 143.0, 33876.0, 9936.0, 36319.0, 3.0, 7.0);		// ps 2nd door(leftside entrance)
 
-						tp.CreateDisplayList (XY,  146, 375.0, 128.0, 33808.0, 9936.0, 37855.0, 4.25, 7.0);		// ps 2nd door(rightside entrance)
+						tp.CreateDisplayList (XY,  146, 375.0, 143.0, 33808.0, 9936.0, 37855.0, 4.25, 7.0);		// ps 2nd door(rightside entrance)
 	tp.CreateDisplayList (XY,  147, 128.0, 128.0, 33808.0, 9936.0, 26752, 4.0, 7.0);		// ps first door (left bottom)
 	tp.CreateDisplayList (XY,  148, 128.0, 128.0, 33808.0, 9936.0, 27559.0, 3.5, 4.5);		// ps first door (right bottom)
 	tp.CreateDisplayList (XY,  149, 128.0, 128.0, 33872.0, 10384.0, 27559.0, 3.0, 3.5);		// ps first door (right top)
