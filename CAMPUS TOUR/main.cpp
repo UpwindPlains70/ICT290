@@ -910,6 +910,7 @@ void CreateBoundingBoxes()
 //--------------------------------------------------------------------------------------
 void CreatePlains()
 {
+
 	// grass slope
 	cam.SetPlains (ZY_PLAIN, 4848.0 ,31568.0 ,9536.0, 10450.0 ,6200.0, 10000.0);
 
@@ -954,6 +955,9 @@ void CreatePlains()
 
 	// temp plain to take down to ECL1
 	cam.SetPlains (ZY_PLAIN, 3200.0, 4800.0 , 10450.0, 9370.0, 53400.0, 57900.0);
+
+	// new room stairs
+	cam.SetPlains(ZY_PLAIN, 36310.0, 37391.0, 10450.0, 11000.0, 38997.0, 40503.0); 
 }
 
 //--------------------------------------------------------------------------------------
@@ -2946,6 +2950,9 @@ void DisplayRoom() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
 	glCallList(676);		//main room roof
 	glCallList(677);		//enterance roof
+
+	
+
 }
 void DrawRoom() {
 	//XY
