@@ -19,6 +19,8 @@ using namespace std;
 GLdouble movementSpeed = 10.0;
 GLdouble rotationSpeed = 0.005;
 
+bool closing = false;
+
 int i, k, j = 0;
 
 // TEXTURE IMAGE AXISES
@@ -460,7 +462,7 @@ void myinit()
 	// turn collision detection on
 	cam.SetCollisionDetectionOn(true);
 	// set number of bounding boxes required
-	cam.SetNoBoundingBoxes(19);
+	cam.SetNoBoundingBoxes(22);  // originally started with 19 
 	// set starting position of user
 	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
 
@@ -479,12 +481,16 @@ void myinit()
 //--------------------------------------------------------------------------------------
 //  Main Display Function
 //--------------------------------------------------------------------------------------
+
+
 void Display()
 {
 	// check for movement
 	cam.CheckCamera();
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	if (closing) exit(0);
 
 	// DISPLAY TEXTURES
 	//enable texture mapping
@@ -714,7 +720,7 @@ void Mouse(int button, int state, int x, int y)
 			&& (y <= height/2.0 + 256.0) && (y >= height/2.0 - 256.0))
 		{
 			DeleteImageFromMemory(image);
-			exit(1);
+			closing = true; 
 		}
   	 }
 }
@@ -796,15 +802,31 @@ void CreateBoundingBoxes()
 	cam.SetAABBMinZ(4, 27559.0);
 
 
-	////////////////////////////////////////////////////////START
-	//cam.SetAABBMaxX(5, 40000.0);
-	//cam.SetAABBMinX(5, 36050.0);
-	//cam.SetAABBMaxZ(5, 37855.0);
-	//cam.SetAABBMinZ(5, 36319.0);
+	 //START    // box collision for front wall you see when you walk in the new room
+	cam.SetAABBMaxX(5, 37750.0);  // old value 5, 40000.0
+	cam.SetAABBMinX(5, 37500.0);   // 5, 36050.0
+	cam.SetAABBMaxZ(5, 37855.0);  // 5, 37855.0
+	cam.SetAABBMinZ(5, 35338.0);  // 5, 36319.0
 
+	// adding collision with wall left to entrance of new room, one with the no smoking sign 
+	cam.SetAABBMaxX(19, 34300.0); 
+	cam.SetAABBMinX(19, 34226.0);  
+	cam.SetAABBMaxZ(19, 36657.0);  
+	cam.SetAABBMinZ(19, 36300.0);  
 
+	// wall left side #1
+	cam.SetAABBMaxX(20, 35555.0);
+	cam.SetAABBMinX(20, 35491.0);
+	cam.SetAABBMaxZ(20, 36434.0);
+	cam.SetAABBMinZ(20, 35314.0);
 
-	////////////////////////////////////////////////////////END
+	cam.SetAABBMaxX(21, 36379.0);
+	cam.SetAABBMinX(21, 35556.0);
+	cam.SetAABBMaxZ(21, 35414.0);
+	cam.SetAABBMinZ(21, 35314.0);
+
+	//END
+	
 
 	// phy sci block 3rd panel
 	cam.SetAABBMaxX(6, 35375.0);
