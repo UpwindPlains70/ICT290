@@ -462,7 +462,7 @@ void myinit()
 	// turn collision detection on
 	cam.SetCollisionDetectionOn(true);
 	// set number of bounding boxes required
-	cam.SetNoBoundingBoxes(22);  // originally started with 19 
+	cam.SetNoBoundingBoxes(24);  // originally started with 19 
 	// set starting position of user
 	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
 
@@ -820,10 +820,20 @@ void CreateBoundingBoxes()
 	cam.SetAABBMaxZ(20, 36434.0);
 	cam.SetAABBMinZ(20, 35314.0);
 
-	cam.SetAABBMaxX(21, 36379.0);
+	cam.SetAABBMaxX(21, 36379.0); // left side wall #2
 	cam.SetAABBMinX(21, 35556.0);
 	cam.SetAABBMaxZ(21, 35414.0);
 	cam.SetAABBMinZ(21, 35314.0);
+
+	cam.SetAABBMaxX(22, 36272.0); // wall to right when entering 
+	cam.SetAABBMinX(22, 35423.0);
+	cam.SetAABBMaxZ(22, 39166.0);
+	cam.SetAABBMinZ(22, 39013.0);
+
+	cam.SetAABBMaxX(23, 37595.0);
+	cam.SetAABBMinX(23, 37395.0); // wall. right of entrance to hallway
+	cam.SetAABBMaxZ(23, 38987.0);
+	cam.SetAABBMinZ(23, 38732.0);
 
 	//END
 	
