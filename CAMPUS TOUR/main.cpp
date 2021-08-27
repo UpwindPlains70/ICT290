@@ -362,6 +362,7 @@ void DisplayStepBricks ();
 void DisplayLights ();
 void DisplayECL ();
 void DisplayRoom();
+void DisplayRoomStairs();
 
 // calls functions to create display lists (below)
 void CreateTextureList();
@@ -390,6 +391,8 @@ void DrawAngledRoofBeam2 (int listNo, GLdouble x, GLdouble y, GLdouble z, GLdoub
 void DrawStepBricks ();
 void DrawMapExit ();
 void DrawECL ();
+void DrawRoom();
+void DrawRoomStairs();
 
 
 void BindBridgeWall(GLint LR);
@@ -956,7 +959,7 @@ void CreatePlains()
 	// temp plain to take down to ECL1
 	cam.SetPlains (ZY_PLAIN, 3200.0, 4800.0 , 10450.0, 9370.0, 53400.0, 57900.0);
 
-	// new room stairs
+	// new room stairs ( actually model for the new stairs is in displayroom 
 	cam.SetPlains(ZY_PLAIN, 36310.0, 37391.0, 10450.0, 11000.0, 38997.0, 40503.0); 
 }
 
@@ -1682,6 +1685,7 @@ void DrawBackdrop()
 	DisplayStepBricks ();
 	if (lightsOn) DisplayLights ();
 	DisplayRoom();
+	DisplayRoomStairs();
 }
 
 
@@ -2973,6 +2977,35 @@ void DrawRoom() {
 
 	tp.CreateDisplayList(XZ, 676, 770, 700, 35300.0, 10936.0, 35319.0, 3.0, 7.0);
 	tp.CreateDisplayList(XZ, 677, 435, 500, 34000.0, 10936.0, 35319.0, 3.0, 7.0);
+}
+
+void DrawRoomStairs() {
+	GLdouble xCord = 36730.0 - 400; // x coord   //31582.0  is original cord  // new value ( value of the second x coord for its corresponding plain  - 400) 
+	step = 10450.0 + 225.0; // effectively the y coordinate  // 10000.0 original // new value ( value of first y value + 225 ) 
+	stepLength = 40503.0 + 700.0; // z coordinate   // 9808.0 original     // new value ( value of second z value + 700 )
+	for (int i = 678; i < 694; i++)
+	{
+		tp.CreateDisplayList(XZ, i, 1024.0, 512.0, xCord, step, stepLength, 1.0, 0.277); // original xTimes was 2.2
+		tp.CreateDisplayList(XY, i + 16, 64.0, 64.0, xCord, step - 64.0, stepLength, 16.0, 1.0); // original xTimes was 35.0
+		step -= 48.0;
+		stepLength -= 142.0;
+	}
+
+}
+
+void DisplayRoomStairs() {
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_PAVING_1));
+	for (int i = 678; i < 694; i++) glCallList(i);
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_EDGE));
+	for (i = 694; i < 710; i++) glCallList(i);
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_PAVING_1));
+	for (i = 710; i < 713; i++) glCallList(i);
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_EDGE));
+	for (i = 713; i < 716; i++) glCallList(i);
 }
 
 //--------------------------------------------------------------------------------------
@@ -5223,7 +5256,8 @@ void CreateTextureList()
 	DrawStepBricks ();			// 478-507
 	DrawCylinders ();			// 437-441
 	DrawMapExit ();				// 448-449, 454
-	DrawRoom();
+	DrawRoom();					// 666 - 677 
+	DrawRoomStairs();			// 678 - 714
 	// 455-459
 }
 
