@@ -18,6 +18,8 @@ using namespace std;
 GLdouble movementSpeed = 10.0;
 GLdouble rotationSpeed = 0.005;
 
+bool closing = false;
+
 int i, k, j = 0;
 
 // TEXTURE IMAGE AXISES
@@ -358,6 +360,8 @@ void DisplayRoof();
 void DisplayStepBricks ();
 void DisplayLights ();
 void DisplayECL ();
+void DisplayRoom();
+void DisplayRoomStairs();
 
 // calls functions to create display lists (below)
 void CreateTextureList();
@@ -386,6 +390,8 @@ void DrawAngledRoofBeam2 (int listNo, GLdouble x, GLdouble y, GLdouble z, GLdoub
 void DrawStepBricks ();
 void DrawMapExit ();
 void DrawECL ();
+void DrawRoom();
+void DrawRoomStairs();
 
 
 void BindBridgeWall(GLint LR);
@@ -458,10 +464,9 @@ void myinit()
 	// turn collision detection on
 	cam.SetCollisionDetectionOn(true);
 	// set number of bounding boxes required
-	cam.SetNoBoundingBoxes(19);
+	cam.SetNoBoundingBoxes(24);  // originally started with 19 
 	// set starting position of user
-	cam.Position(32720.0, 9536.0,
-				 4800.0, 180.0);
+	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
 
 	CreatePlains();
 
@@ -478,12 +483,16 @@ void myinit()
 //--------------------------------------------------------------------------------------
 //  Main Display Function
 //--------------------------------------------------------------------------------------
+
+
 void Display()
 {
 	// check for movement
 	cam.CheckCamera();
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	if (closing) exit(0);
 
 	// DISPLAY TEXTURES
 	//enable texture mapping
@@ -713,7 +722,7 @@ void Mouse(int button, int state, int x, int y)
 			&& (y <= height/2.0 + 256.0) && (y >= height/2.0 - 256.0))
 		{
 			DeleteImageFromMemory(image);
-			exit(1);
+			closing = true; 
 		}
   	 }
 }
@@ -789,19 +798,50 @@ void CreateBoundingBoxes()
 	cam.SetAABBMinZ(3, 26752.0);
 
 	// phy sci block 2nd panel
-	cam.SetAABBMaxX(4, 35879.0);
+	cam.SetAABBMaxX(4, 35375.0);
 	cam.SetAABBMinX(4, 33808.0);
 	cam.SetAABBMaxZ(4, 36319.0);
 	cam.SetAABBMinZ(4, 27559.0);
 
-	// phy sci block 2nd doorway
-	cam.SetAABBMaxX(5, 35879.0);
-	cam.SetAABBMinX(5, 34260.0);
-	cam.SetAABBMaxZ(5, 37855.0);
-	cam.SetAABBMinZ(5, 36319.0);
+
+	 //START    // box collision for front wall you see when you walk in the new room
+	cam.SetAABBMaxX(5, 37750.0);  // old value 5, 40000.0
+	cam.SetAABBMinX(5, 37500.0);   // 5, 36050.0
+	cam.SetAABBMaxZ(5, 37855.0);  // 5, 37855.0
+	cam.SetAABBMinZ(5, 35338.0);  // 5, 36319.0
+
+	// adding collision with wall left to entrance of new room, one with the no smoking sign 
+	cam.SetAABBMaxX(19, 34300.0); 
+	cam.SetAABBMinX(19, 34226.0);  
+	cam.SetAABBMaxZ(19, 36657.0);  
+	cam.SetAABBMinZ(19, 36300.0);  
+
+	// wall left side #1
+	cam.SetAABBMaxX(20, 35555.0);
+	cam.SetAABBMinX(20, 35491.0);
+	cam.SetAABBMaxZ(20, 36434.0);
+	cam.SetAABBMinZ(20, 35314.0);
+
+	cam.SetAABBMaxX(21, 36379.0); // left side wall #2
+	cam.SetAABBMinX(21, 35556.0);
+	cam.SetAABBMaxZ(21, 35414.0);
+	cam.SetAABBMinZ(21, 35314.0);
+
+	cam.SetAABBMaxX(22, 36272.0); // wall to right when entering 
+	cam.SetAABBMinX(22, 35423.0);
+	cam.SetAABBMaxZ(22, 39166.0);
+	cam.SetAABBMinZ(22, 39013.0);
+
+	cam.SetAABBMaxX(23, 37595.0);
+	cam.SetAABBMinX(23, 37395.0); // wall. right of entrance to hallway
+	cam.SetAABBMaxZ(23, 38987.0);
+	cam.SetAABBMinZ(23, 38732.0);
+
+	//END
+	
 
 	// phy sci block 3rd panel
-	cam.SetAABBMaxX(6, 35879.0);
+	cam.SetAABBMaxX(6, 35375.0);
 	cam.SetAABBMinX(6, 33808.0);
 	cam.SetAABBMaxZ(6, 41127.0);
 	cam.SetAABBMinZ(6, 37855.0);
@@ -872,6 +912,7 @@ void CreateBoundingBoxes()
 //--------------------------------------------------------------------------------------
 void CreatePlains()
 {
+
 	// grass slope
 	cam.SetPlains (ZY_PLAIN, 4848.0 ,31568.0 ,9536.0, 10450.0 ,6200.0, 10000.0);
 
@@ -916,6 +957,9 @@ void CreatePlains()
 
 	// temp plain to take down to ECL1
 	cam.SetPlains (ZY_PLAIN, 3200.0, 4800.0 , 10450.0, 9370.0, 53400.0, 57900.0);
+
+	// new room stairs ( actually model for the new stairs is in displayroom 
+	cam.SetPlains(ZY_PLAIN, 36310.0, 37391.0, 10450.0, 11000.0, 38997.0, 40503.0); 
 }
 
 //--------------------------------------------------------------------------------------
@@ -1639,6 +1683,8 @@ void DrawBackdrop()
 	DisplayRoof();
 	DisplayStepBricks ();
 	if (lightsOn) DisplayLights ();
+	DisplayRoom();
+	DisplayRoomStairs();
 }
 
 
@@ -2881,10 +2927,89 @@ void DrawPavement ()
 	tp.CreateDisplayList (XZ, 86, 128.0, 64.0,  33744.0, 10000.0, 28624.0, 2.5, 13.5);	//phys sci toilet doorways
 }
 
+
+//--------------------------------------------------------------------------------------
+//  New Room
+//--------------------------------------------------------------------------------------
+void DisplayRoom() {
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
+	glCallList(666);		//XY left left
+	glCallList(667);		//XY left right
+	glCallList(668);		//XY right right
+	glCallList(669);		//XY right left
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
+	glCallList(670);
+	glCallList(671);
+	glCallList(672);
+	glCallList(673);
+
+	//floor
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
+	glCallList(674);		//main room floor
+	glCallList(675);		//enterance floor
+
+	//roof
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
+	glCallList(676);		//main room roof
+	glCallList(677);		//enterance roof
+
+	
+
+}
+void DrawRoom() {
+	//XY
+    tp.CreateDisplayList(XY, 666, 300, 143.0, 35500.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 667, 50, 143.0, 37400.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 668, 300, 143.0, 35390.0, 9936.0, 39000.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 669, 50, 143.0, 37400.0, 9936.0, 39000.0, 3.0, 7.0);
+
+	//ZY
+	tp.CreateDisplayList(YZ, 670, 333, 145.0, 35500.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 671, 333, 370.0, 37550.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 672, 333, 200.0, 35390.0, 9936.0, 37850.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 673, 333, 40.0, 37528.0, 9936.0, 38720.0, 3.0, 7.0);
+
+	//XZ
+	tp.CreateDisplayList(XZ, 674, 770, 700, 35300.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 675, 435, 500, 34000.0, 9936.0, 35319.0, 3.0, 7.0);
+
+	tp.CreateDisplayList(XZ, 676, 770, 700, 35300.0, 10936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 677, 435, 500, 34000.0, 10936.0, 35319.0, 3.0, 7.0);
+}
+
+void DrawRoomStairs() {
+	GLdouble xCord = 36730.0 - 400; // x coord   //31582.0  is original cord  // new value ( value of the second x coord for its corresponding plain  - 400) 
+	step = 10450.0 + 225.0; // effectively the y coordinate  // 10000.0 original // new value ( value of first y value + 225 ) 
+	stepLength = 40503.0 + 700.0; // z coordinate   // 9808.0 original     // new value ( value of second z value + 700 )
+	for (int i = 678; i < 694; i++)
+	{
+		tp.CreateDisplayList(XZ, i, 1024.0, 512.0, xCord, step, stepLength, 1.0, 0.277); // original xTimes was 2.2
+		tp.CreateDisplayList(XY, i + 16, 64.0, 64.0, xCord, step - 64.0, stepLength, 16.0, 1.0); // original xTimes was 35.0
+		step -= 48.0;
+		stepLength -= 142.0;
+	}
+
+}
+
+void DisplayRoomStairs() {
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_PAVING_1));
+	for (int i = 678; i < 694; i++) glCallList(i);
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_EDGE));
+	for (i = 694; i < 710; i++) glCallList(i);
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_PAVING_1));
+	for (i = 710; i < 713; i++) glCallList(i);
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_EDGE));
+	for (i = 713; i < 716; i++) glCallList(i);
+}
+
 //--------------------------------------------------------------------------------------
 // Display Wall Bricks
 //--------------------------------------------------------------------------------------
-
 void DisplayBricks ()
 {
 	// WALL_BRICK_YZ
@@ -2928,10 +3053,10 @@ void DisplayBricks ()
 	for (i = 195; i < 198; i++) glCallList(i);
 	glCallList(392);
 	for (i = 430; i < 434; i++) glCallList(i);
+
 	// Brick with map on
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(MAP_2));
 	glCallList(434);
-
 
 	// WALL_BRICK_GAP_YZ
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_GAP_YZ));
@@ -3018,7 +3143,6 @@ void DisplayBricks ()
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
 	glCallList(190);
 }
-
 void DrawBricks ()
 {
 	// WALL_BRICK_YZ
@@ -3082,8 +3206,9 @@ void DrawBricks ()
 	tp.CreateDisplayList (XY,  190, 128.0, 128.0, 34704.0, 10000.0, 25344.0, 9.5, 5.75);	// end wall behind drinks machine
 	tp.CreateDisplayList (XY,  189, 128.0, 128.0, 34704.0, 10736.0, 25344.0, 9.5, 0.75);	// end wall above drinks machine
 	tp.CreateDisplayList (XY,  144, 128.0, 128.0, 33808.0, 10000.0, 25344.0, 7.0, 1.6);		// end wall
-	tp.CreateDisplayList (XY,  145, 128.0, 128.0, 33876.0, 9936.0, 36319.0, 3.0, 7.0);		// ps 2nd door(leftside entrance)
-	tp.CreateDisplayList (XY,  146, 128.0, 128.0, 33808.0, 9936.0, 37855.0, 4.25, 7.0);		// ps 2nd door(rightside entrance)
+						tp.CreateDisplayList (XY,  145, 550, 143.0, 33876.0, 9936.0, 36319.0, 3.0, 7.0);		// ps 2nd door(leftside entrance)
+
+						tp.CreateDisplayList (XY,  146, 375.0, 143.0, 33808.0, 9936.0, 37855.0, 4.25, 7.0);		// ps 2nd door(rightside entrance)
 	tp.CreateDisplayList (XY,  147, 128.0, 128.0, 33808.0, 9936.0, 26752, 4.0, 7.0);		// ps first door (left bottom)
 	tp.CreateDisplayList (XY,  148, 128.0, 128.0, 33808.0, 9936.0, 27559.0, 3.5, 4.5);		// ps first door (right bottom)
 	tp.CreateDisplayList (XY,  149, 128.0, 128.0, 33872.0, 10384.0, 27559.0, 3.0, 3.5);		// ps first door (right top)
@@ -4497,7 +4622,7 @@ void DisplayLargerTextures ()
 		glTranslatef(0.0, 0.0, 1920.0);
 		glCallList(374);
 	glPopMatrix();
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_15));
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(CHANC_DOOR_1));
 	glCallList(375);
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_16));
 	glCallList(379);
@@ -4670,8 +4795,8 @@ void DrawLargerTextures ()
 	tp.CreateYtoZWindowList (373, 34320.0, 10000.0, 832.0, 26752.0, 552.0, 1.0, 0.66);		// 256x169.85
 	// phys sci toilets
 	tp.CreateYtoZWindowList (374, 33872.0, 10000.0, 768.0, 28646.0, 322.0, 1.0, 0.833);		// 256x106.67 toilet doors
-	// phys sci door 2
-	tp.CreateYtoZWindowList (375, 34342.0, 10000.0, 832.0, 36639.0, 1216, 0.68, 1.0);		// 256x175.16
+	//////////////////////// phys sci door 2
+	tp.CreateYtoZWindowList (375, 37600.0, 10000.0, 832.0, 36639.0, 1216, 0.68, 1.0);		// 256x175.16
 
 	tp.CreateXtoYWindowList (379, 43152.0, 33232.0, 384.0, 10000.0, 768.0, 1.0, 1.0);		// GCL1 doorway
 	tp.CreateXtoYWindowList (380, 43152.0, 32720.0, 384.0, 10000.0, 768.0, 1.0, 1.0);		// GCL1 doorway
@@ -5130,6 +5255,8 @@ void CreateTextureList()
 	DrawStepBricks ();			// 478-507
 	DrawCylinders ();			// 437-441
 	DrawMapExit ();				// 448-449, 454
+	DrawRoom();					// 666 - 677 
+	DrawRoomStairs();			// 678 - 714
 	// 455-459
 }
 

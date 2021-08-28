@@ -1,450 +1,307 @@
-﻿  AABB.CPP
-  AABBLinkedList.cpp
-  AABBNode.cpp
-  camera.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(19,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(20,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(21,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(210,21): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(210,14): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(221,20): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(221,13): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(252,21): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(252,14): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(262,20): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\camera.cpp(262,13): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-  cameraMap.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(29,18): warning C4244: 'argument': conversion from 'const int' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(36,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(36,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(37,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(37,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(38,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(38,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(39,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(39,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(67,53): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(67,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(99,53): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\cameraMap.cpp(99,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-  collision.cpp
-  EasySound.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\EasySound.cpp(81,15): warning C4018: '>': signed/unsigned mismatch
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   main.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(445,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(735,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(735,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(741,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(741,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(751,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(751,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(756,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(756,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(1655,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(1681,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(1698,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(1936,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2024,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2036,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2102,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2103,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2104,45): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2105,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2106,46): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2108,47): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2115,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2116,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2117,45): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2118,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2119,51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2121,52): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2129,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2130,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2131,45): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2132,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2133,51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2135,52): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2201,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2205,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2285,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2285,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2290,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2294,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2300,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2304,38): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2311,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2315,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2321,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2338,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2342,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2348,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2352,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2391,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2398,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2409,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2416,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2439,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2453,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2453,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2473,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2511,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2512,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2513,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2514,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2563,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2571,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2578,25): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2591,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2599,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2665,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2666,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2667,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2668,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2677,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2678,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2679,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2680,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2969,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3170,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3185,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3201,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3221,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3244,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3248,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3267,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3271,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3291,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3295,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3315,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3319,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3380,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3381,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3382,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3383,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3385,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3392,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3393,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3394,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3395,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3396,56): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3405,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3407,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3408,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3409,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3410,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3411,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3419,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3420,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3421,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3422,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3423,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3424,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3434,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3435,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3436,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3437,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3447,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3448,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3449,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3450,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3458,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3459,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3460,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3461,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3462,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3463,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3473,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3474,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3475,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3476,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3486,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3487,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3488,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3489,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3496,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3497,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3498,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3499,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3500,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3501,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3502,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3509,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3511,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3512,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3513,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3514,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3515,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3522,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3524,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3525,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3526,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3527,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3528,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3536,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3537,67): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3538,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3539,67): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3540,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3551,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3553,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3564,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3566,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3610,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3610,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3610,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3612,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3612,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3612,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3613,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3614,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3614,35): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3615,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3616,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3616,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3622,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3622,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3622,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3624,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3624,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3624,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3625,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3626,41): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3626,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3627,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3628,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3628,35): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3638,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3638,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3638,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3640,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3640,25): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3640,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3641,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3642,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3643,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3644,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3650,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3650,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3650,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3652,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3652,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3652,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3653,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3654,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3655,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3656,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3685,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3685,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3689,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3689,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3744,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3771,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3785,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3813,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3813,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3840,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3854,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4013,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4047,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4078,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4121,33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4126,33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4257,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4259,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4260,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4261,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4262,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4269,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4271,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4272,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4273,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4274,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4281,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4283,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4284,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4285,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4286,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4293,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4295,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4296,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4297,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4298,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4307,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4308,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4309,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4310,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4342,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4353,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4365,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4399,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4410,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4422,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4432,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4445,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4529,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4540,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4551,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4563,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4581,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4807,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4814,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4821,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4840,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4840,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4844,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4844,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4860,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4860,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4864,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4864,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4971,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4980,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4987,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4994,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5000,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5001,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5002,44): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5013,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5020,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5027,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5033,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5034,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5035,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5047,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5048,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5050,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5051,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5053,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5054,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5056,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5057,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5059,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5060,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5065,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5070,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5075,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5081,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5083,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5084,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5085,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5086,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5087,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5088,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5089,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5090,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5091,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5092,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5093,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
-  PlainLinkedList.cpp
-  PlainNode.cpp
-  Sound.cpp
-  SoundTime.cpp
-  texturedPolygons.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(39,9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(135,30): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(135,21): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(135,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(136,20): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(137,35): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(137,21): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(137,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(138,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(138,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(139,57): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(139,43): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(139,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(140,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(141,51): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(141,43): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(141,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(160,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(161,29): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(161,21): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(161,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(162,22): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(162,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(163,51): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(163,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(163,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(164,22): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(164,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(165,73): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(165,50): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(165,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(166,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(167,51): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(167,43): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(167,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(186,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(187,29): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(187,21): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(187,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(188,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(189,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(189,21): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(189,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(190,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(190,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(191,57): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(191,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(191,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(192,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(192,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(193,51): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(193,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(193,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(210,22): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(211,31): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(211,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(211,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(213,38): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(213,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(213,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(214,17): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(215,45): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(215,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(215,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(216,27): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(216,17): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(217,39): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(217,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(217,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(232,31): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(232,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(232,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(233,17): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(234,39): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(234,31): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(234,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(235,27): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(235,17): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(236,47): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(236,38): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(236,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(237,22): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(238,39): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(238,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(238,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(353,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(353,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(354,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(354,19): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(354,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(355,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(355,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(356,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(356,19): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(356,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(357,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(357,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(358,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(358,19): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(358,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(359,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(359,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(360,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(360,19): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\texturedPolygons.cpp(360,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-  Generating Code...
-AABB.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-  houses.vcxproj -> C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\.\Debug\houses.exe
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(452,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(745,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(745,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(751,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(751,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(761,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(761,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(766,36): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(766,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(1702,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(1728,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(1745,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(1983,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2071,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2083,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2149,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2150,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2151,45): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2152,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2153,46): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2155,47): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2162,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2163,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2164,45): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2165,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2166,51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2168,52): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2176,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2177,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2178,45): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2179,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2180,51): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2182,52): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2248,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2252,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2332,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2332,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2337,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2341,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2347,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2351,38): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2358,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2362,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2368,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2385,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2389,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2395,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2399,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2438,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2445,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2456,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2463,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2486,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2500,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2500,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2520,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2558,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2559,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2560,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2561,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2610,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2618,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2625,25): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2638,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2646,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2712,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2713,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2714,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2715,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2724,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2725,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2726,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(2727,60): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3095,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3296,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3311,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3327,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3347,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3370,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3374,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3393,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3397,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3417,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3421,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3441,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3445,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3506,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3507,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3508,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3509,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3511,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3518,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3519,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3520,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3521,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3522,56): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3531,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3533,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3534,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3535,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3536,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3537,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3545,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3546,57): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3547,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3548,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3549,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3550,40): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3560,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3561,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3562,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3563,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3573,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3574,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3575,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3576,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3584,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3585,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3586,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3587,59): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3588,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3589,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3599,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3600,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3601,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3602,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3612,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3613,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3614,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3615,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3622,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3623,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3624,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3625,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3626,58): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3627,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3628,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3635,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3637,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3638,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3639,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3640,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3641,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3648,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3650,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3651,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3652,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3653,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3654,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3662,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3663,67): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3664,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3665,67): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3666,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3677,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3679,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3690,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3692,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3736,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3736,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3736,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3738,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3738,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3738,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3739,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3740,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3740,35): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3741,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3742,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3742,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3748,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3748,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3748,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3750,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3750,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3750,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3751,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3752,41): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3752,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3753,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3754,34): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3754,35): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3764,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3764,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3764,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3766,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3766,25): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3766,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3767,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3768,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3769,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3770,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3776,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3776,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3776,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3778,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3778,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3778,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3779,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3780,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3781,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3782,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3811,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3811,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3815,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3815,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3870,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3897,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3911,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3939,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3939,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3966,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(3980,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4139,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4173,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4204,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4247,33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4252,33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4383,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4385,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4386,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4387,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4388,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4395,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4397,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4398,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4399,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4400,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4407,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4409,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4410,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4411,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4412,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4419,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4421,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4422,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4423,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4424,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4433,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4434,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4435,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4436,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4468,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4479,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4491,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4525,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4536,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4548,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4558,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4571,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4655,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4666,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4677,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4689,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4707,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4933,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4940,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4947,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4966,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4966,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4970,36): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4970,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4986,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4986,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4990,44): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(4990,19): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5097,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5106,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5113,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5120,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5126,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5127,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5128,44): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5139,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5146,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5153,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5159,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5160,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5161,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5173,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5174,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5176,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5177,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5179,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5180,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5182,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5183,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5185,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5186,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5191,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5196,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5201,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5207,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5209,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5210,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5211,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5212,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5213,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5214,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5215,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5216,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5217,28): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5218,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\main.cpp(5219,29): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+  houses.vcxproj -> C:\Users\jason\Documents\GitHub\ICT290\CAMPUS TOUR\Debug\houses.exe
