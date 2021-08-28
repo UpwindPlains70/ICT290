@@ -721,7 +721,7 @@ void Mouse(int button, int state, int x, int y)
 		if ((DisplayExit) && (x <= width/2.0 + 256.0) && (x >= width/2.0 - 256.0)
 			&& (y <= height/2.0 + 256.0) && (y >= height/2.0 - 256.0))
 		{
-			DeleteImageFromMemory(image);
+			//DeleteImageFromMemory(image);
 			closing = true; 
 		}
   	 }
