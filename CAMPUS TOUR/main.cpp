@@ -286,6 +286,10 @@ int i, k, j = 0;
 
 //--------------------------------------------------------------------------------------
 
+#define TIMERSECS 100
+
+int dx = 0;
+
 GLdouble stepIncrement;
 GLdouble angleIncrement;
 int frameCount = 0;
@@ -315,6 +319,42 @@ GLUquadricObj *glu_cylinder;
 
 // Stores raw image file
 unsigned char* image = NULL;
+
+//Position
+struct Position {
+	GLfloat x;
+	GLfloat y;
+	GLfloat z;
+} ;
+
+// Door Turn
+struct door2 {
+	float orientation;
+	float loOrientation;
+	float cOrientation;
+	float roOrientation;
+	//state -1:left-open, 0:closed, 1:right-open
+	int state;
+	bool moving;
+	float speed;
+	Position pos;
+	Position scale;
+} ;
+
+// Door Slide
+struct door1 {
+	float orientation;
+	//state 1:open, 0:closed
+	int state;
+	bool moving;
+	float speed;
+	Position openPos;
+	Position closePos;
+	Position pos;
+	Position scale;
+} ;
+door1 front;
+
 
 // objects
 Camera cam;
@@ -360,6 +400,8 @@ void DisplayStepBricks ();
 void DisplayLights ();
 void DisplayECL ();
 void DisplayRoom();
+void DisplayDoors();
+void CreateDoors();
 
 // calls functions to create display lists (below)
 void CreateTextureList();
@@ -389,6 +431,7 @@ void DrawStepBricks ();
 void DrawMapExit ();
 void DrawECL ();
 
+void animate(int value);
 
 void BindBridgeWall(GLint LR);
 void BindBuildingWall();
@@ -433,6 +476,8 @@ int main(int argc, char **argv)
 	//glutPassiveMotionFunc(mouseMove);
 	//ShowCursor(FALSE);
 
+	glutTimerFunc(TIMERSECS, animate, 0);
+
 	glutReshapeFunc(reshape);
 	glutMainLoop();
 	return(0);
@@ -474,6 +519,9 @@ void myinit()
 	// load texture images and create display lists
 	CreateTextureList();
 	CreateTextures();
+
+	//Doors
+	CreateDoors();
 }
 
 //--------------------------------------------------------------------------------------
@@ -514,6 +562,55 @@ void Display()
 	// clear buffers
 	glFlush();
 	glutSwapBuffers();
+}
+
+void animate(int value)
+{
+	int camX;
+	int camY;
+	int camZ;
+	cam.getPosition(camX, camY, camZ);
+	cout << camX << " " << camY << " " << camZ << endl;
+	if ((camX > 33600 && camX < 35000) && (camZ > 36300 && camZ < 37800))
+	{
+		cout << front.moving << endl;
+		front.state = 1;
+		if (front.pos.z < front.openPos.z)
+		{
+			front.pos.z = front.openPos.z;
+			front.moving = false;
+		}
+		else
+		{
+			front.moving = true;
+		}
+	}
+	else
+	{
+		front.state = 0;
+		if (front.pos.z > front.closePos.z)
+		{
+			front.pos.z = front.closePos.z;
+			front.moving = false;
+		}
+		else
+		{
+			front.moving = true;
+		}
+	}
+	if (front.moving == true)
+	{
+		if (front.state == 0)
+		{
+			front.pos.z += front.speed;
+		}
+		else if (front.state == 1)
+		{
+			front.pos.z += front.speed;
+		}
+	}
+	glutPostRedisplay();
+	glutTimerFunc(TIMERSECS, animate, 1);
 }
 
 //--------------------------------------------------------------------------------------
@@ -1646,8 +1743,46 @@ void DrawBackdrop()
 	DisplayStepBricks ();
 	if (lightsOn) DisplayLights ();
 	DisplayRoom();
+	DisplayDoors();
 }
 
+//--------------------------------------------------------------------------------------
+// Create each door
+//--------------------------------------------------------------------------------------
+void CreateDoors()
+{
+	//Door 1
+	front.orientation = 0;
+	front.state = 0;
+	front.moving = false;
+	front.speed = 100.0;
+	front.openPos.x = 0.0f;
+	front.openPos.y = 0.0f;
+	front.openPos.z = 37820.0f;
+	front.closePos.x = 0.0f;
+	front.closePos.y = 0.0f;
+	front.closePos.z = 36920.0f;
+	front.pos.x = 34330.0f;
+	front.pos.y = 10450.0f;
+	front.pos.z = 36920.0f;
+	front.scale.x = 50.0f;
+	front.scale.y = 1500.0f;
+	front.scale.z = 560.0f;
+}
+
+//--------------------------------------------------------------------------------------
+//  Display each door
+//--------------------------------------------------------------------------------------
+void DisplayDoors()
+{
+	//Door 1
+	glPushMatrix();
+		glTranslatef(front.pos.x, front.pos.y, front.pos.z);
+		glRotatef(front.orientation, 0.0f, 1.0f, 0.0f);
+		glScalef(front.scale.x, front.scale.y, front.scale.z);
+		glutSolidCube(1.0f);
+	glPopMatrix();
+}
 
 //--------------------------------------------------------------------------------------
 // Display the chancellery windoe and door posts
