@@ -805,7 +805,7 @@ void CreateBoundingBoxes()
 	cam.SetAABBMinZ(4, 27559.0);
 
 
-	 //START    // box collision for front wall you see when you walk in the new room
+	 //START    // box collision for front wall you see when you walk in the new room ( Made by Jason to add more collisions to the new room )
 	cam.SetAABBMaxX(5, 37750.0);  // old value 5, 40000.0
 	cam.SetAABBMinX(5, 37500.0);   // 5, 36050.0
 	cam.SetAABBMaxZ(5, 37855.0);  // 5, 37855.0
@@ -2979,7 +2979,7 @@ void DrawRoom() {
 	tp.CreateDisplayList(XZ, 677, 435, 500, 34000.0, 10936.0, 35319.0, 3.0, 7.0);
 }
 
-void DrawRoomStairs() {
+void DrawRoomStairs() { // Made by Jason
 	GLdouble xCord = 36730.0 - 400; // x coord   //31582.0  is original cord  // new value ( value of the second x coord for its corresponding plain  - 400) 
 	step = 10450.0 + 225.0; // effectively the y coordinate  // 10000.0 original // new value ( value of first y value + 225 ) 
 	stepLength = 40503.0 + 700.0; // z coordinate   // 9808.0 original     // new value ( value of second z value + 700 )
@@ -2993,7 +2993,7 @@ void DrawRoomStairs() {
 
 }
 
-void DisplayRoomStairs() {
+void DisplayRoomStairs() { // Made by Jason
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_PAVING_1));
 	for (int i = 678; i < 694; i++) glCallList(i);
