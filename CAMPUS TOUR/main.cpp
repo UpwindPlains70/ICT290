@@ -21,8 +21,8 @@ GLdouble rotationSpeed = 0.005;
 
 bool closing = false;
 
-int i, k, j = 0;
-
+int i, k, j = 0;   
+GLdouble stairsWidth = 0.80; GLdouble Xx = 36310.0; GLdouble Xe = 37391.0; // temporary variables i added to test the size of the stairs, increasing it increases stair width
 // TEXTURE IMAGE AXISES
 #define XY		0
 #define XZ		1
@@ -968,7 +968,7 @@ void CreatePlains()
 	cam.SetPlains (ZY_PLAIN, 3200.0, 4800.0 , 10450.0, 9370.0, 53400.0, 57900.0);
 
 	// new room stairs ( actually model for the new stairs is in displayroom 
-	cam.SetPlains(ZY_PLAIN, 36310.0, 37391.0, 10450.0, 11000.0, 38997.0, 40503.0); 
+	cam.SetPlains(ZY_PLAIN, Xx , Xe , 10450.0, 11000.0, 38997.0, 40503.0); // Xx and Xe declared globally for now ( probably change )
 }
 
 //--------------------------------------------------------------------------------------
@@ -2985,7 +2985,7 @@ void DrawRoom() {
 	tp.CreateDisplayList(YZ, 673, 333, 40.0, 37528.0, 9936.0, 38720.0, 3.0, 7.0);
 
 	//XZ
-	tp.CreateDisplayList(XZ, 674, 770, 700, 35300.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 674, 770, 700, 35300.0, 9936.0, 35319.0, 3.0, 9.0); //the main floor in new room  chaning zTimes to 9.0 from 7.0
 	tp.CreateDisplayList(XZ, 675, 435, 500, 34000.0, 9936.0, 35319.0, 3.0, 7.0);
 
 	tp.CreateDisplayList(XZ, 676, 770, 700, 35300.0, 10936.0, 35319.0, 3.0, 7.0);
@@ -2999,16 +2999,19 @@ void DrawRoomStairs() { // Made by Jason
 	stepLength = 40503.0 + 700.0; // z coordinate   // 9808.0 original     // new value ( value of second z value + 700 )
 	for (int i = 678; i < 694; i++)
 	{
-		tp.CreateDisplayList(XZ, i, 1024.0, 512.0, xCord, step, stepLength, 1.0, 0.277); // original xTimes was 2.2
-		tp.CreateDisplayList(XY, i + 16, 64.0, 64.0, xCord, step - 64.0, stepLength, 16.0, 1.0); // original xTimes was 35.0
+		tp.CreateDisplayList(XZ, i, 1024.0, 512.0, xCord, step, stepLength, 1.0 * stairsWidth, 0.277); // original xTimes was 2.2 // 1.0 // 0.277
+		tp.CreateDisplayList(XY, i + 16, 64.0, 64.0, xCord, step - 64.0, stepLength, 16.0 * stairsWidth, 1.0); // original xTimes was 35.0
 		step -= 48.0;
 		stepLength -= 142.0;
 	}
-
+	// creating the walls in the sub room that has stairs 
+	tp.CreateDisplayList(YZ, 716, 666, 300.0, 37528.0, 9936.0, 39000.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 717, 600, 300.0, 37528.0, 9936.0, 39000.0, 3.0, 7.0);
 }
 
 void DisplayRoomStairs() { // Made by Jason
-
+	glPushMatrix();
+	glTranslatef(100.0, 0.0, 0.0);
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_PAVING_1));
 	for (int i = 678; i < 694; i++) glCallList(i);
 
@@ -3020,6 +3023,20 @@ void DisplayRoomStairs() { // Made by Jason
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_EDGE));
 	for (i = 713; i < 716; i++) glCallList(i);
+	glPopMatrix();
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));  // begins drawing the walls 
+    glCallList(716);
+	glPushMatrix();
+		glTranslatef(-1500.0, 0.0, 0.0);
+		glCallList(716);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(-1500.0, 0.0, 2000.0);
+		glCallList(717);
+	glPopMatrix();
+	
 }
 void DisplayHallway() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
@@ -5299,10 +5316,10 @@ void CreateTextureList()
 	DrawMapExit ();				// 448-449, 454
 
 	DrawRoom();					// 666 - 677 
-	DrawRoomStairs();			// 678 - 714
+	DrawRoomStairs();			// 678 - 716
 
-	DrawRoom();
-	DrawHallway();
+	
+	DrawHallway();				// 777 - 781 
 
 	// 455-459
 }
