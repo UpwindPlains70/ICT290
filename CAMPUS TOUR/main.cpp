@@ -362,7 +362,11 @@ void DisplayStepBricks ();
 void DisplayLights ();
 void DisplayECL ();
 void DisplayRoom();
+
 void DisplayRoomStairs();
+
+void DisplayHallway();
+
 
 // calls functions to create display lists (below)
 void CreateTextureList();
@@ -392,7 +396,11 @@ void DrawStepBricks ();
 void DrawMapExit ();
 void DrawECL ();
 void DrawRoom();
+
 void DrawRoomStairs();
+
+void DrawHallway();
+
 
 
 void BindBridgeWall(GLint LR);
@@ -1685,7 +1693,11 @@ void DrawBackdrop()
 	DisplayStepBricks ();
 	if (lightsOn) DisplayLights ();
 	DisplayRoom();
+
 	DisplayRoomStairs();
+
+	DisplayHallway();
+
 }
 
 
@@ -2930,7 +2942,8 @@ void DrawPavement ()
 
 
 //--------------------------------------------------------------------------------------
-//  New Room
+//  New Room 
+// 33993431 - Raymond Lau
 //--------------------------------------------------------------------------------------
 void DisplayRoom() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
@@ -2979,6 +2992,7 @@ void DrawRoom() {
 	tp.CreateDisplayList(XZ, 677, 435, 500, 34000.0, 10936.0, 35319.0, 3.0, 7.0);
 }
 
+
 void DrawRoomStairs() { // Made by Jason
 	GLdouble xCord = 36730.0 - 400; // x coord   //31582.0  is original cord  // new value ( value of the second x coord for its corresponding plain  - 400) 
 	step = 10450.0 + 225.0; // effectively the y coordinate  // 10000.0 original // new value ( value of first y value + 225 ) 
@@ -3006,6 +3020,33 @@ void DisplayRoomStairs() { // Made by Jason
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_EDGE));
 	for (i = 713; i < 716; i++) glCallList(i);
+}
+void DisplayHallway() {
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
+	glCallList(777);	//right wall
+	glCallList(778);	//left wall
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
+	glCallList(779);	//Back wall 
+	
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
+	glCallList(780);	//floor
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
+	glCallList(781);	//roof
+}
+void DrawHallway() {
+	//XY
+	tp.CreateDisplayList(XY, 777, 10000, 143.0, 37550.0, 9936.0, 39000.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 778, 10000, 143.0, 37550.0, 9936.0, 37500.0, 3.0, 7.0);
+
+	//YZ
+	tp.CreateDisplayList(YZ, 779, 330, 215.0, 67550.0, 9936.0, 37500.0, 3.0, 7.0);
+
+	//XZ
+	tp.CreateDisplayList(XZ, 780, 10000, 215.0, 37610.0, 9936.0, 37500.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 781, 10000, 215.0, 37610.0, 10936.0, 37500.0, 3.0, 7.0);
+
 }
 
 //--------------------------------------------------------------------------------------
@@ -5256,8 +5297,13 @@ void CreateTextureList()
 	DrawStepBricks ();			// 478-507
 	DrawCylinders ();			// 437-441
 	DrawMapExit ();				// 448-449, 454
+
 	DrawRoom();					// 666 - 677 
 	DrawRoomStairs();			// 678 - 714
+
+	DrawRoom();
+	DrawHallway();
+
 	// 455-459
 }
 
