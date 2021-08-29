@@ -360,6 +360,7 @@ void DisplayStepBricks ();
 void DisplayLights ();
 void DisplayECL ();
 void DisplayRoom();
+void DisplayHallway();
 
 // calls functions to create display lists (below)
 void CreateTextureList();
@@ -388,6 +389,8 @@ void DrawAngledRoofBeam2 (int listNo, GLdouble x, GLdouble y, GLdouble z, GLdoub
 void DrawStepBricks ();
 void DrawMapExit ();
 void DrawECL ();
+void DrawRoom();
+void DrawHallway();
 
 
 void BindBridgeWall(GLint LR);
@@ -1646,6 +1649,7 @@ void DrawBackdrop()
 	DisplayStepBricks ();
 	if (lightsOn) DisplayLights ();
 	DisplayRoom();
+	DisplayHallway();
 }
 
 
@@ -2935,6 +2939,33 @@ void DrawRoom() {
 
 	tp.CreateDisplayList(XZ, 676, 770, 700, 35300.0, 10936.0, 35319.0, 3.0, 7.0);
 	tp.CreateDisplayList(XZ, 677, 435, 500, 34000.0, 10936.0, 35319.0, 3.0, 7.0);
+}
+
+void DisplayHallway() {
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
+	glCallList(777);	//right wall
+	glCallList(778);	//left wall
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
+	glCallList(779);	//Back wall 
+	
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
+	glCallList(780);	//floor
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
+	glCallList(781);	//roof
+}
+void DrawHallway() {
+	//XY
+	tp.CreateDisplayList(XY, 777, 10000, 143.0, 37550.0, 9936.0, 39000.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 778, 10000, 143.0, 37550.0, 9936.0, 37500.0, 3.0, 7.0);
+
+	//YZ
+	tp.CreateDisplayList(YZ, 779, 330, 215.0, 67550.0, 9936.0, 37500.0, 3.0, 7.0);
+
+	//XZ
+	tp.CreateDisplayList(XZ, 780, 10000, 215.0, 37610.0, 9936.0, 37500.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 781, 10000, 215.0, 37610.0, 10936.0, 37500.0, 3.0, 7.0);
 }
 
 //--------------------------------------------------------------------------------------
@@ -5186,6 +5217,7 @@ void CreateTextureList()
 	DrawCylinders ();			// 437-441
 	DrawMapExit ();				// 448-449, 454
 	DrawRoom();
+	DrawHallway();
 	// 455-459
 }
 
