@@ -2890,7 +2890,8 @@ void DrawPavement ()
 
 
 //--------------------------------------------------------------------------------------
-//  New Room
+//  New Room 
+// 33993431 - Raymond Lau
 //--------------------------------------------------------------------------------------
 void DisplayRoom() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
