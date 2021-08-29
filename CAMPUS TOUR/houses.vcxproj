@@ -47,7 +47,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
-    <IncludePath>..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\include;..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\include</IncludePath>
+    <IncludePath>..\CAMPUS TOUR\Include;..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\include;..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\include</IncludePath>
     <LibraryPath>..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\lib\v110\Win32\Release\dynamic;..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\lib\x64\dynamic;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -130,36 +130,50 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AABB.CPP" />
-    <ClCompile Include="AABBLinkedList.cpp" />
-    <ClCompile Include="AABBNode.cpp" />
-    <ClCompile Include="camera.cpp" />
-    <ClCompile Include="cameraMap.cpp" />
-    <ClCompile Include="collision.cpp" />
-    <ClCompile Include="EasySound.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="PlainLinkedList.cpp" />
-    <ClCompile Include="PlainNode.cpp" />
-    <ClCompile Include="Sound.cpp" />
-    <ClCompile Include="SoundTime.cpp" />
-    <ClCompile Include="texturedPolygons.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="AABB.H" />
-    <ClInclude Include="AABBLinkedList.h" />
-    <ClInclude Include="AABBNode.h" />
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="cameraMap.h" />
-    <ClInclude Include="collision.h" />
-    <ClInclude Include="EasySound.h" />
-    <ClInclude Include="PlainLinkedList.h" />
-    <ClInclude Include="PlainNode.h" />
-    <ClInclude Include="Sound.h" />
-    <ClInclude Include="SoundTime.h" />
-    <ClInclude Include="texturedPolygons.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\AABB.H" />
+    <ClInclude Include="Include\AABBLinkedList.h" />
+    <ClInclude Include="Include\AABBNode.h" />
+    <ClInclude Include="Include\camera.h" />
+    <ClInclude Include="Include\cameraMap.h" />
+    <ClInclude Include="Include\collision.h" />
+    <ClInclude Include="Include\CollisionHandler.h" />
+    <ClInclude Include="Include\DisplayHandler.h" />
+    <ClInclude Include="Include\DrawHandler.h" />
+    <ClInclude Include="Include\EasySound.h" />
+    <ClInclude Include="Include\Geometry.h" />
+    <ClInclude Include="Include\MovementHandler.h" />
+    <ClInclude Include="Include\PlainLinkedList.h" />
+    <ClInclude Include="Include\PlainNode.h" />
+    <ClInclude Include="Include\ReadOBJfile.h" />
+    <ClInclude Include="Include\Sound.h" />
+    <ClInclude Include="Include\SoundTime.h" />
+    <ClInclude Include="Include\texturedPolygons.h" />
+    <ClInclude Include="Include\TextureHandler.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AABB.CPP" />
+    <ClCompile Include="src\AABBLinkedList.cpp" />
+    <ClCompile Include="src\AABBNode.cpp" />
+    <ClCompile Include="src\camera.cpp" />
+    <ClCompile Include="src\cameraMap.cpp" />
+    <ClCompile Include="src\collision.cpp" />
+    <ClCompile Include="src\CollisionHandler.cpp" />
+    <ClCompile Include="src\DisplayHandler.cpp" />
+    <ClCompile Include="src\DrawHandler.cpp" />
+    <ClCompile Include="src\EasySound.cpp" />
+    <ClCompile Include="src\Geometry.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MovementHandler.cpp" />
+    <ClCompile Include="src\PlainLinkedList.cpp" />
+    <ClCompile Include="src\PlainNode.cpp" />
+    <ClCompile Include="src\ReadOBJfile.cpp" />
+    <ClCompile Include="src\Sound.cpp" />
+    <ClCompile Include="src\SoundTime.cpp" />
+    <ClCompile Include="src\texturedPolygons.cpp" />
+    <ClCompile Include="src\TextureHandler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
