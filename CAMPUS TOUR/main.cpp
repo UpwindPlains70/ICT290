@@ -286,9 +286,11 @@ int i, k, j = 0;
 
 //--------------------------------------------------------------------------------------
 
-#define TIMERSECS 100
+#define TIMERSECS 25
 
 int dx = 0;
+float prevTime;
+float currTime;
 
 GLdouble stepIncrement;
 GLdouble angleIncrement;
@@ -522,6 +524,7 @@ void myinit()
 
 	//Doors
 	CreateDoors();
+	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
 }
 
 //--------------------------------------------------------------------------------------
@@ -566,16 +569,19 @@ void Display()
 
 void animate(int value)
 {
+	glutTimerFunc(TIMERSECS, animate, 0);
+	prevTime = currTime;
+	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
+	float dT = currTime - prevTime;
 	int camX;
 	int camY;
 	int camZ;
 	cam.getPosition(camX, camY, camZ);
-	cout << camX << " " << camY << " " << camZ << endl;
-	if ((camX > 33600 && camX < 35000) && (camZ > 36300 && camZ < 37800))
+	//cout << camX << " " << camY << " " << camZ << endl;
+	if ((camX > 33200 && camX < 35600) && (camZ > 36300 && camZ < 37800))
 	{
-		cout << front.moving << endl;
 		front.state = 1;
-		if (front.pos.z < front.openPos.z)
+		if (front.pos.z >= front.openPos.z)
 		{
 			front.pos.z = front.openPos.z;
 			front.moving = false;
@@ -588,7 +594,7 @@ void animate(int value)
 	else
 	{
 		front.state = 0;
-		if (front.pos.z > front.closePos.z)
+		if (front.pos.z <= front.closePos.z)
 		{
 			front.pos.z = front.closePos.z;
 			front.moving = false;
@@ -600,17 +606,17 @@ void animate(int value)
 	}
 	if (front.moving == true)
 	{
+		cout << front.pos.z << endl;
 		if (front.state == 0)
 		{
-			front.pos.z += front.speed;
+			front.pos.z -= front.speed * dT;
 		}
 		else if (front.state == 1)
 		{
-			front.pos.z += front.speed;
+			front.pos.z += front.speed * dT;
 		}
 	}
 	glutPostRedisplay();
-	glutTimerFunc(TIMERSECS, animate, 1);
 }
 
 //--------------------------------------------------------------------------------------
@@ -1755,10 +1761,10 @@ void CreateDoors()
 	front.orientation = 0;
 	front.state = 0;
 	front.moving = false;
-	front.speed = 100.0;
+	front.speed = 2000.0;
 	front.openPos.x = 0.0f;
 	front.openPos.y = 0.0f;
-	front.openPos.z = 37820.0f;
+	front.openPos.z = 37520.0f;
 	front.closePos.x = 0.0f;
 	front.closePos.y = 0.0f;
 	front.closePos.z = 36920.0f;
