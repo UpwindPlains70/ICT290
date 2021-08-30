@@ -46,5 +46,5 @@ void DrawMapExit();
 void DrawECL();
 void DrawRoom();
 void DrawRoomStairs();
-
+void DrawHallway();
 #endif

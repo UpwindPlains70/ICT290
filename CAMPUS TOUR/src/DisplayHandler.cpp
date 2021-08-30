@@ -31,8 +31,26 @@ void DrawBackdrop()
 	DisplayRoof();
 	DisplayStepBricks();
 	if (lightsOn) DisplayLights();
+	
 	DisplayRoom();
 	DisplayRoomStairs();
+	DisplayHallway();
+}
+
+//Made by Raymond Lua
+void DisplayHallway() {
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
+	glCallList(777);	//right wall
+	glCallList(778);	//left wall
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
+	glCallList(779);	//Back wall 
+	
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
+	glCallList(780);	//floor
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
+	glCallList(781);	//roof
 }
 
 //--------------------------------------------------------------------------------------
@@ -860,8 +878,10 @@ void DisplayPavement()
 	glPopMatrix();
 }
 
+
 //--------------------------------------------------------------------------------------
-//  New Room
+//  New Room 
+// 33993431 - Raymond Lau
 //--------------------------------------------------------------------------------------
 void DisplayRoom() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
@@ -885,13 +905,11 @@ void DisplayRoom() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
 	glCallList(676);		//main room roof
 	glCallList(677);		//enterance roof
-
-
-
 }
 
-void DisplayRoomStairs() {
-
+void DisplayRoomStairs() { // Made by Jason
+	glPushMatrix();
+	glTranslatef(100.0, 0.0, 0.0);
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_PAVING_1));
 	for (int i = 678; i < 694; i++) glCallList(i);
 
@@ -903,6 +921,20 @@ void DisplayRoomStairs() {
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_EDGE));
 	for (int i = 713; i < 716; i++) glCallList(i);
+	glPopMatrix();
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));  // begins drawing the walls 
+    glCallList(716);
+	glPushMatrix();
+		glTranslatef(-1500.0, 0.0, 0.0);
+		glCallList(716);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(-1500.0, 0.0, 2000.0);
+		glCallList(717);
+	glPopMatrix();
+	
 }
 
 //--------------------------------------------------------------------------------------

@@ -35,7 +35,8 @@ void DisplayRoof();
 void DisplayStepBricks();
 void DisplayLights();
 void DisplayECL();
+
 void DisplayRoom();
 void DisplayRoomStairs();
-
+void DisplayHallway();
 #endif // !DISPLAYERHANDLER_H

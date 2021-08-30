@@ -43,18 +43,17 @@ void CreateBoundingBoxes()
 	cam.SetAABBMaxZ(4, 36319.0);
 	cam.SetAABBMinZ(4, 27559.0);
 
-
-	//START    // box collision for front wall you see when you walk in the new room
+	//START    // box collision for front wall you see when you walk in the new room ( Made by Jason to add more collisions to the new room )
 	cam.SetAABBMaxX(5, 37750.0);  // old value 5, 40000.0
 	cam.SetAABBMinX(5, 37500.0);   // 5, 36050.0
 	cam.SetAABBMaxZ(5, 37855.0);  // 5, 37855.0
 	cam.SetAABBMinZ(5, 35338.0);  // 5, 36319.0
 
 	// adding collision with wall left to entrance of new room, one with the no smoking sign 
-	cam.SetAABBMaxX(19, 34300.0);
-	cam.SetAABBMinX(19, 34226.0);
-	cam.SetAABBMaxZ(19, 36657.0);
-	cam.SetAABBMinZ(19, 36300.0);
+	cam.SetAABBMaxX(19, 34300.0); 
+	cam.SetAABBMinX(19, 34226.0);  
+	cam.SetAABBMaxZ(19, 36657.0);  
+	cam.SetAABBMinZ(19, 36300.0);  
 
 	// wall left side #1
 	cam.SetAABBMaxX(20, 35555.0);

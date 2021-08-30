@@ -8,6 +8,8 @@
 
 GLUquadricObj* glu_cylinder;
 
+GLdouble stairsWidth = 0.80; GLdouble Xx = 36310.0; GLdouble Xe = 37391.0; // temporary variables i added to test the size of the stairs, increasing it increases stair width
+
 //--------------------------------------------------------------------------------------
 //  Create display lists
 //	Numbers indicate list numbers
@@ -37,6 +39,7 @@ void CreateTextureList()
 	DrawMapExit();				// 448-449, 454
 	DrawRoom();					// 666 - 677 
 	DrawRoomStairs();			// 678 - 714
+	DrawHallway();				// 777 - 781 
 	// 455-459
 }
 
@@ -509,9 +512,25 @@ void DrawPavement()
 	tp.CreateDisplayList(XZ, 86, 128.0, 64.0, 33744.0, 10000.0, 28624.0, 2.5, 13.5);	//phys sci toilet doorways
 }
 
+//Made by Raymond Lua
+void DrawHallway() {
+	//XY
+	tp.CreateDisplayList(XY, 777, 10000, 143.0, 37550.0, 9936.0, 39000.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 778, 10000, 143.0, 37550.0, 9936.0, 37500.0, 3.0, 7.0);
+
+	//YZ
+	tp.CreateDisplayList(YZ, 779, 330, 215.0, 67550.0, 9936.0, 37500.0, 3.0, 7.0);
+
+	//XZ
+	tp.CreateDisplayList(XZ, 780, 10000, 215.0, 37610.0, 9936.0, 37500.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 781, 10000, 215.0, 37610.0, 10936.0, 37500.0, 3.0, 7.0);
+
+}
+
+//Made by Raymond Lau
 void DrawRoom() {
 	//XY
-	tp.CreateDisplayList(XY, 666, 300, 143.0, 35500.0, 9936.0, 35319.0, 3.0, 7.0);
+    tp.CreateDisplayList(XY, 666, 300, 143.0, 35500.0, 9936.0, 35319.0, 3.0, 7.0);
 	tp.CreateDisplayList(XY, 667, 50, 143.0, 37400.0, 9936.0, 35319.0, 3.0, 7.0);
 	tp.CreateDisplayList(XY, 668, 300, 143.0, 35390.0, 9936.0, 39000.0, 3.0, 7.0);
 	tp.CreateDisplayList(XY, 669, 50, 143.0, 37400.0, 9936.0, 39000.0, 3.0, 7.0);
@@ -523,25 +542,27 @@ void DrawRoom() {
 	tp.CreateDisplayList(YZ, 673, 333, 40.0, 37528.0, 9936.0, 38720.0, 3.0, 7.0);
 
 	//XZ
-	tp.CreateDisplayList(XZ, 674, 770, 700, 35300.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 674, 770, 700, 35300.0, 9936.0, 35319.0, 3.0, 9.0); //the main floor in new room  chaning zTimes to 9.0 from 7.0
 	tp.CreateDisplayList(XZ, 675, 435, 500, 34000.0, 9936.0, 35319.0, 3.0, 7.0);
 
 	tp.CreateDisplayList(XZ, 676, 770, 700, 35300.0, 10936.0, 35319.0, 3.0, 7.0);
 	tp.CreateDisplayList(XZ, 677, 435, 500, 34000.0, 10936.0, 35319.0, 3.0, 7.0);
 }
 
-void DrawRoomStairs() {
+void DrawRoomStairs() { // Made by Jason
 	GLdouble xCord = 36730.0 - 400; // x coord   //31582.0  is original cord  // new value ( value of the second x coord for its corresponding plain  - 400) 
 	step = 10450.0 + 225.0; // effectively the y coordinate  // 10000.0 original // new value ( value of first y value + 225 ) 
 	stepLength = 40503.0 + 700.0; // z coordinate   // 9808.0 original     // new value ( value of second z value + 700 )
 	for (int i = 678; i < 694; i++)
 	{
-		tp.CreateDisplayList(XZ, i, 1024.0, 512.0, xCord, step, stepLength, 1.0, 0.277); // original xTimes was 2.2
-		tp.CreateDisplayList(XY, i + 16, 64.0, 64.0, xCord, step - 64.0, stepLength, 16.0, 1.0); // original xTimes was 35.0
+		tp.CreateDisplayList(XZ, i, 1024.0, 512.0, xCord, step, stepLength, 1.0 * stairsWidth, 0.277); // original xTimes was 2.2 // 1.0 // 0.277
+		tp.CreateDisplayList(XY, i + 16, 64.0, 64.0, xCord, step - 64.0, stepLength, 16.0 * stairsWidth, 1.0); // original xTimes was 35.0
 		step -= 48.0;
 		stepLength -= 142.0;
 	}
-
+	// creating the walls in the sub room that has stairs 
+	tp.CreateDisplayList(YZ, 716, 666, 300.0, 37528.0, 9936.0, 39000.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 717, 600, 300.0, 37528.0, 9936.0, 39000.0, 3.0, 7.0);
 }
 
 void DrawBricks()
