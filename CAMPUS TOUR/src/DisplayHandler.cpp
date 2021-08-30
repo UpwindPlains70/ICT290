@@ -35,6 +35,7 @@ void DrawBackdrop()
 	DisplayRoom();
 	DisplayRoomStairs();
 	DisplayHallway();
+	DisplayDoors();
 }
 
 //Made by Raymond Lua

@@ -141,6 +141,7 @@
     <ClInclude Include="Include\collision.h" />
     <ClInclude Include="Include\CollisionHandler.h" />
     <ClInclude Include="Include\DisplayHandler.h" />
+    <ClInclude Include="Include\DoorHandler.h" />
     <ClInclude Include="Include\DrawHandler.h" />
     <ClInclude Include="Include\EasySound.h" />
     <ClInclude Include="Include\Geometry.h" />
@@ -162,6 +163,7 @@
     <ClCompile Include="src\collision.cpp" />
     <ClCompile Include="src\CollisionHandler.cpp" />
     <ClCompile Include="src\DisplayHandler.cpp" />
+    <ClCompile Include="src\DoorHandler.cpp" />
     <ClCompile Include="src\DrawHandler.cpp" />
     <ClCompile Include="src\EasySound.cpp" />
     <ClCompile Include="src\Geometry.cpp" />

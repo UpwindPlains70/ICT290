@@ -1,12 +1,14 @@
 //Aurthor: Peter Neve
 //Version: 1
 //Date: 29/08/2021
+// Refactor of main
 //Purpose: handle all object display, references 'DrawHandler' callList()
 
 #ifndef DISPLAYHANDLER_H
 #define DISPLAYHANDLER_H
 
-#include "TextureHandler.h"
+//#include "TextureHandler.h"
+#include "DoorHandler.h"
 
 // display light fittings
 extern bool lightsOn;

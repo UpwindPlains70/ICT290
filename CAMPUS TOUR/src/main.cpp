@@ -55,6 +55,8 @@ int main(int argc, char **argv)
 	//glutPassiveMotionFunc(mouseMove);
 	//ShowCursor(FALSE);
 
+	glutTimerFunc(TIMERSECS, animate, 0);
+	
 	glutReshapeFunc(reshape);
 	glutMainLoop();
 	return(0);
@@ -96,6 +98,10 @@ void myinit()
 	// load texture images and create display lists
 	CreateTextureList();
 	CreateTextures();
+	
+	//Doors
+	CreateDoors();
+	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
 }
 
 //--------------------------------------------------------------------------------------
@@ -132,6 +138,8 @@ void Display()
 		cam.SetRotateSpeed (angleIncrement);
 		// display images
 		DrawBackdrop();
+		//DisplayDoors(); //should be in DrawBackdrop()
+		
 	glPopMatrix();
 	glDisable (GL_TEXTURE_2D);
 
