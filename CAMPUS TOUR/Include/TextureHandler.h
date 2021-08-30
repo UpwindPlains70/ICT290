@@ -280,6 +280,16 @@ extern TexturedPolygons tp;
 
 // 223 Next
 
+#define PIN_BOARD_1					223 // List textures new room ( Jason )
+#define PIN_BOARD_2					224
+#define EXIT_DOOR_1					225
+#define ENTRANCE_DOOR_1				226
+#define HALLWAY_DOOR_1				227
+#define HALLWAY_DOOR_2				228
+#define HALLWAY_FLOOR_1				229
+
+#define STAIRS_TOP					231
+#define FLOOR_LEVEL_SIGN			232
 
 void CreateTextures();
 

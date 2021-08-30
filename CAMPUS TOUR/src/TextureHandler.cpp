@@ -690,6 +690,25 @@ void CreateTextures()
 	image = tp.LoadTexture("data/thanks.raw", 512, 512);
 	tp.CreateTexture(219, image, 512, 512);
 
+	image = tp.LoadTexture("data/room/pinboard1.raw", 209, 157);
+	tp.CreateTexture(PIN_BOARD_1, image, 209, 157);
+	image = tp.LoadTexture("data/room/pinboard2.raw", 194, 192);
+	tp.CreateTexture(PIN_BOARD_2, image, 194, 192);
+	image = tp.LoadTexture("data/room/hallwayFloor.raw", 225, 300);
+	tp.CreateTexture(HALLWAY_FLOOR_1, image, 225, 300);
+	image = tp.LoadTexture("data/room/exitdoor1.raw", 195, 267);
+	tp.CreateTexture(EXIT_DOOR_1, image, 195, 267);
+	image = tp.LoadTexture("data/room/stairsTop.raw", 225, 300);
+	tp.CreateTexture(STAIRS_TOP, image, 225, 300);
+	image = tp.LoadTexture("data/room/entranceDoor1.raw", 244, 210);
+	tp.CreateTexture(ENTRANCE_DOOR_1, image, 244, 210);
+	image = tp.LoadTexture("data/room/floorLevel2.raw", 135, 90);
+	tp.CreateTexture(FLOOR_LEVEL_SIGN, image, 135, 90);
+	image = tp.LoadTexture("data/room/hallwayDoor1.raw", 189, 282);
+	tp.CreateTexture(HALLWAY_DOOR_1, image, 189, 282);
+	image = tp.LoadTexture("data/room/hallwayDoor2.raw", 175, 271);
+	tp.CreateTexture(HALLWAY_DOOR_2, image, 175, 271);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }

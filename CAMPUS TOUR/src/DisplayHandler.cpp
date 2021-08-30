@@ -47,7 +47,7 @@ void DisplayHallway() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
 	glCallList(779);	//Back wall 
 	
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(HALLWAY_FLOOR_1)); // replacing SHADOW_BRICK to hallwayfloor
 	glCallList(780);	//floor
 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
@@ -906,6 +906,36 @@ void DisplayRoom() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
 	glCallList(676);		//main room roof
 	glCallList(677);		//enterance roof
+
+	// New Textures ( pinboard ) Jason
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(PIN_BOARD_1));
+	glCallList(782);
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(PIN_BOARD_2));
+	glCallList(783);
+
+	// Exit door on left side of room
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(EXIT_DOOR_1));
+	glCallList(784);
+
+	// Stairs wall once you walk up the stairs
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STAIRS_TOP));
+	glCallList(785);
+
+	// Window next to the right of the entrance door 
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ENTRANCE_DOOR_1));
+	glCallList(786);
+
+	// Floor level sign
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(FLOOR_LEVEL_SIGN));
+	glCallList(787);
+
+	//Hallway door1
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(HALLWAY_DOOR_1));
+	glCallList(788);
+
+	//Hallway door2
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(HALLWAY_DOOR_2));
+	glCallList(789);
 }
 
 void DisplayRoomStairs() { // Made by Jason

@@ -37,7 +37,7 @@ void CreateTextureList()
 	DrawStepBricks();			// 478-507
 	DrawCylinders();			// 437-441
 	DrawMapExit();				// 448-449, 454
-	DrawRoom();					// 666 - 677 
+	DrawRoom();					// 666 - 677 and 782 -792
 	DrawRoomStairs();			// 678 - 714
 	DrawHallway();				// 777 - 781 
 	// 455-459
@@ -522,8 +522,8 @@ void DrawHallway() {
 	tp.CreateDisplayList(YZ, 779, 330, 215.0, 67550.0, 9936.0, 37500.0, 3.0, 7.0);
 
 	//XZ
-	tp.CreateDisplayList(XZ, 780, 10000, 215.0, 37610.0, 9936.0, 37500.0, 3.0, 7.0);
-	tp.CreateDisplayList(XZ, 781, 10000, 215.0, 37610.0, 10936.0, 37500.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 780, 2500, 215.0 * 7 , 37610.0, 9936.0, 37500.0, 12.0, 1.0); // 3.0, 7.0 // 10000 215
+	tp.CreateDisplayList(XZ, 781, 10000 /4, 215.0 * 3.5, 37610.0, 10936.0, 37500.0, 12.0, 2.0); // 3.0 , 7.0
 
 }
 
@@ -545,8 +545,24 @@ void DrawRoom() {
 	tp.CreateDisplayList(XZ, 674, 770, 700, 35300.0, 9936.0, 35319.0, 3.0, 9.0); //the main floor in new room  chaning zTimes to 9.0 from 7.0
 	tp.CreateDisplayList(XZ, 675, 435, 500, 34000.0, 9936.0, 35319.0, 3.0, 7.0);
 
-	tp.CreateDisplayList(XZ, 676, 770, 700, 35300.0, 10936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 676, 770, 700 * 0.76, 35300.0, 10936.0, 35319.0, 3.0, 7.0); 
 	tp.CreateDisplayList(XZ, 677, 435, 500, 34000.0, 10936.0, 35319.0, 3.0, 7.0);
+
+	// Pin Boards in the entrance room (782 - 783)       ( 792) max // 209, 157
+	tp.CreateDisplayList(XY, 782, 409, 257, 35728.0, 10250.0, 38995.0, 1.0, 1.0); // pinboard 1
+	tp.CreateDisplayList(XY, 783, 409, 257, 35000.0, 10250.0, 36325.0, 1.0, 1.0); // pinboard 2
+	// Exit door leftside of room
+	tp.CreateDisplayList(XY, 784, 300 * 3.34, 143.0 * 7, 36400.0, 9936.0, 35319.0, 1.0, 1.0);
+	// Image at the top of the stairs 
+	tp.CreateDisplayList(XY, 785, 409 * 2, 257 * 4, 36428.0, 10550.0, 40975.0, 1.0, 1.0);
+	// Right window next to the entrance door 
+	tp.CreateDisplayList(YZ, 786, 333 * 3, 145.0 * 5, 34300.0, 9936.0, 37100.0, 1.0, 1.0);
+	// Floor level sign next to the stairs
+	tp.CreateDisplayList(YZ, 787, 333 , 145.0 , 37450.0, 10200.0, 39100.0, 1.0, 1.0);
+	// Door1 in the hallway 
+	tp.CreateDisplayList(XY, 788, 409 , 257 * 3 , 39300.0, 9936.0, 38990.0, 1.0, 1.0);
+	// Door2 in the hallway 
+	tp.CreateDisplayList(XY, 789, 409, 257 * 3, 41000.0, 9936.0, 37510.0, 1.0, 1.0);
 }
 
 void DrawRoomStairs() { // Made by Jason
