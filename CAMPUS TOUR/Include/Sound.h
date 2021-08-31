@@ -9,7 +9,7 @@
 #include "SoundTime.h"
 
 /**
- * class CSound: This class is the sound object, and it allow to play, stop, etc
+ * @brief class CSound: This class is the sound object, and it allow to play, stop, etc
  *
  * @author Shannon, Grahan and Shay
  */

@@ -18,7 +18,7 @@
 #define ES_ONCE	0
 
 /**
- * class CSoundTime: The is the time convertion from min:sec:ms into int value for SDL library
+ * @brief class CSoundTime: The is the time convertion from min:sec:ms into int value for SDL library
  *
  * @author Shannon, Grahan and Shay
  */

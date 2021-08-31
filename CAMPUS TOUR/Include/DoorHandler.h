@@ -7,11 +7,23 @@
 
 #define TIMERSECS 25
 
-//int dx = 0;
+/**
+	 * @brief Defines everything for door object (behavior, pos, orientation, etc)
+	 *
+	 * @author Mark Burns
+	 * @version 01
+	 * @date 29/08/2021, Started
+	 * 
+	 * @author Peter Neve
+	 * @version 02
+	 * @date 29/08/2021, Refactor
+	 */
+///prevTime value for animation tracking
 extern float prevTime;
+///currTime value for animation tracking
 extern float currTime;
 
-//Position
+///Position
 class Position {
 	public:
 		GLfloat x;
@@ -19,7 +31,7 @@ class Position {
 		GLfloat z;
 };
 
-// Door Turn
+/// Door Turn
 class door2 {
 	public: 
 		float orientation;
@@ -34,7 +46,7 @@ class door2 {
 		Position scale;
 };
 
-// Door Slide
+/// Door Slide
 class door1 {
 	public:
 		float orientation;
@@ -48,12 +60,33 @@ class door1 {
 		Position scale;
 };
 
+/// front sliding door
 extern door1 front;
+/// back left swival door
 extern door2 backL;
+/// back right swival door
 extern door2 backR;
 
+/**
+* @brief display doors in 3D world
+* 
+* @return void
+*/
 void DisplayDoors();
+
+/**
+* @brief draw door geometry
+*
+* @return void
+*/
 void CreateDoors();
+
+/**
+* @brief Allows doors to turn/rotate
+*
+* @param int - val
+* @return void
+*/
 void animate(int value);
 
 #endif // !DOORHANDLER_H

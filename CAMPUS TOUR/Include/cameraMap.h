@@ -11,7 +11,16 @@
 #include <gl/glut.h>
 
 //--------------------------------------------------------------------------------------
-
+/**
+	 * @brief Displays a map and welcome screen in 2D on the screen
+	 *
+	 *
+	 * @author Shay Leary
+	 * @version 01
+	 * @date April 2005, Finished
+	 *
+	 *
+	 */
 class CameraMap
 {
 public:
@@ -20,12 +29,12 @@ public:
 
 	//----------------------------------------------------------------------------------
 
-	// display the map
+	/// display the map
 	void DisplayMap(const int & screenWidth, const int & screenHeight,
 				    const GLdouble & xPos, const GLdouble & zPos,
 					const GLuint & tempImage);
 
-	// display the welcome screen
+	/// display the welcome screen
 	void DisplayWelcomeScreen (const int & screenWidth, const int & screenHeight, 
 		                       const int & tempExit, const GLuint & tempImage);
 
@@ -33,7 +42,7 @@ public:
 						const GLuint & tempImage);
 
 private:
-    // Privatised copy constructor and assignment operator
+    /// Privatised copy constructor and assignment operator
     CameraMap (const CameraMap &cam) {};
     CameraMap &operator = (const CameraMap &cam) {};
 };

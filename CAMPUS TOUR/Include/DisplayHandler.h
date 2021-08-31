@@ -1,21 +1,43 @@
-//Aurthor: Peter Neve
-//Version: 1
-//Date: 29/08/2021
-// Refactor of main
-//Purpose: handle all object display, references 'DrawHandler' callList()
-
 #ifndef DISPLAYHANDLER_H
 #define DISPLAYHANDLER_H
 
-//#include "TextureHandler.h"
 #include "DoorHandler.h"
 
-// display light fittings
+/**
+	 * @brief Handles all display function calls & definitions
+	 *
+	 *
+	 * @author Shay Leary
+	 * @version 01
+	 * @date March 2005, Finished
+	 *
+	 * @author Raymon Lua
+	 * @version 03
+	 * @date 28/08/2021, Added new room
+	 * 
+	 * @author Peter Neve
+	 * @version 02
+	 * @date 29/08/2021, Refactor
+	 * 
+	 * @author Raymond Lua
+	 * @version 04
+	 * @date 29/08/2021, Added hallway
+	 * 
+	 * @author Jason Botterill
+	 * @version 05
+	 * @date 29/08/2021, Added stairs to new room
+	 * 
+	 * @author Mark Burns
+	 * @version 06
+	 * @date 29/08/2021, Added doors to new room
+	 */
+
+/// display light fittings
 extern bool lightsOn;
 
-// calls display functions below to draw the backdrops
+/// calls display functions below to draw the backdrops
 void DrawBackdrop();
-// functions to display display lists (images) and bind them to a texture
+/// functions to display display lists (images) and bind them to a texture
 void DisplayAboveWindowBlock();
 void DisplayBench();
 void DisplayBricks();
@@ -38,7 +60,9 @@ void DisplayStepBricks();
 void DisplayLights();
 void DisplayECL();
 
+/// new room added by Raymond Lua
 void DisplayRoom();
+/// new stairs added by Jason Botterill
 void DisplayRoomStairs();
 void DisplayHallway();
 #endif // !DISPLAYERHANDLER_H

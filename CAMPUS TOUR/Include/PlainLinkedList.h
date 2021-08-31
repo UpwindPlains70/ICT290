@@ -18,7 +18,17 @@
 #include "PlainNode.h"
 
 //--------------------------------------------------------------------------------------
-
+/**
+	 * @brief Linked List used to store nodes (PlainNode) which contain the co-ordinates of the 
+	 *  of each plain used in the program.
+	 *
+	 * 	The program will split the world into four quadrants and creates a linked list to
+	 *  store the bounding box details for each
+	 *
+	 * @author Shay Leary
+	 * @version 00
+	 * @date April 2005, finsihed code
+	 */
 class PlainLinkedList
 {
 public:
@@ -45,7 +55,7 @@ public:
 				 const GLdouble tempZs, const GLdouble tempZe);
 
 	//----------------------------------------------------------------------------------
-	//  Get Methods
+	///  Get Methods
 	//----------------------------------------------------------------------------------
 	GLdouble GetType (int ptrCount);
 	GLdouble GetXstart (int ptrCount);
@@ -55,25 +65,25 @@ public:
 	GLdouble GetZstart (int ptrCount);
 	GLdouble GetZend (int ptrCount);
 
-	// Return size of list
+	/// Return size of list
 	int GetListSize ();
 	
-	// Return the address of the link to the next node in the list
+	/// Return the address of the link to the next node in the list
     PlainNode *GetNext () const {return m_first->GetNext();}
-	// Return the address of the link to the first node in the list
+	/// Return the address of the link to the first node in the list
 	PlainNode *GetFirst() const {return m_first;}
 
 
 //--------------------------------------------------------------------------------------
 
 private:
-	// pointer to first node in list
+	/// pointer to first node in list
 	PlainNode *m_first;
 
-	// used to clear memory
+	/// used to clear memory
 	void Delete (PlainNode *before);
 
-	// Privatised copy constructor and assignment operator
+	/// Privatised copy constructor and assignment operator
 	PlainLinkedList (const PlainLinkedList &array) {};
 	PlainLinkedList &operator = (const PlainLinkedList &array) {};
 };

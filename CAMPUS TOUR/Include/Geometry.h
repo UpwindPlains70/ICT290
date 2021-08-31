@@ -5,21 +5,35 @@
 #include <GL/freeglut.h>
 #include <GL/glut.h>
 
+/**
+ * @brief Allows for manipulation of read objects & various calculations
+ *
+ *
+ * @author Peter Neve
+ * @version 01
+ * @date 5/06/2021 Peter Neve, finished
+ *
+ * @author Peter Neve
+ * @version 02
+ * @date 25/08/2021 Peter Neve, Converted Object3D to accept .obj values
+ *
+ * @author Peter Neve
+ * @version 03
+ * @date 28/08/2021 Peter Neve, Refactor (seperate definition & implentation)
+ */
+/// stores a 2D point
 typedef GLfloat Point2D[2];
+/// stores face values from .obj file
 typedef GLint face3D[9];
+/// stores a 3D point
 typedef GLfloat Point3D[3];
 
+/// object face 
 typedef struct Face3D{
     int x,y,z;
 }Face3D;
 
-/*typedef struct Object3D{
-    int nverts, nfaces;
-    Point3D *norms;
-    Point3D *vertices;
-    Face3D *faces;
-}Object3D;*/
-
+/// object to store an objects vetices, faces, norms & texture coordinates
 typedef struct Object3D{
     int nverts, nfaces;
     Point3D *norms;

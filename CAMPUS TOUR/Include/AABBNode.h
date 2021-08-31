@@ -13,7 +13,17 @@
 #include <gl/glut.h>
 
 //--------------------------------------------------------------------------------------
-
+/**
+	 * @brief Stores details for each bounding box used for collsion detection.  Each node is stored
+	 *  in each link of the AABB Linked List
+	 *
+	 *
+	 * @author Shay Leary
+	 * @version 01
+	 * @date March 2005, Finished
+	 *
+	 *
+	 */
 class AABBNode
 {
 public:
@@ -25,7 +35,7 @@ public:
 	void  Clear   ();
 
 	//----------------------------------------------------------------------------------
-	//  Get Methods
+	///  Get Methods
 	//----------------------------------------------------------------------------------
 	GLdouble GetMaxX () {return m_BBox.max.x;}
 	GLdouble GetMinX () {return m_BBox.min.x;}
@@ -38,36 +48,36 @@ public:
     AABBNode *GetNext () const {return m_next;}
 
 	//----------------------------------------------------------------------------------
-	//  Set Methods
+	///  Set Methods
 	//----------------------------------------------------------------------------------
 	void SetData(const GLdouble maxX, const GLdouble minX,
 				 const GLdouble maxY, const GLdouble minY,
 				 const GLdouble maxZ, const GLdouble minZ);
 
-    // Set the address of the link to the next node in the list
+    /// Set the address of the link to the next node in the list
     void SetNext (AABBNode *next) {m_next = next;}
 
 private:
-    // The address of the next node in the list
+    /// The address of the next node in the list
     AABBNode *m_next;
 
-	// stores x,y,z co-ordinates
+	/// stores x,y,z co-ordinates
 	struct XYZ 
 	{ 
 		GLdouble x, y, z; 
 	}; 
-	// stores max and min values of co-ordinates
+	/// stores max and min values of co-ordinates
 	struct BoundingBox 
 	{ 
 		XYZ max; 
 		XYZ min; 
 	}; 
-	// stores above info
+	/// stores above info
 	BoundingBox m_BBox;
 
 	//----------------------------------------------------------------------------------
 
-    // Privatised copy constructor and assignment operator
+    /// Privatised copy constructor and assignment operator
     AABBNode (const AABBNode &newNode) {};
     AABBNode &operator = (const AABBNode &newNode) {};
 };

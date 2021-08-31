@@ -16,7 +16,17 @@
 #include "EasySound.h"
 
 //--------------------------------------------------------------------------------------
-
+/**
+	 * @brief Allows the camera to be navigated around the world. 
+	 *	Also sets Plains, Bounding Boxes and view Maps
+	 *
+	 *
+	 * @author Shay Leary
+	 * @version 01
+	 * @date March 2005, Finished
+	 *
+	 *
+	 */
 class Camera
 {
 public:
