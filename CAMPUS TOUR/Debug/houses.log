@@ -1,34 +1,4 @@
-﻿  AABB.CPP
-  AABBLinkedList.cpp
-  AABBNode.cpp
-  camera.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(19,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(20,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(21,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(210,21): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(210,14): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(221,20): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(221,13): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(252,21): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(252,14): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(262,20): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(262,13): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
-  cameraMap.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(29,18): warning C4244: 'argument': conversion from 'const int' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(36,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(36,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(37,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(37,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(38,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(38,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(39,49): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(39,28): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(67,53): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(67,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(99,53): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\cameraMap.cpp(99,29): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-  collision.cpp
-  CollisionHandler.cpp
+﻿  CollisionHandler.cpp
   DisplayHandler.cpp
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(67,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(93,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
@@ -334,9 +304,6 @@ C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DrawHandler.cpp(1435,27):
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\EasySound.cpp(81,15): warning C4018: '>': signed/unsigned mismatch
   Geometry.cpp
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\Geometry.cpp(131,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  main.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(71,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   MovementHandler.cpp
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(233,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(233,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
@@ -346,8 +313,6 @@ C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(249,3
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(249,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(254,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(254,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  PlainLinkedList.cpp
-  PlainNode.cpp
   ReadOBJfile.cpp
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\ReadOBJfile.cpp(23,21): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\ReadOBJfile.cpp(37,15): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -360,115 +325,20 @@ C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\ReadOBJfile.cpp(81,21): w
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\ReadOBJfile.cpp(95,15): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   Sound.cpp
   SoundTime.cpp
-  texturedPolygons.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(39,9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(135,30): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(135,21): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(135,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(136,20): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(137,35): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(137,21): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(137,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(138,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(138,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(139,57): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(139,43): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(139,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(140,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(141,51): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(141,43): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(141,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(160,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(161,29): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(161,21): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(161,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(162,22): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(162,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(163,51): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(163,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(163,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(164,22): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(164,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(165,73): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(165,50): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(165,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(166,15): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(167,51): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(167,43): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(167,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(186,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(187,29): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(187,21): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(187,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(188,20): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(189,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(189,21): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(189,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(190,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(190,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(191,57): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(191,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(191,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(192,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(192,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(193,51): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(193,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(193,13): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(210,22): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(211,31): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(211,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(211,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(213,38): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(213,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(213,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(214,17): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(215,45): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(215,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(215,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(216,27): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(216,17): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(217,39): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(217,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(217,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(232,31): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(232,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(232,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(233,17): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(234,39): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(234,31): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(234,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(235,27): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(235,17): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(236,47): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(236,38): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(236,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(237,22): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(238,39): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(238,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(238,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(353,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(353,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(354,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(354,19): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(354,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(355,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(355,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(356,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(356,19): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(356,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(357,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(357,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(358,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(358,19): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(358,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(359,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(359,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(360,23): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(360,19): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\texturedPolygons.cpp(360,15): warning C4244: 'argument': conversion from 'const GLdouble' to 'GLfloat', possible loss of data
+  camera.cpp
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(19,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(20,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(21,6): warning C4244: '=': conversion from 'GLdouble' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(210,21): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(210,14): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(221,20): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(221,13): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(252,21): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(252,14): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(262,20): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\camera.cpp(262,13): warning C4244: 'argument': conversion from 'GLdouble' to 'const int', possible loss of data
+  main.cpp
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(71,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(104,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Generating Code...
-  Compiling...
-  TextureHandler.cpp
-  Generating Code...
-AABB.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   houses.vcxproj -> C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\.\Debug\houses.exe

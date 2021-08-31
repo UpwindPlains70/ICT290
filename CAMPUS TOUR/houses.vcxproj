@@ -57,6 +57,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
+    <IncludePath>..\CAMPUS TOUR\Include;..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\include;..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\include</IncludePath>
+    <LibraryPath>..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\lib\v110\Win32\Release\dynamic;..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\lib\x64\dynamic;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -110,6 +112,7 @@
       <PrecompiledHeaderOutputFile>.\Release\houses.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
       <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
+      <AdditionalIncludeDirectories>..\CAMPUS TOUR\Dependencies\MSVC\include;..\CAMPUS TOUR\Dependencies\10.0.18362.0\cppwinrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\shared;..\CAMPUS TOUR\Dependencies\10.0.18362.0\um;..\CAMPUS TOUR\Dependencies\10.0.18362.0\ucrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl\wrappers;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Midl>
       <TypeLibraryName>.\Release\houses.tlb</TypeLibraryName>
