@@ -7,6 +7,7 @@
 #include "DisplayHandler.h"
 #include "DrawHandler.h"
 #include "MovementHandler.h"
+#include "LevelHandler.h"
 
 GLdouble stepIncrement;
 GLdouble angleIncrement;
