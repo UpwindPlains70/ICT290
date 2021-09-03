@@ -148,6 +148,7 @@
     <ClInclude Include="Include\DrawHandler.h" />
     <ClInclude Include="Include\EasySound.h" />
     <ClInclude Include="Include\Geometry.h" />
+    <ClInclude Include="Include\LevelHandler.h" />
     <ClInclude Include="Include\MovementHandler.h" />
     <ClInclude Include="Include\PlainLinkedList.h" />
     <ClInclude Include="Include\PlainNode.h" />
@@ -170,6 +171,7 @@
     <ClCompile Include="src\DrawHandler.cpp" />
     <ClCompile Include="src\EasySound.cpp" />
     <ClCompile Include="src\Geometry.cpp" />
+    <ClCompile Include="src\LevelHandler.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\MovementHandler.cpp" />
     <ClCompile Include="src\PlainLinkedList.cpp" />
