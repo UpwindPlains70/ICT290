@@ -515,14 +515,14 @@ void DrawPavement()
 //Made by Raymond Lua
 void DrawHallway() {
 	//XY
-	tp.CreateDisplayList(XY, 777, 10000, 143.0, 37550.0, 9936.0, 39000.0, 3.0, 7.0);
-	tp.CreateDisplayList(XY, 778, 10000, 143.0, 37550.0, 9936.0, 37500.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 777, 10000, 1000.0, 37550.0, 4000.0, 39000.0, 3.0, 7.0);
+	tp.CreateDisplayList(XY, 778, 10000, 1000.0, 37550.0, 4000.0, 37500.0, 3.0, 7.0);
 
 	//YZ
-	tp.CreateDisplayList(YZ, 779, 330, 215.0, 67550.0, 9936.0, 37500.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 779, 10000, 215.0, 67550.0, 4000.0, 37500.0, 3.0, 7.0);
 
 	//XZ
-	tp.CreateDisplayList(XZ, 780, 2500, 215.0 * 7 , 37610.0, 9936.0, 37500.0, 12.0, 1.0); // 3.0, 7.0 // 10000 215
+	tp.CreateDisplayList(XZ, 780, 500, 215.0 * 7 , 37610.0, 9936.0, 37500.0, 12.0, 1.0); // 3.0, 7.0 // 10000 215
 	tp.CreateDisplayList(XZ, 781, 10000 /4, 215.0 * 3.5, 37610.0, 10936.0, 37500.0, 12.0, 2.0); // 3.0 , 7.0
 
 }
