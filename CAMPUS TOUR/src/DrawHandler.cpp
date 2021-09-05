@@ -41,6 +41,7 @@ void CreateTextureList()
 	DrawRoomStairs();			// 678 - 714
 	DrawHallway();				// 777 - 781 
 	// 455-459
+	DrawHallwayStairs();
 }
 
 //--------------------------------------------------------------------------------------
@@ -519,12 +520,29 @@ void DrawHallway() {
 	tp.CreateDisplayList(XY, 778, 10000, 1000.0, 37550.0, 4000.0, 37500.0, 3.0, 7.0);
 
 	//YZ
-	tp.CreateDisplayList(YZ, 779, 10000, 215.0, 67550.0, 4000.0, 37500.0, 3.0, 7.0);
+	tp.CreateDisplayList(YZ, 779, 2500, 215.0, 67550.0, 4000.0, 37500.0, 3.0, 7.0);
 
 	//XZ
-	tp.CreateDisplayList(XZ, 780, 500, 215.0 * 7 , 37610.0, 9936.0, 37500.0, 12.0, 1.0); // 3.0, 7.0 // 10000 215
+	tp.CreateDisplayList(XZ, 780, 500, 1505 , 37610.0, 9936.0, 37500.0, 12.0, 1.0); // 3.0, 7.0 // 10000 215
 	tp.CreateDisplayList(XZ, 781, 10000 /4, 215.0 * 3.5, 37610.0, 10936.0, 37500.0, 12.0, 2.0); // 3.0 , 7.0
 
+}
+
+void DrawHallwayStairs() {
+	GLdouble xCord = 43500.0; // x coord   //31582.0  is original cord  // new value ( value of the second x coord for its corresponding plain  - 400) 
+	step = 9936.0; // effectively the y coordinate  // 10000.0 original // new value ( value of first y value + 225 ) 
+	stepLength = 37350.0; // z coordinate   // 9808.0 original     // new value ( value of second z value + 700 )
+	for (int i = 1000; i < 1320; i++)
+	{
+		tp.CreateDisplayList(XZ, i,512.0, 2050.0, xCord, step, stepLength,0.277, 1.0 * stairsWidth); // original xTimes was 2.2 // 1.0 // 0.277
+		//tp.CreateDisplayList(XY, i + 16, 64.0, 64.0, xCord, step - 64.0, stepLength, 16.0 * stairsWidth, 1.0); // original xTimes was 35.0
+		tp.CreateDisplayList(YZ, i + 320, 5.0, 1800.0, xCord + 142.0, step - 64.0, stepLength, 16.0 * stairsWidth, 1.0); // original xTimes was 35.0
+		//tp.CreateDisplayList(XZ, i, 1024.0, 512.0, xCord, step, stepLength, 1.0 * stairsWidth, 0.277);
+
+		step -= 48.0;
+		//stepLength -= 142.0;
+		xCord += 142.0;
+	}
 }
 
 //Made by Raymond Lau

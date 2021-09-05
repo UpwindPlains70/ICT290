@@ -77,4 +77,5 @@ void DrawECL();
 void DrawRoom();
 void DrawRoomStairs();
 void DrawHallway();
+void DrawHallwayStairs();
 #endif

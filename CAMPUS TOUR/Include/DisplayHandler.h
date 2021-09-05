@@ -65,4 +65,5 @@ void DisplayRoom();
 /// new stairs added by Jason Botterill
 void DisplayRoomStairs();
 void DisplayHallway();
+void DisplayHallwayStairs();
 #endif // !DISPLAYERHANDLER_H

@@ -36,6 +36,7 @@ void DrawBackdrop()
 	DisplayRoomStairs();
 	DisplayHallway();
 	DisplayDoors();
+	DisplayHallwayStairs();
 }
 
 //Made by Raymond Lua
@@ -53,6 +54,17 @@ void DisplayHallway() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
 	glCallList(781);	//roof
 }
+void DisplayHallwayStairs() {
+	glPushMatrix();
+		glTranslatef(100.0, 0.0, 0.0);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_PAVING_1));
+		for (int i = 1000; i < 1320; i++) glCallList(i);
+
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
+		for (int i = 1320; i < 1640; i++) glCallList(i);
+	glPopMatrix();
+}
+
 
 //--------------------------------------------------------------------------------------
 // Display the chancellery windoe and door posts
