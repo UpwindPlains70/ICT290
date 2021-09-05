@@ -76,6 +76,44 @@ void CreateBoundingBoxes()
 	cam.SetAABBMaxZ(23, 38987.0);
 	cam.SetAABBMinZ(23, 38732.0);
 
+	// 3 new collisions for the new room that has stairs going up (24, 25, 26)
+	cam.SetAABBMaxX(24, 37488.0);
+	cam.SetAABBMinX(24, 37388.0); //  Left wall 
+	cam.SetAABBMaxZ(24, 40848.0);
+	cam.SetAABBMinZ(24, 39025.0);
+
+	cam.SetAABBMaxX(25, 37488.0);
+	cam.SetAABBMinX(25, 36117.0); //  Centre wall 
+	cam.SetAABBMaxZ(25, 40948.0);
+	cam.SetAABBMinZ(25, 40848.0);
+
+	cam.SetAABBMaxX(26, 36117.0);
+	cam.SetAABBMinX(26, 36017.0); //  Right wall 
+	cam.SetAABBMaxZ(26, 40848.0);
+	cam.SetAABBMinZ(26, 39215.0);
+
+	// Collision for the exit door on the left side of the new room
+	cam.SetAABBMaxX(27, 37344.0);
+	cam.SetAABBMinX(27, 36357.0); // Left side exit
+	cam.SetAABBMaxZ(27, 35485.0);
+	cam.SetAABBMinZ(27, 35385.0);
+
+	// Collisions for the walls in the hallway room
+	cam.SetAABBMaxX(28, 67496.0);
+	cam.SetAABBMinX(28, 37814.0); // Left wall 
+	cam.SetAABBMaxZ(28, 37558.0);
+	cam.SetAABBMinZ(28, 37458.0);
+
+	cam.SetAABBMaxX(29, 67596.0);
+	cam.SetAABBMinX(29, 67496.0); // Centre wall 
+	cam.SetAABBMaxZ(29, 39017.0);
+	cam.SetAABBMinZ(29, 37434.0);
+
+	cam.SetAABBMaxX(30, 67496.0);
+	cam.SetAABBMinX(30, 37616.0); // Right wall 
+	cam.SetAABBMaxZ(30, 39117.0);
+	cam.SetAABBMinZ(30, 39017.0);
+
 	//END
 
 

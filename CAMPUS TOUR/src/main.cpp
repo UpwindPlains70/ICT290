@@ -84,7 +84,7 @@ void myinit()
 	// turn collision detection on
 	cam.SetCollisionDetectionOn(true);
 	// set number of bounding boxes required
-	cam.SetNoBoundingBoxes(24);  // originally started with 19 
+	cam.SetNoBoundingBoxes(32);  // originally started with 19 
 	// set starting position of user
 	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
 
