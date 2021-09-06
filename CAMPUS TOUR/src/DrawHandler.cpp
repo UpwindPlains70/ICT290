@@ -98,7 +98,7 @@ void CreatePlains()
 	cam.SetPlains(ZY_PLAIN, 36310.0, 37391.0, 10450.0, 11000.0, 38997.0, 40503.0);
 
 	//hallway stairs
-	cam.SetPlains(XY_PLAIN, 43200.0, 63500.0, 10450.0, 3200, 37350.0, 47350.0);
+	cam.SetPlains(XY_PLAIN, 43500.0, 63500.0, 9936.0, 3500, 37350.0, 47350.0);
 }
 
 
