@@ -60,7 +60,7 @@ void DisplayStepBricks();
 void DisplayLights();
 void DisplayECL();
 
-/// new room added by Raymond Lua
+/// new room added by Raymond Lau
 void DisplayRoom();
 /// new stairs added by Jason Botterill
 void DisplayRoomStairs();
