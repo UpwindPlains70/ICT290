@@ -65,29 +65,35 @@ void animate(int value)
 	//Back Left Door
 	if ((camX > 37600 && camX < 38700) && (camZ > 37300 && camZ < 38300))
 	{
-		backL.state = -1;
-		if (backL.orientation - backL.loOrientation > 1)
+		if (backL.state != 1)
 		{
+			backL.state = -1;
+			if (backL.orientation - backL.loOrientation > 1)
+			{
 				backL.moving = true;
-		}
-		else
-		{
-			backL.orientation = backL.loOrientation;
-			backL.moving = false;
+			}
+			else
+			{
+				backL.orientation = backL.loOrientation;
+				backL.moving = false;
+			}
 		}
 		
 	}
 	else if ((camX > 36500 && camX < 37600) && (camZ > 37300 && camZ < 38300))
 	{
-		backL.state = 1;
-		if (backL.roOrientation - backL.orientation > 1)
+		if (backL.state != -1)
 		{
-			backL.moving = true;
-		}
-		else
-		{
-			backL.orientation = backL.roOrientation;
-			backL.moving = false;
+			backL.state = 1;
+			if (backL.roOrientation - backL.orientation > 1)
+			{
+				backL.moving = true;
+			}
+			else
+			{
+				backL.orientation = backL.roOrientation;
+				backL.moving = false;
+			}
 		}
 	}
 	else

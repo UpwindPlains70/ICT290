@@ -1,1 +1,5 @@
-﻿  houses.vcxproj -> C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\Debug\houses.exe
+﻿  DoorHandler.cpp
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\DoorHandler.cpp(19,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\DoorHandler.cpp(212,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\DoorHandler.cpp(219,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  houses.vcxproj -> C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\Debug\houses.exe
