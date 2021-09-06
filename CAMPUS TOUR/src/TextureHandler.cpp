@@ -708,6 +708,8 @@ void CreateTextures()
 	tp.CreateTexture(HALLWAY_DOOR_1, image, 189, 282);
 	image = tp.LoadTexture("data/room/hallwayDoor2.raw", 175, 271);
 	tp.CreateTexture(HALLWAY_DOOR_2, image, 175, 271);
+	image = tp.LoadTexture("data/room/graffiti_1.raw", 659, 1000);
+	tp.CreateTexture(GRAFFITI_1, image, 659, 1000);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);

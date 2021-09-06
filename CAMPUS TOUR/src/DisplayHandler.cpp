@@ -948,6 +948,10 @@ void DisplayRoom() {
 	//Hallway door2
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(HALLWAY_DOOR_2));
 	glCallList(789);
+
+	//Graffiti 1
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(GRAFFITI_1));
+	glCallList(790);
 }
 
 void DisplayRoomStairs() { // Made by Jason
