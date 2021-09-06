@@ -1,4 +1,5 @@
 #include "DoorHandler.h"
+#include <iostream>
 
 //int dx = 0;
 float prevTime;
@@ -8,6 +9,7 @@ door1 front;
 door2 backL;
 door2 backR;
 
+using namespace std;
 
 //Made by Mark Burns
 void animate(int value)
@@ -61,23 +63,24 @@ void animate(int value)
 	}
 
 	//Back Left Door
-	if ((camX > 33200 && camX < 35600) && (camZ > 36300 && camZ < 37800))
+	if ((camX > 37600 && camX < 38700) && (camZ > 37300 && camZ < 38300))
 	{
-		backL.state = 1;
-		if ((backL.orientation < backL.loOrientation) && (backL.orientation >= backL.cOrientation))
+		backL.state = -1;
+		if (backL.orientation - backL.loOrientation > 1)
 		{
-			backL.moving = true;
+				backL.moving = true;
 		}
 		else
 		{
 			backL.orientation = backL.loOrientation;
 			backL.moving = false;
 		}
+		
 	}
-	else if ((camX > 33200 && camX < 35600) && (camZ > 36300 && camZ < 37800))
+	else if ((camX > 36500 && camX < 37600) && (camZ > 37300 && camZ < 38300))
 	{
 		backL.state = 1;
-		if ((backL.orientation > backL.roOrientation) && (backL.orientation = backL.cOrientation))
+		if (backL.roOrientation - backL.orientation > 1)
 		{
 			backL.moving = true;
 		}
@@ -90,20 +93,38 @@ void animate(int value)
 	else
 	{
 		backL.state = 0;
-		if (backL.orientation != backL.cOrientation)
+		if (backL.cOrientation + 1 > backL.orientation && backL.cOrientation - 1 < backL.orientation)
 		{
-			front.moving = true;
+			backL.orientation = backL.cOrientation;
+			backL.moving = false;
+		}
+		else
+		{
+			backL.moving = true;
 		}
 	}
+
+	//moving
 	if (backL.moving == true)
 	{
-		if ((backL.state == -1) || (backL.state == 0 && backL.orientation > backL.cOrientation))
+		if (backL.state == -1)
 		{
-			backL.loOrientation -= backL.speed * dT;
+			backL.orientation -= backL.speed * dT;
 		}
-		else if ((backL.state == 1) || (backL.state == 0 && backL.orientation < backL.cOrientation))
+		else if (backL.state == 1)
 		{
-			backL.roOrientation += backL.speed * dT;
+			backL.orientation += backL.speed * dT;
+		}
+		else if (backL.state == 0)
+		{
+			if (backL.orientation > backL.cOrientation)
+			{
+				backL.orientation -= backL.speed * dT;
+			}
+			else
+			{
+				backL.orientation += backL.speed * dT;
+			}
 		}
 	}
 
@@ -142,10 +163,10 @@ void CreateDoors()
 	backL.roOrientation = 90.0;
 	backL.state = 0;
 	backL.moving = false;
-	backL.speed = 10.0;
+	backL.speed = 20.0;
 	backL.pos.x = 37560.0f;
 	backL.pos.y = 10450.0f;
-	backL.pos.z = 38000.0f;
+	backL.pos.z = 37900.0f;
 	backL.scale.x = 50.0f;
 	backL.scale.y = 1500.0f;
 	backL.scale.z = 500.0f;
@@ -155,7 +176,7 @@ void CreateDoors()
 	backR.roOrientation = 270.0;
 	backR.state = 0;
 	backR.moving = false;
-	backR.speed = 10.0;
+	backR.speed = 20.0;
 	backR.pos.x = 37560.0f;
 	backR.pos.y = 10450.0f;
 	backR.pos.z = 38500.0f;
