@@ -45,7 +45,7 @@ void DisplayHallway() {
 	glCallList(777);	//right wall
 	glCallList(778);	//left wall
 
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(KURO));
 	glCallList(779);	//Back wall 
 	
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(HALLWAY_FLOOR_1)); // replacing SHADOW_BRICK to hallwayfloor
@@ -63,6 +63,10 @@ void DisplayHallwayStairs() {
 		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
 		for (int i = 1320; i < 1640; i++) glCallList(i);
 	glPopMatrix();
+
+	//abyss
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(KURO));
+	glCallList(1641);
 }
 
 

@@ -98,7 +98,7 @@ void CreatePlains()
 	cam.SetPlains(ZY_PLAIN, 36310.0, 37391.0, 10450.0, 11000.0, 38997.0, 40503.0);
 
 	//hallway stairs
-	cam.SetPlains(XY_PLAIN, 43500.0, 63500.0, 9936.0, 3500, 37350.0, 47350.0);
+	cam.SetPlains(XY_PLAIN, 43500.0, 63500.0, 10450.0, 3500, 37350.0, 47350.0);
 }
 
 
@@ -546,6 +546,14 @@ void DrawHallwayStairs() {
 		//stepLength -= 142.0;
 		xCord += 142.0;
 	}
+
+	//abyss
+	tp.CreateAngledPolygon(1641, 
+		500.0, 500.0, 
+		43500.0, 70000, 70000, 43500.0,
+		6500.0, 20000, 20000, 6500,
+		37350.0, 37350.0, 40000, 40000,
+		1, 1);
 }
 
 //Made by Raymond Lau
