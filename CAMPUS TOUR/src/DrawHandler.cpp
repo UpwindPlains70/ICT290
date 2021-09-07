@@ -100,7 +100,7 @@ void CreatePlains()
 	cam.SetPlains(ZY_PLAIN, 36310.0, 37391.0, 10450.0, 11000.0, 38997.0, 40503.0);
 
 	//hallway stairs
-	cam.SetPlains(XY_PLAIN, 43500.0, 63500.0, 9936.0, 3500, 37350.0, 47350.0);
+	cam.SetPlains(XY_PLAIN, 43500.0, 63500.0, 10450.0, 3500, 37350.0, 47350.0);
 }
 
 
@@ -548,6 +548,14 @@ void DrawHallwayStairs() {
 		//stepLength -= 142.0;
 		xCord += 142.0;
 	}
+
+	//abyss
+	tp.CreateAngledPolygon(1641, 
+		500.0, 500.0, 
+		43500.0, 70000, 70000, 43500.0,
+		6500.0, 20000, 20000, 6500,
+		37350.0, 37350.0, 40000, 40000,
+		1, 1);
 }
 
 //Made by Raymond Lau
@@ -571,7 +579,7 @@ void DrawRoom() {
 	tp.CreateDisplayList(XZ, 676, 770, 700 * 0.76, 35300.0, 10936.0, 35319.0, 3.0, 7.0); 
 	tp.CreateDisplayList(XZ, 677, 435, 500, 34000.0, 10936.0, 35319.0, 3.0, 7.0);
 
-	// Pin Boards in the entrance room (782 - 783)       ( 792) max // 209, 157
+	// Pin Boards in the entrance room (782 - 783)       ( 792) max // 209, 157 // Objects added by Jason
 	tp.CreateDisplayList(XY, 782, 409, 257, 35728.0, 10250.0, 38995.0, 1.0, 1.0); // pinboard 1
 	tp.CreateDisplayList(XY, 783, 409, 257, 35000.0, 10250.0, 36325.0, 1.0, 1.0); // pinboard 2
 	// Exit door leftside of room
@@ -586,6 +594,8 @@ void DrawRoom() {
 	tp.CreateDisplayList(XY, 788, 409 , 257 * 3 , 39300.0, 9936.0, 38990.0, 1.0, 1.0);
 	// Door2 in the hallway 
 	tp.CreateDisplayList(XY, 789, 409, 257 * 3, 41000.0, 9936.0, 37510.0, 1.0, 1.0);
+	// Graffiti Image 1
+	tp.CreateDisplayList(YZ, 790, 659, 1000, 37540.0, 9936.0, 36810.0, 1.0, 1.0);
 }
 
 void DrawRoomStairs() { // Made by Jason

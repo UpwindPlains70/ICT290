@@ -301,6 +301,8 @@ extern TexturedPolygons tp;
 
 #define STAIRS_TOP					231
 #define FLOOR_LEVEL_SIGN			232
+#define GRAFFITI_1					233
+#define KURO						234
 
 //texture list for decorations
 #define Chained_Tree				233
