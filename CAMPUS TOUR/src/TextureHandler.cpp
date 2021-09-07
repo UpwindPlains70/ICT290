@@ -708,6 +708,27 @@ void CreateTextures()
 	tp.CreateTexture(HALLWAY_DOOR_1, image, 189, 282);
 	image = tp.LoadTexture("data/room/hallwayDoor2.raw", 175, 271);
 	tp.CreateTexture(HALLWAY_DOOR_2, image, 175, 271);
+	image = tp.LoadTexture("data/room/graffiti_1.raw", 659, 1000);
+	tp.CreateTexture(GRAFFITI_1, image, 659, 1000);
+	image = tp.LoadTexture("data/kuro.raw", 1920, 1080);
+	tp.CreateTexture(KURO, image, 1920, 1080);
+
+	image = tp.LoadTexture("data/Object Textures/Decorations/Dead_Tree.raw", 1024, 1024);
+	tp.CreateTexture(Dead_Tree, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Red_Mushroom.raw", 1024, 1024);
+	tp.CreateTexture(Red_Mushroom, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Brown_Mushroom.raw", 1024, 1024);
+	tp.CreateTexture(Brown_Mushroom, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Bush.raw", 1024, 1024);
+	tp.CreateTexture(Bush, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Chained_tree.raw", 1024, 1024);
+	tp.CreateTexture(Chained_Tree, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Dying_Tree.raw", 1024, 1024);
+	tp.CreateTexture(Dying_Tree, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Tree.raw", 1024, 1024);
+	tp.CreateTexture(Tree, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Rock.raw", 1024, 1024);
+	tp.CreateTexture(Rock, image, 1024, 1024);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);

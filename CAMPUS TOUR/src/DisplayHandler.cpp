@@ -36,15 +36,135 @@ void DrawBackdrop()
 	DisplayRoomStairs();
 	DisplayHallway();
 	DisplayDoors();
+	DisplayHallwayStairs();
+
+	DisplayDecorations();
 }
 
+/*
+void TESTDisplayDecorations()
+{
+	glPushMatrix();
+		glTranslatef(30720.0, 10000.0, 37000.0);
+		glScalef(100, 100, 100); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Chained_Tree));
+		draw3DObject(chainTreeObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(26720.0, 10000.0, 30000.0);
+		glScalef(50, 50, 50);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Chained_Tree));
+		draw3DObject(chainTreeObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(29025.0, 10000.0, 35000.0);
+		glScalef(500, 500, 500);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Red_Mushroom));
+		draw3DObject(red_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(28020.0, 10000.0, 36540.0);
+		glScalef(200, 200, 200);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Red_Mushroom));
+		draw3DObject(red_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(30020.0, 10000.0, 19000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Red_Mushroom));
+		draw3DObject(red_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 14587);
+		glScalef(800, 800, 800);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Red_Mushroom));
+		draw3DObject(red_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(10020.0, 10000.0, 12456);
+		glScalef(500, 500, 500); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Brown_Mushroom));
+		draw3DObject(brown_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(13020.0, 10000.0, 26500.0);
+		glScalef(500, 500, 500); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Brown_Mushroom));
+		draw3DObject(brown_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(15020.0, 10000.0, 15000.0);
+		glScalef(500, 500, 500); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Brown_Mushroom));
+		draw3DObject(brown_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(25020.0, 10000.0, 12000.0);
+		glScalef(500, 500, 500); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Brown_Mushroom));
+		draw3DObject(brown_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(33020.0, 10000.0, 20000.0);
+		glScalef(500, 500, 500); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Brown_Mushroom));
+		draw3DObject(brown_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 36000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Tree));
+		draw3DObject(treeObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 36000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Bush));
+		draw3DObject(bushObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 36000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Rock));
+		draw3DObject(rockObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 36000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Dying_Tree));
+		draw3DObject(treeObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 36000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Dead_Tree));
+		draw3DObject(deadTreeObj);
+	glPopMatrix();
+
+}
+*/
 //Made by Raymond Lua
 void DisplayHallway() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
 	glCallList(777);	//right wall
 	glCallList(778);	//left wall
 
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(KURO));
 	glCallList(779);	//Back wall 
 	
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(HALLWAY_FLOOR_1)); // replacing SHADOW_BRICK to hallwayfloor
@@ -53,6 +173,21 @@ void DisplayHallway() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
 	glCallList(781);	//roof
 }
+void DisplayHallwayStairs() {
+	glPushMatrix();
+		glTranslatef(100.0, 0.0, 0.0);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STEP_PAVING_1));
+		for (int i = 1000; i < 1320; i++) glCallList(i);
+
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
+		for (int i = 1320; i < 1640; i++) glCallList(i);
+	glPopMatrix();
+
+	//abyss
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(KURO));
+	glCallList(1641);
+}
+
 
 //--------------------------------------------------------------------------------------
 // Display the chancellery windoe and door posts
@@ -936,6 +1071,10 @@ void DisplayRoom() {
 	//Hallway door2
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(HALLWAY_DOOR_2));
 	glCallList(789);
+
+	//Graffiti 1
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(GRAFFITI_1));
+	glCallList(790);
 }
 
 void DisplayRoomStairs() { // Made by Jason
