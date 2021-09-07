@@ -143,6 +143,7 @@
     <ClInclude Include="Include\cameraMap.h" />
     <ClInclude Include="Include\collision.h" />
     <ClInclude Include="Include\CollisionHandler.h" />
+    <ClInclude Include="Include\Decorations.h" />
     <ClInclude Include="Include\DisplayHandler.h" />
     <ClInclude Include="Include\DoorHandler.h" />
     <ClInclude Include="Include\DrawHandler.h" />
@@ -166,6 +167,7 @@
     <ClCompile Include="src\cameraMap.cpp" />
     <ClCompile Include="src\collision.cpp" />
     <ClCompile Include="src\CollisionHandler.cpp" />
+    <ClCompile Include="src\Decorations.cpp" />
     <ClCompile Include="src\DisplayHandler.cpp" />
     <ClCompile Include="src\DoorHandler.cpp" />
     <ClCompile Include="src\DrawHandler.cpp" />

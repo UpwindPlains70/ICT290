@@ -709,6 +709,23 @@ void CreateTextures()
 	image = tp.LoadTexture("data/room/hallwayDoor2.raw", 175, 271);
 	tp.CreateTexture(HALLWAY_DOOR_2, image, 175, 271);
 
+	image = tp.LoadTexture("data/Object Textures/Decorations/Dead_Tree.raw", 1024, 1024);
+	tp.CreateTexture(Dead_Tree, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Red_Mushroom.raw", 1024, 1024);
+	tp.CreateTexture(Red_Mushroom, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Brown_Mushroom.raw", 1024, 1024);
+	tp.CreateTexture(Brown_Mushroom, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Bush.raw", 1024, 1024);
+	tp.CreateTexture(Bush, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Chained_tree.raw", 1024, 1024);
+	tp.CreateTexture(Chained_Tree, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Dying_Tree.raw", 1024, 1024);
+	tp.CreateTexture(Dying_Tree, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Tree.raw", 1024, 1024);
+	tp.CreateTexture(Tree, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Decorations/Rock.raw", 1024, 1024);
+	tp.CreateTexture(Rock, image, 1024, 1024);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }

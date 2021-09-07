@@ -42,6 +42,8 @@ void CreateTextureList()
 	DrawHallway();				// 777 - 781 
 	// 455-459
 	DrawHallwayStairs();
+
+	DrawDecorations();
 }
 
 //--------------------------------------------------------------------------------------

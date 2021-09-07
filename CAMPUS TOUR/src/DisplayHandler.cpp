@@ -37,8 +37,127 @@ void DrawBackdrop()
 	DisplayHallway();
 	DisplayDoors();
 	DisplayHallwayStairs();
+
+	DisplayDecorations();
 }
 
+/*
+void TESTDisplayDecorations()
+{
+	glPushMatrix();
+		glTranslatef(30720.0, 10000.0, 37000.0);
+		glScalef(100, 100, 100); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Chained_Tree));
+		draw3DObject(chainTreeObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(26720.0, 10000.0, 30000.0);
+		glScalef(50, 50, 50);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Chained_Tree));
+		draw3DObject(chainTreeObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(29025.0, 10000.0, 35000.0);
+		glScalef(500, 500, 500);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Red_Mushroom));
+		draw3DObject(red_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(28020.0, 10000.0, 36540.0);
+		glScalef(200, 200, 200);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Red_Mushroom));
+		draw3DObject(red_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(30020.0, 10000.0, 19000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Red_Mushroom));
+		draw3DObject(red_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 14587);
+		glScalef(800, 800, 800);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Red_Mushroom));
+		draw3DObject(red_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(10020.0, 10000.0, 12456);
+		glScalef(500, 500, 500); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Brown_Mushroom));
+		draw3DObject(brown_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(13020.0, 10000.0, 26500.0);
+		glScalef(500, 500, 500); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Brown_Mushroom));
+		draw3DObject(brown_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(15020.0, 10000.0, 15000.0);
+		glScalef(500, 500, 500); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Brown_Mushroom));
+		draw3DObject(brown_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(25020.0, 10000.0, 12000.0);
+		glScalef(500, 500, 500); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Brown_Mushroom));
+		draw3DObject(brown_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(33020.0, 10000.0, 20000.0);
+		glScalef(500, 500, 500); 
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Brown_Mushroom));
+		draw3DObject(brown_ShroomObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 36000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Tree));
+		draw3DObject(treeObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 36000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Bush));
+		draw3DObject(bushObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 36000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Rock));
+		draw3DObject(rockObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 36000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Dying_Tree));
+		draw3DObject(treeObj);
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(32020.0, 10000.0, 36000.0);
+		glScalef(100, 100, 100);
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Dead_Tree));
+		draw3DObject(deadTreeObj);
+	glPopMatrix();
+
+}
+*/
 //Made by Raymond Lua
 void DisplayHallway() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));

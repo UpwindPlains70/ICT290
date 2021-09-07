@@ -13,6 +13,9 @@ Camera cam;
 //--------------------------------------------------------------------------------------
 void CreateBoundingBoxes()
 {
+	//generates the positions for all decoration objects
+	genDecorationsPositions();
+
 	// chanc block
 	cam.SetAABBMaxX(0, 35879.0);
 	cam.SetAABBMinX(0, 33808.0);
@@ -43,7 +46,7 @@ void CreateBoundingBoxes()
 	cam.SetAABBMaxZ(4, 36319.0);
 	cam.SetAABBMinZ(4, 27559.0);
 
-	//START    // box collision for front wall you see when you walk in the new room ( Made by Jason to add more collisions to the new room )
+//START    // box collision for front wall you see when you walk in the new room ( Made by Jason to add more collisions to the new room )
 	cam.SetAABBMaxX(5, 37750.0);  // old value 5, 40000.0
 	cam.SetAABBMinX(5, 37500.0);   // 5, 36050.0
 	cam.SetAABBMaxZ(5, 37855.0);  // 5, 37855.0
@@ -114,7 +117,7 @@ void CreateBoundingBoxes()
 	cam.SetAABBMaxZ(30, 39117.0);
 	cam.SetAABBMinZ(30, 39017.0);
 
-	//END
+//END
 
 
 	// phy sci block 3rd panel
@@ -182,4 +185,20 @@ void CreateBoundingBoxes()
 	cam.SetAABBMinX(16, 31444.0);
 	cam.SetAABBMaxZ(16, 10395.0);
 	cam.SetAABBMinZ(16, 4590.0);
+
+	CreateDecorationBoundingBoxes();
+}
+
+void CreateDecorationBoundingBoxes()
+{
+	int x = 31;
+	for (int i = 0; i < randXList.size(); ++i)
+	{
+		cam.SetAABBMaxX(x, (randXList.at(i) + randScaleList.at(i)));
+		cam.SetAABBMinX(x, (randXList.at(i) - randScaleList.at(i)));
+		cam.SetAABBMaxZ(x, (randZList.at(i) + randScaleList.at(i)));
+		cam.SetAABBMinZ(x, (randZList.at(i) - randScaleList.at(i)));
+
+		++x;
+	}
 }
