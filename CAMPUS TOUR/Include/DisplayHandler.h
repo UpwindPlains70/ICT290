@@ -2,6 +2,8 @@
 #define DISPLAYHANDLER_H
 
 #include "DoorHandler.h"
+#include "Decorations.h"
+#include "LevelHandler.h"
 
 /**
 	 * @brief Handles all display function calls & definitions
@@ -30,6 +32,10 @@
 	 * @author Mark Burns
 	 * @version 06
 	 * @date 29/08/2021, Added doors to new room
+	 * 
+	 * @author Peter Neve
+	 * @version 07
+	 * @date 6/09/2021, Added Decorations.h for displaying decoration objects
 	 */
 
 /// display light fittings
@@ -65,4 +71,7 @@ void DisplayRoom();
 /// new stairs added by Jason Botterill
 void DisplayRoomStairs();
 void DisplayHallway();
+void DisplayHallwayStairs();
+
+
 #endif // !DISPLAYERHANDLER_H

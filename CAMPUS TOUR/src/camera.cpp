@@ -14,7 +14,7 @@
 
 using namespace std;
 
-void Camera::getPosition(int &x, int &y, int &z)
+void Camera::getPosition(GLdouble &x, GLdouble&y, GLdouble&z)
 {
 	x = m_x;
 	y = m_y;
