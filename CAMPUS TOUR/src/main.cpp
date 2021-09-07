@@ -7,6 +7,7 @@
 #include "DisplayHandler.h"
 #include "DrawHandler.h"
 #include "MovementHandler.h"
+#include "LevelHandler.h"
 
 GLdouble stepIncrement;
 GLdouble angleIncrement;
@@ -110,6 +111,10 @@ void myinit()
 
 	//Doors
 	CreateDoors();
+
+	//Maps
+	CreateMaps();
+
 	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
 }
 
