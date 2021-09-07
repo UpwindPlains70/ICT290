@@ -2,7 +2,18 @@
 #define LELVELHANDLER_H
 #pragma once
 #include "CollisionHandler.h"
-
+/**
+	 * @brief defines all functions relating to levels
+	 *
+	 * @author Peter Neve
+	 * @version 01
+	 * @date 7/09/2021, level change
+	 * 
+	 * @author Mark Burns
+	 * @version 02
+	 * @date 7/09/2021, level maps
+	 *
+	 */
 extern enum levelStage;
 extern levelStage lvlStage;
 

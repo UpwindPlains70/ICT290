@@ -88,8 +88,9 @@ void myinit()
 
 	// set the world co-ordinates (used to set quadrants for bounding boxes)
 	cam.SetWorldCoordinates(36000.0, 43200.0);
-	// turn collision detection on
-	cam.SetCollisionDetectionOn(true);
+	// turn collision detection on (level zero)
+	//if (lvlStage == 0)
+		cam.SetCollisionDetectionOn(true);
 	// set number of bounding boxes required
 	cam.SetNoBoundingBoxes(82);  // originally started with 19 
 	// set starting position of user

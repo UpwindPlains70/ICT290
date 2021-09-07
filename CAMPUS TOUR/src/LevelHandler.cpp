@@ -2,7 +2,8 @@
 
 enum levelStage { zero, one, two, three };
 levelStage lvlStage = zero;
-Point4 camPos = { 0.0, 8000.0, 0.0, 90.0 };
+//Point4 camPos = { 0.0, 8000.0, 0.0, 90.0 };
+Point4 camPos = { 32720.0, 8000.0, 37000.0, 90.0 };
 
 GLdouble currXPos;
 GLdouble currYPos;
