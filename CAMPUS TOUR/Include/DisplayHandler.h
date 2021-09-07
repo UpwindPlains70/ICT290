@@ -3,6 +3,7 @@
 
 #include "DoorHandler.h"
 #include "Decorations.h"
+#include "LevelHandler.h"
 
 /**
 	 * @brief Handles all display function calls & definitions

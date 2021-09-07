@@ -11,34 +11,40 @@ bool lightsOn;
 //--------------------------------------------------------------------------------------
 void DrawBackdrop()
 {
-	DisplayAboveWindowBlock();
-	DisplayBench();
-	DisplayBricks();
-	DisplayChancPosts();
-	DisplayCylinders();
-	DisplayDoorPaving();
-	DisplayDoorPosts();
-	DisplayEntranceSteps();
-	DisplayExtras();
-	DisplayGrass();
-	DisplayLargerTextures();
-	DisplayLibraryPosts();
-	DisplayMainPosts();
-	DisplayPavement();
-	DisplayPhysSciPosts();
-	DisplayPurplePosts();
-	DisplayRedPosts();
-	DisplayRoof();
-	DisplayStepBricks();
-	if (lightsOn) DisplayLights();
-	
-	DisplayRoom();
-	DisplayRoomStairs();
-	DisplayHallway();
-	DisplayDoors();
-	DisplayHallwayStairs();
+	if (!levelZeroClear() && lvlStage == 0) {
+		DisplayAboveWindowBlock();
+		DisplayBench();
+		DisplayBricks();
+		DisplayChancPosts();
+		DisplayCylinders();
+		DisplayDoorPaving();
+		DisplayDoorPosts();
+		DisplayEntranceSteps();
+		DisplayExtras();
+		DisplayGrass();
+		DisplayLargerTextures();
+		DisplayLibraryPosts();
+		DisplayMainPosts();
+		DisplayPavement();
+		DisplayPhysSciPosts();
+		DisplayPurplePosts();
+		DisplayRedPosts();
+		DisplayRoof();
+		DisplayStepBricks();
+		if (lightsOn) DisplayLights();
 
-	DisplayDecorations();
+		DisplayRoom();
+		DisplayRoomStairs();
+		DisplayHallway();
+		DisplayDoors();
+		DisplayHallwayStairs();
+
+		DisplayDecorations();
+	}
+	else
+	{
+		printf("displaying lvl 1\n");
+	}
 }
 
 /*

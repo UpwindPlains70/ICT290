@@ -134,9 +134,9 @@ void keys(unsigned char key, int x, int y)
 //--------------------------------------------------------------------------------------
 void movementKeys(int key, int x, int y)
 {
-	int m_x = 0;
-	int m_y = 0;
-	int m_z = 0;
+	GLdouble m_x = 0;
+	GLdouble m_y = 0;
+	GLdouble m_z = 0;
 	cam.getPosition(m_x, m_y, m_z);
 	cout << "Position: " << m_x << " " << m_y << " " << m_z << endl;
 	switch (key)

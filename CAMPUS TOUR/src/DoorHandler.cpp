@@ -18,9 +18,9 @@ void animate(int value)
 	prevTime = currTime;
 	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
 	float dT = currTime - prevTime;
-	int camX;
-	int camY;
-	int camZ;
+	GLdouble camX;
+	GLdouble camY;
+	GLdouble camZ;
 	cam.getPosition(camX, camY, camZ);
 
 	//Front Door

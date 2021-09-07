@@ -27,6 +27,7 @@ typedef GLfloat Point2D[2];
 typedef GLint face3D[9];
 /// stores a 3D point
 typedef GLfloat Point3D[3];
+typedef GLdouble Point4[4];
 
 /// object face 
 typedef struct Face3D{

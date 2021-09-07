@@ -32,7 +32,7 @@ class Camera
 public:
 
 	// Get Position
-	void getPosition(int&, int&, int&);
+	void getPosition(GLdouble&, GLdouble&, GLdouble&);
 
 	Camera();
 	virtual ~Camera() {es->Unload(stepSound);}
