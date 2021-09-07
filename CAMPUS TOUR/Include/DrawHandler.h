@@ -37,10 +37,6 @@
 	 * @author Mark Burns
 	 * @version 06
 	 * @date 29/08/2021, Added doors to new room
-	 * 
-	 * @author Peter Neve
-	 * @version 07
-	 * @date 6/09/2021, added decoration drawing DrawDecorations() from Decorations.h
 	 */
 
 /// calls functions to create display lists (below)
@@ -81,5 +77,4 @@ void DrawECL();
 void DrawRoom();
 void DrawRoomStairs();
 void DrawHallway();
-void DrawHallwayStairs();
 #endif

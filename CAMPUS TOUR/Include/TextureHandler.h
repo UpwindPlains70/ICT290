@@ -301,18 +301,6 @@ extern TexturedPolygons tp;
 
 #define STAIRS_TOP					231
 #define FLOOR_LEVEL_SIGN			232
-#define GRAFFITI_1					233
-#define KURO						234
-
-//texture list for decorations
-#define Chained_Tree				233
-#define Tree						234
-#define Dying_Tree					235
-#define Bush						236
-#define Dead_Tree					237
-#define Red_Mushroom				238
-#define Rock						239
-#define Brown_Mushroom				240
 
 		/**
 		 * @brief  Load/Save texture images

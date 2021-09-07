@@ -13,9 +13,6 @@ Camera cam;
 //--------------------------------------------------------------------------------------
 void CreateBoundingBoxes()
 {
-	//generates the positions for all decoration objects
-	genDecorationsPositions();
-
 	// chanc block
 	cam.SetAABBMaxX(0, 35879.0);
 	cam.SetAABBMinX(0, 33808.0);
@@ -46,7 +43,7 @@ void CreateBoundingBoxes()
 	cam.SetAABBMaxZ(4, 36319.0);
 	cam.SetAABBMinZ(4, 27559.0);
 
-//START    // box collision for front wall you see when you walk in the new room ( Made by Jason to add more collisions to the new room )
+	//START    // box collision for front wall you see when you walk in the new room ( Made by Jason to add more collisions to the new room )
 	cam.SetAABBMaxX(5, 37750.0);  // old value 5, 40000.0
 	cam.SetAABBMinX(5, 37500.0);   // 5, 36050.0
 	cam.SetAABBMaxZ(5, 37855.0);  // 5, 37855.0
@@ -79,45 +76,7 @@ void CreateBoundingBoxes()
 	cam.SetAABBMaxZ(23, 38987.0);
 	cam.SetAABBMinZ(23, 38732.0);
 
-	// 3 new collisions for the new room that has stairs going up (24, 25, 26)
-	cam.SetAABBMaxX(24, 37488.0);
-	cam.SetAABBMinX(24, 37388.0); //  Left wall 
-	cam.SetAABBMaxZ(24, 40848.0);
-	cam.SetAABBMinZ(24, 39025.0);
-
-	cam.SetAABBMaxX(25, 37488.0);
-	cam.SetAABBMinX(25, 36117.0); //  Centre wall 
-	cam.SetAABBMaxZ(25, 40948.0);
-	cam.SetAABBMinZ(25, 40848.0);
-
-	cam.SetAABBMaxX(26, 36117.0);
-	cam.SetAABBMinX(26, 36017.0); //  Right wall 
-	cam.SetAABBMaxZ(26, 40848.0);
-	cam.SetAABBMinZ(26, 39215.0);
-
-	// Collision for the exit door on the left side of the new room
-	cam.SetAABBMaxX(27, 37344.0);
-	cam.SetAABBMinX(27, 36357.0); // Left side exit
-	cam.SetAABBMaxZ(27, 35485.0);
-	cam.SetAABBMinZ(27, 35385.0);
-
-	// Collisions for the walls in the hallway room
-	cam.SetAABBMaxX(28, 67496.0);
-	cam.SetAABBMinX(28, 37814.0); // Left wall 
-	cam.SetAABBMaxZ(28, 37558.0);
-	cam.SetAABBMinZ(28, 37458.0);
-
-	cam.SetAABBMaxX(29, 67596.0);
-	cam.SetAABBMinX(29, 67496.0); // Centre wall 
-	cam.SetAABBMaxZ(29, 39017.0);
-	cam.SetAABBMinZ(29, 37434.0);
-
-	cam.SetAABBMaxX(30, 67496.0);
-	cam.SetAABBMinX(30, 37616.0); // Right wall 
-	cam.SetAABBMaxZ(30, 39117.0);
-	cam.SetAABBMinZ(30, 39017.0);
-
-//END
+	//END
 
 
 	// phy sci block 3rd panel
@@ -185,20 +144,4 @@ void CreateBoundingBoxes()
 	cam.SetAABBMinX(16, 31444.0);
 	cam.SetAABBMaxZ(16, 10395.0);
 	cam.SetAABBMinZ(16, 4590.0);
-
-	CreateDecorationBoundingBoxes();
-}
-
-void CreateDecorationBoundingBoxes()
-{
-	int x = 31;
-	for (int i = 0; i < randXList.size(); ++i)
-	{
-		cam.SetAABBMaxX(x, (randXList.at(i) + randScaleList.at(i)));
-		cam.SetAABBMinX(x, (randXList.at(i) - randScaleList.at(i)));
-		cam.SetAABBMaxZ(x, (randZList.at(i) + randScaleList.at(i)));
-		cam.SetAABBMinZ(x, (randZList.at(i) - randScaleList.at(i)));
-
-		++x;
-	}
 }

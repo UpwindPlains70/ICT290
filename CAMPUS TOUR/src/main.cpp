@@ -63,7 +63,6 @@ int main(int argc, char **argv)
 	return(0);
 }
 
-GLfloat light_position[] = { 32720.0, 10500.0, 37000.0 , 1};
 //--------------------------------------------------------------------------------------
 //  Initialize Settings
 //--------------------------------------------------------------------------------------
@@ -81,17 +80,12 @@ void myinit()
 	glu_cylinder = gluNewQuadric();
     gluQuadricTexture(glu_cylinder, GL_TRUE );
 
-	//Enable lighting
-	glEnable(GL_LIGHTING); 
-	glEnable(GL_LIGHT0);
-	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
-
 	// set the world co-ordinates (used to set quadrants for bounding boxes)
 	cam.SetWorldCoordinates(36000.0, 43200.0);
 	// turn collision detection on
 	cam.SetCollisionDetectionOn(true);
 	// set number of bounding boxes required
-	cam.SetNoBoundingBoxes(82);  // originally started with 19 
+	cam.SetNoBoundingBoxes(24);  // originally started with 19 
 	// set starting position of user
 	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
 
@@ -99,7 +93,6 @@ void myinit()
 
 	// creates bounding boxes and places in array
 	CreateBoundingBoxes();
-
 	// copies bounding boxes from array to linked lists (one fopr each quadrant)
 	cam.InitiateBoundingBoxes();
 
@@ -107,8 +100,6 @@ void myinit()
 	CreateTextureList();
 	CreateTextures();
 	
-	//CreateDecorationBoundingBoxes();
-
 	//Doors
 	CreateDoors();
 	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
@@ -125,11 +116,7 @@ void Display()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	if (closing) exit(0);
-	///Enable object shading from light
-	glEnable(GL_COLOR_MATERIAL);
-	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 
-	glEnable(GL_NORMALIZE);
 	// DISPLAY TEXTURES
 	//enable texture mapping
 	glEnable (GL_TEXTURE_2D);
@@ -157,9 +144,8 @@ void Display()
 	glPopMatrix();
 	glDisable (GL_TEXTURE_2D);
 
-	glDisable(GL_COLOR_MATERIAL);
 	// clear buffers
-	//glFlush();
+	glFlush();
 	glutSwapBuffers();
 }
 
