@@ -43,7 +43,7 @@ void DrawBackdrop()
 	}
 	else
 	{
-		printf("displaying lvl 1\n");
+		levelOneDraw();
 	}
 }
 
