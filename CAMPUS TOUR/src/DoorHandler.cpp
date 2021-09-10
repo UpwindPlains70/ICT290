@@ -1,4 +1,5 @@
 #include "DoorHandler.h"
+#include <iostream>
 
 //int dx = 0;
 float prevTime;
@@ -8,6 +9,7 @@ door1 front;
 door2 backL;
 door2 backR;
 
+using namespace std;
 
 //Made by Mark Burns
 void animate(int value)
@@ -61,49 +63,144 @@ void animate(int value)
 	}
 
 	//Back Left Door
-	if ((camX > 33200 && camX < 35600) && (camZ > 36300 && camZ < 37800))
+	if ((camX > 37600 && camX < 38700) && (camZ > 37600 && camZ < 38400))
 	{
-		backL.state = 1;
-		if ((backL.orientation < backL.loOrientation) && (backL.orientation >= backL.cOrientation))
+		if (backL.state != 1)
 		{
-			backL.moving = true;
+			backL.state = -1;
+			if (backL.orientation - backL.loOrientation > 1)
+			{
+				backL.moving = true;
+			}
+			else
+			{
+				backL.orientation = backL.loOrientation;
+				backL.moving = false;
+			}
 		}
-		else
-		{
-			backL.orientation = backL.loOrientation;
-			backL.moving = false;
-		}
+		
 	}
-	else if ((camX > 33200 && camX < 35600) && (camZ > 36300 && camZ < 37800))
+	else if ((camX > 36500 && camX < 37600) && (camZ > 37600 && camZ < 38400))
 	{
-		backL.state = 1;
-		if ((backL.orientation > backL.roOrientation) && (backL.orientation = backL.cOrientation))
+		if (backL.state != -1)
 		{
-			backL.moving = true;
-		}
-		else
-		{
-			backL.orientation = backL.roOrientation;
-			backL.moving = false;
+			backL.state = 1;
+			if (backL.roOrientation - backL.orientation > 1)
+			{
+				backL.moving = true;
+			}
+			else
+			{
+				backL.orientation = backL.roOrientation;
+				backL.moving = false;
+			}
 		}
 	}
 	else
 	{
 		backL.state = 0;
-		if (backL.orientation != backL.cOrientation)
+		if (backL.cOrientation + 1 > backL.orientation && backL.cOrientation - 1 < backL.orientation)
 		{
-			front.moving = true;
+			backL.orientation = backL.cOrientation;
+			backL.moving = false;
+		}
+		else
+		{
+			backL.moving = true;
 		}
 	}
+
+	//Back Right Door
+	if ((camX > 36500 && camX < 37600) && (camZ > 38200 && camZ < 38800))
+	{
+		if (backR.state != 1)
+		{
+			backR.state = -1;
+			if (backR.orientation - backR.loOrientation > 1)
+			{
+				backR.moving = true;
+			}
+			else
+			{
+				backR.orientation = backR.loOrientation;
+				backR.moving = false;
+			}
+		}
+
+	}
+	else if ((camX > 37600 && camX < 38700) && (camZ > 38200 && camZ < 38800))
+	{
+		if (backR.state != -1)
+		{
+			backR.state = 1;
+			if (backR.roOrientation - backR.orientation > 1)
+			{
+				backR.moving = true;
+			}
+			else
+			{
+				backR.orientation = backR.roOrientation;
+				backR.moving = false;
+			}
+		}
+	}
+	else
+	{
+		backR.state = 0;
+		if (backR.cOrientation + 1 > backR.orientation && backR.cOrientation - 1 < backR.orientation)
+		{
+			backR.orientation = backR.cOrientation;
+			backR.moving = false;
+		}
+		else
+		{
+			backR.moving = true;
+		}
+	}
+
+	//moving
 	if (backL.moving == true)
 	{
-		if ((backL.state == -1) || (backL.state == 0 && backL.orientation > backL.cOrientation))
+		if (backL.state == -1)
 		{
-			backL.loOrientation -= backL.speed * dT;
+			backL.orientation -= backL.speed * dT;
 		}
-		else if ((backL.state == 1) || (backL.state == 0 && backL.orientation < backL.cOrientation))
+		else if (backL.state == 1)
 		{
-			backL.roOrientation += backL.speed * dT;
+			backL.orientation += backL.speed * dT;
+		}
+		else if (backL.state == 0)
+		{
+			if (backL.orientation > backL.cOrientation)
+			{
+				backL.orientation -= backL.speed * dT;
+			}
+			else
+			{
+				backL.orientation += backL.speed * dT;
+			}
+		}
+	}
+	if (backR.moving == true)
+	{
+		if (backR.state == -1)
+		{
+			backR.orientation -= backR.speed * dT;
+		}
+		else if (backR.state == 1)
+		{
+			backR.orientation += backR.speed * dT;
+		}
+		else if (backR.state == 0)
+		{
+			if (backR.orientation > backR.cOrientation)
+			{
+				backR.orientation -= backR.speed * dT;
+			}
+			else
+			{
+				backR.orientation += backR.speed * dT;
+			}
 		}
 	}
 
@@ -142,26 +239,26 @@ void CreateDoors()
 	backL.roOrientation = 90.0;
 	backL.state = 0;
 	backL.moving = false;
-	backL.speed = 10.0;
+	backL.speed = 20.0;
 	backL.pos.x = 37560.0f;
 	backL.pos.y = 10450.0f;
-	backL.pos.z = 38000.0f;
+	backL.pos.z = 37900.0f;
 	backL.scale.x = 50.0f;
 	backL.scale.y = 1500.0f;
-	backL.scale.z = 500.0f;
-	backR.orientation = 180.0;
-	backR.loOrientation = 90.0;
-	backR.cOrientation = 180.0;
-	backR.roOrientation = 270.0;
+	backL.scale.z = 420.0f;
+	backR.orientation = 0.0;
+	backR.loOrientation = -90.0;
+	backR.cOrientation = 0.0;
+	backR.roOrientation = 90.0;
 	backR.state = 0;
 	backR.moving = false;
-	backR.speed = 10.0;
+	backR.speed = 20.0;
 	backR.pos.x = 37560.0f;
 	backR.pos.y = 10450.0f;
-	backR.pos.z = 38500.0f;
+	backR.pos.z = 38740.0f;
 	backR.scale.x = 50.0f;
 	backR.scale.y = 1500.0f;
-	backR.scale.z = 500.0f;
+	backR.scale.z = 420.0f;
 }
 
 //--------------------------------------------------------------------------------------
@@ -182,14 +279,14 @@ void DisplayDoors()
 	glPushMatrix();
 	glTranslatef(backL.pos.x, backL.pos.y, backL.pos.z);
 	glRotatef(backL.orientation, 0.0f, 1.0f, 0.0f);
-	glTranslatef(0.0f, 0.0f, backL.scale.z / 2.0);
+	glTranslatef(0.0f, 0.0f, backL.scale.z * 0.5f);
 	glScalef(backL.scale.x, backL.scale.y, backL.scale.z);
 	glutSolidCube(1.0f);
 	glPopMatrix();
 	glPushMatrix();
 	glTranslatef(backR.pos.x, backR.pos.y, backR.pos.z);
 	glRotatef(backR.orientation, 0.0f, 1.0f, 0.0f);
-	glTranslatef(0.0f, 0.0f, backR.scale.z / -2.0);
+	glTranslatef(0.0f, 0.0f, backR.scale.z * -0.5f);
 	glScalef(backR.scale.x, backR.scale.y, backR.scale.z);
 	glutSolidCube(1.0f);
 	glPopMatrix();
