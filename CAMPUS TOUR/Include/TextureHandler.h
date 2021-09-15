@@ -313,7 +313,7 @@ extern TexturedPolygons tp;
 #define Red_Mushroom				240
 #define Rock						241
 #define Brown_Mushroom				242
-
+#define CobbleWall					243
 		/**
 		 * @brief  Load/Save texture images
 		 *

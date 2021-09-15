@@ -89,12 +89,12 @@ void myinit()
 	// set the world co-ordinates (used to set quadrants for bounding boxes)
 	cam.SetWorldCoordinates(36000.0, 43200.0);
 	// turn collision detection on (level zero)
-	//if (lvlStage == 0)
 		cam.SetCollisionDetectionOn(true);
 	// set number of bounding boxes required
 	cam.SetNoBoundingBoxes(82);  // originally started with 19 
 	// set starting position of user
-	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
+	//cam.Position(32720.0, 10500.0, 37000.0, 90.0);
+	cam.Position(0.0, 9500.0, 0.0, 90.0);//Level testing pos
 
 	CreatePlains();
 
@@ -124,6 +124,10 @@ void myinit()
 //--------------------------------------------------------------------------------------
 void Display()
 {
+		//Turn collisions off for all levels except zero
+	if (lvlStage != 0)
+		cam.SetCollisionDetectionOn(false);
+
 	// check for movement
 	cam.CheckCamera();
 
@@ -146,10 +150,12 @@ void Display()
 		// displays the map
 		if (DisplayMap) cam.DisplayMap(width, height, tp.GetTexture(MAP));
 		// display no exit sign (position check should really be in an object, but didn't have time)
-		if ((cam.GetLR() > 35500.0) && (cam.GetFB() < 25344.0) ||
-			(cam.GetLR() > 34100.0) && (cam.GetFB() > 41127.0))
-		{
-			cam.DisplayNoExit(width, height,tp.GetTexture(NO_EXIT));
+		if (lvlStage == 0) {
+			if ((cam.GetLR() > 35500.0) && (cam.GetFB() < 25344.0) ||
+				(cam.GetLR() > 34100.0) && (cam.GetFB() > 41127.0))
+			{
+				cam.DisplayNoExit(width, height, tp.GetTexture(NO_EXIT));
+			}
 		}
 				// set the movement and rotation speed according to frame count
 		IncrementFrameCount();
@@ -157,7 +163,6 @@ void Display()
 		cam.SetRotateSpeed (angleIncrement);
 		// display images
 		DrawBackdrop();
-		//DisplayDoors(); //should be in DrawBackdrop()
 		
 	glPopMatrix();
 	glDisable (GL_TEXTURE_2D);

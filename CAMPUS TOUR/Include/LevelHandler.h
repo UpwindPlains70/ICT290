@@ -12,7 +12,10 @@
 	 * @author Mark Burns
 	 * @version 02
 	 * @date 7/09/2021, level maps
-	 *
+	 * 
+	 * @author Peter Neve
+	 * @version 03
+	 * @date 15/09/2021, level maps updates (fixed movement)
 	 */
 extern enum levelStage;
 extern levelStage lvlStage;
@@ -39,6 +42,7 @@ bool levelZeroClear();
 
 void levelOneDraw();
 
+void drawWalls();
 void CreateMaps();
 #endif // !LEVELHANDLER_H
 

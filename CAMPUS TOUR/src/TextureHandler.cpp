@@ -729,6 +729,8 @@ void CreateTextures()
 	tp.CreateTexture(Tree, image, 1024, 1024);
 	image = tp.LoadTexture("data/Object Textures/Decorations/Rock.raw", 1024, 1024);
 	tp.CreateTexture(Rock, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/CobbleWall.raw", 1024, 1024);
+	tp.CreateTexture(CobbleWall, image, 1024, 1024);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
