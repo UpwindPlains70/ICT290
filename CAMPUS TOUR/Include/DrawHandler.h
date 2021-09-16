@@ -9,7 +9,7 @@
 #include <GL/glut.h>
 #include "TextureHandler.h"
 #include "CollisionHandler.h"
-
+#include "LevelHandler.h"
 /**
 	 * @brief Handles all display function calls & definitions
 	 *

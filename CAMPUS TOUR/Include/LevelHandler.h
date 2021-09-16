@@ -22,17 +22,17 @@ extern levelStage lvlStage;
 
 extern Point4 camPos;
 
-template<int X, int Y>
+template<int X, int Z>
 class LevelMap
 {
 private:
 	// 0 = empty, 1 = wall, 2 = ally, 3 = enemy.
-	int array[X][Y];
+	int array[X][Z];
 public:
 	int GetX() const { return X; }
-	int GetY() const { return Y; }
-	int GetValue(int x, int y) const { return array[x][y]; }
-	void SetValue(int x, int y, int value) { array[x][y] = value; }
+	int GetZ() const { return Z; }
+	int GetValue(int x, int z) const { return array[x][z]; }
+	void SetValue(int x, int z, int value) { array[x][z] = value; }
 };
 
 void teleportCamera();
@@ -41,8 +41,24 @@ void teleportCamera();
 bool levelZeroClear();
 
 void levelOneDraw();
-
 void drawWalls();
+
+///Read in 3D pillar object file
+void drawPillar();
+///draws and displays pillars in a wall structure
+/// @param bool - neg
+void displayWalls(bool neg);
+
+///display the generated level map, uses set map X & Y value for size (length, width)
+void displayMap();
+
+///Size of each grid square
+#define gridSquareSize 155
+
+///Draw grid lines
+void drawLines();
+
+///Sets objstical locations (update: load from file)
 void CreateMaps();
 #endif // !LEVELHANDLER_H
 

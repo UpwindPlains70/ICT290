@@ -26,7 +26,7 @@ void ReadOBJfile(char* fileName, Object3D* newObj) {
     if (in_file == NULL)
     {
         printf("Error! Could not open file: %s\n", fileName);
-        exit(-1);
+        //exit(-1);
     }
 
     char lineHeader[bufferLength];
@@ -84,7 +84,7 @@ void setArrays(char* fileName, Object3D* newObj) {
     if (in_file == NULL)
     {
         printf("Error! Could not open file: %s\n", fileName);
-        exit(-1);
+        //exit(-1);
     }
 
     char lineHeader[bufferLength];

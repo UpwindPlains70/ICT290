@@ -25,6 +25,10 @@
 	 * @author Peter Neve
 	 * @version 03
 	 * @date 28/08/2021 Peter Neve, Refactor (seperate definition & implentation)
+	 * 
+	 * @author Peter Neve
+	 * @version 04
+	 * @date 16/09/2021, commented out exit statement to stop launch failure
 	 */
 
 	 /**

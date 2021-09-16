@@ -43,7 +43,8 @@ void DrawBackdrop()
 	}
 	else
 	{
-		levelOneDraw();
+		displayMap();
+		//levelOneDraw();
 	}
 }
 
