@@ -732,6 +732,9 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/CobbleWall.raw", 1024, 1024);
 	tp.CreateTexture(CobbleWall, image, 1024, 1024);
 
+	image = tp.LoadTexture("data/teamphoto.raw", 800, 200);
+	tp.CreateTexture(Group_Photo, image, 800, 200);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }
