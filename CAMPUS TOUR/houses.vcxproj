@@ -144,7 +144,7 @@
     <ClInclude Include="Include\cameraMap.h" />
     <ClInclude Include="Include\collision.h" />
     <ClInclude Include="Include\CollisionHandler.h" />
-    <ClInclude Include="Include\DataHander.h" />
+    <ClInclude Include="Include\DataHandler.h" />
     <ClInclude Include="Include\Decorations.h" />
     <ClInclude Include="Include\DisplayHandler.h" />
     <ClInclude Include="Include\DoorHandler.h" />

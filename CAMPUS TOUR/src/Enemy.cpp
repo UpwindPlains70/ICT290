@@ -14,6 +14,8 @@ Enemy::Enemy() {
 	posZ = 0;
 	movement = 0;
 	turn = 0;
+	armor = 0;
+	maxhp = 0;
 }
 
 Enemy::Enemy(int newID, string newName, int newMaxHP, int newArmor, int newHP, int newStun, int newPosX, int newPosZ, int newMovement, int newTurn) {

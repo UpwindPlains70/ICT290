@@ -121,6 +121,7 @@ void myinit()
 	GetCharacterData();
 	GetEnemyData();
 	GetAbilityData();
+	GetEnemyPerLevelData();
 
 
 	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;

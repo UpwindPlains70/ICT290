@@ -1,4 +1,5 @@
 #pragma once
+//useless at the moment
 
 #ifndef PLAYERCLASS_H
 #define PLAYERCLASS_H

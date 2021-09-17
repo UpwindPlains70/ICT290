@@ -108,7 +108,7 @@
     <ClInclude Include="Include\MapLevel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\DataHander.h">
+    <ClInclude Include="Include\DataHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

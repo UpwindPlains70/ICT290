@@ -3,6 +3,7 @@
 #ifndef ENTITYABILITY_H
 #define ENTITYABILITY_H
 
+#include <string>
 #include <iostream>
 using namespace std;
 
@@ -11,7 +12,7 @@ class EntityAbility
 public:
 	EntityAbility();
 
-	EntityAbility(int, int, int, bool);
+	EntityAbility(string, int, int, int, int, int, int, int, int, bool);
 
 	~EntityAbility();
 
@@ -19,9 +20,9 @@ public:
 
 	int getToHit();
 
-	void setNum(int);
+	void setDuplicate(int);
 
-	int getNum();
+	int getDuplicate();
 
 	void setDamage(int);
 
@@ -31,9 +32,39 @@ public:
 
 	bool getUsed();
 
+	void setName(string);
+
+	string getName();
+
+	void setRange(int);
+
+	int getRange();
+
+	void setAOE(int);
+
+	int getAOE();
+
+	void setStun(int);
+
+	int getStun();
+
+	void setCooldown(int);
+
+	int getCooldown();
+
+	void setCooldownCounter(int);
+
+	int getCooldownCounter();
+
 private:
+	string name;
+	int range;
+	int aoe;
+	int duplicate;
+	int stun;
+	int cooldown;
+	int cooldownCounter;
 	int tohit;
-	int num;
 	int damage;
 	bool used;
 };

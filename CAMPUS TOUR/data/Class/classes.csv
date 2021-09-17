@@ -1,0 +1,12 @@
+Berserker,10,16,4,hammer,rage,earthTremer
+Shield,8,18,4,shieldBash,charge,castle
+Mage,7,12,6,mace,wall,shield
+Archer,7,12,6,arrow,deadEye,rapidFire
+Artillery,8,14,4,reload,powerShot,aoeShot
+Wizard,6,12,6,dagger,fireBall,lightning
+Samurai,8,16,5,katana,quickDraw,counter
+Monk,8,14,6,punch,twinPunch,grapple
+Swashbuckler,6,12,6,twinSlash,shield,combo
+Cleric,7,14,5,dagger,revive,heal
+Druid,7,12,5,mace,thorns,vineBind
+Bard,6,12,6,dagger,damageBoost,shield
