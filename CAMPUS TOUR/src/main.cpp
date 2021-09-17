@@ -146,7 +146,7 @@ void Display()
 		// displays the welcome screen
 		if (DisplayWelcome) cam.DisplayWelcomeScreen (width, height, 1, tp.GetTexture(WELCOME));
 		// displays the exit screen
-		if (DisplayExit) cam.DisplayWelcomeScreen (width, height, 0, tp.GetTexture(EXIT) );
+		if (DisplayExit) cam.DisplayWelcomeScreen (1000, 1900, 0, tp.GetTexture(Group_Photo) );
 		// displays the map
 		if (DisplayMap) cam.DisplayMap(width, height, tp.GetTexture(MAP));
 		// display no exit sign (position check should really be in an object, but didn't have time)

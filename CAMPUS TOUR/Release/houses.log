@@ -1,13 +1,5 @@
-﻿  LevelHandler.cpp
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\LevelHandler.h(26,23): warning C4091: 'extern ': ignored on left of 'levelStage' when no variable is declared
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(23,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(65,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(89,20): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(98,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(109,19): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(118,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(169,29): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(170,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(176,20): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(177,20): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  houses.vcxproj -> C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Release\houses.exe
+﻿  main.cpp
+C:\ICT290\GitHub\CAMPUS TOUR\Include\LevelHandler.h(26,23): warning C4091: 'extern ': ignored on left of 'levelStage' when no variable is declared
+C:\ICT290\GitHub\CAMPUS TOUR\src\main.cpp(73,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\ICT290\GitHub\CAMPUS TOUR\src\main.cpp(119,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  houses.vcxproj -> C:\ICT290\GitHub\CAMPUS TOUR\Release\houses.exe
