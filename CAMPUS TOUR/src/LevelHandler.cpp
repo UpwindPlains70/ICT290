@@ -195,6 +195,7 @@ void CreateMaps()
 	int tempLevel;
 	int tempX;
 	int tempZ;
+	int tempInput;
 	string tempString;
 	if (!mapFile)
 	{
@@ -221,6 +222,20 @@ void CreateMaps()
 			mapList[tempLevel] = presetLMV;
 		}
 		
+		for (int i = 0; i < tempZ; i++)
+		{
+			getline(mapFile, tmp);
+			stringstream element(tmp);
+			for (int j = 0; j < tempX - 1; j++)
+			{
+				getline(element, tempString, ',');
+				istringstream(tempString) >> tempInput;
+				tempLevelMap->SetValue(i, j, tempInput);
+			}
+			getline(element, tempString);
+			istringstream(tempString) >> tempInput;
+			tempLevelMap->SetValue(i, tempX - 1, tempInput);
+		}
 		//read the map layout
 		//input into tempLevelMap
 		
