@@ -96,9 +96,6 @@
     <ClInclude Include="Include\EntityAbility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -109,6 +106,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Include\MapLevel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\DataHander.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -194,9 +194,6 @@
     <ClCompile Include="src\EntityAbility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Map.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -207,6 +204,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\MapLevel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

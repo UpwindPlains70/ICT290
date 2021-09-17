@@ -144,6 +144,7 @@
     <ClInclude Include="Include\cameraMap.h" />
     <ClInclude Include="Include\collision.h" />
     <ClInclude Include="Include\CollisionHandler.h" />
+    <ClInclude Include="Include\DataHander.h" />
     <ClInclude Include="Include\Decorations.h" />
     <ClInclude Include="Include\DisplayHandler.h" />
     <ClInclude Include="Include\DoorHandler.h" />
@@ -154,7 +155,6 @@
     <ClInclude Include="Include\EntityAbility.h" />
     <ClInclude Include="Include\Geometry.h" />
     <ClInclude Include="Include\LevelHandler.h" />
-    <ClInclude Include="Include\Map.h" />
     <ClInclude Include="Include\MapLevel.h" />
     <ClInclude Include="Include\MovementHandler.h" />
     <ClInclude Include="Include\PlainLinkedList.h" />
@@ -177,6 +177,7 @@
     <ClCompile Include="src\cameraMap.cpp" />
     <ClCompile Include="src\collision.cpp" />
     <ClCompile Include="src\CollisionHandler.cpp" />
+    <ClCompile Include="src\DataHandler.cpp" />
     <ClCompile Include="src\Decorations.cpp" />
     <ClCompile Include="src\DisplayHandler.cpp" />
     <ClCompile Include="src\DoorHandler.cpp" />
@@ -188,7 +189,6 @@
     <ClCompile Include="src\Geometry.cpp" />
     <ClCompile Include="src\LevelHandler.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Map.cpp" />
     <ClCompile Include="src\MapLevel.cpp" />
     <ClCompile Include="src\MovementHandler.cpp" />
     <ClCompile Include="src\PlainLinkedList.cpp" />

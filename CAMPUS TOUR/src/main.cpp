@@ -8,6 +8,7 @@
 #include "DrawHandler.h"
 #include "MovementHandler.h"
 #include "LevelHandler.h"
+#include "DataHandler.h"
 
 GLdouble stepIncrement;
 GLdouble angleIncrement;
@@ -115,6 +116,12 @@ void myinit()
 
 	//Maps
 	CreateMaps();
+	
+	//Get Data
+	GetCharacterData();
+	GetEnemyData();
+	GetAbilityData();
+
 
 	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
 }

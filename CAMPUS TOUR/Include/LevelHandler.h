@@ -1,5 +1,5 @@
 #ifndef LEVELHANDLER_H
-#define LELVELHANDLER_H
+#define LEVELHANDLER_H
 #pragma once
 #include "CollisionHandler.h"
 #include "MapLevel.h"

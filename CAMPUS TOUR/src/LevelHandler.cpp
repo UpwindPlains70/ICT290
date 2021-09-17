@@ -236,9 +236,7 @@ void CreateMaps()
 			istringstream(tempString) >> tempInput;
 			tempLevelMap->SetValue(i, tempX - 1, tempInput);
 		}
-		//read the map layout
-		//input into tempLevelMap
-		
+
 		mapList[tempLevel].push_back(*tempLevelMap);
 	}
 
