@@ -8,7 +8,9 @@ GLdouble currXPos;
 GLdouble currYPos;
 GLdouble currZPos;
 
-LevelMap<7, 7> level1Map;
+LevelMap level1Map(7,7);
+LevelMap *tempLevelMap = nullptr;
+map<int, vector<LevelMap>> mapList;
 
 Point3D gameFloor[4] = { {1000, 9000, 1000},{1000, 9000, -1000},{-1000, 9000, -1000},{-1000, 9000, 1000} };
 Point3D wall[4] = { {1000, 9000, 1000},{1000, 10000, 1000},{-1000, 10000, 1000},{-1000, 9000, 1000} };
@@ -42,68 +44,6 @@ void levelOneDraw()
 	glColor3f(0, 0, 0);
 	//Wall East
 	drawWalls();
-	/*glPushMatrix();
-		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
-		glBegin(GL_POLYGON);
-			glTexCoord2f(0.0, 0.0);
-			glVertex3fv(wall[0]);
-			glTexCoord2f(0.0, 1.0);
-			glVertex3fv(wall[1]);
-			glTexCoord2f(1.0, 1.0);
-			glVertex3fv(wall[2]);
-			glTexCoord2f(1.0, 0.0);
-			glVertex3fv(wall[3]);
-		glEnd();
-	glPopMatrix();
-
-	//Wall West
-	glPushMatrix();
-		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
-		glRotatef(0, 0, 1, 0);
-		glBegin(GL_POLYGON);
-			glTexCoord2f(0.0, 0.0);
-			glVertex3fv(wall[0]);
-			glTexCoord2f(0.0, 1.0);
-			glVertex3fv(wall[1]);
-			glTexCoord2f(1.0, 1.0);
-			glVertex3fv(wall[2]);
-			glTexCoord2f(1.0, 0.0);
-			glVertex3fv(wall[3]);
-		glEnd();
-	glPopMatrix();
-
-	//Wall North
-	glPushMatrix();
-		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
-		glRotatef(90, 0, 1, 0);
-		glBegin(GL_POLYGON);
-			glTexCoord2f(0.0, 0.0);
-			glVertex3fv(wall[0]);
-			glTexCoord2f(0.0, 1.0);
-			glVertex3fv(wall[1]);
-			glTexCoord2f(1.0, 1.0);
-			glVertex3fv(wall[2]);
-			glTexCoord2f(1.0, 0.0);
-			glVertex3fv(wall[3]);
-		glEnd();
-	glPopMatrix();
-
-	//Wall South
-	glPushMatrix();
-		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_XY));
-		glRotatef(-90, 0, 1, 0);
-		glBegin(GL_POLYGON);
-			glTexCoord2f(0.0, 0.0);
-			glVertex3fv(wall[0]);
-			glTexCoord2f(0.0, 1.0);
-			glVertex3fv(wall[1]);
-			glTexCoord2f(1.0, 1.0);
-			glVertex3fv(wall[2]);
-			glTexCoord2f(1.0, 0.0);
-			glVertex3fv(wall[3]);
-		glEnd();
-	glPopMatrix();*/
-
 	//Floor
 	
 
@@ -249,4 +189,43 @@ void CreateMaps()
 			level1Map.SetValue(a, b, 0);
 		}
 	}
+
+	fstream mapFile("data/Levels/maps.csv");
+	string tmp;
+	int tempLevel;
+	int tempX;
+	int tempZ;
+	string tempString;
+	if (!mapFile)
+	{
+		cout << "Error" << endl;
+		return;
+	}
+	while (!mapFile.eof())
+	{
+		getline(mapFile, tmp);
+		stringstream element(tmp);
+		getline(element, tempString, ',');
+		istringstream(tempString) >> tempLevel;
+		getline(element, tempString, ',');
+		istringstream(tempString) >> tempX;
+		getline(element, tempString);
+		istringstream(tempString) >> tempZ;
+
+		tempLevelMap = new LevelMap(tempX, tempZ);
+		//if level not found
+		if (mapList.find(tempLevel) == mapList.end())
+		{
+			//add level to map
+			vector<LevelMap> presetLMV;
+			mapList[tempLevel] = presetLMV;
+		}
+		
+		//read the map layout
+		//input into tempLevelMap
+		
+		mapList[tempLevel].push_back(*tempLevelMap);
+	}
+
+	mapFile.close();
 }

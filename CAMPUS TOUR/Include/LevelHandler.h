@@ -2,6 +2,12 @@
 #define LELVELHANDLER_H
 #pragma once
 #include "CollisionHandler.h"
+#include "MapLevel.h"
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <map>
 /**
 	 * @brief defines all functions relating to levels
 	 *
@@ -20,20 +26,9 @@
 extern enum levelStage;
 extern levelStage lvlStage;
 
-extern Point4 camPos;
+using namespace std;
 
-template<int X, int Z>
-class LevelMap
-{
-private:
-	// 0 = empty, 1 = wall, 2 = ally, 3 = enemy.
-	int array[X][Z];
-public:
-	int GetX() const { return X; }
-	int GetZ() const { return Z; }
-	int GetValue(int x, int z) const { return array[x][z]; }
-	void SetValue(int x, int z, int value) { array[x][z] = value; }
-};
+extern Point4 camPos;
 
 void teleportCamera();
 

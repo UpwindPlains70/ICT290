@@ -155,6 +155,7 @@
     <ClInclude Include="Include\Geometry.h" />
     <ClInclude Include="Include\LevelHandler.h" />
     <ClInclude Include="Include\Map.h" />
+    <ClInclude Include="Include\MapLevel.h" />
     <ClInclude Include="Include\MovementHandler.h" />
     <ClInclude Include="Include\PlainLinkedList.h" />
     <ClInclude Include="Include\PlainNode.h" />
@@ -188,6 +189,7 @@
     <ClCompile Include="src\LevelHandler.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Map.cpp" />
+    <ClCompile Include="src\MapLevel.cpp" />
     <ClCompile Include="src\MovementHandler.cpp" />
     <ClCompile Include="src\PlainLinkedList.cpp" />
     <ClCompile Include="src\PlainNode.cpp" />
