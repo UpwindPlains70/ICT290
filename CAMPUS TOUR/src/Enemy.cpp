@@ -5,7 +5,6 @@
 using namespace std;
 
 Enemy::Enemy() {
-	id = 0;
 	name = "";
 	numAbilities = 0;
 	hp = 0;
@@ -15,32 +14,25 @@ Enemy::Enemy() {
 	movement = 0;
 	turn = 0;
 	armor = 0;
-	maxhp = 0;
+	maxHP = 0;
 }
 
-Enemy::Enemy(int newID, string newName, int newMaxHP, int newArmor, int newHP, int newStun, int newPosX, int newPosZ, int newMovement, int newTurn) {
-	id = newID;
+Enemy::Enemy(string newName, int newMaxHP, int newArmor, int newStun, int newPosX, int newPosZ, int newMovement, int newTurn) {
+
 	name = newName;
-	maxhp = newMaxHP;
+	maxHP = newMaxHP;
 	armor = newArmor;
-	hp = newHP;
+	hp = maxHP;
 	stun = newStun;
 	posX = newPosX;
 	posZ = newPosZ;
 	movement = newMovement;
 	turn = newTurn;
+	numAbilities = 0;
 }
 
 Enemy::~Enemy() {
 
-}
-
-void Enemy::setID(int newID) {
-	id = newID;
-}
-
-int Enemy::getID() {
-	return id;
 }
 
 void Enemy::setName(string newName) {
@@ -52,11 +44,11 @@ string Enemy::getName() {
 }
 
 void Enemy::setMaxHP(int newMaxHP) {
-	maxhp = newMaxHP;
+	maxHP = newMaxHP;
 }
 
 int Enemy::getMaxHP() {
-	return maxhp;
+	return maxHP;
 }
 
 void Enemy::setArmor(int newArmor) {
@@ -71,12 +63,28 @@ int Enemy::getNumAbilities() {
 	return numAbilities;
 }
 
-void Enemy::setHP(int newHP) {
-	hp = newHP;
+void Enemy::resetHP() {
+	hp = maxHP;
 }
 
 int Enemy::getHP() {
 	return hp;
+}
+
+void Enemy::damageEnemy(int dam) {
+	hp -= dam;
+	if (hp < 0)
+	{
+		hp = 0;
+	}
+}
+
+void Enemy::healEnemy(int heal) {
+	hp += heal;
+	if (hp > maxHP)
+	{
+		hp = maxHP;
+	}
 }
 
 void Enemy::setStun(int newStun) {

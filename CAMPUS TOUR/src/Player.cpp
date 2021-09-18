@@ -5,39 +5,37 @@
 using namespace std;
 	
 Player::Player() {
-	id = 0;
 	name = "";
-	classtype = "";
+	classType = "";
 	hp = 0;
 	stun = 0;
 	posX = 0;
 	posZ = 0;
-	movementleft = 0;
+	movementLeft = 0;
 	turn = 0;
+	numAbilities = 0;
+	movement = 0;
+	maxHP = 0;
+	armor = 0;
 }
 
-Player::Player(int newID, string newName, string newClassType, int newHP, int newStun, int newPosX, int newPosZ, int newMovementLeft, int newTurn) {
-	id = newID;
+Player::Player(string newName, string newclassType, int newMaxHP, int newStun, int newPosX, int newPosZ, int newMovement, int newTurn, int newArmor) {
 	name = newName;
-	classtype = newClassType;
-	hp = newHP;
+	classType = newclassType;
+	maxHP = newMaxHP;
+	hp = maxHP;
 	stun = newStun;
 	posX = newPosX;
 	posZ = newPosZ;
-	movementleft = newMovementLeft;
+	movement = newMovement;
+	movementLeft = movement;
 	turn = newTurn;
+	armor = newArmor;
+	numAbilities = 0;
 }
 
 Player::~Player() {
 
-}
-
-void Player::setID(int newID) {
-	id = newID;
-}
-
-int Player::getID() {
-	return id;
 }
 
 void Player::setName(string newName) {
@@ -48,20 +46,56 @@ string Player::getName() {
 	return name;
 }
 
-void Player::setClassType(string newClassType) {
-	classtype = newClassType;
+void Player::setClassName(string newName) {
+	classType = newName;
 }
 
-string Player::getClassType() {
-	return classtype;
+string Player::getClassName() {
+	return classType;
 }
 
-void Player::setHP(int newHP) {
-	hp = newHP;
+void Player::setMaxHP(int newMaxHP) {
+	maxHP = newMaxHP;
+}
+
+int Player::getMaxHP() {
+	return maxHP;
+}
+
+void Player::setArmor(int newArmor) {
+	armor = newArmor;
+}
+
+int Player::getArmor() {
+	return armor;
+}
+
+int Player::getNumAbilities() {
+	return numAbilities;
+}
+
+void Player::resetHP() {
+	hp = maxHP;
 }
 
 int Player::getHP() {
 	return hp;
+}
+
+void Player::damagePlayer(int dam) {
+	hp -= dam;
+	if (hp < 0)
+	{
+		hp = 0;
+	}
+}
+
+void Player::healPlayer(int heal) {
+	hp += heal;
+	if (hp > maxHP)
+	{
+		hp = maxHP;
+	}
 }
 
 void Player::setStun(int newStun) {
@@ -88,12 +122,27 @@ int Player::getPosZ() {
 	return posZ;
 }
 
-void Player::setMovementLeft(int newMovementLeft) {
-	movementleft = newMovementLeft;
+void Player::setMovement(int newMovement) {
+	movement = newMovement;
 }
 
-int Player::getMovementLeft() {
-	return movementleft;
+int Player::getMovement() {
+	return movement;
+}
+
+void Player::resetMovementLeft()
+{
+	movementLeft = movement;
+}
+
+bool Player::movePlayer()
+{
+	if (movementLeft > 0)
+	{
+		movementLeft--;
+		return true;
+	}
+	return false;
 }
 
 void Player::setTurn(int newTurn) {
@@ -102,4 +151,22 @@ void Player::setTurn(int newTurn) {
 
 int Player::getTurn() {
 	return turn;
+}
+
+void Player::pushAbility(EntityAbility newAbility) {
+	abilities.push_back(newAbility);
+	numAbilities++;
+}
+
+void Player::popAbility() {
+	abilities.pop_back();
+	numAbilities--;
+}
+
+void Player::setAbility(EntityAbility newAbility, int num) {
+	abilities.at(num) = newAbility;
+}
+
+EntityAbility Player::getAbility(int num) {
+	return abilities[num];
 }

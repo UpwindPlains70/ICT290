@@ -5,34 +5,36 @@
 
 #include <string>
 #include <iostream>
-#include "PlayerClass.h"
+#include <vector>
+#include "EntityAbility.h"
 using namespace std;
-
 
 class Player
 {
 public:
 	Player();
 
-	Player(int, string, string, int, int, int, int, int, int);
+	Player(string, string, int, int, int, int, int, int, int);
 
 	~Player();
-
-	void setID(int);
-
-	int getID();
 
 	void setName(string);
 
 	string getName();
 
-	void setClassType(string);
-
-	string getClassType();
-
-	void setHP(int);
+	void resetHP();
 
 	int getHP();
+
+	void setMaxHP(int);
+
+	int getMaxHP();
+
+	void setArmor(int);
+
+	int getArmor();
+
+	int getNumAbilities();
 
 	void setStun(int);
 
@@ -46,25 +48,48 @@ public:
 
 	int getPosZ();
 
-	void setMovementLeft(int);
+	void setMovement(int);
 
-	int getMovementLeft();
+	int getMovement();
 
 	void setTurn(int);
 
 	int getTurn();
 
+	void pushAbility(EntityAbility);
+
+	void popAbility();
+
+	void setAbility(EntityAbility, int);
+
+	EntityAbility getAbility(int);
+
+	void setClassName(string);
+
+	string getClassName();
+
+	void damagePlayer(int);
+
+	void healPlayer(int);
+
+	void resetMovementLeft();
+	
+	bool movePlayer();
+
 private:
-	int id;
 	string name;
-	string classtype;
+	string classType;
+	int maxHP;
+	int armor;
 	int hp;
 	int stun;
 	int posX;
-	int posZ;
-	int movementleft;
+	int posZ;  
+	int movement;
+	int movementLeft;
 	int turn;
-	PlayerClass pc;
+	int numAbilities;
+	vector<EntityAbility> abilities;
 };
 
 #endif

@@ -14,19 +14,15 @@ class Enemy
 public:
 	Enemy();
 
-	Enemy(int, string, int, int, int, int, int, int, int, int);
+	Enemy(string, int, int, int, int, int, int, int);
 
 	~Enemy();
-
-	void setID(int);
-
-	int getID();
 
 	void setName(string);
 
 	string getName();
 
-	void setHP(int);
+	void resetHP();
 
 	int getHP();
 
@@ -68,10 +64,13 @@ public:
 
 	EntityAbility getAbility(int);
 
+	void damageEnemy(int dam);
+
+	void healEnemy(int heal);
+
 private:
-	int id;
 	string name;
-	int maxhp;
+	int maxHP;
 	int hp;
 	int armor;
 	int numAbilities;
