@@ -167,7 +167,7 @@ void Display()
 		}
 				// set the movement and rotation speed according to frame count
 		IncrementFrameCount();
-		cam.SetMoveSpeed (stepIncrement);
+		cam.SetMoveSpeed (stepIncrement * movementSpeed);
 		cam.SetRotateSpeed (angleIncrement);
 		// display images
 		DrawBackdrop();

@@ -29,7 +29,7 @@ bool closing = false;
 
 // USE THESE STTEINGS TO CHANGE SPEED (on different spec computers)
 // Set speed (steps)
-GLdouble movementSpeed = 10.0;
+GLdouble movementSpeed = 1.0;
 GLdouble rotationSpeed = 0.005;
 
 //--------------------------------------------------------------------------------------
@@ -156,6 +156,14 @@ void movementKeys(int key, int x, int y)
 	case GLUT_KEY_DOWN:
 		cam.DirectionFB(-1);
 		break;
+	}
+
+	auto sprintCheck = glutGetModifiers();
+	if (sprintCheck == GLUT_ACTIVE_SHIFT) {
+		movementSpeed = 2.0;
+	}
+	else {
+		movementSpeed = 1.0; 
 	}
 }
 
