@@ -22,10 +22,18 @@
 	 * 
 	 * @author Peter Neve
 	 * @version 03
-	 * @date 15/09/2021, level maps updates (fixed movement)
+	 * @date 15/09/2021, level maps gen redo (fixed movement)
+	 * 
+	 * @author Mark Burns
+	 * @version 04
+	 * @date 17/09/2021, Level map reader (.csv)
+	 *  
+	 * @author Peter Neve
+	 * @version 05
+	 * @date 18/09/2021, floor generation for maps
 	 */
-extern enum levelStage;
-extern levelStage lvlStage;
+//extern enum levelStage;
+extern int currLevel;
 
 using namespace std;
 
@@ -36,11 +44,8 @@ void teleportCamera();
 ///check if player has gone far enough down the stairs to teleport
 bool levelZeroClear();
 
-void levelOneDraw();
-void drawWalls();
-
 ///Read in 3D pillar object file
-void drawPillar();
+void drawLevelObjects();
 ///draws and displays pillars in a wall structure
 /// @param bool - neg
 void displayWalls(bool neg);
@@ -51,11 +56,13 @@ void displayMap();
 ///Size of each grid square
 #define gridSquareSize 155
 
-///Draw grid lines
-void drawLines();
+///Display the floor tiles and pillars
+void displayFloor();
 
 ///Sets objstical locations (update: load from file)
 void CreateMaps();
+
+void printMap();
 #endif // !LEVELHANDLER_H
 
 

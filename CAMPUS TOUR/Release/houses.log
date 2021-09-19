@@ -1,5 +1,22 @@
-﻿  main.cpp
-C:\ICT290\GitHub\CAMPUS TOUR\Include\LevelHandler.h(26,23): warning C4091: 'extern ': ignored on left of 'levelStage' when no variable is declared
-C:\ICT290\GitHub\CAMPUS TOUR\src\main.cpp(73,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-C:\ICT290\GitHub\CAMPUS TOUR\src\main.cpp(119,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  houses.vcxproj -> C:\ICT290\GitHub\CAMPUS TOUR\Release\houses.exe
+﻿  LevelHandler.cpp
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(23,33): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(32,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(59,20): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(67,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(77,19): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(85,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(104,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(104,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(129,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(130,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(131,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(132,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(150,52): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(151,53): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(181,32): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(181,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(187,33): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(187,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(194,34): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(194,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  houses.vcxproj -> C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\.\Release\houses.exe

@@ -730,7 +730,9 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/Decorations/Rock.raw", 1024, 1024);
 	tp.CreateTexture(Rock, image, 1024, 1024);
 	image = tp.LoadTexture("data/Object Textures/CobbleWall.raw", 1024, 1024);
-	tp.CreateTexture(CobbleWall, image, 1024, 1024);
+	tp.CreateTexture(DungeonPillar, image, 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/DungeonFloor.raw", 512, 512);
+	tp.CreateTexture(DungeonFloor, image, 512, 512);
 
 	image = tp.LoadTexture("data/teamphoto.raw", 800, 200);
 	tp.CreateTexture(Group_Photo, image, 800, 200);

@@ -44,7 +44,7 @@ void CreateTextureList()
 	DrawHallwayStairs();
 
 	DrawDecorations(); 
-	drawPillar();
+	drawLevelObjects();
 }
 
 //--------------------------------------------------------------------------------------

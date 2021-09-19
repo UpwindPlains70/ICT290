@@ -95,7 +95,7 @@ void myinit()
 	cam.SetNoBoundingBoxes(82);  // originally started with 19 
 	// set starting position of user
 	//cam.Position(32720.0, 10500.0, 37000.0, 90.0);
-	cam.Position(0.0, 9500.0, 0.0, 90.0);//Level testing pos
+	cam.Position(0.0, 9500.0, 0.0, 180.0);//Level testing pos
 
 	CreatePlains();
 
@@ -133,7 +133,7 @@ void myinit()
 void Display()
 {
 		//Turn collisions off for all levels except zero
-	if (lvlStage != 0)
+	if (currLevel != 0)
 		cam.SetCollisionDetectionOn(false);
 
 	// check for movement
@@ -158,7 +158,7 @@ void Display()
 		// displays the map
 		if (DisplayMap) cam.DisplayMap(width, height, tp.GetTexture(MAP));
 		// display no exit sign (position check should really be in an object, but didn't have time)
-		if (lvlStage == 0) {
+		if (currLevel == 0) {
 			if ((cam.GetLR() > 35500.0) && (cam.GetFB() < 25344.0) ||
 				(cam.GetLR() > 34100.0) && (cam.GetFB() > 41127.0))
 			{
