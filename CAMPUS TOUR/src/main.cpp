@@ -118,9 +118,9 @@ void myinit()
 	CreateMaps();
 	
 	//Get Data
+	GetAbilityData();
 	GetCharacterData();
 	GetEnemyData();
-	GetAbilityData();
 	GetEnemyPerLevelData();
 
 

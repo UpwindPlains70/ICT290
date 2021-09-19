@@ -5,16 +5,7 @@
 using namespace std;
 
 Enemy::Enemy() {
-	name = "";
-	numAbilities = 0;
-	hp = 0;
-	stun = 0;
-	posX = 0;
-	posZ = 0;
-	movement = 0;
-	turn = 0;
-	armor = 0;
-	maxHP = 0;
+	reset();
 }
 
 Enemy::Enemy(string newName, int newMaxHP, int newArmor, int newStun, int newPosX, int newPosZ, int newMovement, int newTurn) {
@@ -143,4 +134,19 @@ void Enemy::setAbility(EntityAbility newAbility, int num) {
 
 EntityAbility Enemy::getAbility(int num) {
 	return abilities[num];
+}
+
+void Enemy::reset()
+{
+	abilities.clear();
+	name = "";
+	numAbilities = 0;
+	hp = 0;
+	stun = 0;
+	posX = 0;
+	posZ = 0;
+	movement = 0;
+	turn = 0;
+	armor = 0;
+	maxHP = 0;
 }

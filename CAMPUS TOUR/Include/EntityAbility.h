@@ -12,7 +12,7 @@ class EntityAbility
 public:
 	EntityAbility();
 
-	EntityAbility(string, int, int, int, int, int, int, int, int, bool);
+	EntityAbility(string, int, int, int, int, int, int, int, int);
 
 	~EntityAbility();
 
@@ -27,6 +27,10 @@ public:
 	void setDamage(int);
 
 	int getDamage();
+
+	void setUnique(int);
+
+	int getUnique();
 
 	void setUsed(bool);
 
@@ -67,6 +71,7 @@ private:
 	int tohit;
 	int damage;
 	bool used;
+	int unique;
 };
 
 #endif

@@ -68,6 +68,8 @@ public:
 
 	void healEnemy(int heal);
 
+	void reset();
+
 private:
 	string name;
 	int maxHP;

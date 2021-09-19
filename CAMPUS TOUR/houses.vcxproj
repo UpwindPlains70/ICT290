@@ -151,7 +151,6 @@
     <ClInclude Include="Include\DrawHandler.h" />
     <ClInclude Include="Include\EasySound.h" />
     <ClInclude Include="Include\Enemy.h" />
-    <ClInclude Include="Include\EnemyType.h" />
     <ClInclude Include="Include\EntityAbility.h" />
     <ClInclude Include="Include\Geometry.h" />
     <ClInclude Include="Include\LevelHandler.h" />
@@ -160,11 +159,9 @@
     <ClInclude Include="Include\PlainLinkedList.h" />
     <ClInclude Include="Include\PlainNode.h" />
     <ClInclude Include="Include\Player.h" />
-    <ClInclude Include="Include\PlayerClass.h" />
     <ClInclude Include="Include\ReadOBJfile.h" />
     <ClInclude Include="Include\Sound.h" />
     <ClInclude Include="Include\SoundTime.h" />
-    <ClInclude Include="Include\SubClasses.h" />
     <ClInclude Include="Include\texturedPolygons.h" />
     <ClInclude Include="Include\TextureHandler.h" />
   </ItemGroup>
@@ -172,7 +169,6 @@
     <ClCompile Include="src\AABB.CPP" />
     <ClCompile Include="src\AABBLinkedList.cpp" />
     <ClCompile Include="src\AABBNode.cpp" />
-    <ClCompile Include="src\Abilities.cpp" />
     <ClCompile Include="src\camera.cpp" />
     <ClCompile Include="src\cameraMap.cpp" />
     <ClCompile Include="src\collision.cpp" />
@@ -184,7 +180,6 @@
     <ClCompile Include="src\DrawHandler.cpp" />
     <ClCompile Include="src\EasySound.cpp" />
     <ClCompile Include="src\Enemy.cpp" />
-    <ClCompile Include="src\EnemyType.cpp" />
     <ClCompile Include="src\EntityAbility.cpp" />
     <ClCompile Include="src\Geometry.cpp" />
     <ClCompile Include="src\LevelHandler.cpp" />
@@ -194,11 +189,9 @@
     <ClCompile Include="src\PlainLinkedList.cpp" />
     <ClCompile Include="src\PlainNode.cpp" />
     <ClCompile Include="src\Player.cpp" />
-    <ClCompile Include="src\PlayerClass.cpp" />
     <ClCompile Include="src\ReadOBJfile.cpp" />
     <ClCompile Include="src\Sound.cpp" />
     <ClCompile Include="src\SoundTime.cpp" />
-    <ClCompile Include="src\SubClasses.cpp" />
     <ClCompile Include="src\texturedPolygons.cpp" />
     <ClCompile Include="src\TextureHandler.cpp" />
   </ItemGroup>

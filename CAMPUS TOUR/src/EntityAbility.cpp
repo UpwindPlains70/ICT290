@@ -9,11 +9,15 @@ EntityAbility::EntityAbility() {
 	damage = 0;
 	range = 0;
 	aoe = 0;
-
+	name = " ";
+	cooldown = 0;
+	cooldownCounter = 0;
+	stun = 0;
+	unique = 0;
 	used = false;
 }
 
-EntityAbility::EntityAbility(string newName, int newRange, int newAOE, int newDuplicate, int newStun, int newCooldown, int newCooldownCounter, int newToHit, int newDamage, bool newUsed) {
+EntityAbility::EntityAbility(string newName, int newRange, int newAOE, int newDuplicate, int newStun, int newCooldown, int newUnique, int newToHit, int newDamage) {
 
 	name = newName;
 	range = newRange;
@@ -21,10 +25,11 @@ EntityAbility::EntityAbility(string newName, int newRange, int newAOE, int newDu
 	duplicate = newDuplicate;
 	stun = newStun;
 	cooldown = newCooldown;
-	cooldownCounter = newCooldownCounter;
+	cooldownCounter = cooldown;
 	tohit = newToHit;
 	damage = newDamage;
-	used = newUsed;
+	used = false;
+	unique = newUnique;
 }
 
 EntityAbility::~EntityAbility() {
@@ -53,6 +58,14 @@ void EntityAbility::setDamage(int newDamage) {
 
 int EntityAbility::getDamage() {
 	return damage;
+}
+
+void EntityAbility::setUnique(int newUnique) {
+	unique = newUnique;
+}
+
+int EntityAbility::getUnique() {
+	return unique;
 }
 
 void EntityAbility::setUsed(bool newUsed) {
