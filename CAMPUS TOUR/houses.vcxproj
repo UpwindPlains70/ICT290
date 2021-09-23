@@ -47,7 +47,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
-    <IncludePath>..\CAMPUS TOUR\Include;..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\include;..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\include</IncludePath>
+    <IncludePath>..\CAMPUS TOUR\packages\imgui-master\backends;..\CAMPUS TOUR\packages\imgui-master;..\CAMPUS TOUR\Include;..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\include;..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\include</IncludePath>
     <LibraryPath>..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\lib\v110\Win32\Release\dynamic;..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\lib\x64\dynamic;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -57,7 +57,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <CodeAnalysisRules />
     <CodeAnalysisRuleAssemblies />
-    <IncludePath>..\CAMPUS TOUR\Include;..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\include;..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\include</IncludePath>
+    <IncludePath>..\CAMPUS TOUR\packages\imgui-master\backends;..\CAMPUS TOUR\packages\imgui-master;..\CAMPUS TOUR\Include;..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\include;..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\include</IncludePath>
     <LibraryPath>..\CAMPUS TOUR\packages\freeglut.2.8.1.15\build\native\lib\v110\Win32\Release\dynamic;..\CAMPUS TOUR\packages\sdl2.2.0.5\build\native\lib\x64\dynamic;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -77,7 +77,7 @@
       <ObjectFileName>.\Debug\</ObjectFileName>
       <ProgramDataBaseFileName>.\Debug\</ProgramDataBaseFileName>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <AdditionalIncludeDirectories>..\CAMPUS TOUR\Dependencies\MSVC\include;..\CAMPUS TOUR\Dependencies\10.0.18362.0\cppwinrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\shared;..\CAMPUS TOUR\Dependencies\10.0.18362.0\um;..\CAMPUS TOUR\Dependencies\10.0.18362.0\ucrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl\wrappers;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\CAMPUS TOUR\packages\imgui-master\backends;..\CAMPUS TOUR\packages\imgui-master;..\CAMPUS TOUR\Dependencies\MSVC\include;..\CAMPUS TOUR\Dependencies\10.0.18362.0\cppwinrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\shared;..\CAMPUS TOUR\Dependencies\10.0.18362.0\um;..\CAMPUS TOUR\Dependencies\10.0.18362.0\ucrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl\wrappers;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Midl>
       <TypeLibraryName>.\Debug\houses.tlb</TypeLibraryName>
@@ -96,6 +96,7 @@
       <SubSystem>Console</SubSystem>
       <OutputFile>.\Debug\houses.exe</OutputFile>
       <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\packages\imgui-master\backends;C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\packages\imgui-master;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -112,7 +113,7 @@
       <PrecompiledHeaderOutputFile>.\Release\houses.pch</PrecompiledHeaderOutputFile>
       <ObjectFileName>.\Release\</ObjectFileName>
       <ProgramDataBaseFileName>.\Release\</ProgramDataBaseFileName>
-      <AdditionalIncludeDirectories>..\CAMPUS TOUR\Dependencies\MSVC\include;..\CAMPUS TOUR\Dependencies\10.0.18362.0\cppwinrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\shared;..\CAMPUS TOUR\Dependencies\10.0.18362.0\um;..\CAMPUS TOUR\Dependencies\10.0.18362.0\ucrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl\wrappers;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\CAMPUS TOUR\packages\imgui-master\backends;..\CAMPUS TOUR\packages\imgui-master;..\CAMPUS TOUR\Dependencies\MSVC\include;..\CAMPUS TOUR\Dependencies\10.0.18362.0\cppwinrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\shared;..\CAMPUS TOUR\Dependencies\10.0.18362.0\um;..\CAMPUS TOUR\Dependencies\10.0.18362.0\ucrt;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl\wrappers;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt\wrl;..\CAMPUS TOUR\Dependencies\10.0.18362.0\winrt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Midl>
       <TypeLibraryName>.\Release\houses.tlb</TypeLibraryName>
@@ -167,8 +168,20 @@
     <ClInclude Include="Include\SubClasses.h" />
     <ClInclude Include="Include\texturedPolygons.h" />
     <ClInclude Include="Include\TextureHandler.h" />
+    <ClInclude Include="packages\imgui-master\backends\imgui_impl_glut.h" />
+    <ClInclude Include="packages\imgui-master\backends\imgui_impl_opengl2.h" />
+    <ClInclude Include="packages\imgui-master\imconfig.h" />
+    <ClInclude Include="packages\imgui-master\imgui.h" />
+    <ClInclude Include="packages\imgui-master\imgui_internal.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="packages\imgui-master\backends\imgui_impl_glut.cpp" />
+    <ClCompile Include="packages\imgui-master\backends\imgui_impl_opengl2.cpp" />
+    <ClCompile Include="packages\imgui-master\imgui.cpp" />
+    <ClCompile Include="packages\imgui-master\imgui_demo.cpp" />
+    <ClCompile Include="packages\imgui-master\imgui_draw.cpp" />
+    <ClCompile Include="packages\imgui-master\imgui_tables.cpp" />
+    <ClCompile Include="packages\imgui-master\imgui_widgets.cpp" />
     <ClCompile Include="src\AABB.CPP" />
     <ClCompile Include="src\AABBLinkedList.cpp" />
     <ClCompile Include="src\AABBNode.cpp" />

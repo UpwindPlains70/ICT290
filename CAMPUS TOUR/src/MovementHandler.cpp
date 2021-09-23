@@ -204,6 +204,7 @@ void releaseKeys(unsigned char key, int x, int y)
 //--------------------------------------------------------------------------------------
 void Mouse(int button, int state, int x, int y)
 {
+	ImGui_ImplGLUT_MouseFunc(button, state, x, y);
 	// exit tour if clicked on exit splash screen
 	if ((button == GLUT_LEFT_BUTTON) && (state == GLUT_DOWN))
 	{

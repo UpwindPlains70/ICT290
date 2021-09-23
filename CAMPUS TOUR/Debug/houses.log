@@ -1,5 +1,6 @@
-﻿  main.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\LevelHandler.h(17,23): warning C4091: 'extern ': ignored on left of 'levelStage' when no variable is declared
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(73,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(119,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+﻿  imgui_impl_glut.cpp
+  main.cpp
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(155,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(206,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   houses.vcxproj -> C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\.\Debug\houses.exe
