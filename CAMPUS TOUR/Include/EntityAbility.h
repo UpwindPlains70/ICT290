@@ -32,9 +32,7 @@ public:
 
 	int getUnique();
 
-	void setUsed(bool);
-
-	bool getUsed();
+	void used();
 
 	void setName(string);
 
@@ -56,9 +54,11 @@ public:
 
 	int getCooldown();
 
-	void setCooldownCounter(int);
+	void resetCooldownCounter();
 
-	int getCooldownCounter();
+	void roundPassed();
+
+	bool canUseAbility();
 
 private:
 	string name;
@@ -70,7 +70,6 @@ private:
 	int cooldownCounter;
 	int tohit;
 	int damage;
-	bool used;
 	int unique;
 };
 

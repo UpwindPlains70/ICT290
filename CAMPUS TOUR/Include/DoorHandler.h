@@ -4,6 +4,7 @@
 #include <GL/glut.h>
 #include "TextureHandler.h"
 #include "CollisionHandler.h"
+#include "UpdateHandler.h"
 
 #define TIMERSECS 25
 

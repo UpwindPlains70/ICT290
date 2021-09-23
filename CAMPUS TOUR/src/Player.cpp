@@ -135,11 +135,23 @@ void Player::resetMovementLeft()
 	movementLeft = movement;
 }
 
-bool Player::movePlayer()
+void Player::noMovementLeft()
+{
+	movementLeft = 0;
+}
+
+void Player::movePlayer()
+{
+	if (canMove())
+	{
+		movementLeft--;
+	}
+}
+
+bool Player::canMove()
 {
 	if (movementLeft > 0)
 	{
-		movementLeft--;
 		return true;
 	}
 	return false;
@@ -169,4 +181,9 @@ void Player::setAbility(EntityAbility newAbility, int num) {
 
 EntityAbility Player::getAbility(int num) {
 	return abilities[num];
+}
+
+int Player::getNumberOfAbilities()
+{
+	return abilities.size();
 }

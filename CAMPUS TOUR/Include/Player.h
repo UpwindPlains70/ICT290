@@ -74,7 +74,13 @@ public:
 
 	void resetMovementLeft();
 	
-	bool movePlayer();
+	void movePlayer();
+
+	bool canMove();
+
+	void noMovementLeft();
+
+	int getNumberOfAbilities();
 
 private:
 	string name;

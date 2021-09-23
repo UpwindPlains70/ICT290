@@ -1,205 +1,351 @@
--int 'Level' = 0
-- string 'State' = Not Ready
-- map < int turn, bool isPC> 'isPCTurnMap'
-- map < int turn, int ID> 'turnIDMap'
-- map < int turn, bool isDead> 'turnDeadMap'
-- vector<Player> playerList
-- bool pcHasAction
-- Player nowPlayer
-- Map nowMap
-- vector<Enemy> nowEnemies
-- maxTurn
-- EntityAbility nowAbility
-- int nowAbilityID
+#include "UpdateHandler.h"
 
-//IF State = Not Ready
-Get Number of Players
-Choose the first player's class and push_back the new player
-Repeat till all players are done
-If number of players selected and all player classes are set
-State = Ready
+int level = 0;
+enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE};
+state gameState = NotReady;
+map<int, bool> isPCTurnMap;
+map<int, bool> turnDeadMap;
+map<int, int> turnIDMap;
+vector<Player> playerList;
+bool pcHasAction;
+Player nowPlayer;
+vector<Enemy> nowEnemies;
+int maxTurn;
+int nowAbilityID;
+int turn;
+int nowMapID;
 
-//IF State = Ready
-Doors can open now
-if in area to teleport
-State = Initializing
+using namespace std;
 
-//IF State = Initializing
-Choose map as 'nowMap'
-draw map
-empty isPCTurnMap
-empty turnIDMap
-empty turnDeadMap
-empty nowEnemies
-Figure out enemies in Level
-Place enemies into 'nowEnemies'
-Display enemy stats(all at once or one at a time due to who is selected)
-Randomly choose location
-Place first enemy
-If more enemies
-While('found' == false)
-Randomly choose location
-for (int i = -2; i <= 2; i++)
-for (int j = -2; j <= 2; j++)
-'newX' = 'locationX' + i
-'newY' = 'locationY' + j
-if (there is an enemy at map[newX][newY])
-'found' = true
-Repeat for each
-Do the same for players
-maxTurn = number of entities
-Figure out turn order
-(use a vector of integers filled with each number up to number of entities)
-(then get random location in vector and get the turn from that)
-(then removing that turn as it is used makes life easier)
-Place turn in each enemy and character
-Place if enemy or character into isPCTurnMap
-Set all of turnDeadMap to false
-State = Start Turn
+void Update()
+{
+	switch (gameState) {
+		case NotReady:
+			/// <Task 1> (Peter)
+			/// Get Number of Players
+			/// </Task 1>
+			
+			/// <Task 2> (Peter)
+			/// Choose the first player's class and push_back the new player
+			/// Repeat till all players are done
+			/// </Task 2>
 
-//IF State = Start Turn
-if turnDeadMap[Turn] == true
-skip turn
-if (isPCTurnMap[Turn] == false)
-enemyTurn(turnIDMap[Turn])
-else
-playerTurn(turnIDMap[Turn])
+			/// <Task 3> (Peter)
+			/// If all of above is done then:
+			/// gameState = Ready;
+			/// </Task 3>
 
-//enemyTurn(int enemyID)
-Enemy ai = nowEnemies.at(enemyID)
-if (ai.stun == 1)
-show stun being removed
-ai.stun = 0
-endturn()
-else if (ai.stun == 0.5)
-if in range
-attack
-show stun being removed
-ai.stun = 0
-endturn()
-else
-move + attack
-endturn()
+			break;
+		case Ready:
+			/// <Task 4> (Anyone)
+			/// Keep back doors locked until now.
+			/// </Task 4>
+			
+			/// <Task 5> (Anyone)
+			/// If teleport area:
+			/// gameState = Initialising;
+			/// </Task 5>
 
+			break;
+		case Initialising:
+			/// <Task 6> (Peter)
+			/// nowMap = map for level
+			/// draw map
+			/// </Task 6>
+			
+			isPCTurnMap.clear();
+			turnIDMap.clear();
+			turnDeadMap.clear();
+			nowEnemies.clear();
 
-//playerTurn(int playerID)
-Player pc = players.at(playerID)
-display pc stats
-pc.movementLeft = pc.movement
-if (pc.stun == 1)
-show stun being removed
-pc.stun = 0
-endturn()
-else if (pc.stun == 0.5)
-pc.movementLeft = 0
-all pc ability cooldownLeft -= 1
-pc.stun = 0
-pcHasAction = true
-nowPlayer = pc
-State = Action
+			/// <Task 7> (Anyone)
+			/// figure out enemies for level
+			/// place enemies into nowEnemies
+			/// </Task 7>
+			
+			/// <Task 8> (Peter)
+			/// Display enemy stats(all at once or one at a time due to who is selected)
+			/// </Task 8>
 
-//endturn()
-check if any player or enemy is dead
-if so delete them from list
-and add their turn to 'turnDeadMap'
-remove model off board
-make that space empty on map
-check if no more enemies
-State = Win
-check if no more players
-State = Lose
-State = Start Turn
-Turn += 1
-if turn > maxTurn
-turn = 1
+			/// <Task 9> (Raymond)
+			/// Randomly choose location 
+			/// Place first enemy
+			///	If more enemies
+			///	While('found' == false)
+			///	Randomly choose location
+			///	for (int i = -2; i <= 2; i++)
+			///		for (int j = -2; j <= 2; j++)
+			///			'newX' = 'locationX' + i
+			///			'newY' = 'locationY' + j
+			///			if (there is an enemy at map[newX][newY])
+			///				'found' = true
+			///	Repeat for each
+			///	Do the same for players
+			/// </Task 9>
+			
+			/// <Task 16> (Jason)
+			/// start drawing players and enemies in their positions
+			/// </Task 16>
+			
+			maxTurn = playerList.size() + nowEnemies.size();
 
-//IF State = Action
-if nowPlayer.MovementLeft > 0
-if keyboard 'w'
-nowPlayer.posZ += 1
-nowPlayer.MovementLeft--
-if keyboard 's'
-nowPlayer.posZ -= 1
-nowPlayer.MovementLeft--
-if keyboard 'a'
-nowPlayer.posX -= 1
-nowPlayer.MovementLeft--
-if keyboard 'd'
-nowPlayer.posX += 1
-nowPlayer.MovementLeft--
-if pcHasAction = true
-if keyboard '1'
-nowAbilityID = 0
-nowAbility = nowPlayer.GetAbility(0)
-if cooldownLeft
-if Ability.Unique = true
-uniqueAbility()
-if Ability.aoe > 1
-State = AttackAOE
-else
-State = Attack
-if keyboard '2'
-nowAbilityID = 1
-nowAbility = nowPlayer.GetAbility(1)
-if cooldownLeft
-if Ability.Unique = true
-uniqueAbility()
-if Ability.aoe > 1
-State = AttackAOE
-else
-State = Attack
+			/// <Task 10> (Peter)
+			/// figure out turn order
+			/// (use a vector of integers filled with each number up to number of entities)
+			/// (then get random location in vector and get the turn from that)
+			///	(then removing that turn as it is used makes life easier)
+			///	Place turn in each enemyand characters
+			/// </Task 10>
+			
+			for (int i = 1; i <= maxTurn; i++)
+			{
+				turnDeadMap.insert(std::pair<int, bool>(i, false));
+			}
+			gameState = StartTurn;
+			turn = 1;
+			break;
+		case StartTurn:
+			if (turnDeadMap[turn] == true)
+			{
+				endTurn();
+				if (isPCTurnMap[turn] == false)
+				{
+					enemyTurn(nowEnemies[turnIDMap[turn]]);
+				}
+				else
+				{
+					playerTurn(playerList[turnIDMap[turn]]);
+				}
+			}
+			break;
+		case Action:
+			if (nowPlayer.canMove())
+			{
+				/// <Task 17> (Anyone)
+				/// if keyboard 'w'
+				///		nowPlayer.posZ += 1
+				///		nowPlayer.MovementLeft--
+				///	if keyboard 's'
+				///		nowPlayer.posZ -= 1
+				///		nowPlayer.MovementLeft--
+				///	if keyboard 'a'
+				///		nowPlayer.posX -= 1
+				///		nowPlayer.MovementLeft--
+				///	if keyboard 'd'
+				///		nowPlayer.posX += 1
+				///		nowPlayer.MovementLeft--
+				/// </Task 17>
+			}
+			if (pcHasAction == true)
+			{
+				/// <Task 18> (Anyone)
+				/// if keyboard '1'
+				///		nowAbilityID = 0
+				///		nowAbility = nowPlayer.GetAbility(0)
+				///		if cooldownLeft
+				///			if Ability.Unique = true
+				///				uniqueAbility()
+				///			elseif Ability.aoe > 1
+				///				State = AttackAOE
+				///			else
+				///				State = Attack
+				///	if keyboard '2'
+				///		nowAbilityID = 1
+				///		nowAbility = nowPlayer.GetAbility(1)
+				///		if cooldownLeft
+				///			if Ability.Unique = true
+				///				uniqueAbility()
+				///			elseif Ability.aoe > 1
+				///				State = AttackAOE
+				///			else
+				///				State = Attack
+				/// if keyboard '3'
+				///		nowAbilityID = 2
+				///		nowAbility = nowPlayer.GetAbility(2)
+				///		if cooldownLeft
+				///			if Ability.Unique = true
+				///				uniqueAbility()
+				///			elseif Ability.aoe > 1
+				///				State = AttackAOE
+				///			else
+				///				State = Attack
+				/// </Task 18>
+			}
+			if (nowPlayer.canMove() == false && pcHasAction == false)
+			{
+				playerList[turnIDMap[turn]] = nowPlayer;
+				endTurn();
+			}
+			/// <Task 19> (Anyone)
+			/// if keyboard '`'
+			///		playerList[turnIDMap[turn]] = nowPlayer;
+			///		endTurn();
+			/// </Task 19>
+			break;
+		case Attack:
+			/// <Task 20> (Anyone)
+			/// show enemy select screen
+			/// get player to decide on enemy to hit
+			/// if decided:
+			///		nowPlayer.GetAbility(nowAbilityID).used()
+			///		if in range:
+			///			attack(enemy)
+			///			State = Action
+			/// </Task 20>
 
-if keyboard '3'
-nowAbilityID = 2
-nowAbility = nowPlayer.GetAbility(2)
-if cooldownLeft
-if Ability.Unique = true
-uniqueAbility()
-if Ability.aoe > 1
-State = AttackAOE
-else
-State = Attack
-if nowPlayer.MovementLeft = 0 and pcHasAction = false
-endturn()
-if keyboard '`'
-endturn()
+			break;
+		case Win:
+			if (level == 10)
+			{
+				/// <Task 21> (Jason)
+				/// show final win screen
+				/// </Task 21>
+			}
+			else
+			{
+				/// <Task 22> (Jason)
+				/// show level win screen
+				/// </Task 22>
+				upgrade();
+				level++;
+				gameState = Initialising;
+			}
+			break;
+		case Lose:
+			/// <Task 22> (Jason)
+			/// show lose screen
+			/// </Task 22>
+			break;
+		case AttackAOE:
+			/// <Task 26> (Anyone)
+			/// show aoe select screen
+			/// if decided
+			///		nowPlayer.GetAbility(nowAbilityID).used()
+			///		foreach enemy in aoe
+			///			attack(enemy)
+			/// </Task 26>				
+			break;
+	}
+}
 
-//IF State = Attack
-Show enemy select screen
-if decided
-nowPlayer.GetAbility(nowAbilityID).cooldownReset()
-if in range
-attack(enemy)
-State = Action
+void endTurn()
+{
+	/// <Task 11> (Jason)
+	/// if so delete them from list
+	///	and add their turn to 'turnDeadMap'
+	///	remove model off board
+	///	make that space empty on map
+	/// </Task 11>
+	if (nowEnemies.size() == 0)
+	{
+		gameState = Win;
+	}
+	if (playerList.size() == 0)
+	{
+		gameState = Lose;
+	}
+	gameState = StartTurn;
+	turn += 1;
+	if (turn > maxTurn)
+	{
+		turn = 1;
+	}
+}
 
-//IF State = Win
-if level = 10
-show final win screen
-else
-show level win screen
-upgrade()
-level++
-State = Initializing
+void playerTurn(Player pc)
+{
+	/// <Task 12> (Peter)
+	/// display pc stats
+	/// </Task 12>
+	pc.resetMovementLeft();
+	if (pc.getStun() == 1)
+	{
+		/// <Task 13> (Jason)
+		/// show stun being removed
+		/// </Task 13>
+		pc.setStun(0);
+		playerList[turnIDMap[turn]] = pc;
+		endTurn();
+	}
+	else if (pc.getStun() == 0.5)
+	{
+		pc.noMovementLeft();
+	}
+	EntityAbility ability;
+	for (int i = 0; i < pc.getNumberOfAbilities(); i++)
+	{
+		ability = pc.getAbility(i);
+		ability.roundPassed();
+		pc.setAbility(ability, i);
+	}
+	pc.setStun(0);
+	pcHasAction = true;
+	nowPlayer = pc;
+	gameState = Action;
+}
 
-//If State = Lose
-Show loosing screen
+void enemyTurn(Enemy ai)
+{
+	EntityAbility ability;
+	
+	if (ai.getStun() == 1)
+	{
+		/// <Task 13> (Jason)
+		/// show stun being removed
+		/// </Task 13>
+	}
+	else if (ai.getStun() == 0.5)
+	{	
+		/// <Task 14> (Raymond)
+		/// randomly choose ability from enemy that is an ability in range of closest target
+		/// if there is an ability and it has no cooldown left
+		/// set as ability
+		/// attack
+		/// </Task 14>
+		
+		/// <Task 13> (Jason)
+		/// show stun being removed
+		/// </Task 13>
+	}
+	else
+	{
+		/// <Task 15> (Raymond)
+		/// move enemy
+		/// </Task 15>
 
-//uniqueAbility()
-needs to be filled in with special actions and what happens
+		/// <Task 14> (Raymond)
+		/// randomly choose ability from enemy that is an ability in range of closest target
+		/// if there is an ability and it has no cooldown left
+		/// set as ability
+		/// attack
+		/// </Task 14>
+	}
+	ai.setStun(0);
+	nowEnemies[turnIDMap[turn]] = ai;
+	endTurn();
+}
 
-//upgrade()
-needs to be filled in with upgrading each character and displaying the update
+void upgrade()
+{
+	/// <Task 23> (Mark)
+	/// needs to be filled in with upgrading each character and displaying the update
+	/// </Task 23>
+}
 
-//attack(enemy)
-pcHasAction = false
-foreach duplicate
-if tohit
-damage
-stun
+void uniqueAbility()
+{
+	/// <Task 24> (Mark)
+	/// needs to be filled in with special actions and what happens
+	/// </Task 24>
+}
 
-//IF State = AttackAOE
-Show aoe select screen
-if decided
-nowPlayer.GetAbility(nowAbilityID).cooldownReset()
-foreach enemy in aoe
-attack(enemy)
+void attack(int id)
+{
+	/// <Task 25> (Mark)
+	/// pcHasAction = false
+	///	foreach duplicate
+	///	if tohit
+	///		damage
+	///		stun
+	/// </Task 25>
+}

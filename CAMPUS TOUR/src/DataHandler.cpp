@@ -77,7 +77,7 @@ EntityAbility GetAbility(string name)
 		}
 	}
 	cout << "Error" << endl;
-	return;
+	return anAbility;
 }
 
 Enemy GetEnemy(string name)
@@ -92,7 +92,7 @@ Enemy GetEnemy(string name)
 		}
 	}
 	cout << "Error" << endl;
-	return;
+	return anEnemy;
 }
 
 void GetEnemyData()
@@ -176,12 +176,12 @@ void GetEnemyPerLevelData()
 	while (!EPLFile.eof())
 	{
 		getline(EPLFile, tmp);
-		stringstream element(tmp);
-		getline(element, tempString, ',');
+		stringstream element1(tmp);
+		getline(element1, tempString, ',');
 		istringstream(tempString) >> tempLevel;
-		getline(element, tempString, ',');
+		getline(element1, tempString, ',');
 		istringstream(tempString) >> tempMin;
-		getline(element, tempString, ',');
+		getline(element1, tempString, ',');
 		istringstream(tempString) >> tempMax;
 
 		getline(EPLFile, tmp);

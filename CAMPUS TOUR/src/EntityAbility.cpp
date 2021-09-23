@@ -14,7 +14,6 @@ EntityAbility::EntityAbility() {
 	cooldownCounter = 0;
 	stun = 0;
 	unique = 0;
-	used = false;
 }
 
 EntityAbility::EntityAbility(string newName, int newRange, int newAOE, int newDuplicate, int newStun, int newCooldown, int newUnique, int newToHit, int newDamage) {
@@ -25,10 +24,9 @@ EntityAbility::EntityAbility(string newName, int newRange, int newAOE, int newDu
 	duplicate = newDuplicate;
 	stun = newStun;
 	cooldown = newCooldown;
-	cooldownCounter = cooldown;
+	cooldownCounter = 0;
 	tohit = newToHit;
 	damage = newDamage;
-	used = false;
 	unique = newUnique;
 }
 
@@ -68,12 +66,8 @@ int EntityAbility::getUnique() {
 	return unique;
 }
 
-void EntityAbility::setUsed(bool newUsed) {
-	used = newUsed;
-}
-
-bool EntityAbility::getUsed() {
-	return used;
+void EntityAbility::used() {
+	cooldownCounter = cooldown;
 }
 
 void EntityAbility::setName(string newName) {
@@ -116,10 +110,26 @@ int EntityAbility::getCooldown() {
 	return cooldown;
 }
 
-void EntityAbility::setCooldownCounter(int newCooldownCounter) {
-	cooldownCounter = newCooldownCounter;
+void EntityAbility::resetCooldownCounter() {
+	cooldownCounter = 0;
 }
 
-int EntityAbility::getCooldownCounter() {
-	return cooldownCounter;
+void EntityAbility::roundPassed()
+{
+	cooldownCounter--;
+	if (cooldownCounter < 0)
+	{
+		cooldownCounter = 0;
+	}
+}
+
+bool EntityAbility::canUseAbility() {
+	if (cooldownCounter == 0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

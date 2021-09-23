@@ -1,30 +1,18 @@
 ﻿  DataHandler.cpp
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(55,21): warning C4018: '<': signed/unsigned mismatch
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(43,25): warning C4390: ';': empty controlled statement found; is this the intent?
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(71,20): warning C4018: '<': signed/unsigned mismatch
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(80,2): error C2561: 'GetAbility': function must return a value
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(68): message : see declaration of 'GetAbility'
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(86,20): warning C4018: '<': signed/unsigned mismatch
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(95,2): error C2561: 'GetEnemy': function must return a value
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(83): message : see declaration of 'GetEnemy'
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(145,21): warning C4018: '<': signed/unsigned mismatch
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(131,25): warning C4390: ';': empty controlled statement found; is this the intent?
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(188,16): error C2374: 'element': redefinition; multiple initialization
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(179): message : see declaration of 'element'
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(203,21): warning C4018: '<': signed/unsigned mismatch
-C:\ICT290\GitHub\CAMPUS TOUR\src\DataHandler.cpp(192,25): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(55,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(43,25): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(71,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(86,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(145,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(131,25): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(203,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(192,25): warning C4390: ';': empty controlled statement found; is this the intent?
   main.cpp
-C:\ICT290\GitHub\CAMPUS TOUR\Include\LevelHandler.h(27,23): warning C4091: 'extern ': ignored on left of 'levelStage' when no variable is declared
-C:\ICT290\GitHub\CAMPUS TOUR\src\main.cpp(74,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-C:\ICT290\GitHub\CAMPUS TOUR\src\main.cpp(127,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  MovementHandler.cpp
-C:\ICT290\GitHub\CAMPUS TOUR\Include\LevelHandler.h(27,23): warning C4091: 'extern ': ignored on left of 'levelStage' when no variable is declared
-C:\ICT290\GitHub\CAMPUS TOUR\src\MovementHandler.cpp(241,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\MovementHandler.cpp(241,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\MovementHandler.cpp(247,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\MovementHandler.cpp(247,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\MovementHandler.cpp(257,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\MovementHandler.cpp(257,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\MovementHandler.cpp(262,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\MovementHandler.cpp(262,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(13,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\LevelHandler.h(27,23): warning C4091: 'extern ': ignored on left of 'levelStage' when no variable is declared
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(74,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(127,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  UpdateHandler.cpp
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(13,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
   Generating Code...
+  houses.vcxproj -> C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Release\houses.exe
