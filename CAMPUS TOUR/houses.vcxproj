@@ -164,6 +164,7 @@
     <ClInclude Include="Include\SoundTime.h" />
     <ClInclude Include="Include\texturedPolygons.h" />
     <ClInclude Include="Include\TextureHandler.h" />
+    <ClInclude Include="Include\UpdateHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AABB.CPP" />
@@ -194,6 +195,7 @@
     <ClCompile Include="src\SoundTime.cpp" />
     <ClCompile Include="src\texturedPolygons.cpp" />
     <ClCompile Include="src\TextureHandler.cpp" />
+    <ClCompile Include="src\UpdateHandler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
