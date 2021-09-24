@@ -47,7 +47,8 @@ void LevelMap::SetValue(int x, int z, int value)
 
 LevelMap::LevelMap(const LevelMap& copy)
 {
-	CopyMap(copy);
+	if(this != &copy)
+		*this = copy;
 }
 
 void LevelMap::CopyMap(const LevelMap& copy)

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{9062be4e-efab-4464-ada2-c00ed044d106}</UniqueIdentifier>
       <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
     </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{3ec7f9a8-2bf6-49c2-93cb-764cd8bdad4f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -90,10 +93,19 @@
     <ClInclude Include="Include\Enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\EnemyType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Include\EntityAbility.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Include\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\PlayerClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\SubClasses.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Include\MapLevel.h">
@@ -102,8 +114,20 @@
     <ClInclude Include="Include\DataHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Include\UpdateHandler.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="packages\imgui-master\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\imgui-master\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\imgui-master\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\imgui-master\backends\imgui_impl_glut.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="packages\imgui-master\backends\imgui_impl_opengl2.h">
+      <Filter>imgui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -176,7 +200,13 @@
     <ClCompile Include="src\Decorations.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Abilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\Enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EnemyType.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\EntityAbility.cpp">
@@ -185,14 +215,38 @@
     <ClCompile Include="src\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\PlayerClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubClasses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="src\MapLevel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\DataHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\UpdateHandler.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="packages\imgui-master\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\imgui-master\imgui_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\imgui-master\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\imgui-master\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\imgui-master\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\imgui-master\backends\imgui_impl_glut.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="packages\imgui-master\backends\imgui_impl_opengl2.cpp">
+      <Filter>imgui</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
