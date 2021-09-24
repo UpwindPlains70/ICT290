@@ -1,6 +1,6 @@
 #include "LevelHandler.h"
 
-enum levelStage { zero, one, two, three };
+enum levelStage { zero, one, two, three, four, five, six, seven, eight, nine, ten };
 levelStage lvlStage = one;
 Point4 camPos = { 0.0, 9500.0, 0.0, 90.0 };
 
