@@ -20,6 +20,8 @@ int currLevel = 1;
 int mapID = 0;
 LevelEnemy nowLM;
 int randNum;
+int randX;
+int randZ;
 
 using namespace std;
 
@@ -83,23 +85,40 @@ void Update()
 
 			displayEnt = true;
 
-			///	If more enemies
+			randNum = rand() % nowMap->GetX();
+			nowEnemies[0].setPosX(randNum);
+			randNum = rand() % nowMap->GetZ();
+			nowEnemies[0].setPosZ(randNum);
 			if (nowEnemies.size() > 0) {
-				bool found = false;
-				///	While('found' == false)
-				while (!found) {
-					///	Randomly choose location
-					for (int i = -2; i <= 2; i++) {
-						for (int j = -2; j <= 2; j++) {
-							///			'newX' = 'locationX' + i
-							///			'newY' = 'locationY' + j
-							///			if (there is an enemy at map[newX][newY] || there is wall at map[newX][newY] )
-							///				'found' = true
+				for (int i = 1; i < nowEnemies.size(); i++)
+				{
+					bool found = false;
+					while (!found) {
+						randX = rand() % nowMap->GetX();
+						randZ = rand() % nowMap->GetZ();
+						for (int x = 0; x < nowMap->GetX(); x++)
+						{
+							for (int z = 0; z < nowMap->GetZ(); z++)
+							{
+								int xDis = randX - x;
+								int zDis = randZ - z;
+								if (xDis >= -2 && xDis <= 2)
+								{
+									if (zDis >= -2 && zDis <= 2)
+									{
+										if (nowMap->GetValue(randX, randZ) == 0)
+										{
+											found = true;
+										}
+									}
+								}
+							}
 						}
 					}
+					nowEnemies[i].setPosX(randX);
+					nowEnemies[i].setPosZ(randZ);
 				}
 			}
-			
 			
 			///	Repeat for each
 			///	Do the same for players
