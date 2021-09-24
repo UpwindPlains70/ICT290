@@ -1,1 +1,3 @@
-﻿  houses.vcxproj -> C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\Debug\houses.exe
+﻿  UpdateHandler.cpp
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(14,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+  houses.vcxproj -> C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Debug\houses.exe

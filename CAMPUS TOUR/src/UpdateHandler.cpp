@@ -1,6 +1,7 @@
 #include "UpdateHandler.h"
 
-int level = 1;
+int currLevel = 1;
+int mapID;
 enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE};
 state gameState = NotReady;
 map<int, bool> isPCTurnMap;
@@ -26,8 +27,6 @@ void Update()
 			/// Get Number of Players
 			/// </Task 1>
 			
-			nowMap = new LevelMap(mapList[level].at(rand() % mapList[level].size()));
-			
 			/// <Task 2> (Peter)
 			/// Choose the first player's class and push_back the new player
 			/// Repeat till all players are done
@@ -51,11 +50,10 @@ void Update()
 
 			break;
 		case Initialising:
-			//find preset map
-
-			/// <Task 6> (Peter)
-			/// draw map
-			/// </Task 6>
+			
+			mapID = rand() % mapList[currLevel].size();
+			
+			nowMap = new LevelMap(mapList[currLevel].at(mapID));
 			
 			isPCTurnMap.clear();
 			turnIDMap.clear();
@@ -63,7 +61,7 @@ void Update()
 			nowEnemies.clear();
 
 			/// <Task 7> (Anyone)
-			/// figure out enemies for level
+			/// figure out enemies for currLevel
 			/// place enemies into nowEnemies
 			/// </Task 7>
 			
@@ -199,7 +197,7 @@ void Update()
 
 			break;
 		case Win:
-			if (level == 10)
+			if (currLevel == 10)
 			{
 				/// <Task 21> (Jason)
 				/// show final win screen
@@ -208,10 +206,10 @@ void Update()
 			else
 			{
 				/// <Task 22> (Jason)
-				/// show level win screen
+				/// show currLevel win screen
 				/// </Task 22>
 				upgrade();
-				level++;
+				currLevel++;
 				gameState = Initialising;
 			}
 			break;

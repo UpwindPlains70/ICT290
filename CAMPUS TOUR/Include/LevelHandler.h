@@ -57,6 +57,7 @@ void displayMap();
 #define gridSquareSize 155
 
 extern map<int, vector<LevelMap>> mapList;
+extern int mapID;
 ///Display the floor tiles and pillars
 void displayFloor();
 
