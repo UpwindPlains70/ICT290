@@ -186,13 +186,9 @@ void GetEnemyPerLevelData()
 
 		getline(EPLFile, tmp);
 		stringstream element(tmp);
-		while (true)
+		while (!element.eof())
 		{
 			getline(element, tempString, ',');
-			if (tempString == "");
-			{
-				break;
-			}
 			istringstream(tempString) >> tempEnemyName;
 			tempEnemyNameList.push_back(tempEnemyName);
 		}
