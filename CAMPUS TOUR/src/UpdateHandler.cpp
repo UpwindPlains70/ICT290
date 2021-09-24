@@ -15,7 +15,8 @@ int maxTurn;
 int nowAbilityID;
 int turn;
 LevelMap* nowMap = nullptr;
-
+LevelEnemy nowLM;
+int randNum;
 
 using namespace std;
 
@@ -59,11 +60,13 @@ void Update()
 			turnIDMap.clear();
 			turnDeadMap.clear();
 			nowEnemies.clear();
-
-			/// <Task 7> (Anyone)
-			/// figure out enemies for currLevel
-			/// place enemies into nowEnemies
-			/// </Task 7>
+			
+			nowLM = enemyLevelMap[currLevel];
+			randNum = rand() % (nowLM.max - nowLM.min) + nowLM.min;
+			for (int i = 0; i < randNum; i++)
+			{
+				nowEnemies.push_back(nowLM.presetList[rand() % nowLM.presetList.size()]);
+			}
 			
 			/// <Task 8> (Peter)
 			/// Display enemy stats(all at once or one at a time due to who is selected)

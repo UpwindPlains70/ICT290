@@ -1,3 +1,132 @@
-﻿  UpdateHandler.cpp
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(14,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+﻿  DataHandler.cpp
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(55,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(43,25): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(71,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(86,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(145,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(131,25): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(203,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DataHandler.cpp(192,25): warning C4390: ';': empty controlled statement found; is this the intent?
+  DisplayHandler.cpp
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(15,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(208,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(234,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(251,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(438,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(526,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(538,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(593,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(597,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(662,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(662,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(667,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(671,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(677,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(681,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(688,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(692,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(698,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(715,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(719,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(725,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(729,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(760,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(767,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(778,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(785,35): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(808,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(822,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(822,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(842,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(871,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(879,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(886,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(899,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(907,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1200,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1269,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1284,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1300,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1320,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1343,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1347,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1366,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1370,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1390,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1394,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1414,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1418,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1496,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1496,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1500,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1500,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1523,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1550,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1564,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1592,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1592,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1619,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1633,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1774,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1808,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1839,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1882,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1887,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1966,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1977,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1989,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2023,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2034,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2046,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2056,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2069,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2153,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2164,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2175,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2187,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2205,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2279,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2286,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2293,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2312,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2312,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2316,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2316,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2332,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2332,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2336,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2336,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2398,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2407,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2414,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2421,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2427,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2428,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2429,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2440,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2447,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2454,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2460,38): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2461,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2462,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  DoorHandler.cpp
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(15,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\DoorHandler.cpp(19,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  MovementHandler.cpp
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(15,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(242,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(242,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(248,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(248,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(258,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(258,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(263,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(263,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  UpdateHandler.cpp
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(15,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+  main.cpp
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(15,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(155,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(206,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   houses.vcxproj -> C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Debug\houses.exe
