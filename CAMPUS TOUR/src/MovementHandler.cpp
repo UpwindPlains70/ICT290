@@ -29,7 +29,7 @@ bool closing = false;
 
 // USE THESE STTEINGS TO CHANGE SPEED (on different spec computers)
 // Set speed (steps)
-GLdouble movementSpeed = 10.0;
+GLdouble movementSpeed = 1.0;
 GLdouble rotationSpeed = 0.005;
 
 //--------------------------------------------------------------------------------------
@@ -157,6 +157,14 @@ void movementKeys(int key, int x, int y)
 		cam.DirectionFB(-1);
 		break;
 	}
+
+	auto sprintCheck = glutGetModifiers();
+	if (sprintCheck == GLUT_ACTIVE_SHIFT) {
+		movementSpeed = 2.0;
+	}
+	else {
+		movementSpeed = 1.0; 
+	}
 }
 
 //--------------------------------------------------------------------------------------
@@ -204,6 +212,7 @@ void releaseKeys(unsigned char key, int x, int y)
 //--------------------------------------------------------------------------------------
 void Mouse(int button, int state, int x, int y)
 {
+	ImGui_ImplGLUT_MouseFunc(button, state, x, y);
 	// exit tour if clicked on exit splash screen
 	if ((button == GLUT_LEFT_BUTTON) && (state == GLUT_DOWN))
 	{

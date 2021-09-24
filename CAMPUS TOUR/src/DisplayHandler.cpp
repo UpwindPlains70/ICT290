@@ -11,7 +11,7 @@ bool lightsOn;
 //--------------------------------------------------------------------------------------
 void DrawBackdrop()
 {
-	if (!levelZeroClear() && lvlStage == 0) {
+	if (!levelZeroClear() && currLevel == 0) {
 		DisplayAboveWindowBlock();
 		DisplayBench();
 		DisplayBricks();
@@ -43,7 +43,7 @@ void DrawBackdrop()
 	}
 	else
 	{
-		levelOneDraw();
+		displayMap();
 	}
 }
 

@@ -1,2 +1,3 @@
-﻿  TextureHandler.cpp
-  houses.vcxproj -> C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\.\Release\houses.exe
+﻿  UpdateHandler.cpp
+C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(13,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+  houses.vcxproj -> C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Release\houses.exe

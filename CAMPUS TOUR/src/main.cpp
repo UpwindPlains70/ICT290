@@ -1,3 +1,8 @@
+//GUI lidrary
+#include "imgui.h"
+#include "imgui_impl_glut.h"
+#include "imgui_impl_opengl2.h"
+
 #include <math.h>
 #include <GL/glut.h>
 #include <time.h>
@@ -8,6 +13,8 @@
 #include "DrawHandler.h"
 #include "MovementHandler.h"
 #include "LevelHandler.h"
+#include "DataHandler.h"
+
 
 GLdouble stepIncrement;
 GLdouble angleIncrement;
@@ -29,6 +36,62 @@ void IncrementFrameCount();
 // deletes image and clears memory
 void DeleteImageFromMemory(unsigned char* tempImage);
 
+// Our state
+bool show_demo_window = true;
+bool show_another_window = false;
+ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+
+void my_display_code()
+{
+	// Start the Dear ImGui frame
+	ImGui_ImplOpenGL2_NewFrame();
+	ImGui_ImplGLUT_NewFrame();
+
+	// 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
+	if (show_demo_window)
+		ImGui::ShowDemoWindow(&show_demo_window);
+
+	// 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
+	{
+		static float f = 0.0f;
+		static int counter = 0;
+
+		ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
+
+		ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
+		ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
+		ImGui::Checkbox("Another Window", &show_another_window);
+
+		ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
+		ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
+
+		if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
+			counter++;
+		ImGui::SameLine();
+		ImGui::Text("counter = %d", counter);
+
+		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+		ImGui::End();
+	}
+
+	// 3. Show another simple window.
+	if (show_another_window)
+	{
+		ImGui::Begin("Another Window", &show_another_window);   // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool when clicked)
+		ImGui::Text("Hello from another window!");
+		if (ImGui::Button("Close Me"))
+			show_another_window = false;
+		ImGui::End();
+	}
+
+	// Rendering
+	ImGui::Render();
+	ImGuiIO& io = ImGui::GetIO();
+	glViewport(0, 0, (GLsizei)io.DisplaySize.x, (GLsizei)io.DisplaySize.y);
+
+	glutPostRedisplay();
+}
+
 //--------------------------------------------------------------------------------------
 //  Main function
 //--------------------------------------------------------------------------------------
@@ -49,17 +112,36 @@ int main(int argc, char **argv)
 	glutKeyboardFunc(keys);
 
 	glutDisplayFunc(Display);
-	glutIdleFunc(Display);
-	glutMouseFunc(Mouse);
 
-	// ONLY USE IF REQUIRE MOUSE MOVEMENT
-	//glutPassiveMotionFunc(mouseMove);
-	//ShowCursor(FALSE);
+	// Setup Dear ImGui context
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+
+	// Setup Dear ImGui style
+	ImGui::StyleColorsDark();
+	
+	// Setup Platform/Renderer backends
+	ImGui_ImplGLUT_Init();
+	ImGui_ImplOpenGL2_Init();
+
+		//Smoothness
+	glutIdleFunc(Display);
+
+	//interaction
+	glutMotionFunc(ImGui_ImplGLUT_MotionFunc);
+	glutMouseFunc(Mouse);
 
 	glutTimerFunc(TIMERSECS, animate, 0);
 	
 	glutReshapeFunc(reshape);
 	glutMainLoop();
+
+	// Cleanup
+	ImGui_ImplOpenGL2_Shutdown();
+	ImGui_ImplGLUT_Shutdown();
+	ImGui::DestroyContext();
+	
 	return(0);
 }
 
@@ -89,12 +171,12 @@ void myinit()
 	// set the world co-ordinates (used to set quadrants for bounding boxes)
 	cam.SetWorldCoordinates(36000.0, 43200.0);
 	// turn collision detection on (level zero)
-	//if (lvlStage == 0)
 		cam.SetCollisionDetectionOn(true);
 	// set number of bounding boxes required
 	cam.SetNoBoundingBoxes(82);  // originally started with 19 
 	// set starting position of user
-	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
+	//cam.Position(32720.0, 10500.0, 37000.0, 90.0);
+	cam.Position(0.0, 9500.0, 0.0, 180.0);//Level testing pos
 
 	CreatePlains();
 
@@ -107,14 +189,19 @@ void myinit()
 	// load texture images and create display lists
 	CreateTextureList();
 	CreateTextures();
-	
-	//CreateDecorationBoundingBoxes();
 
 	//Doors
 	CreateDoors();
 
 	//Maps
 	CreateMaps();
+	
+	//Get Data
+	GetAbilityData();
+	GetCharacterData();
+	GetEnemyData();
+	GetEnemyPerLevelData();
+
 
 	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
 }
@@ -124,6 +211,10 @@ void myinit()
 //--------------------------------------------------------------------------------------
 void Display()
 {
+		//Turn collisions off for all levels except zero
+	if (currLevel != 0)
+		cam.SetCollisionDetectionOn(false);
+
 	// check for movement
 	cam.CheckCamera();
 
@@ -131,10 +222,10 @@ void Display()
 
 	if (closing) exit(0);
 	///Enable object shading from light
-	glEnable(GL_COLOR_MATERIAL);
+	/*glEnable(GL_COLOR_MATERIAL);
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
 
-	glEnable(GL_NORMALIZE);
+	glEnable(GL_NORMALIZE);*/
 	// DISPLAY TEXTURES
 	//enable texture mapping
 	glEnable (GL_TEXTURE_2D);
@@ -142,35 +233,41 @@ void Display()
 		// displays the welcome screen
 		if (DisplayWelcome) cam.DisplayWelcomeScreen (width, height, 1, tp.GetTexture(WELCOME));
 		// displays the exit screen
-		if (DisplayExit) cam.DisplayWelcomeScreen (width, height, 0, tp.GetTexture(EXIT) );
+		if (DisplayExit) cam.DisplayWelcomeScreen (1000, 1900, 0, tp.GetTexture(Group_Photo) );
 		// displays the map
 		if (DisplayMap) cam.DisplayMap(width, height, tp.GetTexture(MAP));
 		// display no exit sign (position check should really be in an object, but didn't have time)
-		if ((cam.GetLR() > 35500.0) && (cam.GetFB() < 25344.0) ||
-			(cam.GetLR() > 34100.0) && (cam.GetFB() > 41127.0))
-		{
-			cam.DisplayNoExit(width, height,tp.GetTexture(NO_EXIT));
+		if (currLevel == 0) {
+			if ((cam.GetLR() > 35500.0) && (cam.GetFB() < 25344.0) ||
+				(cam.GetLR() > 34100.0) && (cam.GetFB() > 41127.0))
+			{
+				cam.DisplayNoExit(width, height, tp.GetTexture(NO_EXIT));
+			}
 		}
 				// set the movement and rotation speed according to frame count
 		IncrementFrameCount();
-		cam.SetMoveSpeed (stepIncrement);
+		cam.SetMoveSpeed (stepIncrement * movementSpeed);
 		cam.SetRotateSpeed (angleIncrement);
 		// display images
 		DrawBackdrop();
-		//DisplayDoors(); //should be in DrawBackdrop()
 		
 	glPopMatrix();
 	glDisable (GL_TEXTURE_2D);
 
-	glDisable(GL_COLOR_MATERIAL);
+	//glDisable(GL_COLOR_MATERIAL);
+
+		//Display GUI
+	my_display_code();
+	ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 	// clear buffers
-	//glFlush();
+	//glFlush();*/
 	glutSwapBuffers();
 }
 
 //--------------------------------------------------------------------------------------
 void reshape(int w, int h)
 {
+	ImGui_ImplGLUT_ReshapeFunc(w, h);
 	width = w;
 	height = h;
 	// Prevent a divide by zero, when window is too short

@@ -43,7 +43,8 @@ void CreateTextureList()
 	// 455-459
 	DrawHallwayStairs();
 
-	DrawDecorations();
+	DrawDecorations(); 
+	drawLevelObjects();
 }
 
 //--------------------------------------------------------------------------------------
@@ -102,7 +103,6 @@ void CreatePlains()
 	//hallway stairs
 	cam.SetPlains(XY_PLAIN, 43500.0, 63500.0, 10450.0, 3500, 37350.0, 47350.0);
 }
-
 
 void DrawChancPosts()
 {

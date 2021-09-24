@@ -313,7 +313,9 @@ extern TexturedPolygons tp;
 #define Red_Mushroom				240
 #define Rock						241
 #define Brown_Mushroom				242
-
+#define DungeonPillar				243
+#define DungeonFloor				244
+#define Group_Photo					245
 		/**
 		 * @brief  Load/Save texture images
 		 *
