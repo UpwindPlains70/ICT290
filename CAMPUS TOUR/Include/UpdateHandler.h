@@ -13,6 +13,7 @@
 
 extern enum state;
 extern state gameState;
+extern bool displayEnt;
 
 void Update();
 void endTurn();

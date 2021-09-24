@@ -1,1 +1,118 @@
-﻿  houses.vcxproj -> C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\Debug\houses.exe
+﻿  DisplayHandler.cpp
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\Include\UpdateHandler.h(14,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(218,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(244,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(261,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(448,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(536,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(548,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(603,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(607,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(672,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(672,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(677,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(681,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(687,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(691,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(698,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(702,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(708,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(725,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(729,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(735,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(739,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(770,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(777,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(788,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(795,35): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(818,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(832,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(832,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(852,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(881,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(889,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(896,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(909,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(917,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1210,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1279,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1294,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1310,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1330,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1353,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1357,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1376,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1380,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1400,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1404,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1424,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1428,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1506,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1506,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1510,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1510,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1533,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1560,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1574,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1602,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1602,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1629,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1643,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1784,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1818,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1849,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1892,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1897,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1976,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1987,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(1999,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2033,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2044,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2056,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2066,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2079,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2163,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2174,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2185,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2197,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2215,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2289,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2296,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2303,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2322,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2322,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2326,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2326,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2342,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2342,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2346,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2346,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2408,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2417,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2424,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2431,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2437,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2438,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2439,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2450,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2457,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2464,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2470,38): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2471,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\DisplayHandler.cpp(2472,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  UpdateHandler.cpp
+C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\Include\UpdateHandler.h(14,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+  Generating Code...
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003: The specified task executable "CL.exe" could not be run. System.IO.IOException: The requested operation cannot be performed on a file with a user-mapped section open.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003: 
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at Microsoft.Build.CPPTasks.TrackedVCToolTask.WriteSourcesToCommandLinesTable(IDictionary`2 sourcesToCommandLines)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at Microsoft.Build.CPPTasks.CL.ConstructCommandTLog(ITaskItem[] upToDateSources, DependencyFilter inputFilter)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at Microsoft.Build.CPPTasks.CL.PostExecuteTool(Int32 exitCode)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at Microsoft.Build.CPPTasks.TrackedVCToolTask.ExecuteTool(String pathToTool, String responseFileCommands, String commandLineCommands)
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(687,5): error MSB6003:    at Microsoft.Build.Utilities.ToolTask.Execute()

@@ -229,6 +229,9 @@ void Display()
 	// DISPLAY TEXTURES
 	//enable texture mapping
 	glEnable (GL_TEXTURE_2D);
+
+	
+
 	glPushMatrix();
 		// displays the welcome screen
 		if (DisplayWelcome) cam.DisplayWelcomeScreen (width, height, 1, tp.GetTexture(WELCOME));
@@ -250,12 +253,14 @@ void Display()
 		cam.SetRotateSpeed (angleIncrement);
 		// display images
 		DrawBackdrop();
+		DisplayEntities();
 		
 	glPopMatrix();
 	glDisable (GL_TEXTURE_2D);
 
-	//glDisable(GL_COLOR_MATERIAL);
 
+	
+	//glDisable(GL_COLOR_MATERIAL);
 		//Display GUI
 	my_display_code();
 	ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());

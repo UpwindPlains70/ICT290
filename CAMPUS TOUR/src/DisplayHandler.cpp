@@ -47,6 +47,16 @@ void DrawBackdrop()
 	}
 }
 
+void DisplayEntities(){
+	if (displayEnt) {
+		glPushMatrix();
+		glTranslatef(80, 9050, 80);
+		glColor3f(1, 1, 0);
+		glutSolidCube(100);
+		glPopMatrix();
+	}
+}
+
 /*
 void TESTDisplayDecorations()
 {

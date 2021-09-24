@@ -2,7 +2,8 @@
 
 int level = 1;
 enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE};
-state gameState = NotReady;
+//state gameState = NotReady;
+state gameState = Initialising;
 map<int, bool> isPCTurnMap;
 map<int, bool> turnDeadMap;
 map<int, int> turnIDMap;
@@ -14,18 +15,21 @@ int maxTurn;
 int nowAbilityID;
 int turn;
 LevelMap* nowMap = nullptr;
-
+bool displayEnt;
 
 using namespace std;
 
 void Update()
 {
+	
 	switch (gameState) {
 		case NotReady:
 			/// <Task 1> (Peter)
 			/// Get Number of Players
 			/// </Task 1>
 			
+			displayEnt = false;
+
 			nowMap = new LevelMap(mapList[level].at(rand() % mapList[level].size()));
 			
 			/// <Task 2> (Peter)
@@ -71,18 +75,26 @@ void Update()
 			/// Display enemy stats(all at once or one at a time due to who is selected)
 			/// </Task 8>
 
-			/// <Task 9> (Raymond)
-			/// Randomly choose location 
-			/// Place first enemy
+			displayEnt = true;
+
 			///	If more enemies
-			///	While('found' == false)
-			///	Randomly choose location
-			///	for (int i = -2; i <= 2; i++)
-			///		for (int j = -2; j <= 2; j++)
-			///			'newX' = 'locationX' + i
-			///			'newY' = 'locationY' + j
-			///			if (there is an enemy at map[newX][newY])
-			///				'found' = true
+			if (nowEnemies.size() > 0) {
+				bool found = false;
+				///	While('found' == false)
+				while (!found) {
+					///	Randomly choose location
+					for (int i = -2; i <= 2; i++) {
+						for (int j = -2; j <= 2; j++) {
+							///			'newX' = 'locationX' + i
+							///			'newY' = 'locationY' + j
+							///			if (there is an enemy at map[newX][newY] || there is wall at map[newX][newY] )
+							///				'found' = true
+						}
+					}
+				}
+			}
+			
+			
 			///	Repeat for each
 			///	Do the same for players
 			/// </Task 9>
