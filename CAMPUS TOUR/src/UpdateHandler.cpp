@@ -1,6 +1,6 @@
 #include "UpdateHandler.h"
 
-int level = 0;
+int level = 1;
 enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE};
 state gameState = NotReady;
 map<int, bool> isPCTurnMap;
@@ -49,7 +49,6 @@ void Update()
 			break;
 		case Initialising:
 			/// <Task 6> (Peter)
-			/// nowMap = map for level
 			/// draw map
 			/// </Task 6>
 			
