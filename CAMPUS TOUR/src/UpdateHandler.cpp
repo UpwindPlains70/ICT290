@@ -13,7 +13,8 @@ vector<Enemy> nowEnemies;
 int maxTurn;
 int nowAbilityID;
 int turn;
-int nowMapID;
+LevelMap* nowMap = nullptr;
+
 
 using namespace std;
 
@@ -24,6 +25,8 @@ void Update()
 			/// <Task 1> (Peter)
 			/// Get Number of Players
 			/// </Task 1>
+			
+			nowMap = new LevelMap(mapList[level].at(rand() % mapList[level].size()));
 			
 			/// <Task 2> (Peter)
 			/// Choose the first player's class and push_back the new player
@@ -48,6 +51,8 @@ void Update()
 
 			break;
 		case Initialising:
+			//find preset map
+
 			/// <Task 6> (Peter)
 			/// draw map
 			/// </Task 6>
