@@ -16,6 +16,8 @@ int nowAbilityID;
 int turn;
 LevelMap* nowMap = nullptr;
 bool displayEnt;
+int currLevel = 1;
+int mapID = 0;
 
 using namespace std;
 

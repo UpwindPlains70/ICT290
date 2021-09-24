@@ -9,7 +9,6 @@ GLdouble currZPos;
 
 LevelMap *tempLevelMap = nullptr;
 map<int, vector<LevelMap>> mapList;
-
 Object3D pillarObj;
 Object3D floorObj;
 
