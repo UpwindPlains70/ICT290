@@ -1,3 +1,6 @@
-﻿  UpdateHandler.cpp
-C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(14,18): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-  houses.vcxproj -> C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Debug\houses.exe
+﻿  UIHandler.cpp
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(14,101): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(79,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(99,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(133,21): warning C4018: '<': signed/unsigned mismatch
+  houses.vcxproj -> C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\.\Debug\houses.exe

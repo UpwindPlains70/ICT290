@@ -35,6 +35,9 @@ GLdouble rotationSpeed = 0.005;
 //--------------------------------------------------------------------------------------
 void keys(unsigned char key, int x, int y)
 {
+	//Put in if condition to restrict controls
+	ImGui_ImplGLUT_KeyboardFunc(key, x, y);
+
 	int i = 0;
 	switch (key)
 	{

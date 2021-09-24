@@ -11,8 +11,9 @@
 #include "MapLevel.h"
 #include "LevelHandler.h"
 
-extern enum state;
+extern enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE };
 extern state gameState;
+extern vector<Player> playerList;
 
 void Update();
 void endTurn();

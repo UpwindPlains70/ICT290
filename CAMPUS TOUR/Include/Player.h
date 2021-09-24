@@ -14,7 +14,7 @@ class Player
 public:
 	Player();
 
-	Player(string, string, int, int, int, int, int, int, int);
+	Player(string, string, int, int, int);
 
 	~Player();
 

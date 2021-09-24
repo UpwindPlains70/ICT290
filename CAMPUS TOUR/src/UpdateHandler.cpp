@@ -2,7 +2,7 @@
 
 int currLevel = 1;
 int mapID;
-enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE};
+//enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE};
 state gameState = NotReady;
 map<int, bool> isPCTurnMap;
 map<int, bool> turnDeadMap;

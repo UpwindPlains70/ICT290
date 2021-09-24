@@ -22,12 +22,15 @@ void GetCharacterData()
 	Class tempClass;
 	if (!classFile)
 	{
-		cout << "Error" << endl;
+		cout << "Error: get character data" << endl;
 		return;
 	}
 	while (!classFile.eof())
 	{
 		getline(classFile, tmp);
+			//catch empty line (try next one)
+		if(tmp.empty())
+			continue;
 		stringstream element(tmp);
 		getline(element, tempString, ',');
 		istringstream(tempString) >> tempName;
@@ -37,13 +40,10 @@ void GetCharacterData()
 		istringstream(tempString) >> tempArmor;
 		getline(element, tempString, ',');
 		istringstream(tempString) >> tempMovement;
-		while (true)
+
+		while (!element.eof())
 		{
 			getline(element, tempString, ',');
-			if (tempString == "");
-			{
-				break;
-			}
 			istringstream(tempString) >> tempAbilityName;
 			tempAbilityNameList.push_back(tempAbilityName);
 		}
@@ -52,6 +52,7 @@ void GetCharacterData()
 		tempClass.name = tempName;
 		tempClass.hp = tempHP;
 		tempClass.armor = tempArmor;
+		tempClass.movement = tempMovement;
 		for (int i = 0; i < tempAbilityNameList.size(); i++)
 		{
 			tempAbilityName = tempAbilityNameList.at(i);
@@ -59,7 +60,10 @@ void GetCharacterData()
 			tempClass.abilityList.push_back(tempAbility);
 		}
 
+			//add populated class to list
 		allClasses.push_back(tempClass);
+			//clear tempAbilitylist (empty for each class)
+		tempAbilityNameList.clear();
 	}
 
 	classFile.close();
@@ -76,7 +80,7 @@ EntityAbility GetAbility(string name)
 			return anAbility;
 		}
 	}
-	cout << "Error" << endl;
+	//cout << "Error: Ability get" << endl;
 	return anAbility;
 }
 
@@ -91,7 +95,7 @@ Enemy GetEnemy(string name)
 			return anEnemy;
 		}
 	}
-	cout << "Error" << endl;
+	//cout << "Error: get enemy" << endl;
 	return anEnemy;
 }
 
@@ -110,12 +114,15 @@ void GetEnemyData()
 	Enemy tempEnemy;
 	if (!enemyFile)
 	{
-		cout << "Error" << endl;
+		cout << "Error: get enemy data" << endl;
 		return;
 	}
 	while (!enemyFile.eof())
 	{
 		getline(enemyFile, tmp);
+			//catch empty line (try next one)
+		if(tmp.empty())
+			continue;
 		stringstream element(tmp);
 		getline(element, tempString, ',');
 		istringstream(tempString) >> tempName;
@@ -125,13 +132,9 @@ void GetEnemyData()
 		istringstream(tempString) >> tempArmor;
 		getline(element, tempString, ',');
 		istringstream(tempString) >> tempMovement;
-		while (true)
+		while (!element.eof())
 		{
 			getline(element, tempString, ',');
-			if (tempString == "");
-			{
-				break;
-			}
 			istringstream(tempString) >> tempAbilityName;
 			tempAbilityNameList.push_back(tempAbilityName);
 		}
@@ -150,6 +153,7 @@ void GetEnemyData()
 		}
 
 		allEnemies.push_back(tempEnemy);
+		tempAbilityNameList.clear();
 	}
 
 	enemyFile.close();
@@ -170,12 +174,15 @@ void GetEnemyPerLevelData()
 	LevelEnemy tempLevelEnemy;
 	if (!EPLFile)
 	{
-		cout << "Error" << endl;
+		cout << "Error: get enemy per level data" << endl;
 		return;
 	}
 	while (!EPLFile.eof())
 	{
 		getline(EPLFile, tmp);
+			//catch empty line (try next one)
+		if(tmp.empty())
+			continue;
 		stringstream element1(tmp);
 		getline(element1, tempString, ',');
 		istringstream(tempString) >> tempLevel;
@@ -186,13 +193,9 @@ void GetEnemyPerLevelData()
 
 		getline(EPLFile, tmp);
 		stringstream element(tmp);
-		while (true)
+		while (!element.eof())
 		{
 			getline(element, tempString, ',');
-			if (tempString == "");
-			{
-				break;
-			}
 			istringstream(tempString) >> tempEnemyName;
 			tempEnemyNameList.push_back(tempEnemyName);
 		}
@@ -208,6 +211,7 @@ void GetEnemyPerLevelData()
 		}
 
 		enemyLevelMap[tempLevel] = tempLevelEnemy;
+		tempEnemyNameList.clear();
 	}
 
 	EPLFile.close();
@@ -230,12 +234,15 @@ void GetAbilityData()
 	EntityAbility tempAbility;
 	if (!abilityFile)
 	{
-		cout << "Error" << endl;
+		cout << "Error: get ability data" << endl;
 		return;
 	}
 	while (!abilityFile.eof())
 	{
 		getline(abilityFile, tmp);
+			//catch empty line (try next one)
+		if(tmp.empty())
+			continue;
 		stringstream element(tmp);
 		getline(element, tempString, ',');
 		istringstream(tempString) >> tempName;
