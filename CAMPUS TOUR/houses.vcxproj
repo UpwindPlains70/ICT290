@@ -168,6 +168,7 @@
     <ClInclude Include="Include\SubClasses.h" />
     <ClInclude Include="Include\texturedPolygons.h" />
     <ClInclude Include="Include\TextureHandler.h" />
+    <ClInclude Include="Include\UpdateHandler.h" />
     <ClInclude Include="packages\imgui-master\backends\imgui_impl_glut.h" />
     <ClInclude Include="packages\imgui-master\backends\imgui_impl_opengl2.h" />
     <ClInclude Include="packages\imgui-master\imconfig.h" />
@@ -214,6 +215,7 @@
     <ClCompile Include="src\SubClasses.cpp" />
     <ClCompile Include="src\texturedPolygons.cpp" />
     <ClCompile Include="src\TextureHandler.cpp" />
+    <ClCompile Include="src\UpdateHandler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

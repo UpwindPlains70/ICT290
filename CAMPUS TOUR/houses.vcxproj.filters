@@ -129,6 +129,9 @@
     <ClInclude Include="packages\imgui-master\backends\imgui_impl_opengl2.h">
       <Filter>imgui</Filter>
     </ClInclude>
+    <ClInclude Include="Include\UpdateHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AABB.CPP">
@@ -247,6 +250,9 @@
     </ClCompile>
     <ClCompile Include="packages\imgui-master\backends\imgui_impl_opengl2.cpp">
       <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UpdateHandler.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
