@@ -10,6 +10,7 @@
 #include "Player.h"
 #include "MapLevel.h"
 #include "LevelHandler.h"
+#include "DataHandler.h"
 
 extern enum state;
 extern state gameState;
