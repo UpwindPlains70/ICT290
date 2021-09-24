@@ -49,11 +49,47 @@ void DrawBackdrop()
 
 void DisplayEntities(){
 	if (displayEnt) {
-		glPushMatrix();
-		glTranslatef(80, 9050, 80);
-		glColor3f(1, 1, 0);
-		glutSolidCube(100);
-		glPopMatrix();
+		/*
+			glPushMatrix();
+				glTranslatef(80, 9050, 80);
+				glColor3f(1, 1, 0);
+				glutSolidCube(100);
+			glPopMatrix();
+		*/
+
+		int repeatX = mapList[currLevel].at(mapID).GetX();
+		int repeatZ = mapList[currLevel].at(mapID).GetZ();
+
+		int wallValX = 114.28 * repeatX;
+		int wallValZ = 91.42 * repeatZ;
+		int floorValX = 67.14 * repeatX;
+		int floorValZ = 67.14 * repeatZ;
+		//for each enemy
+		for (int i = 0; i < nowEnemies.size(); i++) {
+			//get x and z
+			int posX = nowEnemies[i].getPosX();
+			int posZ = nowEnemies[i].getPosZ();
+			//get translated area on map
+			//glTranslatef(-floorValX, 9000, -floorValZ);//(1,1)
+			glTranslatef(-floorValX * posX, 9000, -floorValZ * posZ);
+			//draw enemy
+			glColor3f(1, 0, 0);
+			glutSolidCube(100);
+		//endFor
+		}
+		//do same for players
+		for (int i = 0; i < playerList.size(); i++) {
+			//get x and z
+			int posX = playerList[i].getPosX();
+			int posZ = playerList[i].getPosZ();
+			//get translated area on map
+			//glTranslatef(-floorValX, 9000, -floorValZ);//(1,1)
+			glTranslatef(-floorValX * posX, 9000, -floorValZ * posZ);
+			//draw enemy
+			glColor3f(0, 0, 1);
+			glutSolidCube(100);
+			//endFor
+		}
 	}
 }
 

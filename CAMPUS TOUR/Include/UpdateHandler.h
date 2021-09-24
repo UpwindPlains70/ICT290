@@ -15,6 +15,8 @@
 extern enum state;
 extern state gameState;
 extern bool displayEnt;
+extern vector<Player> playerList;
+extern vector<Enemy> nowEnemies;
 
 void Update();
 void endTurn();

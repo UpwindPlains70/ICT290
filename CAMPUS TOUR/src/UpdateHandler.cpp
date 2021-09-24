@@ -25,7 +25,6 @@ using namespace std;
 
 void Update()
 {
-	
 	switch (gameState) {
 		case NotReady:
 			/// <Task 1> (Peter)
@@ -76,7 +75,7 @@ void Update()
 			{
 				nowEnemies.push_back(nowLM.presetList[rand() % nowLM.presetList.size()]);
 			}
-			
+
 			/// <Task 8> (Peter)
 			/// Display enemy stats(all at once or one at a time due to who is selected)
 			/// </Task 8>
@@ -85,16 +84,24 @@ void Update()
 
 			///	If more enemies
 			if (nowEnemies.size() > 0) {
-				bool found = false;
-				///	While('found' == false)
-				while (!found) {
-					///	Randomly choose location
-					for (int i = -2; i <= 2; i++) {
-						for (int j = -2; j <= 2; j++) {
-							///			'newX' = 'locationX' + i
-							///			'newY' = 'locationY' + j
-							///			if (there is an enemy at map[newX][newY] || there is wall at map[newX][newY] )
-							///				'found' = true
+				for (int i = 0; i < nowEnemies.size(); i++) {
+					bool found = false;
+					///	While('found' == false)
+					while (!found) {
+						///	Randomly choose location
+						for (int i = -2; i <= 2; i++) {
+							for (int j = -2; j <= 2; j++) {
+								///			'newX' = 'locationX' + i
+								int newX=0, newZ=0;
+								newX = nowEnemies[i].getPosX() + i;
+								///			'newY' = 'locationY' + j
+								newZ = nowEnemies[i].getPosZ() + j;
+								///			if (there is an enemy at map[newX][newY] || there is wall at map[newX][newY] )
+								if (nowMap->GetValue(newX,newZ) != 0) {
+									///				'found' = true
+									found = true;
+								}
+							}
 						}
 					}
 				}
