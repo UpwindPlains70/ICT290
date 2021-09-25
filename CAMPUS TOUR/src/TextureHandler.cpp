@@ -734,8 +734,13 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/DungeonFloor.raw", 512, 512);
 	tp.CreateTexture(DungeonFloor, image, 512, 512);
 
-	image = tp.LoadTexture("data/teamphoto.raw", 800, 200);
-	tp.CreateTexture(Group_Photo, image, 800, 200);
+	image = tp.LoadTexture("data/teamPhoto.raw", 641, 638);
+	tp.CreateTexture(Group_Photo, image, 641, 638);
+
+	string path = "data/Class/Class Previews/" + allClasses[0].name + ".raw";
+	char* tempPath = &path[0];
+	image = tp.LoadTexture(tempPath, 1024, 1024, false);
+	tp.CreateTexture(246, image, 1024, 1024);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);

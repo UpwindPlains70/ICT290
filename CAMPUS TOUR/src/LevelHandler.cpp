@@ -28,8 +28,6 @@ void teleportCamera()
 ///UPDATE: general function for new level
 bool levelZeroClear()
 {
-	srand(time(NULL));
-	//mapID = rand() % mapList[currLevel].size();
 	cam.getPosition(currXPos, currYPos, currZPos);
 
 	if (currYPos < 9000.0)

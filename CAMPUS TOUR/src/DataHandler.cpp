@@ -62,6 +62,7 @@ void GetCharacterData()
 
 			//add populated class to list
 		allClasses.push_back(tempClass);
+
 			//clear tempAbilitylist (empty for each class)
 		tempAbilityNameList.clear();
 	}

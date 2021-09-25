@@ -130,6 +130,10 @@ int Player::getMovement() {
 	return movement;
 }
 
+int Player::getMovementLeft() {
+	return movementLeft;
+}
+
 void Player::resetMovementLeft()
 {
 	movementLeft = movement;
@@ -168,6 +172,11 @@ int Player::getTurn() {
 void Player::pushAbility(EntityAbility newAbility) {
 	abilities.push_back(newAbility);
 	numAbilities++;
+}
+
+void Player::setAbilities(vector<EntityAbility> newList) {
+	abilities = newList;
+	numAbilities = abilities.size();
 }
 
 void Player::popAbility() {

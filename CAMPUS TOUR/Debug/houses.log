@@ -1,6 +1,17 @@
 ﻿  UIHandler.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(14,101): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(79,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(99,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(133,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(27,101): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(106,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(126,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(162,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(245,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(297,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(298,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(303,26): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(316,23): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(318,18): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(372,14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(432,20): warning C4018: '<': signed/unsigned mismatch
+  LINK : program database C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Debug\houses.pdb missing; performing full link
+imgui_impl_glut.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   houses.vcxproj -> C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\.\Debug\houses.exe

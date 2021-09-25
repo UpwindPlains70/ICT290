@@ -15,7 +15,11 @@ int maxTurn;
 int nowAbilityID;
 int turn;
 LevelMap* nowMap = nullptr;
+vector<int> turnList;
 
+bool firstRun = true;
+bool displayActionMenu = false;
+bool allowedToRoll = true;
 
 using namespace std;
 
@@ -23,19 +27,9 @@ void Update()
 {
 	switch (gameState) {
 		case NotReady:
-			/// <Task 1> (Peter)
-			/// Get Number of Players
-			/// </Task 1>
-			
-			/// <Task 2> (Peter)
-			/// Choose the first player's class and push_back the new player
-			/// Repeat till all players are done
-			/// </Task 2>
-
-			/// <Task 3> (Peter)
-			/// If all of above is done then:
-			/// gameState = Ready;
-			/// </Task 3>
+				//stuck until finished button is pressed
+			classSelectionUI();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 
 			break;
 		case Ready:
@@ -43,73 +37,82 @@ void Update()
 			/// Keep back doors locked until now.
 			/// </Task 4>
 			
-			/// <Task 5> (Anyone)
-			/// If teleport area:
-			/// gameState = Initialising;
-			/// </Task 5>
+			//if (levelZeroClear())
+				gameState = Initialising;
 
 			break;
 		case Initialising:
-			
-			mapID = rand() % mapList[currLevel].size();
-			
-			nowMap = new LevelMap(mapList[currLevel].at(mapID));
-			
-			isPCTurnMap.clear();
-			turnIDMap.clear();
-			turnDeadMap.clear();
-			nowEnemies.clear();
+			if (firstRun) {
+				firstRun = false;
+					//Load copy of current level
+				srand(time(NULL));
+				mapID = rand() % mapList[currLevel].size();
 
-			/// <Task 7> (Anyone)
-			/// figure out enemies for currLevel
-			/// place enemies into nowEnemies
-			/// </Task 7>
-			
-			/// <Task 8> (Peter)
-			/// Display enemy stats(all at once or one at a time due to who is selected)
-			/// </Task 8>
+				nowMap = new LevelMap(mapList[currLevel].at(mapID));
 
-			/// <Task 9> (Raymond)
-			/// Randomly choose location 
-			/// Place first enemy
-			///	If more enemies
-			///	While('found' == false)
-			///	Randomly choose location
-			///	for (int i = -2; i <= 2; i++)
-			///		for (int j = -2; j <= 2; j++)
-			///			'newX' = 'locationX' + i
-			///			'newY' = 'locationY' + j
-			///			if (there is an enemy at map[newX][newY])
-			///				'found' = true
-			///	Repeat for each
-			///	Do the same for players
-			/// </Task 9>
-			
-			/// <Task 16> (Jason)
-			/// start drawing players and enemies in their positions
-			/// </Task 16>
-			
-			maxTurn = playerList.size() + nowEnemies.size();
+					//Clear list (turns, enemies)
+				isPCTurnMap.clear();
+				turnIDMap.clear();
+				turnDeadMap.clear();
+				nowEnemies.clear();
 
-			/// <Task 10> (Peter)
-			/// figure out turn order
-			/// (use a vector of integers filled with each number up to number of entities)
-			/// (then get random location in vector and get the turn from that)
-			///	(then removing that turn as it is used makes life easier)
-			///	Place turn in each enemyand characters
-			/// </Task 10>
-			
-			for (int i = 1; i <= maxTurn; i++)
+				/// <Task 7> (Anyone)
+				/// figure out enemies for currLevel
+				/// place enemies into nowEnemies
+				/// </Task 7>
+
+				maxTurn = playerList.size() + nowEnemies.size();
+
+				for (int i = 1; i <= maxTurn; ++i)
+					turnList.push_back(i);
+
+				/// <Task 9> (Raymond)
+				/// Randomly choose location 
+				/// Place first enemy
+				///	If more enemies
+				///	While('found' == false)
+				///	Randomly choose location
+				///	for (int i = -2; i <= 2; i++)
+				///		for (int j = -2; j <= 2; j++)
+				///			'newX' = 'locationX' + i
+				///			'newY' = 'locationY' + j
+				///			if (there is an enemy at map[newX][newY])
+				///				'found' = true
+				///	Repeat for each
+				///	Do the same for players
+				/// </Task 9>
+
+				/// <Task 16> (Jason)
+				/// start drawing players and enemies in their positions
+				/// </Task 16>
+
+			}//	figure out turn order (Every level)
+			if(assignTurnStage)
 			{
-				turnDeadMap.insert(std::pair<int, bool>(i, false));
+				turnOrderUI();
+				ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 			}
-			gameState = StartTurn;
-			turn = 1;
-			break;
+			else 
+			{
+				for (int i = 1; i <= maxTurn; i++)
+				{
+					turnDeadMap.insert(std::pair<int, bool>(i, false));
+				}
+				gameState = StartTurn;
+				firstRun = true;
+				turn = 1;
+				//set player turn
+				if (isPCTurnMap.find(turn) != isPCTurnMap.end())
+					isPCTurnMap[turn] = true;
+			}
+				break;
 		case StartTurn:
+				//Display player & enemy stats
+			playerHUD();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+
 			if (turnDeadMap[turn] == true)
 			{
-				endTurn();
 				if (isPCTurnMap[turn] == false)
 				{
 					enemyTurn(nowEnemies[turnIDMap[turn]]);
@@ -118,9 +121,14 @@ void Update()
 				{
 					playerTurn(playerList[turnIDMap[turn]]);
 				}
+				endTurn();
 			}
+			
 			break;
 		case Action:
+				//Display player & enemy stats
+			playerHUD();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 			if (nowPlayer.canMove())
 			{
 				/// <Task 17> (Anyone)
@@ -185,6 +193,10 @@ void Update()
 			/// </Task 19>
 			break;
 		case Attack:
+				//Display player & enemy stats
+			playerHUD();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+
 			/// <Task 20> (Anyone)
 			/// show enemy select screen
 			/// get player to decide on enemy to hit
@@ -252,13 +264,14 @@ void endTurn()
 	{
 		turn = 1;
 	}
+	allowedToRoll = true;
 }
 
 void playerTurn(Player pc)
 {
-	/// <Task 12> (Peter)
-	/// display pc stats
-	/// </Task 12>
+		// display pc actions
+	displayActionMenu = true;
+
 	pc.resetMovementLeft();
 	if (pc.getStun() == 1)
 	{

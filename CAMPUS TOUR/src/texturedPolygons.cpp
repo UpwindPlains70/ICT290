@@ -16,13 +16,14 @@ using namespace std;
 //  Declares datatype to store a raw image file and calls method to load image
 //--------------------------------------------------------------------------------------
 
-GLubyte* TexturedPolygons::LoadTexture(char* filename, int imgWidth, int imgHeight)
+GLubyte* TexturedPolygons::LoadTexture(char* filename, int imgWidth, int imgHeight, bool* isRequired)
 {
 	//
 	unsigned char* image = NULL;
-	image = LoadRawImageFile(filename, imgWidth, imgHeight);
+	image = LoadRawImageFile(filename, imgWidth, imgHeight, isRequired);
 	// inform user if file loaded
-	cout << "Loading image file " << filename << "...\n";
+	if(isRequired)
+		cout << "Loading image file " << filename << "...\n";
 	return image;
 }
 
@@ -30,7 +31,7 @@ GLubyte* TexturedPolygons::LoadTexture(char* filename, int imgWidth, int imgHeig
 //  Creates memory space to store raw image file and reads in file from disk.
 //--------------------------------------------------------------------------------------
 
-GLubyte* TexturedPolygons::LoadRawImageFile(char* filename, int width, int height)
+GLubyte* TexturedPolygons::LoadRawImageFile(char* filename, int width, int height, bool* isRequired)
 {
 	FILE* file;
 	unsigned char* image;
@@ -41,7 +42,10 @@ GLubyte* TexturedPolygons::LoadRawImageFile(char* filename, int width, int heigh
 	if (file == NULL)
 	{
 		cout << "ERROR loading image file: " << filename << "...\n";
-		exit(0);
+		if (isRequired)
+			exit(0);
+		else
+			return image;
 	}
 	fread(image, width * height * 3, 1, file);
 	fclose(file);

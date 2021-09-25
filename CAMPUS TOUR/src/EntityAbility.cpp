@@ -94,6 +94,10 @@ int EntityAbility::getAOE() {
 	return aoe;
 }
 
+bool EntityAbility::isAOE() {
+	return (aoe > 1);
+}
+
 void EntityAbility::setStun(int newStun) {
 	stun = newStun;
 }

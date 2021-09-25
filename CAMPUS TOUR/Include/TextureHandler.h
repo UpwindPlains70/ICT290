@@ -3,6 +3,10 @@
 
 #include <GL/glut.h>
 #include "texturedPolygons.h"
+#include "DataHandler.h"
+#include <string>
+
+using std::string;
 /**
 	 * @brief defines all variables for textures & load/save textures
 	 *
@@ -18,6 +22,10 @@
 	 * @author Jason Botterill
 	 * @version 02
 	 * @date 30/08/2021, Poster texutres added to new room & hallway
+	 * 
+	 * @author Peter Neve
+	 * @version 03
+	 * @date 25/09/2021, initail character preview load (246)
 	 *
 	 */
 /// Stores raw image file

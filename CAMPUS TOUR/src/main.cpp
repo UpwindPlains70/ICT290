@@ -9,7 +9,6 @@
 #include "MovementHandler.h"
 #include "LevelHandler.h"
 #include "DataHandler.h"
-#include "UIHandler.h"
 
 
 GLdouble stepIncrement;
@@ -105,21 +104,21 @@ void myinit()
 	// copies bounding boxes from array to linked lists (one fopr each quadrant)
 	cam.InitiateBoundingBoxes();
 
+	//Maps
+	CreateMaps();
+
+	//Get Data
+	GetAbilityData();
+	GetCharacterData();
+	GetEnemyData();
+	GetEnemyPerLevelData();
+
 	// load texture images and create display lists
 	CreateTextureList();
 	CreateTextures();
 
 	//Doors
 	CreateDoors();
-
-	//Maps
-	CreateMaps();
-	
-	//Get Data
-	GetAbilityData();
-	GetCharacterData();
-	GetEnemyData();
-	GetEnemyPerLevelData();
 
 	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
 }
@@ -151,7 +150,7 @@ void Display()
 		// displays the welcome screen
 		if (DisplayWelcome) cam.DisplayWelcomeScreen (width, height, 1, tp.GetTexture(WELCOME));
 		// displays the exit screen
-		if (DisplayExit) cam.DisplayWelcomeScreen (1000, 1900, 0, tp.GetTexture(Group_Photo) );
+		if (DisplayExit) cam.DisplayWelcomeScreen (width, height, 0, tp.GetTexture(Group_Photo) );
 		// displays the map
 		if (DisplayMap) cam.DisplayMap(width, height, tp.GetTexture(MAP));
 		// display no exit sign (position check should really be in an object, but didn't have time)
@@ -174,14 +173,15 @@ void Display()
 
 	//glDisable(GL_COLOR_MATERIAL);
 
+	Update();
 		//Display GUI
-	if (playerSelection)
+	/*if (playerSelection)
 	{
-		classSelectionUI();
-		ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 	}
-	//if(gameHUD)
-	
+	else if (gameHUD)
+	{
+		
+	}*/
 	// clear buffers
 	//glFlush();*/
 	glutSwapBuffers();
