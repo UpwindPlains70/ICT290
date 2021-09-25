@@ -89,34 +89,13 @@ void Update()
 			randNum = rand() % nowMap->GetZ();
 			nowEnemies[0].setPosZ(randNum);
 			if (nowEnemies.size() > 0) {
-				/*
-				for (int i = 0; i < nowEnemies.size(); i++) {
-					bool found = false;
-					///	While('found' == false)
-					while (!found) {
-						///	Randomly choose location
-						for (int i = -2; i <= 2; i++) {
-							for (int j = -2; j <= 2; j++) {
-								///			'newX' = 'locationX' + i
-								int newX=0, newZ=0;
-								newX = nowEnemies[i].getPosX() + i;
-								///			'newY' = 'locationY' + j
-								newZ = nowEnemies[i].getPosZ() + j;
-								///			if (there is an enemy at map[newX][newY] || there is wall at map[newX][newY] )
-								if (nowMap->GetValue(newX,newZ) != 0) {
-									///	'found' = true
-									found = true;
-									*/
 				for (int i = 1; i < nowEnemies.size(); i++)
 				{
 					bool found = false;
-					//while location is not "found"
 					while (!found) {
-						//acquire random position
 						randX = rand() % nowMap->GetX();
 						randZ = rand() % nowMap->GetZ();
 
-						//find location 2 tiles away
 						for (int x = 0; x < nowMap->GetX(); x++)
 						{
 							for (int z = 0; z < nowMap->GetZ(); z++)
@@ -136,14 +115,11 @@ void Update()
 							}
 						}
 					}
-					//set position of selected
 					nowEnemies[i].setPosX(randX);
 					nowEnemies[i].setPosZ(randZ);
 				}
 			}
-			
-			///	Repeat for each
-			///	Do the same for players
+
 			randNum = rand() % nowMap->GetX();
 			playerList[0].setPosX(randNum);
 			randNum = rand() % nowMap->GetZ();
@@ -178,7 +154,6 @@ void Update()
 					playerList[i].setPosZ(randZ);
 				}
 			}
-			/// </Task 9>
 			
 			/// <Task 16> (Jason)
 			/// start drawing players and enemies in their positions
