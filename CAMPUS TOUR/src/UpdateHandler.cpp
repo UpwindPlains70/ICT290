@@ -89,7 +89,7 @@ void Update()
 			randNum = rand() % nowMap->GetZ();
 			nowEnemies[0].setPosZ(randNum);
 			if (nowEnemies.size() > 0) {
-
+				/*
 				for (int i = 0; i < nowEnemies.size(); i++) {
 					bool found = false;
 					///	While('found' == false)
@@ -104,10 +104,52 @@ void Update()
 								newZ = nowEnemies[i].getPosZ() + j;
 								///			if (there is an enemy at map[newX][newY] || there is wall at map[newX][newY] )
 								if (nowMap->GetValue(newX,newZ) != 0) {
-									///				'found' = true
+									///	'found' = true
 									found = true;
-
+									*/
 				for (int i = 1; i < nowEnemies.size(); i++)
+				{
+					bool found = false;
+					//while location is not "found"
+					while (!found) {
+						//acquire random position
+						randX = rand() % nowMap->GetX();
+						randZ = rand() % nowMap->GetZ();
+
+						//find location 2 tiles away
+						for (int x = 0; x < nowMap->GetX(); x++)
+						{
+							for (int z = 0; z < nowMap->GetZ(); z++)
+							{
+								int xDis = randX - x;
+								int zDis = randZ - z;
+								if (xDis >= -2 && xDis <= 2)
+								{
+									if (zDis >= -2 && zDis <= 2)
+									{
+										if (nowMap->GetValue(randX, randZ) == 0)
+										{
+											found = true;
+										}
+									}
+								}
+							}
+						}
+					}
+					//set position of selected
+					nowEnemies[i].setPosX(randX);
+					nowEnemies[i].setPosZ(randZ);
+				}
+			}
+			
+			///	Repeat for each
+			///	Do the same for players
+			randNum = rand() % nowMap->GetX();
+			playerList[0].setPosX(randNum);
+			randNum = rand() % nowMap->GetZ();
+			playerList[0].setPosZ(randNum);
+			if (playerList.size() > 0) {
+				for (int i = 1; i < playerList.size(); i++)
 				{
 					bool found = false;
 					while (!found) {
@@ -132,13 +174,10 @@ void Update()
 							}
 						}
 					}
-					nowEnemies[i].setPosX(randX);
-					nowEnemies[i].setPosZ(randZ);
+					playerList[i].setPosX(randX);
+					playerList[i].setPosZ(randZ);
 				}
 			}
-			
-			///	Repeat for each
-			///	Do the same for players
 			/// </Task 9>
 			
 			/// <Task 16> (Jason)
