@@ -32,5 +32,26 @@ void genDecorationsPositions();
 int decorationTextureHelp(int index);
 void DisplayDecorations();
 
+
+
+//------- Drawing the players and the enemies ---------- // 
+
+#include <iostream>
+#include <map>
+#include <string>
+#include <cstring>
+
+
+
+//map<string, Object3D> characterModelMap;
+
+extern map<string, Object3D> characterModelMap;
+
+void ReadObjectModels(vector<string>& fileNames);
+void DisplayPlayerModel(string className, int posX, int posY, int posZ);
+void getFileNames(vector<string>& fileNames, ifstream& inFile);
+void initPlayerModels();
+
+
 #endif // !DECORATIONS_H
 

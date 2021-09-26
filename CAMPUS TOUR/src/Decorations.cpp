@@ -102,3 +102,88 @@ int decorationTextureHelp(int index)
 		return Chained_Tree;
 	}
 }
+
+
+map<string, Object3D> characterModelMap;
+
+Object3D golum;
+Object3D skeleton;
+Object3D wizard;
+Object3D zombie;
+
+
+
+void initPlayerModels() {
+
+	// read a text file and store the results in a vector of datatype strings
+	vector<string> filenames;
+
+	// string containing the path to the textfile 
+	string filePath = "data/3D Objects/CharacterModels/filenames.txt";  //     data/3D Objects/CharacterModels/filenames.txt
+
+	ifstream fileOpenerStream;
+	fileOpenerStream.open(filePath);
+
+	if (!fileOpenerStream)
+	{
+		cout << "Could not open file!!!!" << endl;
+	}
+	// read
+	getFileNames(filenames, fileOpenerStream);
+
+
+	// read the object files and store
+	ReadObjectModels(filenames);
+}
+
+
+void getFileNames(vector<string>& fileNames, ifstream& inFile)
+{
+	while (!inFile.eof())
+	{
+		string line;
+		getline(inFile, line);
+
+		if (line.length() != 0)
+		{
+			fileNames.push_back(line);
+		}
+	}
+}
+
+
+
+void ReadObjectModels(vector<string>& fileNames) {
+
+	//   data/3D Objects/CharacterModels/
+
+	//string path = "data/3D Objects/CharacterModels/";
+
+
+	ReadOBJfile("data/3D Objects/CharacterModels/golum.obj", &golum);
+	characterModelMap["Golum"] = golum;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/skeleton.obj", &skeleton);
+	characterModelMap["Skeleton"] = skeleton;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/wizard.obj", &wizard);
+	characterModelMap["Wizard"] = wizard;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/zombie.obj", &zombie);
+	characterModelMap["Zombie"] = zombie;
+
+
+}
+
+void DisplayPlayerModel(string className, int posX, int posY, int posZ) {
+
+
+
+	glPushMatrix();
+	glTranslatef(posX, posY, posZ);
+	glScalef(50, 50, 50);
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(decorationTextureHelp(index))); // change this once all the textures are ready
+	draw3DObject(characterModelMap[className]);
+	glPopMatrix();
+
+}

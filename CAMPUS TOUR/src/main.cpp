@@ -117,6 +117,9 @@ void myinit()
 	CreateTextureList();
 	CreateTextures();
 
+	// Init player models
+	initPlayerModels(); 
+
 	//Doors
 	CreateDoors();
 

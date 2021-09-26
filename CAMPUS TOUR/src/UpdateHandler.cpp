@@ -25,6 +25,7 @@ using namespace std;
 
 void Update()
 {
+	DisplayPlayerModel("Zombie", 123, 9000, -21);
 	switch (gameState) {
 		case NotReady:
 				//stuck until finished button is pressed
@@ -84,6 +85,19 @@ void Update()
 
 				/// <Task 16> (Jason)
 				/// start drawing players and enemies in their positions
+				
+				DisplayPlayerModel("Zombie", 123, 9000, -21);  // example usage with a zombie 
+				if (playerList.size() > 0) {
+					for (int i = 0; i < playerList.size(); i++) {
+						DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX(), 9000, playerList[i].getPosZ());
+					}
+				}
+				if (nowEnemies.size() > 0) {
+					for (int i = 0; i < nowEnemies.size(); i++) {
+						DisplayPlayerModel(nowEnemies[i].getName(), nowEnemies[i].getPosX(), 9000, nowEnemies[i].getPosZ());
+					}
+				}
+		
 				/// </Task 16>
 
 			}//	figure out turn order (Every level)
