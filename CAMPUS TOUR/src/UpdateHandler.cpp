@@ -374,6 +374,8 @@ void enemyTurn(Enemy ai)
 		/// set as ability
 		/// attack
 		/// </Task 14>
+		ai.AIAttack(nowMap);
+		
 		
 		/// <Task 13> (Jason)
 		/// show stun being removed
@@ -383,6 +385,7 @@ void enemyTurn(Enemy ai)
 	{
 		/// <Task 15> (Raymond)
 		/// move enemy
+		ai.AITurn(nowMap);
 		/// </Task 15>
 
 		/// <Task 14> (Raymond)
@@ -391,6 +394,7 @@ void enemyTurn(Enemy ai)
 		/// set as ability
 		/// attack
 		/// </Task 14>
+		ai.AIAttack(nowMap);
 	}
 	ai.setStun(0);
 	nowEnemies[turnIDMap[turn]] = ai;
