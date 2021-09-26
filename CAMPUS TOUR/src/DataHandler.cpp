@@ -4,6 +4,7 @@ vector<Class> allClasses;
 vector<EntityAbility> allAbilities;
 vector<Enemy> allEnemies;
 map<int, LevelEnemy> enemyLevelMap;
+map<string, int> upgradeHP;
 
 using namespace std;
 
@@ -16,6 +17,7 @@ void GetCharacterData()
 	int tempHP;
 	int tempArmor;
 	int tempMovement;
+	int bonus;
 	EntityAbility tempAbility;
 	string tempAbilityName;
 	vector<string> tempAbilityNameList;
@@ -58,7 +60,19 @@ void GetCharacterData()
 			tempAbility = GetAbility(tempAbilityName);
 			tempClass.abilityList.push_back(tempAbility);
 		}
-
+		if (tempClass.hp <= 7)
+		{
+			bonus = 2;
+		}
+		else if (tempClass.hp <= 9)
+		{
+			bonus = 3;
+		}
+		else
+		{
+			bonus = 4;
+		}
+		upgradeHP.insert(std::pair<string, int>(tempClass.name, bonus));
 		allClasses.push_back(tempClass);
 	}
 

@@ -25,5 +25,6 @@ void playerTurn(Player);
 void upgrade();
 void uniqueAbility();
 void attack(int);
+int rollTheDice(int, int);
 
 #endif

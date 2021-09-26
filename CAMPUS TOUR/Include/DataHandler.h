@@ -54,4 +54,5 @@ EntityAbility GetAbility(string);
 Enemy GetEnemy(string);
 extern vector<Enemy> allEnemies;
 extern map<int, LevelEnemy> enemyLevelMap;
+extern map<string, int> upgradeHP;
 #endif
