@@ -154,39 +154,119 @@ void Enemy::reset()
 // 0 = empty, 1 = wall, 2 = ally, 3 = enemy.
 //call to move piece //might change due to map orientation
 void Enemy::moveUp(LevelMap* nowMap) {
-	//update map positions
-	nowMap->SetValue(posX + 1, posZ, 3);
-	nowMap->SetValue(posX , posZ, 0);
-
-	//move
-	posX++;
+	if (nowMap->GetValue(posX + 1, posZ) != 1) {
+		//update map positions
+		nowMap->SetValue(posX + 1, posZ, 3);
+		nowMap->SetValue(posX, posZ, 0);
+		//move
+		posX++;
+	}
+	else {
+		//check directions clockwise
+		if (nowMap->GetValue(posX, posZ + 1) != 1) {
+			moveRight(nowMap);
+		}
+		else {
+			if (nowMap->GetValue(posX - 1, posZ) != 1) {
+				moveDown(nowMap);
+			}
+			else {
+				if (nowMap->GetValue(posX, posZ - 1) != 1) {
+					moveLeft(nowMap);
+				}
+				else {
+					// no move; End turn
+				}
+			}
+		}
+	}
 }
 
 void Enemy::moveDown(LevelMap* nowMap) {
-	//update map positions
-	nowMap->SetValue(posX - 1, posZ, 3);
-	nowMap->SetValue(posX, posZ, 0);
-	
-	//move
-	posX--;
+	if (nowMap->GetValue(posX - 1, posZ) != 1) {
+		//update map positions
+		nowMap->SetValue(posX - 1, posZ, 3);
+		nowMap->SetValue(posX, posZ, 0);
+		//move
+		posX--;
+	}
+	else {
+		//check directions clockwise
+		if (nowMap->GetValue(posX, posZ - 1) != 1) {
+			moveLeft(nowMap);
+		}
+		else {
+			if (nowMap->GetValue(posX + 1, posZ) != 1) {
+				moveUp(nowMap);
+			}
+			else {
+				if (nowMap->GetValue(posX, posZ + 1) != 1) {
+					moveRight(nowMap);
+				}
+				else {
+					// no move; End turn
+				}
+			}
+		}
+	}
 }
 
 void Enemy::moveLeft(LevelMap* nowMap) {
-	//update map positions
-	nowMap->SetValue(posX , posZ - 1, 3);
-	nowMap->SetValue(posX, posZ, 0);
-
-	//move
-	posZ = posZ--;
+	if (nowMap->GetValue(posX, posZ - 1) != 1) {
+		//update map positions
+		nowMap->SetValue(posX, posZ - 1, 3);
+		nowMap->SetValue(posX, posZ, 0);
+		//move
+		posZ = posZ--;
+	}
+	else {
+		//check directions clockwise
+		if (nowMap->GetValue(posX + 1, posZ) != 1) {
+			moveUp(nowMap);
+		}
+		else {
+			if (nowMap->GetValue(posX, posZ + 1) != 1) {
+				moveRight(nowMap);
+			}
+			else {
+				if (nowMap->GetValue(posX - 1, posZ) != 1) {
+					moveDown(nowMap);
+				}
+				else {
+					// no move; End turn
+				}
+			}
+		}
+	}
 }
 
 void Enemy::moveRight(LevelMap* nowMap) {
-	//update map positions
-	nowMap->SetValue(posX, posZ + 1, 3);
-	nowMap->SetValue(posX, posZ, 0);
-
-	//move
-	posZ = posZ++;
+	if (nowMap->GetValue(posX, posZ + 1) != 1) {
+		//update map positions
+		nowMap->SetValue(posX, posZ + 1, 3);
+		nowMap->SetValue(posX, posZ, 0);
+		//move
+		posZ = posZ++;
+	}
+	else {
+		//check directions clockwise
+		if (nowMap->GetValue(posX - 1, posZ) != 1) {
+			moveDown(nowMap);
+		}
+		else {
+			if (nowMap->GetValue(posX, posZ - 1) != 1) {
+				moveLeft(nowMap);
+			}
+			else {
+				if (nowMap->GetValue(posX, posZ + 1) != 1) {
+					moveRight(nowMap);
+				}
+				else {
+					// no move; End turn
+				}
+			}
+		}
+	}
 }
 
 bool Enemy::checkRange(EntityAbility range, LevelMap* nowMap) {
