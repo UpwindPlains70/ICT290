@@ -20,11 +20,17 @@ LevelEnemy nowLM;
 int randNum;
 int randX;
 int randZ;
+bool canIJKL;
+bool canAction;
+bool canEndTurn;
 
 using namespace std;
 
 void Update()
 {
+	canIJKL = false;
+	canAction = false;
+	canEndTurn = false;
 	switch (gameState) {
 		case NotReady:
 			/// <Task 1> (Peter)
@@ -191,66 +197,18 @@ void Update()
 		case Action:
 			if (playerList[turnIDMap[turn]].canMove())
 			{
-				/// <Task 17> (Anyone)
-				/// if keyboard 'w'
-				///		playerList[turnIDMap[turn]].posZ += 1
-				///		playerList[turnIDMap[turn]].MovementLeft--
-				///	if keyboard 's'
-				///		playerList[turnIDMap[turn]].posZ -= 1
-				///		playerList[turnIDMap[turn]].MovementLeft--
-				///	if keyboard 'a'
-				///		playerList[turnIDMap[turn]].posX -= 1
-				///		playerList[turnIDMap[turn]].MovementLeft--
-				///	if keyboard 'd'
-				///		playerList[turnIDMap[turn]].posX += 1
-				///		playerList[turnIDMap[turn]].MovementLeft--
-				/// </Task 17>
+				canIJKL = true;
 			}
 			if (pcHasAction == true)
 			{
-				/// <Task 18> (Anyone)
-				/// if keyboard '1'
-				///		nowAbilityID = 0
-				///		nowAbility = playerList[turnIDMap[turn]].GetAbility(0)
-				///		if cooldownLeft
-				///			if Ability.Unique = true
-				///				uniqueAbility()
-				///			elseif Ability.aoe > 1
-				///				State = AttackAOE
-				///			else
-				///				State = Attack
-				///	if keyboard '2'
-				///		nowAbilityID = 1
-				///		nowAbility = playerList[turnIDMap[turn]].GetAbility(1)
-				///		if cooldownLeft
-				///			if Ability.Unique = true
-				///				uniqueAbility()
-				///			elseif Ability.aoe > 1
-				///				State = AttackAOE
-				///			else
-				///				State = Attack
-				/// if keyboard '3'
-				///		nowAbilityID = 2
-				///		nowAbility = playerList[turnIDMap[turn]].GetAbility(2)
-				///		if cooldownLeft
-				///			if Ability.Unique = true
-				///				uniqueAbility()
-				///			elseif Ability.aoe > 1
-				///				State = AttackAOE
-				///			else
-				///				State = Attack
-				/// </Task 18>
+				canAction = true;
 			}
 			if (playerList[turnIDMap[turn]].canMove() == false && pcHasAction == false)
 			{
 				playerList[turnIDMap[turn]] = playerList[turnIDMap[turn]];
 				endTurn();
 			}
-			/// <Task 19> (Anyone)
-			/// if keyboard '`'
-			///		playerList[turnIDMap[turn]] = playerList[turnIDMap[turn]];
-			///		endTurn();
-			/// </Task 19>
+			canEndTurn = true;
 			break;
 		case Attack:
 			/// <Task 20> (Anyone)
@@ -768,6 +726,34 @@ int rollTheDice(int bonus, int AC)
 		else
 		{
 			return 0;
+		}
+	}
+}
+
+void movePlayer(int X, int Z)
+{
+	playerList[turnIDMap[turn]].setPosZ(playerList[turnIDMap[turn]].getPosZ() + Z);
+	playerList[turnIDMap[turn]].setPosX(playerList[turnIDMap[turn]].getPosX() + X);
+	playerList[turnIDMap[turn]].movePlayer();
+}
+
+void abilityPressed(int id)
+{
+	nowAbilityID = id - 1;
+	EntityAbility nowAbility = playerList[turnIDMap[turn]].getAbility(nowAbilityID);
+	if (nowAbility.canUseAbility())
+	{
+		if (nowAbility.getUnique())
+		{
+			uniqueAbility();
+		}
+		else if(nowAbility.getAOE() > 1)
+		{
+			gameState = AttackAOE;
+		}
+		else
+		{
+			gameState = Attack;
 		}
 	}
 }

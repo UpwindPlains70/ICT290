@@ -4,6 +4,7 @@
 #include "CollisionHandler.h"
 #include "DisplayHandler.h"
 #include "backends/imgui_impl_glut.h"
+#include "UpdateHandler.h"
 
 	/**
 	 * @brief Handles all movement controls

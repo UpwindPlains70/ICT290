@@ -17,6 +17,9 @@ extern state gameState;
 extern bool displayEnt;
 extern vector<Player> playerList;
 extern vector<Enemy> nowEnemies;
+extern bool canIJKL;
+extern bool canAction;
+extern bool canEndTurn;
 
 void Update();
 void endTurn();
@@ -26,5 +29,7 @@ void upgrade();
 void uniqueAbility();
 void attack(int);
 int rollTheDice(int, int);
+void movePlayer(int, int);
+void abilityPressed(int);
 
 #endif
