@@ -63,11 +63,6 @@ void Update()
 
 			break;
 		case Initialising:
-			//find preset map
-
-			/// <Task 6> (Peter)
-			/// draw map
-			/// </Task 6>
 			
 			isPCTurnMap.clear();
 			turnIDMap.clear();
