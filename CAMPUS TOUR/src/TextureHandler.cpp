@@ -23,7 +23,7 @@ void CreateTextures()
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	// set texture count
-	tp.SetTextureCount(250);
+	tp.SetTextureCount(255);
 
 	// load and create textures
 	image = tp.LoadTexture("data/abovechanctext.raw", 128, 1024);
@@ -741,6 +741,22 @@ void CreateTextures()
 	char* tempPath = &path[0];
 	image = tp.LoadTexture(tempPath, 1024, 1024, false);
 	tp.CreateTexture(246, image, 1024, 1024);
+
+	// texture numbers 247 - 251
+	image = tp.LoadTexture("data/Object Textures/Characters/zombie.raw", 1024, 1024);
+	tp.CreateTexture(247, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/wizard.raw", 1024, 1024);
+	tp.CreateTexture(248, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/earthGolum.raw", 1024, 1024);
+	tp.CreateTexture(249, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/waterGolum.raw", 1024, 1024);
+	tp.CreateTexture(250, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/fireGolum.raw", 1024, 1024);
+	tp.CreateTexture(251, image, 1024, 1024);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);

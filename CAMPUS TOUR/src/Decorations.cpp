@@ -105,8 +105,12 @@ int decorationTextureHelp(int index)
 
 
 map<string, Object3D> characterModelMap;
+map<string, int> modelTextureMap;
 
 Object3D golum;
+Object3D Earthgolum;
+Object3D Watergolum;
+Object3D Firegolum;
 Object3D skeleton;
 Object3D wizard;
 Object3D zombie;
@@ -163,26 +167,40 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/golum.obj", &golum);
 	characterModelMap["Golum"] = golum;
 
+	ReadOBJfile("data/3D Objects/CharacterModels/Earthgolum.obj", &Earthgolum);
+	characterModelMap["EarthGolum"] = Earthgolum;
+	modelTextureMap["EarthGolum"] = 250; 
+
+	ReadOBJfile("data/3D Objects/CharacterModels/watergolum.obj", &Watergolum);
+	characterModelMap["WaterGolum"] = Watergolum;
+	modelTextureMap["WaterGolum"] = 251;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/firegolum.obj", &Firegolum);
+	characterModelMap["FireGolum"] = Firegolum;
+	modelTextureMap["FireGolum"] = 252;
+
 	ReadOBJfile("data/3D Objects/CharacterModels/skeleton.obj", &skeleton);
 	characterModelMap["Skeleton"] = skeleton;
 
 	ReadOBJfile("data/3D Objects/CharacterModels/wizard.obj", &wizard);
 	characterModelMap["Wizard"] = wizard;
+	modelTextureMap["Wizard"] = 249;
 
 	ReadOBJfile("data/3D Objects/CharacterModels/zombie.obj", &zombie);
 	characterModelMap["Zombie"] = zombie;
+	modelTextureMap["Zombie"] = 248;
 
 
 }
 
 void DisplayPlayerModel(string className, int posX, int posY, int posZ) {
 
-
+	//cout << modelTextureMap[className] << endl;
 
 	glPushMatrix();
 	glTranslatef(posX, posY, posZ);
 	glScalef(50, 50, 50);
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(decorationTextureHelp(index))); // change this once all the textures are ready
+	glBindTexture(GL_TEXTURE_2D, modelTextureMap[className]); // change this once all the textures are ready
 	draw3DObject(characterModelMap[className]);
 	glPopMatrix();
 

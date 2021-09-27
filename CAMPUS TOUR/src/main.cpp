@@ -172,11 +172,12 @@ void Display()
 		DrawBackdrop();
 		
 	glPopMatrix();
-	glDisable (GL_TEXTURE_2D);
+	//glDisable (GL_TEXTURE_2D);
 
 	//glDisable(GL_COLOR_MATERIAL);
 
 	Update();
+	glDisable(GL_TEXTURE_2D);
 		//Display GUI
 	/*if (playerSelection)
 	{
