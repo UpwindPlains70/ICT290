@@ -758,6 +758,9 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/Characters/fireGolum.raw", 1024, 1024);
 	tp.CreateTexture(251, image, 1024, 1024);
 
+	image = tp.LoadTexture("data/Object Textures/Characters/skeleton.raw", 1024, 1024);
+	tp.CreateTexture(252, image, 1024, 1024);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }

@@ -181,6 +181,7 @@ void ReadObjectModels(vector<string>& fileNames) {
 
 	ReadOBJfile("data/3D Objects/CharacterModels/skeleton.obj", &skeleton);
 	characterModelMap["Skeleton"] = skeleton;
+	modelTextureMap["Skeleton"] = 253; 
 
 	ReadOBJfile("data/3D Objects/CharacterModels/wizard.obj", &wizard);
 	characterModelMap["Wizard"] = wizard;

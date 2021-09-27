@@ -25,7 +25,7 @@ using namespace std;
 
 void Update()
 {
-	DisplayPlayerModel("FireGolum", 123, 9000, -21);
+	DisplayPlayerModel("Skeleton", 123, 9000, -21);
 	switch (gameState) {
 		case NotReady:
 				//stuck until finished button is pressed
