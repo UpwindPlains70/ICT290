@@ -34,6 +34,7 @@ void Update()
 	DisplayPlayerModel("WaterGolum", -20, 9000, -21);
 	DisplayPlayerModel("Beserker", -100, 9000, -21);
 	DisplayPlayerModel("Shield", -190, 9000, -21);
+	DisplayPlayerModel("Monk", -270, 9000, -21);
 	switch (gameState) {
 		case NotReady:
 				//stuck until finished button is pressed

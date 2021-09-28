@@ -14,8 +14,10 @@ C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(75,28): warning C4244: 'argumen
 C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(76,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
 C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(76,19): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
 C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(76,12): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(220,27): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(220,21): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(220,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(225,27): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(225,21): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(225,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  TextureHandler.cpp
+  Generating Code...
 C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(104): warning C4715: 'decorationTextureHelp': not all control paths return a value
   houses.vcxproj -> C:\ICT290\GitHub\CAMPUS TOUR\Debug\houses.exe

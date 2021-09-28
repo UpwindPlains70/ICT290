@@ -23,7 +23,7 @@ void CreateTextures()
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	// set texture count
-	tp.SetTextureCount(260);
+	tp.SetTextureCount(265);
 
 	// load and create textures
 	image = tp.LoadTexture("data/abovechanctext.raw", 128, 1024);
@@ -769,6 +769,9 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/Object Textures/Characters/shield.raw", 1024, 1024);
 	tp.CreateTexture(255, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/monk.raw", 1024, 1024);
+	tp.CreateTexture(256, image, 1024, 1024);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
