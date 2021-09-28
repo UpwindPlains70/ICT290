@@ -118,6 +118,7 @@ Object3D samurai;
 Object3D beserker; 
 Object3D shield;
 Object3D monk;
+Object3D swashbuckler;
 
 
 
@@ -213,6 +214,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/monk.obj", &monk);
 	characterModelMap["Monk"] = monk;
 	modelTextureMap["Monk"] = 257;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/swashbuckler.obj", &swashbuckler);
+	characterModelMap["Swashbuckler"] = swashbuckler;
+	modelTextureMap["Swashbuckler"] = 258;
 
 
 }
