@@ -116,6 +116,7 @@ Object3D wizard;
 Object3D zombie;
 Object3D samurai; 
 Object3D beserker; 
+Object3D shield;
 
 
 
@@ -188,7 +189,7 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/wizard.obj", &wizard);
 	characterModelMap["Wizard"] = wizard;
 	modelTextureMap["Wizard"] = 249;
-
+	
 	ReadOBJfile("data/3D Objects/CharacterModels/zombie.obj", &zombie);
 	characterModelMap["Zombie"] = zombie;
 	modelTextureMap["Zombie"] = 248;
@@ -200,6 +201,13 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/beserker.obj", &beserker);
 	characterModelMap["Beserker"] = beserker;
 	modelTextureMap["Beserker"] = 255;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/shield.obj", &shield);
+	characterModelMap["Shield"] = shield;
+	modelTextureMap["Shield"] = 256;
+
+	characterModelMap["Mage"] = wizard;
+	modelTextureMap["Mage"] = 257;
 
 
 }
