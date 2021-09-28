@@ -25,7 +25,14 @@ using namespace std;
 
 void Update()
 {
-	DisplayPlayerModel("Skeleton", 123, 9000, -21);
+	DisplayPlayerModel("Samurai", 123, 9000, -21);
+	DisplayPlayerModel("Zombie", 200, 9000, -21);
+	DisplayPlayerModel("Wizard", 280, 9000, -21);
+	DisplayPlayerModel("Skeleton", 360, 9000, -21);
+	DisplayPlayerModel("FireGolum", 440, 9000, -21);
+	DisplayPlayerModel("EarthGolum", 60, 9000, -21);
+	DisplayPlayerModel("WaterGolum", -20, 9000, -21);
+	DisplayPlayerModel("Beserker", -100, 9000, -21);
 	switch (gameState) {
 		case NotReady:
 				//stuck until finished button is pressed

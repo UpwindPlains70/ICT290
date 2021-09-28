@@ -114,6 +114,8 @@ Object3D Firegolum;
 Object3D skeleton;
 Object3D wizard;
 Object3D zombie;
+Object3D samurai; 
+Object3D beserker; 
 
 
 
@@ -190,6 +192,14 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/zombie.obj", &zombie);
 	characterModelMap["Zombie"] = zombie;
 	modelTextureMap["Zombie"] = 248;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/samurai.obj", &samurai);
+	characterModelMap["Samurai"] = samurai;
+	modelTextureMap["Samurai"] = 254;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/beserker.obj", &beserker);
+	characterModelMap["Beserker"] = beserker;
+	modelTextureMap["Beserker"] = 255;
 
 
 }

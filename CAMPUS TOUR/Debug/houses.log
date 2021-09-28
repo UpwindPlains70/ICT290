@@ -1,7 +1,7 @@
 ﻿  UpdateHandler.cpp
   The contents of <filesystem> are available only with C++17 or later.
 C:\ICT290\GitHub\CAMPUS TOUR\Include\UpdateHandler.h(27,101): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(49,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(91,24): warning C4018: '<': signed/unsigned mismatch
-C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(96,24): warning C4018: '<': signed/unsigned mismatch
+C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(56,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(98,24): warning C4018: '<': signed/unsigned mismatch
+C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(103,24): warning C4018: '<': signed/unsigned mismatch
   houses.vcxproj -> C:\ICT290\GitHub\CAMPUS TOUR\Debug\houses.exe
