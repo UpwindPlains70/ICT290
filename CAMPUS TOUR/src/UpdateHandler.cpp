@@ -37,6 +37,7 @@ void Update()
 	DisplayPlayerModel("Monk", -270, 9000, -21);
 	DisplayPlayerModel("Swashbuckler", -350, 9000, -21);
 	DisplayPlayerModel("Archer", -430, 9000, -21);
+	DisplayPlayerModel("Artillery", -430, 9000, -150);
 	switch (gameState) {
 		case NotReady:
 				//stuck until finished button is pressed

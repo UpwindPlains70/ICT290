@@ -120,6 +120,7 @@ Object3D shield;
 Object3D monk;
 Object3D swashbuckler;
 Object3D archer;
+Object3D artillery;
 
 int characterScale = 50;
 bool displayCharacters;
@@ -225,6 +226,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/archer.obj", &archer);
 	characterModelMap["Archer"] = archer;
 	modelTextureMap["Archer"] = 259;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/artillery.obj", &artillery);
+	characterModelMap["Artillery"] = artillery;
+	modelTextureMap["Artillery"] = 260;
 
 
 }
