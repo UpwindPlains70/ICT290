@@ -782,6 +782,9 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/Characters/artillery.raw", 1024, 1024);
 	tp.CreateTexture(259, image, 1024, 1024);
 
+	image = tp.LoadTexture("data/Object Textures/Characters/bard.raw", 1024, 1024);
+	tp.CreateTexture(260, image, 1024, 1024);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }
