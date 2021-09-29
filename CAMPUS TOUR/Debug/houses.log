@@ -14,19 +14,21 @@ C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(75,28): warning C4244: 'argumen
 C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(76,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
 C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(76,19): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
 C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(76,12): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(247,27): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(247,21): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(247,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(248,43): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(248,27): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(248,11): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(252,27): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(252,21): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(252,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(253,43): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(253,27): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(253,11): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
   TextureHandler.cpp
   UpdateHandler.cpp
   The contents of <filesystem> are available only with C++17 or later.
 C:\ICT290\GitHub\CAMPUS TOUR\Include\UpdateHandler.h(27,101): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(62,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(397,22): warning C4018: '<': signed/unsigned mismatch
-C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(402,22): warning C4018: '<': signed/unsigned mismatch
+C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(63,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(398,22): warning C4018: '<': signed/unsigned mismatch
+C:\ICT290\GitHub\CAMPUS TOUR\src\UpdateHandler.cpp(403,22): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
 C:\ICT290\GitHub\CAMPUS TOUR\src\Decorations.cpp(104): warning C4715: 'decorationTextureHelp': not all control paths return a value
+  LINK : .\Debug\houses.exe not found or not built by the last incremental link; performing full link
+imgui_impl_glut.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   houses.vcxproj -> C:\ICT290\GitHub\CAMPUS TOUR\Debug\houses.exe
