@@ -44,5 +44,6 @@ void playerTurn(Player);
 void upgrade();
 void uniqueAbility();
 void attack(int);
+void updateModels();
 
 #endif

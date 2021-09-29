@@ -47,6 +47,7 @@ void DisplayDecorations();
 
 extern map<string, Object3D> characterModelMap;
 extern map<string, int> modelTextureMap;
+extern bool displayCharacters;
 
 void ReadObjectModels(vector<string>& fileNames);
 void DisplayPlayerModel(string className, int posX, int posY, int posZ);

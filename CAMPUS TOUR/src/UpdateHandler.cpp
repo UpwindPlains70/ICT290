@@ -25,7 +25,7 @@ using namespace std;
 
 void Update()
 {
-	DisplayPlayerModel("Samurai", 123, 9000, -21);
+	DisplayPlayerModel("Samurai", 123, 9000, -21); // just for testing, can remove all these characters calls at any time
 	DisplayPlayerModel("Zombie", 200, 9000, -21);
 	DisplayPlayerModel("Wizard", 280, 9000, -21);
 	DisplayPlayerModel("Skeleton", 360, 9000, -21);
@@ -96,17 +96,7 @@ void Update()
 				/// <Task 16> (Jason)
 				/// start drawing players and enemies in their positions
 				
-				//DisplayPlayerModel("Zombie", 123, 9000, -21);  // example usage with a zombie 
-				if (playerList.size() > 0) {
-					for (int i = 0; i < playerList.size(); i++) {
-						DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX(), 9000, playerList[i].getPosZ());
-					}
-				}
-				if (nowEnemies.size() > 0) {
-					for (int i = 0; i < nowEnemies.size(); i++) {
-						DisplayPlayerModel(nowEnemies[i].getName(), nowEnemies[i].getPosX(), 9000, nowEnemies[i].getPosZ());
-					}
-				}
+				displayCharacters = true; 
 		
 				/// </Task 16>
 
@@ -264,6 +254,8 @@ void Update()
 			/// </Task 26>				
 			break;
 	}
+
+	updateModels(); 
 }
 
 void endTurn()
@@ -387,4 +379,32 @@ void attack(int id)
 	///		damage
 	///		stun
 	/// </Task 25>
+}
+
+void updateModels() { // called at the end of the update function
+
+	/// <Task 16> (Jason)
+				/// start drawing players and enemies in their positions
+
+	//DisplayPlayerModel("Zombie", 123, 9000, -21);  // example usage with a zombie 
+
+	if (displayCharacters) { // displayCharacters is a boolean value that is either set true or false in the Update() function
+
+		if (playerList.size() > 0) {
+			for (int i = 0; i < playerList.size(); i++) {
+				DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX(), 9000, playerList[i].getPosZ());
+			}
+		}
+		if (nowEnemies.size() > 0) {
+			for (int i = 0; i < nowEnemies.size(); i++) {
+				DisplayPlayerModel(nowEnemies[i].getName(), nowEnemies[i].getPosX(), 9000, nowEnemies[i].getPosZ());
+			}
+		}
+
+
+	}
+
+
+	/// </Task 16>
+
 }

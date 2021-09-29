@@ -120,7 +120,8 @@ Object3D shield;
 Object3D monk;
 Object3D swashbuckler;
 
-
+int characterScale = 50;
+bool displayCharacters;
 
 void initPlayerModels() {
 
@@ -143,6 +144,7 @@ void initPlayerModels() {
 
 	// read the object files and store
 	ReadObjectModels(filenames);
+	displayCharacters = false;
 }
 
 
@@ -228,7 +230,7 @@ void DisplayPlayerModel(string className, int posX, int posY, int posZ) {
 
 	glPushMatrix();
 	glTranslatef(posX, posY, posZ);
-	glScalef(50, 50, 50);
+	glScalef(characterScale, characterScale, characterScale);
 	glBindTexture(GL_TEXTURE_2D, modelTextureMap[className]); // change this once all the textures are ready
 	draw3DObject(characterModelMap[className]);
 	glPopMatrix();
