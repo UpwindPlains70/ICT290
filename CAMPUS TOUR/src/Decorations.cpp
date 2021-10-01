@@ -123,6 +123,7 @@ Object3D archer;
 Object3D artillery;
 Object3D bard;
 Object3D cleric;
+Object3D druid;
 
 int characterScale = 50;
 bool displayCharacters;
@@ -240,6 +241,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/cleric.obj", &cleric);
 	characterModelMap["Cleric"] = cleric;
 	modelTextureMap["Cleric"] = 262;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/druid.obj", &druid);
+	characterModelMap["Druid"] = druid;
+	modelTextureMap["Druid"] = 263;
 
 
 }
