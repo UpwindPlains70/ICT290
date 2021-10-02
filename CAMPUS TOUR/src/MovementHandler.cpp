@@ -225,6 +225,13 @@ void Mouse(int button, int state, int x, int y)
 			//DeleteImageFromMemory(image);
 			closing = true;
 		}
+		if ((x <= width / 2.0 + 256.0) && (x >= width / 2.0 - 256.0)
+			&& (y <= height / 2.0 + 256.0) && (y >= height / 2.0 - 256.0))
+		{
+
+			popUpMessage = false; // closes the pop up message 
+			popUpMessageState = None;  // Stops the enum state from being anything else eg if it used to be TotalWin, it is now set to None
+		}
 	}
 }
 

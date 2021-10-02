@@ -37,6 +37,11 @@ extern GLdouble step, step2, stepLength;
 /// object of textures
 extern TexturedPolygons tp;
 
+// Variables for displaying pop up message textures
+extern bool popUpMessage;
+extern enum popUpState { TotalWin, LevelWin, Lost, None };
+extern popUpState popUpMessageState;
+
 // TEXTURE IMAGE AXISES
 #define XY		0
 #define XZ		1
@@ -324,6 +329,9 @@ extern TexturedPolygons tp;
 #define DungeonPillar				243
 #define DungeonFloor				244
 #define Group_Photo					245
+
+#define Lost_Screen					263
+#define Final_Win_Screen			264
 		/**
 		 * @brief  Load/Save texture images
 		 *

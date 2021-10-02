@@ -14,6 +14,10 @@ GLdouble step, step2, stepLength;
 // objects
 TexturedPolygons tp;
 
+//enum popUpState {TotalWin, LevelWin, Lost, None};
+popUpState popUpMessageState = None;
+bool popUpMessage = false;
+
 //--------------------------------------------------------------------------------------
 // Load and Create Textures
 //--------------------------------------------------------------------------------------
@@ -790,6 +794,12 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/Object Textures/Characters/druid.raw", 1024, 1024);
 	tp.CreateTexture(262, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/LostScreen.raw", 641, 638);
+	tp.CreateTexture(Lost_Screen, image, 641, 638);
+
+	image = tp.LoadTexture("data/Object Textures/currentLevelWin.raw", 641, 638);
+	tp.CreateTexture(Final_Win_Screen, image, 641, 638);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);

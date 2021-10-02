@@ -45,5 +45,6 @@ void upgrade();
 void uniqueAbility();
 void attack(int);
 void updateModels();
+void updatePopUpMessage();
 
 #endif

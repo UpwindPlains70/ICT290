@@ -232,12 +232,14 @@ void Update()
 			{
 				/// <Task 21> (Jason)
 				/// show final win screen
+				popUpMessageState = TotalWin;
 				/// </Task 21>
 			}
 			else
 			{
 				/// <Task 22> (Jason)
 				/// show currLevel win screen
+				popUpMessageState = LevelWin; 
 				/// </Task 22>
 				upgrade();
 				currLevel++;
@@ -247,6 +249,7 @@ void Update()
 		case Lose:
 			/// <Task 22> (Jason)
 			/// show lose screen
+			popUpMessageState = Lost; 
 			/// </Task 22>
 			break;
 		case AttackAOE:
@@ -261,6 +264,7 @@ void Update()
 	}
 
 	updateModels(); 
+	updatePopUpMessage();
 }
 
 void endTurn()
@@ -411,5 +415,36 @@ void updateModels() { // called at the end of the update function
 
 
 	/// </Task 16>
+
+}
+
+void updatePopUpMessage() {
+
+
+	if (popUpMessage) {
+
+		// switch statement using the string CurrentPopUp 
+		switch (popUpMessageState) {
+
+		case Lost: {
+			cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Lost_Screen));
+			break;
+		}
+		case TotalWin: {
+			cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Final_Win_Screen));
+			break;
+		}
+		case LevelWin: {
+
+			break;
+		}
+		case None: {
+			//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Lost_Screen));    // just for testing the screen code 
+			break;
+		}
+		}
+
+	}
+
 
 }
