@@ -9,12 +9,25 @@
 #include "EntityAbility.h"
 using namespace std;
 
+/**
+ * @brief Defines player class
+ *
+ *
+ * @author Mark Burns
+ * @version 01
+ * @date 20/09/2021 Started
+ *
+ * @author Peter Neve
+ * @version 02
+ * @date 25/09/2021, added getMovementLeft, setAbilities with existing vector
+ */
+
 class Player
 {
 public:
 	Player();
 
-	Player(string, string, int, int, int, int, int, int, int);
+	Player(string, string, int, int, int);
 
 	~Player();
 
@@ -52,6 +65,8 @@ public:
 
 	int getMovement();
 
+	int getMovementLeft();
+
 	void setTurn(int);
 
 	int getTurn();
@@ -59,6 +74,8 @@ public:
 	void pushAbility(EntityAbility);
 
 	void popAbility();
+
+	void setAbilities(vector<EntityAbility> newList);
 
 	void setAbility(EntityAbility, int);
 

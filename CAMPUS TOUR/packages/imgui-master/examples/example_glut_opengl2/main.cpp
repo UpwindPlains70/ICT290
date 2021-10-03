@@ -58,6 +58,9 @@ void my_display_code()
         ImGui::SameLine();
         ImGui::Text("counter = %d", counter);
 
+        static char buf[25];
+        ImGui::InputText("Name: ", buf, 25);
+        ImGui::Text("entered: %s", buf);
         ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
         ImGui::End();
     }

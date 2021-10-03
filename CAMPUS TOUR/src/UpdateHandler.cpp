@@ -1,7 +1,8 @@
 #include "UpdateHandler.h"
 
-int level = 1;
-enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE};
+int currLevel = 1;
+int mapID;
+//enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE};
 state gameState = NotReady;
 map<int, bool> isPCTurnMap;
 map<int, bool> turnDeadMap;
@@ -13,27 +14,38 @@ vector<Enemy> nowEnemies;
 int maxTurn;
 int nowAbilityID;
 int turn;
-int nowMapID;
+LevelMap* nowMap = nullptr;
+vector<int> turnList;
+
+bool firstRun = true;
+bool displayActionMenu = false;
+bool allowedToRoll = true;
 
 using namespace std;
 
 void Update()
 {
+	DisplayPlayerModel("Samurai", 123, 9000, -21); // just for testing, can remove all these characters calls at any time
+	DisplayPlayerModel("Zombie", 200, 9000, -21);
+	DisplayPlayerModel("Wizard", 280, 9000, -21);
+	DisplayPlayerModel("Skeleton", 360, 9000, -21);
+	DisplayPlayerModel("FireGolum", 440, 9000, -21);
+	DisplayPlayerModel("EarthGolum", 60, 9000, -21);
+	DisplayPlayerModel("WaterGolum", -20, 9000, -21);
+	DisplayPlayerModel("Beserker", -100, 9000, -21);
+	DisplayPlayerModel("Shield", -190, 9000, -21);
+	DisplayPlayerModel("Monk", -270, 9000, -21);
+	DisplayPlayerModel("Swashbuckler", -350, 9000, -21);
+	DisplayPlayerModel("Archer", -430, 9000, -21);
+	DisplayPlayerModel("Artillery", -430, 9000, -150);
+	DisplayPlayerModel("Bard", -350, 9000, -150);
+	DisplayPlayerModel("Cleric", -270, 9000, -150);
+	DisplayPlayerModel("Druid", -190, 9000, -150);
 	switch (gameState) {
 		case NotReady:
-			/// <Task 1> (Peter)
-			/// Get Number of Players
-			/// </Task 1>
-			
-			/// <Task 2> (Peter)
-			/// Choose the first player's class and push_back the new player
-			/// Repeat till all players are done
-			/// </Task 2>
-
-			/// <Task 3> (Peter)
-			/// If all of above is done then:
-			/// gameState = Ready;
-			/// </Task 3>
+				//stuck until finished button is pressed
+			classSelectionUI();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 
 			break;
 		case Ready:
@@ -41,72 +53,85 @@ void Update()
 			/// Keep back doors locked until now.
 			/// </Task 4>
 			
-			/// <Task 5> (Anyone)
-			/// If teleport area:
-			/// gameState = Initialising;
-			/// </Task 5>
+			//if (levelZeroClear())
+				gameState = Initialising;
 
 			break;
 		case Initialising:
-			/// <Task 6> (Peter)
-			/// draw map
-			/// </Task 6>
-			
-			isPCTurnMap.clear();
-			turnIDMap.clear();
-			turnDeadMap.clear();
-			nowEnemies.clear();
+			if (firstRun) {
+				firstRun = false;
+					//Load copy of current level
+				srand(time(NULL));
+				mapID = rand() % mapList[currLevel].size();
 
-			/// <Task 7> (Anyone)
-			/// figure out enemies for level
-			/// place enemies into nowEnemies
-			/// </Task 7>
-			
-			/// <Task 8> (Peter)
-			/// Display enemy stats(all at once or one at a time due to who is selected)
-			/// </Task 8>
+				nowMap = new LevelMap(mapList[currLevel].at(mapID));
 
-			/// <Task 9> (Raymond)
-			/// Randomly choose location 
-			/// Place first enemy
-			///	If more enemies
-			///	While('found' == false)
-			///	Randomly choose location
-			///	for (int i = -2; i <= 2; i++)
-			///		for (int j = -2; j <= 2; j++)
-			///			'newX' = 'locationX' + i
-			///			'newY' = 'locationY' + j
-			///			if (there is an enemy at map[newX][newY])
-			///				'found' = true
-			///	Repeat for each
-			///	Do the same for players
-			/// </Task 9>
-			
-			/// <Task 16> (Jason)
-			/// start drawing players and enemies in their positions
-			/// </Task 16>
-			
-			maxTurn = playerList.size() + nowEnemies.size();
+					//Clear list (turns, enemies)
+				isPCTurnMap.clear();
+				turnIDMap.clear();
+				turnDeadMap.clear();
+				nowEnemies.clear();
 
-			/// <Task 10> (Peter)
-			/// figure out turn order
-			/// (use a vector of integers filled with each number up to number of entities)
-			/// (then get random location in vector and get the turn from that)
-			///	(then removing that turn as it is used makes life easier)
-			///	Place turn in each enemyand characters
-			/// </Task 10>
-			
-			for (int i = 1; i <= maxTurn; i++)
+				/// <Task 7> (Anyone)
+				/// figure out enemies for currLevel
+				/// place enemies into nowEnemies
+				/// </Task 7>
+
+				maxTurn = playerList.size() + nowEnemies.size();
+
+				for (int i = 1; i <= maxTurn; ++i)
+					turnList.push_back(i);
+
+				/// <Task 9> (Raymond)
+				/// Randomly choose location 
+				/// Place first enemy
+				///	If more enemies
+				///	While('found' == false)
+				///	Randomly choose location
+				///	for (int i = -2; i <= 2; i++)
+				///		for (int j = -2; j <= 2; j++)
+				///			'newX' = 'locationX' + i
+				///			'newY' = 'locationY' + j
+				///			if (there is an enemy at map[newX][newY])
+				///				'found' = true
+				///	Repeat for each
+				///	Do the same for players
+				/// </Task 9>
+
+				/// <Task 16> (Jason)
+				/// start drawing players and enemies in their positions
+				
+				displayCharacters = true; 
+		
+				/// </Task 16>
+
+			}//	figure out turn order (Every level)
+			if(assignTurnStage)
 			{
-				turnDeadMap.insert(std::pair<int, bool>(i, false));
+				turnOrderUI();
+				ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 			}
-			gameState = StartTurn;
-			turn = 1;
-			break;
+			else 
+			{
+				for (int i = 1; i <= maxTurn; i++)
+				{
+					turnDeadMap.insert(std::pair<int, bool>(i, false));
+				}
+				gameState = StartTurn;
+				firstRun = true;
+				turn = 1;
+				//set player turn
+				if (isPCTurnMap.find(turn) != isPCTurnMap.end())
+					isPCTurnMap[turn] = true;
+			}
+				break;
 		case StartTurn:
+				//Display player & enemy stats
+			playerHUD();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+
 			if (turnDeadMap[turn] == true)
 			{
-				endTurn();
 				if (isPCTurnMap[turn] == false)
 				{
 					enemyTurn(nowEnemies[turnIDMap[turn]]);
@@ -115,9 +140,14 @@ void Update()
 				{
 					playerTurn(playerList[turnIDMap[turn]]);
 				}
+				endTurn();
 			}
+			
 			break;
 		case Action:
+				//Display player & enemy stats
+			playerHUD();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 			if (nowPlayer.canMove())
 			{
 				/// <Task 17> (Anyone)
@@ -182,6 +212,10 @@ void Update()
 			/// </Task 19>
 			break;
 		case Attack:
+				//Display player & enemy stats
+			playerHUD();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+
 			/// <Task 20> (Anyone)
 			/// show enemy select screen
 			/// get player to decide on enemy to hit
@@ -194,25 +228,28 @@ void Update()
 
 			break;
 		case Win:
-			if (level == 10)
+			if (currLevel == 10)
 			{
 				/// <Task 21> (Jason)
 				/// show final win screen
+				popUpMessageState = TotalWin;
 				/// </Task 21>
 			}
 			else
 			{
 				/// <Task 22> (Jason)
-				/// show level win screen
+				/// show currLevel win screen
+				popUpMessageState = LevelWin; 
 				/// </Task 22>
 				upgrade();
-				level++;
+				currLevel++;
 				gameState = Initialising;
 			}
 			break;
 		case Lose:
 			/// <Task 22> (Jason)
 			/// show lose screen
+			popUpMessageState = Lost; 
 			/// </Task 22>
 			break;
 		case AttackAOE:
@@ -225,6 +262,9 @@ void Update()
 			/// </Task 26>				
 			break;
 	}
+
+	updateModels(); 
+	updatePopUpMessage();
 }
 
 void endTurn()
@@ -249,13 +289,14 @@ void endTurn()
 	{
 		turn = 1;
 	}
+	allowedToRoll = true;
 }
 
 void playerTurn(Player pc)
 {
-	/// <Task 12> (Peter)
-	/// display pc stats
-	/// </Task 12>
+		// display pc actions
+	displayActionMenu = true;
+
 	pc.resetMovementLeft();
 	if (pc.getStun() == 1)
 	{
@@ -347,4 +388,63 @@ void attack(int id)
 	///		damage
 	///		stun
 	/// </Task 25>
+}
+
+void updateModels() { // called at the end of the update function
+
+	/// <Task 16> (Jason)
+				/// start drawing players and enemies in their positions
+
+	//DisplayPlayerModel("Zombie", 123, 9000, -21);  // example usage with a zombie 
+
+	if (displayCharacters) { // displayCharacters is a boolean value that is either set true or false in the Update() function
+
+		if (playerList.size() > 0) {
+			for (int i = 0; i < playerList.size(); i++) {
+				DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX(), 9000, playerList[i].getPosZ());
+			}
+		}
+		if (nowEnemies.size() > 0) {
+			for (int i = 0; i < nowEnemies.size(); i++) {
+				DisplayPlayerModel(nowEnemies[i].getName(), nowEnemies[i].getPosX(), 9000, nowEnemies[i].getPosZ());
+			}
+		}
+
+
+	}
+
+
+	/// </Task 16>
+
+}
+
+void updatePopUpMessage() {
+
+
+	if (popUpMessage) {
+
+		// switch statement using the string CurrentPopUp 
+		switch (popUpMessageState) {
+
+		case Lost: {
+			cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Lost_Screen));
+			break;
+		}
+		case TotalWin: {
+			cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Final_Win_Screen));
+			break;
+		}
+		case LevelWin: {
+
+			break;
+		}
+		case None: {
+			//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Lost_Screen));    // just for testing the screen code 
+			break;
+		}
+		}
+
+	}
+
+
 }

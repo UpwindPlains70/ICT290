@@ -11,7 +11,17 @@
 #include <vector>
 #include "EntityAbility.h"
 #include "Enemy.h"
-
+/**
+	 * @brief Handles all character class, enemy, ability file reading
+	 *
+	 * @author Mark Burns
+	 * @version 01
+	 * @date 20/09/2021, Started
+	 * 
+	 * @author Peter Neve
+	 * @version 02
+	 * @date 24/09/2021, fixed minor issues (added tempNameList.clear & allowed for empty lines)
+	 */
 using namespace std;
 
 struct LevelEnemy
@@ -45,6 +55,8 @@ struct Class
 		abilityList.clear();
 	}
 };
+
+extern vector<Class> allClasses;
 
 void GetCharacterData();
 void GetEnemyData();

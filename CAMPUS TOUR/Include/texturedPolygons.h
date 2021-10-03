@@ -24,7 +24,10 @@
 	 * @author Shay Leary
 	 * @version 01
 	 * @date March 2005, Finished
-	 *
+	 * 
+	 * @author Peter Neve
+	 * @version 02
+	 * @date 25/09/2021, added is required bool to loadTexture (control program shutdown if not found & required)
 	 *
 	 */
 class TexturedPolygons
@@ -55,7 +58,7 @@ public:
 		 * @param  int - image hieght
 		 * @return GLbyte*
 		 */
-	GLubyte* LoadTexture(char *filename, int imgWidth, int imgHeight);
+	GLubyte* LoadTexture(char *filename, int imgWidth, int imgHeight, bool* isRequired = (bool*)1);
 	
 		/**
 		 * @brief  set the number of textures to be used
@@ -169,7 +172,7 @@ private:
 	GLuint *m_texture;
 
 	/// returns image file
-	GLubyte* LoadRawImageFile(char* filename, int width, int height);
+	GLubyte* LoadRawImageFile(char* filename, int width, int height, bool* isRequired = NULL);
 
 		 /**
 			 @brief clear texture pointer

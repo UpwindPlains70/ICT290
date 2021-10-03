@@ -203,7 +203,7 @@ void animate(int value)
 			}
 		}
 	}
-	Update();
+	//Update();
 	glutPostRedisplay();
 }
 

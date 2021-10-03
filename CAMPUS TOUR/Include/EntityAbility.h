@@ -46,6 +46,8 @@ public:
 
 	int getAOE();
 
+	bool isAOE();
+
 	void setStun(int);
 
 	int getStun();

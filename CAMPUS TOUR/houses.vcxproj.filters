@@ -132,6 +132,9 @@
     <ClInclude Include="Include\UpdateHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Include\UIHandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AABB.CPP">
@@ -252,6 +255,9 @@
       <Filter>imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\UpdateHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UIHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -19,17 +19,17 @@ Player::Player() {
 	armor = 0;
 }
 
-Player::Player(string newName, string newclassType, int newMaxHP, int newStun, int newPosX, int newPosZ, int newMovement, int newTurn, int newArmor) {
+Player::Player(string newName, string newclassType, int newMaxHP, int newMovement, int newArmor) {
 	name = newName;
 	classType = newclassType;
 	maxHP = newMaxHP;
 	hp = maxHP;
-	stun = newStun;
-	posX = newPosX;
-	posZ = newPosZ;
+	stun = 0;
+	posX = 0;
+	posZ = 0;
 	movement = newMovement;
 	movementLeft = movement;
-	turn = newTurn;
+	turn = 0;
 	armor = newArmor;
 	numAbilities = 0;
 }
@@ -130,6 +130,10 @@ int Player::getMovement() {
 	return movement;
 }
 
+int Player::getMovementLeft() {
+	return movementLeft;
+}
+
 void Player::resetMovementLeft()
 {
 	movementLeft = movement;
@@ -168,6 +172,11 @@ int Player::getTurn() {
 void Player::pushAbility(EntityAbility newAbility) {
 	abilities.push_back(newAbility);
 	numAbilities++;
+}
+
+void Player::setAbilities(vector<EntityAbility> newList) {
+	abilities = newList;
+	numAbilities = abilities.size();
 }
 
 void Player::popAbility() {

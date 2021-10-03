@@ -14,6 +14,10 @@ GLdouble step, step2, stepLength;
 // objects
 TexturedPolygons tp;
 
+//enum popUpState {TotalWin, LevelWin, Lost, None};
+popUpState popUpMessageState = None;
+bool popUpMessage = false;
+
 //--------------------------------------------------------------------------------------
 // Load and Create Textures
 //--------------------------------------------------------------------------------------
@@ -23,7 +27,7 @@ void CreateTextures()
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	// set texture count
-	tp.SetTextureCount(250);
+	tp.SetTextureCount(265);
 
 	// load and create textures
 	image = tp.LoadTexture("data/abovechanctext.raw", 128, 1024);
@@ -734,8 +738,68 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/DungeonFloor.raw", 512, 512);
 	tp.CreateTexture(DungeonFloor, image, 512, 512);
 
-	image = tp.LoadTexture("data/teamphoto.raw", 800, 200);
-	tp.CreateTexture(Group_Photo, image, 800, 200);
+	image = tp.LoadTexture("data/teamPhoto.raw", 641, 638);
+	tp.CreateTexture(Group_Photo, image, 641, 638);
+
+	string path = "data/Class/Class Previews/" + allClasses[0].name + ".raw";
+	char* tempPath = &path[0];
+	image = tp.LoadTexture(tempPath, 1024, 1024, false);
+	tp.CreateTexture(246, image, 1024, 1024);
+
+	// texture numbers 247 - 251
+	image = tp.LoadTexture("data/Object Textures/Characters/zombie.raw", 1024, 1024);
+	tp.CreateTexture(247, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/wizard.raw", 1024, 1024);
+	tp.CreateTexture(248, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/earthGolum.raw", 1024, 1024);
+	tp.CreateTexture(249, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/waterGolum.raw", 1024, 1024);
+	tp.CreateTexture(250, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/fireGolum.raw", 1024, 1024);
+	tp.CreateTexture(251, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/skeleton.raw", 1024, 1024);
+	tp.CreateTexture(252, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/samurai.raw", 1024, 1024);
+	tp.CreateTexture(253, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/beserker.raw", 1024, 1024);
+	tp.CreateTexture(254, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/shield.raw", 1024, 1024);
+	tp.CreateTexture(255, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/monk.raw", 1024, 1024);
+	tp.CreateTexture(256, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/swashbuckler.raw", 1024, 1024);
+	tp.CreateTexture(257, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/archer.raw", 1024, 1024);
+	tp.CreateTexture(258, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/artillery.raw", 1024, 1024);
+	tp.CreateTexture(259, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/bard.raw", 1024, 1024);
+	tp.CreateTexture(260, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/cleric.raw", 1024, 1024);
+	tp.CreateTexture(261, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/druid.raw", 1024, 1024);
+	tp.CreateTexture(262, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/LostScreen.raw", 641, 638);
+	tp.CreateTexture(Lost_Screen, image, 641, 638);
+
+	image = tp.LoadTexture("data/Object Textures/currentLevelWin.raw", 641, 638);
+	tp.CreateTexture(Final_Win_Screen, image, 641, 638);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);

@@ -102,3 +102,162 @@ int decorationTextureHelp(int index)
 		return Chained_Tree;
 	}
 }
+
+
+map<string, Object3D> characterModelMap;
+map<string, int> modelTextureMap;
+
+Object3D golum;
+Object3D Earthgolum;
+Object3D Watergolum;
+Object3D Firegolum;
+Object3D skeleton;
+Object3D wizard;
+Object3D zombie;
+Object3D samurai; 
+Object3D beserker; 
+Object3D shield;
+Object3D monk;
+Object3D swashbuckler;
+Object3D archer;
+Object3D artillery;
+Object3D bard;
+Object3D cleric;
+Object3D druid;
+
+int characterScale = 50;
+bool displayCharacters;
+
+void initPlayerModels() {
+
+	// read a text file and store the results in a vector of datatype strings
+	vector<string> filenames;
+
+	// string containing the path to the textfile 
+	string filePath = "data/3D Objects/CharacterModels/filenames.txt";  //     data/3D Objects/CharacterModels/filenames.txt
+
+	ifstream fileOpenerStream;
+	fileOpenerStream.open(filePath);
+
+	if (!fileOpenerStream)
+	{
+		cout << "Could not open file!!!!" << endl;
+	}
+	// read
+	getFileNames(filenames, fileOpenerStream);
+
+
+	// read the object files and store
+	ReadObjectModels(filenames);
+	displayCharacters = false;
+}
+
+
+void getFileNames(vector<string>& fileNames, ifstream& inFile)
+{
+	while (!inFile.eof())
+	{
+		string line;
+		getline(inFile, line);
+
+		if (line.length() != 0)
+		{
+			fileNames.push_back(line);
+		}
+	}
+}
+
+
+
+void ReadObjectModels(vector<string>& fileNames) {
+
+	//   data/3D Objects/CharacterModels/
+
+	//string path = "data/3D Objects/CharacterModels/";
+
+
+	ReadOBJfile("data/3D Objects/CharacterModels/golum.obj", &golum);
+	characterModelMap["Golum"] = golum;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/Earthgolum.obj", &Earthgolum);
+	characterModelMap["EarthGolum"] = Earthgolum;
+	modelTextureMap["EarthGolum"] = 250; 
+
+	ReadOBJfile("data/3D Objects/CharacterModels/watergolum.obj", &Watergolum);
+	characterModelMap["WaterGolum"] = Watergolum;
+	modelTextureMap["WaterGolum"] = 251;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/firegolum.obj", &Firegolum);
+	characterModelMap["FireGolum"] = Firegolum;
+	modelTextureMap["FireGolum"] = 252;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/skeleton.obj", &skeleton);
+	characterModelMap["Skeleton"] = skeleton;
+	modelTextureMap["Skeleton"] = 253; 
+
+	ReadOBJfile("data/3D Objects/CharacterModels/wizard.obj", &wizard);
+	characterModelMap["Wizard"] = wizard;
+	modelTextureMap["Wizard"] = 249;
+	
+	ReadOBJfile("data/3D Objects/CharacterModels/zombie.obj", &zombie);
+	characterModelMap["Zombie"] = zombie;
+	modelTextureMap["Zombie"] = 248;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/samurai.obj", &samurai);
+	characterModelMap["Samurai"] = samurai;
+	modelTextureMap["Samurai"] = 254;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/beserker.obj", &beserker);
+	characterModelMap["Beserker"] = beserker;
+	modelTextureMap["Beserker"] = 255;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/shield.obj", &shield);
+	characterModelMap["Shield"] = shield;
+	modelTextureMap["Shield"] = 256;
+
+	characterModelMap["Mage"] = wizard;
+	modelTextureMap["Mage"] = 248;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/monk.obj", &monk);
+	characterModelMap["Monk"] = monk;
+	modelTextureMap["Monk"] = 257;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/swashbuckler.obj", &swashbuckler);
+	characterModelMap["Swashbuckler"] = swashbuckler;
+	modelTextureMap["Swashbuckler"] = 258;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/archer.obj", &archer);
+	characterModelMap["Archer"] = archer;
+	modelTextureMap["Archer"] = 259;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/artillery.obj", &artillery);
+	characterModelMap["Artillery"] = artillery;
+	modelTextureMap["Artillery"] = 260;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/bard.obj", &bard);
+	characterModelMap["Bard"] = bard;
+	modelTextureMap["Bard"] = 261;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/cleric.obj", &cleric);
+	characterModelMap["Cleric"] = cleric;
+	modelTextureMap["Cleric"] = 262;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/druid.obj", &druid);
+	characterModelMap["Druid"] = druid;
+	modelTextureMap["Druid"] = 263;
+
+
+}
+
+void DisplayPlayerModel(string className, int posX, int posY, int posZ) {
+
+	//cout << modelTextureMap[className] << endl;
+
+	glPushMatrix();
+	glTranslatef(posX, posY, posZ);
+	glScalef(characterScale, characterScale, characterScale);
+	glBindTexture(GL_TEXTURE_2D, modelTextureMap[className]); // change this once all the textures are ready
+	draw3DObject(characterModelMap[className]);
+	glPopMatrix();
+
+}

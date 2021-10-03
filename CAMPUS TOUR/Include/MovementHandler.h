@@ -19,6 +19,10 @@
 	 * @author Peter Neve
 	 * @version 02
 	 * @date 28/08/2021 Peter Neve, Refactor
+	 * 
+	 * @author Peter Neve
+	 * @version 03
+	 * @date 24/09/2021 implemented mygui control funcs
 	 */
 // keyboard and mouse functions
 void keys(unsigned char key, int x, int y);

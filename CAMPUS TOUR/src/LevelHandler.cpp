@@ -1,6 +1,6 @@
 #include "LevelHandler.h"
 
-int currLevel = 2;
+//int currLevel = 2;
 Point4 camPos = { 0.0, 9500.0, 0.0, 180.0 };
 
 GLdouble currXPos;
@@ -16,7 +16,6 @@ Object3D floorObj;
 const int wallScale = 80;
 const int floorScale = 75;
 
-int mapID = 0;
 void teleportCamera()
 {
 	//Change background colour to black
@@ -29,8 +28,6 @@ void teleportCamera()
 ///UPDATE: general function for new level
 bool levelZeroClear()
 {
-	srand(time(NULL));
-	//mapID = rand() % mapList[currLevel].size();
 	cam.getPosition(currXPos, currYPos, currZPos);
 
 	if (currYPos < 9000.0)
