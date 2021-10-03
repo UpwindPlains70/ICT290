@@ -27,7 +27,7 @@ void CreateTextures()
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	// set texture count
-	tp.SetTextureCount(265);
+	tp.SetTextureCount(266);
 
 	// load and create textures
 	image = tp.LoadTexture("data/abovechanctext.raw", 128, 1024);
@@ -800,6 +800,9 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/Object Textures/currentLevelWin.raw", 641, 638);
 	tp.CreateTexture(Final_Win_Screen, image, 641, 638);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/Effects/stun.raw", 1024, 1024);
+	tp.CreateTexture(Stun, image, 1024, 1024);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);

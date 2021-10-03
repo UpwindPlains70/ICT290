@@ -763,12 +763,14 @@ void updateModels() { // called at the end of the update function
 		if (playerList.size() > 0) {
 			for (int i = 0; i < playerList.size(); i++) {
 				//cout << "X: " << playerList[i].getPosX() << " Z: " << playerList[i].getPosZ() << endl;
+				playerEffects(playerList[i]);
 				DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX(), 9000, playerList[i].getPosZ());
 			}
 		}
 		if (nowEnemies.size() > 0) {
 			for (int i = 0; i < nowEnemies.size(); i++) {
 				//cout << nowEnemies[i].getName() << endl;
+				enemyEffects(nowEnemies[i]);
 				DisplayPlayerModel("Skeleton", nowEnemies[i].getPosX(), 9000, nowEnemies[i].getPosZ());
 			}
 		}

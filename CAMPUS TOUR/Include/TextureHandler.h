@@ -332,6 +332,9 @@ extern popUpState popUpMessageState;
 
 #define Lost_Screen					263
 #define Final_Win_Screen			264
+
+// Effects on the player
+#define Stun						265
 		/**
 		 * @brief  Load/Save texture images
 		 *

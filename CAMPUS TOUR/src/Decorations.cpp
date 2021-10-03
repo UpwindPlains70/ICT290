@@ -125,6 +125,8 @@ Object3D bard;
 Object3D cleric;
 Object3D druid;
 
+Object3D stun;
+
 int characterScale = 50;
 bool displayCharacters;
 
@@ -246,6 +248,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	characterModelMap["Druid"] = druid;
 	modelTextureMap["Druid"] = 263;
 
+	ReadOBJfile("data/3D Objects/Effects/stun.obj", &stun);
+	modelTextureMap["Stun"] = Stun + 1;
+	characterModelMap["Stun"] = stun;
+
 
 }
 
@@ -259,5 +265,33 @@ void DisplayPlayerModel(string className, int posX, int posY, int posZ) {
 		glBindTexture(GL_TEXTURE_2D, modelTextureMap[className]); // change this once all the textures are ready
 		draw3DObject(characterModelMap[className]);
 	glPopMatrix();
+
+}
+
+void playerEffects(Player& pc) {
+
+	if (pc.getStun() > 0)
+	{
+		glPushMatrix();
+			glTranslatef(pc.getPosX(), 9100, pc.getPosZ());
+			glScalef(50.0, 50.0, 50.0);
+			glBindTexture(GL_TEXTURE_2D, modelTextureMap["Stun"]);
+			draw3DObject(stun);
+		glPopMatrix();
+	}
+}
+
+void enemyEffects(Enemy& ec) {
+
+	if (ec.getStun() > 0)
+	{
+		glPushMatrix();
+			glTranslatef(ec.getPosX(), 9200, ec.getPosZ());
+			glScalef(50.0, 50.0, 50.0);
+			glBindTexture(GL_TEXTURE_2D, modelTextureMap["Stun"]);
+			draw3DObject(stun);
+		glPopMatrix();
+	}
+
 
 }

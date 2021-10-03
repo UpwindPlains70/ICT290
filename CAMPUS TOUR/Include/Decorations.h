@@ -53,6 +53,8 @@ void ReadObjectModels(vector<string>& fileNames);
 void DisplayPlayerModel(string className, int posX, int posY, int posZ);
 void getFileNames(vector<string>& fileNames, ifstream& inFile);
 void initPlayerModels();
+void playerEffects(Player &pc);
+void enemyEffects(Enemy &ec);
 
 
 #endif // !DECORATIONS_H
