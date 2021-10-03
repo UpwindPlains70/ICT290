@@ -272,38 +272,54 @@ void Enemy::moveRight(LevelMap* nowMap) {
 bool Enemy::checkRange(EntityAbility range, LevelMap* nowMap) {
 	for (int i = range.getRange(); i > 0; i--) {
 		//x axis
-		if (nowMap->GetValue(posX + i, posZ) == 2) {
-			//printf("%d\n", fieldGrid[posX + i][posZ]);
-			return true;
+		if (posX + i < nowMap->GetX()) {
+			if (nowMap->GetValue(posX + i, posZ) == 2) {
+				//printf("%d\n", fieldGrid[posX + i][posZ]);
+				return true;
+			}
 		}
-		if (nowMap->GetValue(posX - i, posZ) == 2) {
-			//printf("%d\n", fieldGrid[posX - i][posZ]);
-			return true;
+		if (posX - i > 0) {
+			if (nowMap->GetValue(posX - i, posZ) == 2) {
+				//printf("%d\n", fieldGrid[posX - i][posZ]);
+				return true;
+			}
 		}
 
 		// z axis
-		if (nowMap->GetValue(posX, posZ + i) == 2) {
-			//printf("%d\n", fieldGrid[posX][posZ + i]);
-			return true;
+		if (posZ + i < nowMap->GetZ()) {
+			if (nowMap->GetValue(posX, posZ + i) == 2) {
+				//printf("%d\n", fieldGrid[posX][posZ + i]);
+				return true;
+			}
 		}
-		if (nowMap->GetValue(posX, posZ - i) == 2) {
-			//printf("%d\n", fieldGrid[posX][posZ - i]);
-			return true;
+		if (posZ - i > 0) {
+			if (nowMap->GetValue(posX, posZ - i) == 2) {
+				//printf("%d\n", fieldGrid[posX][posZ - i]);
+				return true;
+			}
 		}
 
 		//diagonals
 		for (int s = range.getRange(); s > 0; s--) {
-			if (nowMap->GetValue(posX + i, posZ + s) == 2) {
-				return true;
+			if (posX + i < nowMap->GetX() || posZ + s < nowMap->GetZ()) {
+				if (nowMap->GetValue(posX + i, posZ + s) == 2) {
+					return true;
+				}
 			}
-			if (nowMap->GetValue(posX + i, posZ - s) == 2) {
-				return true;
+			if (posX + i < nowMap->GetX() || posZ - s > 0) {
+				if (nowMap->GetValue(posX + i, posZ - s) == 2) {
+					return true;
+				}
 			}
-			if (nowMap->GetValue(posX - i, posZ + s) == 2) {
-				return true;
+			if (posX - i < 0 || posZ + s < nowMap->GetZ()) {
+				if (nowMap->GetValue(posX - i, posZ + s) == 2) {
+					return true;
+				}
 			}
-			if (nowMap->GetValue(posX - i, posZ - s) == 2) {
-				return true;
+			if (posX - i < 0 || posZ - s > 0) {
+				if (nowMap->GetValue(posX - i, posZ - s) == 2) {
+					return true;
+				}
 			}
 		}
 
