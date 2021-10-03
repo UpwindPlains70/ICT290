@@ -58,10 +58,14 @@ struct Class
 
 extern vector<Class> allClasses;
 
+extern vector<Enemy> allEnemies;
 void GetCharacterData();
 void GetEnemyData();
 void GetEnemyPerLevelData();
 void GetAbilityData();
 EntityAbility GetAbility(string);
 Enemy GetEnemy(string);
+extern vector<Enemy> allEnemies;
+extern map<int, LevelEnemy> enemyLevelMap;
+extern map<string, int> upgradeHP;
 #endif

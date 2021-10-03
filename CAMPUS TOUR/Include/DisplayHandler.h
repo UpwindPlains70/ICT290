@@ -41,6 +41,8 @@
 /// display light fittings
 extern bool lightsOn;
 
+//entities Display
+void DisplayEntities();
 /// calls display functions below to draw the backdrops
 void DrawBackdrop();
 /// functions to display display lists (images) and bind them to a texture

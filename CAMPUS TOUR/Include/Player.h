@@ -99,6 +99,14 @@ public:
 
 	int getNumberOfAbilities();
 
+	void shield(int);
+
+	void unshield();
+
+	bool damageBoosted();
+
+	void setDamageBoost(bool);
+
 private:
 	string name;
 	string classType;
@@ -112,6 +120,8 @@ private:
 	int movementLeft;
 	int turn;
 	int numAbilities;
+	int originalAC;
+	bool damageBoost;
 	vector<EntityAbility> abilities;
 };
 

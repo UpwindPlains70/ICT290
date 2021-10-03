@@ -17,6 +17,7 @@ Player::Player() {
 	movement = 0;
 	maxHP = 0;
 	armor = 0;
+	damageBoost = false;
 }
 
 Player::Player(string newName, string newclassType, int newMaxHP, int newMovement, int newArmor) {
@@ -32,6 +33,7 @@ Player::Player(string newName, string newclassType, int newMaxHP, int newMovemen
 	turn = 0;
 	armor = newArmor;
 	numAbilities = 0;
+	damageBoost = false;
 }
 
 Player::~Player() {
@@ -195,4 +197,25 @@ EntityAbility Player::getAbility(int num) {
 int Player::getNumberOfAbilities()
 {
 	return abilities.size();
+}
+
+void Player::shield(int AC)
+{
+	originalAC = armor;
+	armor = AC;
+}
+
+void Player::unshield()
+{
+	armor = originalAC;
+}
+
+bool Player::damageBoosted()
+{
+	return damageBoost;
+}
+
+void Player::setDamageBoost(bool dB)
+{
+	damageBoost = dB;
 }

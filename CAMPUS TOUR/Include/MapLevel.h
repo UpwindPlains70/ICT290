@@ -2,7 +2,7 @@
 class LevelMap
 {
 private:
-	// 0 = empty, 1 = wall, 2 = ally, 3 = enemy.
+	// 0 = empty, 1 = wall, 2 = player, 3 = enemy.
 	int** array;
 	int X;
 	int Z;
@@ -18,4 +18,3 @@ public:
 	~LevelMap();
 	const LevelMap& operator =(const LevelMap& copy);
 };
-

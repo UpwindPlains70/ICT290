@@ -40,7 +40,54 @@ void keys(unsigned char key, int x, int y)
 
 	int i = 0;
 	switch (key)
-	{
+	{	// characterUp
+	case 'I':
+	case 'i':
+		if (canIJKL)
+		{
+			movePlayer(0, 1);
+		}
+		break;
+		// characterLeft
+	case 'J':
+	case 'j':
+		if (canIJKL)
+		{
+			movePlayer(-1, 0);
+		}
+		break;
+		// characterDown
+	case 'K':
+	case 'k':
+		if (canIJKL)
+		{
+			movePlayer(0, -1);
+		}
+		break;
+		// characterRight
+	case 'L':
+	case 'l':
+		if (canIJKL)
+		{
+			movePlayer(1, 0);
+		}
+		break;
+		// ability 1
+	case '1':
+		abilityPressed(1);
+		break;
+		// ability 2
+	case '2':
+		abilityPressed(2);
+		break;
+		// ability 3
+	case '3':
+		abilityPressed(3);
+		break;
+		// end Turn
+	case '`':
+		endTurn();
+		break;
 		// step left
 	case 'Z':
 	case 'z':
@@ -101,8 +148,8 @@ void keys(unsigned char key, int x, int y)
 	}
 	break;
 	// display light fittings
-	case 'l':
-	case 'L':
+	case 'O':
+	case 'o':
 	{
 		if (lightsOn)
 		{

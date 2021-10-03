@@ -149,6 +149,9 @@ void Display()
 	// DISPLAY TEXTURES
 	//enable texture mapping
 	glEnable (GL_TEXTURE_2D);
+
+	
+
 	glPushMatrix();
 		// displays the welcome screen
 		if (DisplayWelcome) cam.DisplayWelcomeScreen (width, height, 1, tp.GetTexture(WELCOME));
@@ -170,22 +173,16 @@ void Display()
 		cam.SetRotateSpeed (angleIncrement);
 		// display images
 		DrawBackdrop();
+		DisplayEntities();
 		
 	glPopMatrix();
 	//glDisable (GL_TEXTURE_2D);
 
-	//glDisable(GL_COLOR_MATERIAL);
-
 	Update();
 	glDisable(GL_TEXTURE_2D);
-		//Display GUI
-	/*if (playerSelection)
-	{
-	}
-	else if (gameHUD)
-	{
-		
-	}*/
+	
+	//glDisable(GL_COLOR_MATERIAL);
+
 	// clear buffers
 	//glFlush();*/
 	glutSwapBuffers();

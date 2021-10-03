@@ -10,7 +10,11 @@
 #include "Player.h"
 #include "MapLevel.h"
 #include "LevelHandler.h"
+
 #include "UIHandler.h"
+
+#include "DataHandler.h"
+
 
 /**
  * @brief Defines all User Interface menus
@@ -26,6 +30,7 @@
  */
 extern enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE };
 extern state gameState;
+
 extern vector<Player> playerList;
 extern int turn;
 extern vector<Enemy> nowEnemies;
@@ -37,6 +42,14 @@ extern map<int, int> turnIDMap;
 	///isPCTurnMap - (map<int, bool>), maps players based on turn to have current turn
 extern map<int, bool> isPCTurnMap;
 
+extern bool displayEnt;
+extern vector<Player> playerList;
+extern vector<Enemy> nowEnemies;
+extern bool canIJKL;
+extern bool canAction;
+extern bool canEndTurn;
+
+
 void Update();
 void endTurn();
 void enemyTurn(Enemy);
@@ -44,7 +57,13 @@ void playerTurn(Player);
 void upgrade();
 void uniqueAbility();
 void attack(int);
+
 void updateModels();
 void updatePopUpMessage();
+
+int rollTheDice(int, int);
+void movePlayer(int, int);
+void abilityPressed(int);
+
 
 #endif
