@@ -794,7 +794,7 @@ void updatePopUpMessage()
 			break;
 		}
 		case LevelWin: {
-
+			cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Current_Level_Win_Screen));
 			break;
 		}
 		case None: {
