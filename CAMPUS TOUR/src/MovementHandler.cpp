@@ -273,7 +273,7 @@ void Mouse(int button, int state, int x, int y)
 			closing = true;
 		}
 		if ((x <= width / 2.0 + 256.0) && (x >= width / 2.0 - 256.0)
-			&& (y <= height / 2.0 + 256.0) && (y >= height / 2.0 - 256.0))
+			&& (y <= height / 2.0 + 256.0) && (y >= height / 2.0 - 256.0) && popUpMessageState != None)
 		{
 
 			popUpMessage = false; // closes the pop up message 
