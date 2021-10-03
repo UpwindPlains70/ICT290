@@ -48,8 +48,9 @@ extern vector<Enemy> nowEnemies;
 extern bool canIJKL;
 extern bool canAction;
 extern bool canEndTurn;
+extern int sessionRound;
 
-
+void DisplayLinup();
 void Update();
 void endTurn();
 void enemyTurn(Enemy);

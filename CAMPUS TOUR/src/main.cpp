@@ -173,8 +173,7 @@ void Display()
 		cam.SetRotateSpeed (angleIncrement);
 		// display images
 		DrawBackdrop();
-		DisplayEntities();
-		
+		//DisplayEntities();
 	glPopMatrix();
 	//glDisable (GL_TEXTURE_2D);
 

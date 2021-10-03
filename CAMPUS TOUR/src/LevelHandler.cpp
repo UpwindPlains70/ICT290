@@ -15,6 +15,10 @@ Object3D floorObj;
 const int wallScale = 80;
 const int floorScale = 75;
 
+int floorValX;
+int floorValZ;
+
+float posOffset = 2.08;
 void teleportCamera()
 {
 	//Change background colour to black
@@ -124,8 +128,8 @@ void displayMap()
 
 	int wallValX = 114.28 * repeatX;
 	int wallValZ = 91.42 * repeatZ;
-	int floorValX = 67.14 * repeatX;
-	int floorValZ = 67.14 * repeatZ;
+	floorValX = 67.14 * repeatX;
+	floorValZ = 67.14 * repeatZ;
 
 		//Math for non 7x7 maps
 	if (repeatX != 7)
@@ -185,12 +189,38 @@ void displayMap()
 		displayWalls(true);
 	glPopMatrix();
 
+	//floor
+	/*glPushMatrix();
+		glTranslatef(-floorValX, 9000, -floorValZ);
+		glScalef(floorScale, floorScale, floorScale);
+		displayFloor();
+	glPopMatrix();*/
+}
+
+void positionFloorObjects(vector<Enemy> nowEnemies, vector<Player> playerList)
+{
 	//Floor
 	glPushMatrix();
 		glTranslatef(-floorValX, 9000, -floorValZ);
 		glScalef(floorScale, floorScale, floorScale);
 		displayFloor();
+		displayCharacterModels(nowEnemies, playerList);
 	glPopMatrix();
+}
+
+void displayCharacterModels(vector<Enemy> nowEnemies, vector<Player> playerList) {
+	if (playerList.size() > 0) {
+		for (int i = 0; i < playerList.size(); i++) {
+			//cout << "Player X: " << playerList[i].getPosX() << " Z: " << playerList[i].getPosZ() << endl;
+			DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX() * posOffset, 0, playerList[i].getPosZ() * posOffset);
+		}
+	}
+	if (nowEnemies.size() > 0) {
+		for (int i = 0; i < nowEnemies.size(); i++) {
+			//cout << "Eneemy X: " << nowEnemies[i].getPosX() << " Z: " << nowEnemies[i].getPosZ() << endl;
+			DisplayPlayerModel("Skeleton", nowEnemies[i].getPosX() * posOffset, 0, nowEnemies[i].getPosZ() * posOffset);
+		}
+	}
 }
 
 void CreateMaps()

@@ -3,6 +3,8 @@
 #pragma once
 #include "CollisionHandler.h"
 #include "MapLevel.h"
+#include "Player.h"
+#include "Enemy.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -64,7 +66,11 @@ void displayFloor();
 ///Sets objstical locations (update: load from file)
 void CreateMaps();
 
-void printMap();
+//void printMap();
+
+void positionFloorObjects(vector<Enemy> nowEnemies, vector<Player> playerList);
+
+void displayCharacterModels(vector<Enemy> nowEnemies, vector<Player> playerList);
 #endif // !LEVELHANDLER_H
 
 

@@ -73,8 +73,8 @@ void DisplayEntities(){
 			//glTranslatef(-floorValX, 9000, -floorValZ);//(1,1)
 			glTranslatef(-floorValX * posX, 9000, -floorValZ * posZ);
 			//draw enemy
-			glColor3f(1, 0, 0);
-			glutSolidCube(100);
+			//glColor3f(1, 0, 0);
+			glutSolidCube(200);
 		//endFor
 		}
 		//do same for players
@@ -85,9 +85,9 @@ void DisplayEntities(){
 			//get translated area on map
 			//glTranslatef(-floorValX, 9000, -floorValZ);//(1,1)
 			glTranslatef(-floorValX * posX, 9000, -floorValZ * posZ);
-			//draw enemy
-			glColor3f(0, 0, 1);
-			glutSolidCube(100);
+			//draw player
+			//glColor3f(0, 0, 1);
+			glutSolidCube(150);
 			//endFor
 		}
 	}

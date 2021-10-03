@@ -116,9 +116,9 @@ void classSelectionUI()
 			ImGui::EndCombo();
 		}
 
-		ImGui::Text("Health: %d", allClasses[classID].hp);               // Display some text (you can use a format strings too)
-		ImGui::Text("Armour: %d", allClasses[classID].armor);               // Display some text (you can use a format strings too)
-		ImGui::Text("Movement: %d", allClasses[classID].movement);               // Display some text (you can use a format strings too)
+		ImGui::Text("Health: %d", allClasses[classID].hp);               // Display classes health
+		ImGui::Text("Armour: %d", allClasses[classID].armor);               // Display classes armour
+		ImGui::Text("Movement: %d", allClasses[classID].movement);               // Display classes movement
 
 
 		ImGui::Text("Ability List: (%d)", allClasses[classID].abilityList.size());
@@ -135,6 +135,7 @@ void classSelectionUI()
 		if (ImGui::Button("Save Player")) {
 			if (strlen(playerName) != 0) {
 				Player tempPlayer(playerName, allClasses[classID].name, allClasses[classID].hp, allClasses[classID].movement, allClasses[classID].armor);
+
 				tempPlayer.setAbilities(allClasses[classID].abilityList);
 				playerList.push_back(tempPlayer);
 				//clear player name when saved
@@ -198,7 +199,7 @@ void playerHUD()
 		ImGui::BeginChild("GameInfo", ImVec2(ImGui::GetContentRegionAvail().x, 25), false);
 			ImGui::Text("Level: %d", currLevel);
 			ImGui::SameLine();
-			ImGui::Text("\tTurn: %d", turn);
+			ImGui::Text("\tRound: %d", sessionRound);
 		ImGui::EndChild();
 
 		ImGui::BeginChild("PlayerInfoA", ImVec2(ImGui::GetContentRegionAvail().x, 55), false);
@@ -206,7 +207,7 @@ void playerHUD()
 			ImGui::Text("Class:   \t%s", playerList[turnIDMap[turn]].getClassName().c_str());
 			ImGui::Text("Turn pos:\t%d", playerList[turnIDMap[turn]].getTurn());
 		ImGui::EndChild();
-		
+
 		ImGui::BeginChild("PlayerInfoB", ImVec2(ImGui::GetContentRegionAvail().x, 55), false);
 			ImGui::Text("Health:  \t%d", playerList[turnIDMap[turn]].getHP());               // Display some text (you can use a format strings too)
 			ImGui::Text("Armour:  \t%d", playerList[turnIDMap[turn]].getArmor());               // Display some text (you can use a format strings too)
@@ -285,7 +286,6 @@ void turnOrderUI()
 			ImGui::Text("  %d", prevSelectedTurn);
 		ImGui::PopFont();
 
-
 		auto windowWidth = ImGui::GetWindowSize().x;
 		auto textWidth = ImGui::CalcTextSize("Spin").x;
 
@@ -317,6 +317,7 @@ void turnOrderUI()
 		{
 			for (i = 0; i < turnList.size(); ++i)
 			{		//Define game info (level no. & turn no.)
+				prevSelectedTurn = turnList[i];
 				if (i == (rand() % turnList.size())) {
 					turnList.erase(turnList.begin() + i);
 					nowEnemies[enemyTurnCount].setTurn(prevSelectedTurn);
@@ -435,6 +436,7 @@ void displayEnemyListUI()
 		if (ImGui::Button(nowEnemies[i].getName().c_str())) {
 			//attack this enemy
 			cout << "Attacked: " << nowEnemies[i].getName() << endl;
+			displayListOfEnemies = false;
 			endTurn();
 		}
 	}

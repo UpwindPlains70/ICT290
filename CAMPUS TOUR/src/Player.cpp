@@ -31,7 +31,7 @@ Player::Player(string newName, string newclassType, int newMaxHP, int newMovemen
 	movement = newMovement;
 	movementLeft = movement;
 	turn = 0;
-	armor = newArmor;
+	originalAC = armor = newArmor;
 	numAbilities = 0;
 	damageBoost = false;
 }

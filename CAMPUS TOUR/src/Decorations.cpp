@@ -254,10 +254,10 @@ void DisplayPlayerModel(string className, int posX, int posY, int posZ) {
 	//cout << modelTextureMap[className] << endl;
 
 	glPushMatrix();
-	glTranslatef(posX, posY, posZ);
-	glScalef(characterScale, characterScale, characterScale);
-	glBindTexture(GL_TEXTURE_2D, modelTextureMap[className]); // change this once all the textures are ready
-	draw3DObject(characterModelMap[className]);
+		glTranslatef(posX, posY, posZ);
+	//	glScalef(characterScale, characterScale, characterScale);
+		glBindTexture(GL_TEXTURE_2D, modelTextureMap[className]); // change this once all the textures are ready
+		draw3DObject(characterModelMap[className]);
 	glPopMatrix();
 
 }
