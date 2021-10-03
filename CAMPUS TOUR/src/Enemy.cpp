@@ -312,7 +312,7 @@ bool Enemy::checkRange(EntityAbility range, LevelMap* nowMap) {
 	return false;
 }
 
-int*Enemy::getTargetPos() {
+int*Enemy::getTargetPos(vector<Player> playerList) {
 	int tarPosA[2];
 	int tarPosB[2];
 	//testing
@@ -338,11 +338,11 @@ int*Enemy::getTargetPos() {
 }
 
 ////LARGEST WORK IN PROGRESS
-int Enemy::moveToTarget(int tempMove, LevelMap* nowMap) {
+int Enemy::moveToTarget(int tempMove, LevelMap* nowMap, vector<Player> playerList) {
 	bool inRange = false;
 	bool inRangeTemp = false;
 
-	int* distanceToTarget = getTargetPos();
+	int* distanceToTarget = getTargetPos(playerList);
 
 	//disToTar = distanceToTarget;
 	int disToTar[2];
@@ -372,7 +372,7 @@ int Enemy::moveToTarget(int tempMove, LevelMap* nowMap) {
 		}
 
 		//disToTar = getTargetPos
-		distanceToTarget = getTargetPos();
+		distanceToTarget = getTargetPos(playerList);
 		for (int i = 0; i < 2; i++) {
 			disToTar[i] = distanceToTarget[i];
 		}
@@ -396,7 +396,7 @@ int Enemy::moveToTarget(int tempMove, LevelMap* nowMap) {
 /// <Task 15> (Raymond)
 /// move enemy
 /// </Task 15>
-void Enemy::AITurn(LevelMap* nowMap) {
+void Enemy::AITurn(LevelMap* nowMap, vector<Player> playerList) {
 	bool inRange = false;
 	bool inRangeTemp = false;
 
@@ -416,7 +416,7 @@ void Enemy::AITurn(LevelMap* nowMap) {
 		if (!inRange) {
 			//2 Find enemy's distance on grid
 			//3 Use acquire distance to move
-			tempMove = moveToTarget(tempMove, nowMap);
+			tempMove = moveToTarget(tempMove, nowMap, playerList);
 		}
 	}
 

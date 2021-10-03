@@ -8,8 +8,9 @@
 #include <vector>
 #include "EntityAbility.h"
 #include "MapLevel.h"
+#include "Player.h"
 
-#include "UpdateHandler.h"
+//#include "UpdateHandler.h"
 using namespace std;
 
 class Enemy
@@ -73,7 +74,7 @@ public:
 
 	void reset();
 
-	void AITurn(LevelMap* nowMap);
+	void AITurn(LevelMap* nowMap, vector<Player> playerList);
 	void AIAttack(LevelMap* nowMap);
 private:
 	string name;
@@ -95,8 +96,8 @@ private:
 	void moveRight(LevelMap* nowMap);
 	//ai
 	bool checkRange(EntityAbility range, LevelMap* nowMap);
-	int* getTargetPos();
-	int moveToTarget(int tempMove, LevelMap* nowMap);
+	int* getTargetPos(vector<Player> p);
+	int moveToTarget(int tempMove, LevelMap* nowMap, vector<Player> playerList);
 };
 
 #endif

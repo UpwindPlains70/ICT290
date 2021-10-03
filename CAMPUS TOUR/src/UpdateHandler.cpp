@@ -341,7 +341,7 @@ void enemyTurn(Enemy ai)
 	{
 		/// <Task 15> (Raymond)
 		/// move enemy
-		ai.AITurn(nowMap);
+		ai.AITurn(nowMap, playerList);
 		/// </Task 15>
 
 		/// <Task 14> (Raymond)
