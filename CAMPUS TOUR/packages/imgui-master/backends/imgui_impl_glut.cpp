@@ -87,8 +87,8 @@ void ImGui_ImplGLUT_InstallFuncs()
 #endif
     glutKeyboardFunc(ImGui_ImplGLUT_KeyboardFunc);
     glutKeyboardUpFunc(ImGui_ImplGLUT_KeyboardUpFunc);
-    glutSpecialFunc(ImGui_ImplGLUT_SpecialFunc);
-    glutSpecialUpFunc(ImGui_ImplGLUT_SpecialUpFunc);
+    //glutSpecialFunc(ImGui_ImplGLUT_SpecialFunc);
+    //glutSpecialUpFunc(ImGui_ImplGLUT_SpecialUpFunc);
 }
 
 void ImGui_ImplGLUT_Shutdown()

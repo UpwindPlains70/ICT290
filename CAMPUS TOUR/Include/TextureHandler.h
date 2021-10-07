@@ -336,6 +336,7 @@ extern popUpState popUpMessageState;
 
 // Effects on the player
 #define Stun						266
+#define Portal						267
 		/**
 		 * @brief  Load/Save texture images
 		 *

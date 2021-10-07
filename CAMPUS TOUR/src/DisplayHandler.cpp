@@ -5,6 +5,7 @@
 
 #include "DisplayHandler.h"
 
+Object3D portal;
 bool lightsOn;
 //--------------------------------------------------------------------------------------
 //  Called from the main display function to draw the backdrop (all images)
@@ -108,6 +109,7 @@ void DisplayHallway() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
 	glCallList(781);	//roof
 }
+
 void DisplayHallwayStairs() {
 	glPushMatrix();
 		glTranslatef(100.0, 0.0, 0.0);
@@ -118,9 +120,15 @@ void DisplayHallwayStairs() {
 		for (int i = 1320; i < 1640; i++) glCallList(i);
 	glPopMatrix();
 
+
 	//abyss
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(KURO));
-	glCallList(1641);
+	glPushMatrix();
+		glBindTexture(GL_TEXTURE_2D, tp.GetTexture(Portal));
+		glTranslated(48000, 9000, 38500);
+		glRotatef(angle, 1, 0, 0);
+		glScalef(250, 250, 250);
+		draw3DObject(portal);
+	glPopMatrix();
 }
 
 
@@ -971,7 +979,7 @@ void DisplayRoom() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(SHADOW_BRICK));
 	glCallList(674);		//main room floor
 	glCallList(675);		//enterance floor
-
+	
 	//roof
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
 	glCallList(676);		//main room roof
@@ -2050,8 +2058,8 @@ void DisplayLargerTextures()
 	glTranslatef(0.0, 0.0, 1920.0);
 	glCallList(374);
 	glPopMatrix();
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(CHANC_DOOR_1));
-	glCallList(375);
+	//glBindTexture(GL_TEXTURE_2D, tp.GetTexture(CHANC_DOOR_1));
+	//glCallList(375);
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_16));
 	glCallList(379);
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WINDOW_17));

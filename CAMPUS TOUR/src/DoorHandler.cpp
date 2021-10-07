@@ -8,6 +8,7 @@ float currTime;
 door1 front;
 door2 backL;
 door2 backR;
+float angle = 0;
 
 using namespace std;
 
@@ -23,8 +24,11 @@ void animate(int value)
 	GLdouble camZ;
 	cam.getPosition(camX, camY, camZ);
 
+	++angle/2;
+	if (angle >= 360)
+		angle = 0;
 	//Front Door
-	if ((camX > 33200 && camX < 35600) && (camZ > 36300 && camZ < 37800))
+	if ((camX > 33200 && camX < 35600) && (camZ > 36300 && camZ < 37800) && !playerSelection)
 	{
 		front.state = 1;
 		if (front.pos.z >= front.openPos.z)
@@ -63,7 +67,7 @@ void animate(int value)
 	}
 
 	//Back Left Door
-	if ((camX > 37600 && camX < 38700) && (camZ > 37600 && camZ < 38400))
+	if ((camX > 37600 && camX < 38700) && (camZ > 37600 && camZ < 38400) && !playerSelection)
 	{
 		if (backL.state != 1)
 		{
@@ -80,7 +84,7 @@ void animate(int value)
 		}
 		
 	}
-	else if ((camX > 36500 && camX < 37600) && (camZ > 37600 && camZ < 38400))
+	else if ((camX > 36500 && camX < 37600) && (camZ > 37600 && camZ < 38400) && !playerSelection)
 	{
 		if (backL.state != -1)
 		{
@@ -111,7 +115,7 @@ void animate(int value)
 	}
 
 	//Back Right Door
-	if ((camX > 36500 && camX < 37600) && (camZ > 38200 && camZ < 38800))
+	if ((camX > 36500 && camX < 37600) && (camZ > 38200 && camZ < 38800) && !playerSelection)
 	{
 		if (backR.state != 1)
 		{
@@ -128,7 +132,7 @@ void animate(int value)
 		}
 
 	}
-	else if ((camX > 37600 && camX < 38700) && (camZ > 38200 && camZ < 38800))
+	else if ((camX > 37600 && camX < 38700) && (camZ > 38200 && camZ < 38800) && !playerSelection)
 	{
 		if (backR.state != -1)
 		{

@@ -27,6 +27,8 @@
 	 */
 // keyboard and mouse functions
 void keys(unsigned char key, int x, int y);
+void TourControls(unsigned char key, int x, int y);
+void GameControls(unsigned char key, int x, int y);
 void movementKeys(int key, int x, int y);
 void releaseKey(int key, int x, int y);
 void releaseKeys(unsigned char key, int x, int y);

@@ -526,18 +526,19 @@ void DrawHallway() {
 
 	//YZ
 	tp.CreateDisplayList(YZ, 779, 2500, 215.0, 67550.0, 4000.0, 37500.0, 3.0, 7.0);
-
-	//XZ
-	tp.CreateDisplayList(XZ, 780, 500, 1505 , 37610.0, 9936.0, 37500.0, 12.0, 1.0); // 3.0, 7.0 // 10000 215
+	
+	//floor
+	tp.CreateDisplayList(XZ, 780, 500, 1505 , 37610.0, 9998, 37500.0, 12.0, 1.0); // 3.0, 7.0 // 10000 215
+	//roof
 	tp.CreateDisplayList(XZ, 781, 10000 /4, 215.0 * 3.5, 37610.0, 10936.0, 37500.0, 12.0, 2.0); // 3.0 , 7.0
-
+	
 }
 
 void DrawHallwayStairs() {
 	GLdouble xCord = 43500.0; // x coord   //31582.0  is original cord  // new value ( value of the second x coord for its corresponding plain  - 400) 
-	step = 9936.0; // effectively the y coordinate  // 10000.0 original // new value ( value of first y value + 225 ) 
+	step = 9998.0; // effectively the y coordinate  // 10000.0 original // new value ( value of first y value + 225 ) 
 	stepLength = 37350.0; // z coordinate   // 9808.0 original     // new value ( value of second z value + 700 )
-	for (int i = 1000; i < 1320; i++)
+	for (int i = 1000; i < 1040; i++)
 	{
 		tp.CreateDisplayList(XZ, i,512.0, 2050.0, xCord, step, stepLength,0.277, 1.0 * stairsWidth); // original xTimes was 2.2 // 1.0 // 0.277
 		//tp.CreateDisplayList(XY, i + 16, 64.0, 64.0, xCord, step - 64.0, stepLength, 16.0 * stairsWidth, 1.0); // original xTimes was 35.0
@@ -549,13 +550,14 @@ void DrawHallwayStairs() {
 		xCord += 142.0;
 	}
 
-	//abyss
-	tp.CreateAngledPolygon(1641, 
+	//abyss SWITCH TO PROTAL in displayHandler
+	//tp.CreateDisplayList(YZ, 1641,3000,3000, 48000, 8250, 36900, 1, 1);
+	/*tp.CreateAngledPolygon(1641, 
 		500.0, 500.0, 
 		43500.0, 70000, 70000, 43500.0,
 		6500.0, 20000, 20000, 6500,
 		37350.0, 37350.0, 40000, 40000,
-		1, 1);
+		1, 1);*/
 }
 
 //Made by Raymond Lau
@@ -573,8 +575,8 @@ void DrawRoom() {
 	tp.CreateDisplayList(YZ, 673, 333, 40.0, 37528.0, 9936.0, 38720.0, 3.0, 7.0);
 
 	//XZ
-	tp.CreateDisplayList(XZ, 674, 770, 700, 35300.0, 9936.0, 35319.0, 3.0, 9.0); //the main floor in new room  chaning zTimes to 9.0 from 7.0
-	tp.CreateDisplayList(XZ, 675, 435, 500, 34000.0, 9936.0, 35319.0, 3.0, 7.0);
+	tp.CreateDisplayList(XZ, 674, 770, 700, 35300.0, 9998, 35319.0, 3.0, 9.0); //the main floor in new room  chaning zTimes to 9.0 from 7.0
+	tp.CreateDisplayList(XZ, 675, 435, 500, 34000.0, 9998, 35319.0, 3.0, 7.0);
 
 	tp.CreateDisplayList(XZ, 676, 770, 700 * 0.76, 35300.0, 10936.0, 35319.0, 3.0, 7.0); 
 	tp.CreateDisplayList(XZ, 677, 435, 500, 34000.0, 10936.0, 35319.0, 3.0, 7.0);

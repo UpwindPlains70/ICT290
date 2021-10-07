@@ -37,57 +37,19 @@ void keys(unsigned char key, int x, int y)
 {
 	//Put in if condition to restrict controls
 	ImGui_ImplGLUT_KeyboardFunc(key, x, y);
+	
+	if (gameState != NotReady) {
+		//if (currLevel == 0)
+			TourControls(key, x, y);
+		//else
+			GameControls(key, x, y);
+	}
+}
 
-	int i = 0;
+void TourControls(unsigned char key, int x, int y)
+{
 	switch (key)
-	{	// characterUp
-	case 'I':
-	case 'i':
-		if (canIJKL)
-		{
-			movePlayer(0, 1);
-		}
-		break;
-		// characterLeft
-	case 'J':
-	case 'j':
-		if (canIJKL)
-		{
-			movePlayer(-1, 0);
-		}
-		break;
-		// characterDown
-	case 'K':
-	case 'k':
-		if (canIJKL)
-		{
-			movePlayer(0, -1);
-		}
-		break;
-		// characterRight
-	case 'L':
-	case 'l':
-		if (canIJKL)
-		{
-			movePlayer(1, 0);
-		}
-		break;
-		// ability 1
-	case '1':
-		abilityPressed(1);
-		break;
-		// ability 2
-	case '2':
-		abilityPressed(2);
-		break;
-		// ability 3
-	case '3':
-		abilityPressed(3);
-		break;
-		// end Turn
-	case '`':
-		endTurn();
-		break;
+	{
 		// step left
 	case 'Z':
 	case 'z':
@@ -179,6 +141,61 @@ void keys(unsigned char key, int x, int y)
 
 	}
 }
+
+void GameControls(unsigned char key, int x, int y)
+{
+	switch (key)
+	{	// characterUp
+	case 'I':
+	case 'i':
+		if (canIJKL)
+		{
+			movePlayer(0, 1);
+		}
+		break;
+		// characterLeft
+	case 'J':
+	case 'j':
+		if (canIJKL)
+		{
+			movePlayer(-1, 0);
+		}
+		break;
+		// characterDown
+	case 'K':
+	case 'k':
+		if (canIJKL)
+		{
+			movePlayer(0, -1);
+		}
+		break;
+		// characterRight
+	case 'L':
+	case 'l':
+		if (canIJKL)
+		{
+			movePlayer(1, 0);
+		}
+		break;
+		// ability 1
+	case '1':
+		abilityPressed(1);
+		break;
+		// ability 2
+	case '2':
+		abilityPressed(2);
+		break;
+		// ability 3
+	case '3':
+		abilityPressed(3);
+		break;
+		// end Turn
+	case '`':
+		endTurn();
+		break;
+	}
+}
+
 //--------------------------------------------------------------------------------------
 // Keyboard Functions
 //--------------------------------------------------------------------------------------
@@ -238,6 +255,8 @@ void releaseKey(int key, int x, int y)
 //--------------------------------------------------------------------------------------
 void releaseKeys(unsigned char key, int x, int y)
 {
+		//Prevent backspace loop error
+	ImGui_ImplGLUT_KeyboardUpFunc(key, x, y);
 	switch (key)
 	{
 		// step left or right

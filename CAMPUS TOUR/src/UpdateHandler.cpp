@@ -1,8 +1,7 @@
 #include "UpdateHandler.h"
 
-int currLevel = 1;
-int mapID = 0;
-state gameState = NotReady;
+
+state gameState = NotGame;
 map<int, bool> isPCTurnMap;
 map<int, bool> turnDeadMap;
 map<int, int> turnIDMap;
@@ -56,6 +55,8 @@ void Update()
 {
 	//DisplayLinup();
 	switch (gameState) {
+		case NotGame:
+			break;
 		case NotReady:
 				//stuck until finished button is pressed
 			classSelectionUI();
@@ -74,10 +75,11 @@ void Update()
 			/// <Task 4> (Anyone)
 			/// Keep back doors locked until now.
 			/// </Task 4>
-			
-			//if (levelZeroClear())
+			//cout << "Ready" << endl;
+			if (currLevel != 0) {
+				//cout << "Change" << endl;
 				gameState = Initialising;
-
+			}
 			break;
 		case Initialising:
 			
@@ -310,7 +312,8 @@ void Update()
 			break;
 	}
 
-	positionFloorObjects(nowEnemies, playerList);
+	if (gameState >= Initialising)
+		positionFloorObjects(nowEnemies, playerList);
 
 	if (gameState > 3) {
 		playerHUD();

@@ -7,7 +7,7 @@ static const char* current_item = "";
 static char playerName[25];
 static char** abilities = nullptr;
 
-bool playerSelection = true;
+bool playerSelection = false;
 bool gameHUD = false;
 
 bool assignTurnStage = true;
@@ -80,6 +80,7 @@ void loadClassPreview()
 
 void classSelectionUI()
 {
+	playerSelection = true;
 	// Start the Dear ImGui frame
 	ImGui_ImplOpenGL2_NewFrame();
 	ImGui_ImplGLUT_NewFrame();

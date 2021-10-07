@@ -5,6 +5,7 @@
 #include "TextureHandler.h"
 #include "CollisionHandler.h"
 #include "UpdateHandler.h"
+#include "UIHandler.h"
 
 #define TIMERSECS 25
 
@@ -67,6 +68,7 @@ extern door1 front;
 extern door2 backL;
 /// back right swival door
 extern door2 backR;
+extern float angle;
 
 /**
 * @brief display doors in 3D world

@@ -135,14 +135,27 @@ void TexturedPolygons::CreateXtoZTextureList(const GLdouble &xImgSize, const GLd
 					                         const GLdouble &xStart, const GLdouble &yStart, const GLdouble &zStart,
 					                         const GLdouble &xTimes, const GLdouble &zTimes)
 {
+	Point3D p1 = { xStart, yStart, zStart };
+	Point3D p2 = { xStart, yStart, zStart + (zImgSize * zTimes) };
+	Point3D p3 = { xStart + (xImgSize * xTimes), yStart, zStart + (zImgSize * zTimes) };
+
+	glNormal3fv(NormalVector(p2, p1, p3));
 	glTexCoord2f(0.0, 0.0);
+	glVertex3fv(p1);
+	glTexCoord2f(0.0, zTimes);
+	glVertex3fv(p2);
+	glTexCoord2f(xTimes, zTimes);
+	glVertex3fv(p3);
+	glTexCoord2f(xTimes, 0.0);
+	glVertex3f(xStart + (xImgSize * xTimes), yStart, zStart);
+	/*glTexCoord2f(0.0, 0.0);
 	glVertex3f(xStart, yStart , zStart);
 	glTexCoord2f(0.0, zTimes);
 	glVertex3f(xStart, yStart,zStart + (zImgSize * zTimes));
 	glTexCoord2f(xTimes, zTimes);
 	glVertex3f(xStart + (xImgSize * xTimes), yStart,zStart + (zImgSize * zTimes));
 	glTexCoord2f(xTimes, 0.0);
-	glVertex3f(xStart + (xImgSize * xTimes), yStart, zStart);
+	glVertex3f(xStart + (xImgSize * xTimes), yStart, zStart);*/
 }
 
 //--------------------------------------------------------------------------------------
