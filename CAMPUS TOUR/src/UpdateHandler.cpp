@@ -119,6 +119,7 @@ void Update()
 				} while (nowMap->GetValue(randX, randZ) != 0);
 				nowEnemies[0].setPosX(randX);
 				nowEnemies[0].setPosZ(randZ);
+				nowMap->SetValue(randX, randZ, 3);
 				if (nowEnemies.size() > 0) {
 					for (int i = 1; i < nowEnemies.size(); i++)
 					{
@@ -126,8 +127,6 @@ void Update()
 						while (!found) {
 							randX = rand() % nowMap->GetX();
 							randZ = rand() % nowMap->GetZ();
-							cout << "enemy randX: " << randX << endl;
-							cout << "enemy randZ: " << randZ << endl;
 							for (int x = 0; x < nowMap->GetX(); x++)
 							{
 								for (int z = 0; z < nowMap->GetZ(); z++)
@@ -160,6 +159,7 @@ void Update()
 				} while (nowMap->GetValue(randX, randZ) != 0);
 				playerList[0].setPosX(randX);
 				playerList[0].setPosZ(randZ);
+				nowMap->SetValue(randX, randZ, 2);
 				if (playerList.size() > 0) {
 					for (int i = 1; i < playerList.size(); i++)
 					{
@@ -167,8 +167,6 @@ void Update()
 						while (!found) {
 							randX = rand() % nowMap->GetX();
 							randZ = rand() % nowMap->GetZ();
-							cout << "player randX: " << randX << endl;
-							cout << "player randZ: " << randZ << endl;
 							for (int x = 0; x < nowMap->GetX(); x++)
 							{
 								for (int z = 0; z < nowMap->GetZ(); z++)
@@ -247,14 +245,21 @@ void Update()
 				//Display player & enemy stats
 			//playerHUD();
 			//ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
-
 			if (playerList[turnIDMap[turn]].canMove())
 			{
 				canIJKL = true;
 			}
+			else
+			{
+				canIJKL = false;
+			}
 			if (pcHasAction == true)
 			{
 				canAction = true;
+			}
+			else
+			{
+				canAction = false;
 			}
 			if (playerList[turnIDMap[turn]].canMove() == false && pcHasAction == false)
 			{
@@ -848,12 +853,12 @@ void movePlayer(int X, int Z)
 	int posZ = playerList[turnIDMap[turn]].getPosZ();
 	int newPosX = playerList[turnIDMap[turn]].getPosX() + X;
 	int newPosZ = playerList[turnIDMap[turn]].getPosZ() + Z;
-	if (newPosX > 0 && newPosX < nowMap->GetX() && newPosZ > 0 && newPosZ < nowMap->GetZ())
+	if (newPosX >= 0 && newPosX < nowMap->GetX() && newPosZ >= 0 && newPosZ < nowMap->GetZ())
 	{
 		if (nowMap->GetValue(newPosX, newPosZ) == 0)
 		{
-			playerList[turnIDMap[turn]].setPosZ(newPosX);
-			playerList[turnIDMap[turn]].setPosX(newPosZ);
+			playerList[turnIDMap[turn]].setPosX(newPosX);
+			playerList[turnIDMap[turn]].setPosZ(newPosZ);
 			playerList[turnIDMap[turn]].movePlayer();
 			nowMap->SetValue(posX, posZ, 0);
 			nowMap->SetValue(newPosX, newPosZ, 2);

@@ -139,6 +139,7 @@ void classSelectionUI()
 
 				tempPlayer.setAbilities(allClasses[classID].abilityList);
 				playerList.push_back(tempPlayer);
+				cout << playerList.size() << endl;
 				//clear player name when saved
 				memset(playerName, 0, sizeof playerName);
 			}

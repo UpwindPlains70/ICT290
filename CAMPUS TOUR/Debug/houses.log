@@ -1,15 +1,28 @@
-﻿  UpdateHandler.cpp
+﻿  LevelHandler.cpp
 C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\Include\TextureHandler.h(42,58): warning C4091: 'extern ': ignored on left of 'popUpState' when no variable is declared
-  The contents of <filesystem> are available only with C++17 or later.
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(31,101): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(87,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(121,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(162,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(428,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(651,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(674,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(686,7): warning C4101: 'roll': unreferenced local variable
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(707,6): warning C4101: 'dam': unreferenced local variable
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(771,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(778,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(24,23): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(63,20): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(71,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(81,19): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(89,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(109,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(109,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(135,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(136,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(137,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(138,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(156,52): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(157,53): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(187,32): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(187,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(193,33): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(193,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(210,34): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(210,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(219,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(221,117): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(221,77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(225,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(227,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(227,59): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   houses.vcxproj -> C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\Debug\houses.exe

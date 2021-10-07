@@ -96,7 +96,6 @@ void displayWalls(bool neg)
 
 void displayFloor()
 {
-	
 	int mapVal;
 	for (int x = 0; x < mapList[currLevel].at(mapID).GetX(); ++x)
 	{
