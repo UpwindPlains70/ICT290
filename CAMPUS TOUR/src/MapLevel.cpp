@@ -37,7 +37,7 @@ int LevelMap::GetZ() const
 
 int LevelMap::GetValue(int x, int z) const 
 { 
-	return array[x][z]; 
+	return array[x][z];
 }
 
 void LevelMap::SetValue(int x, int z, int value)

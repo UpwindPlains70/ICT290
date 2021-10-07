@@ -54,7 +54,7 @@ void DisplayLinup();
 void Update();
 void endTurn();
 void enemyTurn(Enemy);
-void playerTurn(Player);
+void playerTurn();
 void upgrade();
 void uniqueAbility();
 void attack(int);

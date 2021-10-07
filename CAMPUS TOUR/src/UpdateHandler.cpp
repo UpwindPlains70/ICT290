@@ -110,11 +110,13 @@ void Update()
 
 				displayEnt = true;
 
-				//Poisition enemies
-				randNum = rand() % nowMap->GetX();
-				nowEnemies[0].setPosX(randNum);
-				randNum = rand() % nowMap->GetZ();
-				nowEnemies[0].setPosZ(randNum);
+				//Position enemies
+				do {
+					randX = rand() % nowMap->GetX();
+					randZ = rand() % nowMap->GetZ();
+				} while (nowMap->GetValue(randX, randZ) != 0);
+				nowEnemies[0].setPosX(randX);
+				nowEnemies[0].setPosZ(randZ);
 				if (nowEnemies.size() > 0) {
 					for (int i = 1; i < nowEnemies.size(); i++)
 					{
@@ -122,7 +124,8 @@ void Update()
 						while (!found) {
 							randX = rand() % nowMap->GetX();
 							randZ = rand() % nowMap->GetZ();
-
+							cout << "enemy randX: " << randX << endl;
+							cout << "enemy randZ: " << randZ << endl;
 							for (int x = 0; x < nowMap->GetX(); x++)
 							{
 								for (int z = 0; z < nowMap->GetZ(); z++)
@@ -144,14 +147,17 @@ void Update()
 						}
 						nowEnemies[i].setPosX(randX);
 						nowEnemies[i].setPosZ(randZ);
+						nowMap->SetValue(randX, randZ, 3);
 					}
 				}
 
 				//Position players
-				randNum = rand() % nowMap->GetX();
-				playerList[0].setPosX(randNum);
-				randNum = rand() % nowMap->GetZ();
-				playerList[0].setPosZ(randNum);
+				do {
+					randX = rand() % nowMap->GetX();
+					randZ = rand() % nowMap->GetZ();
+				} while (nowMap->GetValue(randX, randZ) != 0);
+				playerList[0].setPosX(randX);
+				playerList[0].setPosZ(randZ);
 				if (playerList.size() > 0) {
 					for (int i = 1; i < playerList.size(); i++)
 					{
@@ -159,6 +165,8 @@ void Update()
 						while (!found) {
 							randX = rand() % nowMap->GetX();
 							randZ = rand() % nowMap->GetZ();
+							cout << "player randX: " << randX << endl;
+							cout << "player randZ: " << randZ << endl;
 							for (int x = 0; x < nowMap->GetX(); x++)
 							{
 								for (int z = 0; z < nowMap->GetZ(); z++)
@@ -180,8 +188,10 @@ void Update()
 						}
 						playerList[i].setPosX(randX);
 						playerList[i].setPosZ(randZ);
+						nowMap->SetValue(randX, randZ, 2);
 					}
 				}
+
 				/// <Task 16> (Jason)
 				/// start drawing players and enemies in their positions
 				
@@ -213,6 +223,7 @@ void Update()
 			//ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 
 			//set player turn
+
 			if (isPCTurnMap.find(turn) != isPCTurnMap.end())
 				isPCTurnMap[turn] = true;
 
@@ -224,7 +235,7 @@ void Update()
 				}
 				else
 				{
-					playerTurn(playerList[turnIDMap[turn]]);
+					playerTurn();
 				}
 				//endTurn();
 			}
@@ -236,7 +247,6 @@ void Update()
 			//ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 
 			if (playerList[turnIDMap[turn]].canMove())
-
 			{
 				canIJKL = true;
 			}
@@ -334,39 +344,36 @@ void endTurn()
 	allowedToRoll = true;
 }
 
-void playerTurn(Player pc)
+void playerTurn()
 {
 		// display pc actions
 	displayActionMenu = true;
-
-	pc.unshield();
-	pc.resetMovementLeft();
-	if (pc.getStun() == 1)
+	playerList[turnIDMap[turn]].unshield();
+	playerList[turnIDMap[turn]].resetMovementLeft();
+	if (playerList[turnIDMap[turn]].getStun() == 1)
 	{
 		/// <Task 13> (Jason)
 		/// show stun being removed
 		/// </Task 13>
-		pc.setStun(0);
-		playerList[turnIDMap[turn]] = pc;
+		playerList[turnIDMap[turn]].setStun(0);
 		endTurn();
 	}
-	else if (pc.getStun() == 0.5)
+	else if (playerList[turnIDMap[turn]].getStun() == 0.5)
 	{
 		/// <Task 13> (Jason)
 		/// show stun being removed
 		/// </Task 13>
-		pc.noMovementLeft();
+		playerList[turnIDMap[turn]].noMovementLeft();
 	}
 	EntityAbility ability;
-	for (int i = 0; i < pc.getNumberOfAbilities(); i++)
+	for (int i = 0; i < playerList[turnIDMap[turn]].getNumberOfAbilities(); i++)
 	{
-		ability = pc.getAbility(i);
+		ability = playerList[turnIDMap[turn]].getAbility(i);
 		ability.roundPassed();
-		pc.setAbility(ability, i);
+		playerList[turnIDMap[turn]].setAbility(ability, i);
 	}
-	pc.setStun(0);
+	playerList[turnIDMap[turn]].setStun(0);
 	pcHasAction = true;
-	playerList[turnIDMap[turn]] = pc;
 	gameState = Action;
 }
 
@@ -834,9 +841,21 @@ int rollTheDice(int bonus, int AC)
 
 void movePlayer(int X, int Z)
 {
-	playerList[turnIDMap[turn]].setPosZ(playerList[turnIDMap[turn]].getPosZ() + Z);
-	playerList[turnIDMap[turn]].setPosX(playerList[turnIDMap[turn]].getPosX() + X);
-	playerList[turnIDMap[turn]].movePlayer();
+	int posX = playerList[turnIDMap[turn]].getPosX();
+	int posZ = playerList[turnIDMap[turn]].getPosZ();
+	int newPosX = playerList[turnIDMap[turn]].getPosX() + X;
+	int newPosZ = playerList[turnIDMap[turn]].getPosZ() + Z;
+	if (newPosX > 0 && newPosX < nowMap->GetX() && newPosZ > 0 && newPosZ < nowMap->GetZ())
+	{
+		if (nowMap->GetValue(newPosX, newPosZ) == 0)
+		{
+			playerList[turnIDMap[turn]].setPosZ(newPosX);
+			playerList[turnIDMap[turn]].setPosX(newPosZ);
+			playerList[turnIDMap[turn]].movePlayer();
+			nowMap->SetValue(posX, posZ, 0);
+			nowMap->SetValue(newPosX, newPosZ, 2);
+		}
+	}
 }
 
 void abilityPressed(int id)
