@@ -42,19 +42,26 @@ double DotProduct(Point3D v1, Point3D v2)
 //Calculates the cross product of two vectors
 //Pre-Condition: requires two valid Face3D objects as input
 //Post-condition: returns the cross product as a new Face3D
-void CrossProduct(Point3D v1, Point3D v2, Point3D destination)
+float* CrossProduct(Point3D v1, Point3D v2)
 {
+    Point3D destination;
     destination[0] = ((v2[1] * v1[2]) - (v2[2] * v1[1]));
     destination[1] = ((v2[2] * v1[0]) - (v2[0] * v1[2]));
     destination[2] = ((v2[0] * v1[1]) - (v2[1] * v1[0]));
+    return destination;
 }
 
 //Calculates the Normal Vector to a triangle
 //Pre-Condition: requires two valid Face3D objects as input
 //Post-condition: returns the cross product as a new Face3D (cross product = normal vector)
-void NormalVector(Point3D v1, Point3D v2, Point3D destination)
+float* NormalVector(Point3D v1, Point3D v2, Point3D v3)
 {
-    CrossProduct(v1, v2, destination);
+    Point3D vecA;
+    Point3D vecB;
+    calcVector(v1, v2, vecA);
+    calcVector(v1, v3, vecB);
+    float* tmp = CrossProduct(vecA, vecB);
+    return tmp;
 }
 
 //Magnitude

@@ -29,6 +29,8 @@ void DrawDecorations()
 	ReadOBJfile("data/3D Objects/Decorations/Tree.obj", &treeObj);
 	ReadOBJfile("data/3D Objects/Decorations/Chained_Tree.obj", &chainTreeObj);
 
+	ReadOBJfile("data/3D Objects/Portal.obj", &portal);
+
 	decorationList.push_back(deadTreeObj);
 	decorationList.push_back(red_ShroomObj);
 	decorationList.push_back(brown_ShroomObj);

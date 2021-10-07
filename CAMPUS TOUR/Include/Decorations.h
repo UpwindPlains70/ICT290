@@ -31,7 +31,7 @@ void DrawDecorations();
 void genDecorationsPositions();
 int decorationTextureHelp(int index);
 void DisplayDecorations();
-
+extern Object3D portal;
 
 
 //------- Drawing the players and the enemies ---------- // 

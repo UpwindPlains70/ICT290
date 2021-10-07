@@ -1,7 +1,6 @@
 #include "LevelHandler.h"
 
-//int currLevel = 2;
-Point4 camPos = { 0.0, 9500.0, 0.0, 180.0 };
+Point4 camPos = { -40.8753, 9500, -722.093, 180.0 };
 
 GLdouble currXPos;
 GLdouble currYPos;
@@ -18,23 +17,28 @@ const int floorScale = 75;
 int floorValX;
 int floorValZ;
 
+int currLevel = 0;
+int mapID = 0;
+bool firstTime = true;
+
 float posOffset = 2.08;
 void teleportCamera()
 {
 	//Change background colour to black
-	glClearColor(0.1, 0.1, 0.1, 1.0);
+	//glClearColor(0.1, 0.1, 0.1, 1.0);
 
 	//change camera position
 	cam.Position(camPos[0], camPos[1], camPos[2], camPos[3]);
 }
 
-///UPDATE: general function for new level
+///UPDATE: make general function for new level
 bool levelZeroClear()
 {
 	cam.getPosition(currXPos, currYPos, currZPos);
 
 	if (currYPos < 9000.0)
 	{
+		//firstTime = false;
 		++currLevel;
 		teleportCamera();
 		return true;

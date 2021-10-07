@@ -30,7 +30,6 @@ void IncrementFrameCount();
 
 // deletes image and clears memory
 void DeleteImageFromMemory(unsigned char* tempImage);
-
 //--------------------------------------------------------------------------------------
 //  Main function
 //--------------------------------------------------------------------------------------
@@ -47,8 +46,8 @@ int main(int argc, char **argv)
 	glutIgnoreKeyRepeat(1);
 	glutSpecialFunc(movementKeys);
 	glutSpecialUpFunc(releaseKey);
-	glutKeyboardUpFunc (releaseKeys);
 	glutKeyboardFunc(keys);
+	glutKeyboardUpFunc (releaseKeys);
 
 	glutDisplayFunc(Display);
 
@@ -68,7 +67,7 @@ int main(int argc, char **argv)
 	shutdownUI();
 	return(0);
 }
-
+GLfloat light_position[] = { 32720.0, 10500.0, 37000.0 , 0 };
 //--------------------------------------------------------------------------------------
 //  Initialize Settings
 //--------------------------------------------------------------------------------------
@@ -86,6 +85,11 @@ void myinit()
 	glu_cylinder = gluNewQuadric();
     gluQuadricTexture(glu_cylinder, GL_TRUE );
 
+	//Enable lighting
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+	glLightfv(GL_LIGHT0, GL_POSITION, light_position);
+
 	// set the world co-ordinates (used to set quadrants for bounding boxes)
 	cam.SetWorldCoordinates(36000.0, 43200.0);
 	// turn collision detection on (level zero)
@@ -93,8 +97,8 @@ void myinit()
 	// set number of bounding boxes required
 	cam.SetNoBoundingBoxes(82);  // originally started with 19 
 	// set starting position of user
-	//cam.Position(32720.0, 10500.0, 37000.0, 90.0);
-	cam.Position(0.0, 9500.0, 0.0, 180.0);//Level testing pos
+	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
+	//cam.Position(0.0, 9500.0, 0.0, 180.0);//Level testing pos
 
 	CreatePlains();
 
@@ -150,8 +154,6 @@ void Display()
 	//enable texture mapping
 	glEnable (GL_TEXTURE_2D);
 
-	
-
 	glPushMatrix();
 		// displays the welcome screen
 		if (DisplayWelcome) cam.DisplayWelcomeScreen (width, height, 1, tp.GetTexture(WELCOME));
@@ -173,11 +175,17 @@ void Display()
 		cam.SetRotateSpeed (angleIncrement);
 		// display images
 		DrawBackdrop();
+
 		//DisplayEntities();
 	glPopMatrix();
-	//glDisable (GL_TEXTURE_2D);
 
-	Update();
+
+	if (cam.GetLR() > 35200 && gameState < NotReady)
+		gameState = NotReady;
+
+	if(gameState >= NotReady)
+		Update();
+	
 	glDisable(GL_TEXTURE_2D);
 	
 	//glDisable(GL_COLOR_MATERIAL);

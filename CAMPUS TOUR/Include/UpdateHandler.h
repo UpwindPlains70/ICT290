@@ -28,7 +28,7 @@
  * @version 02
  * @date 25/09/2021 implented UI (added displayActionMenu, allowedToRoll bools)
  */
-extern enum state { NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE };
+extern enum state { NotGame, NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE };
 extern state gameState;
 
 extern vector<Player> playerList;

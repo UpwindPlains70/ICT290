@@ -103,5 +103,6 @@ void playerActionUI();
 	//Ends player turn if selected
 void displayEnemyListUI();
 
+extern bool playerSelection;
 extern bool assignTurnStage;
 

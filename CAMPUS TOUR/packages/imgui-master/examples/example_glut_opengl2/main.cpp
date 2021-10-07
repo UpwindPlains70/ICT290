@@ -131,7 +131,12 @@ int main(int argc, char** argv)
 
     // Setup Platform/Renderer backends
     ImGui_ImplGLUT_Init();
-    ImGui_ImplGLUT_InstallFuncs();
+
+    glutMouseFunc(ImGui_ImplGLUT_MouseFunc);
+    glutReshapeFunc(ImGui_ImplGLUT_ReshapeFunc);
+    glutKeyboardFunc(ImGui_ImplGLUT_KeyboardFunc);
+    glutKeyboardUpFunc(ImGui_ImplGLUT_KeyboardUpFunc);
+    //ImGui_ImplGLUT_InstallFuncs();
     ImGui_ImplOpenGL2_Init();
 
     // Load Fonts
