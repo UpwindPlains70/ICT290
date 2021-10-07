@@ -330,7 +330,6 @@ void Update()
 
 void endTurn()
 {
-	//playerList[turnIDMap[turn]] = playerList[turnIDMap[turn]];
 	popUpMessage = true; 
 	if (nowEnemies.size() == 0)
 	{
