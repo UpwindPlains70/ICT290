@@ -154,7 +154,7 @@ void Enemy::reset()
 // 0 = empty, 1 = wall, 2 = ally, 3 = enemy.
 //call to move piece //might change due to map orientation
 void Enemy::moveUp(LevelMap* nowMap) {
-	if (nowMap->GetValue(posX + 1, posZ) != 1) {
+	if (nowMap->GetValue(posX + 1, posZ) == 0) {
 		//update map positions
 		nowMap->SetValue(posX + 1, posZ, 3);
 		nowMap->SetValue(posX, posZ, 0);
@@ -163,15 +163,15 @@ void Enemy::moveUp(LevelMap* nowMap) {
 	}
 	else {
 		//check directions clockwise
-		if (nowMap->GetValue(posX, posZ + 1) != 1) {
+		if (nowMap->GetValue(posX, posZ + 1) == 0) {
 			moveRight(nowMap);
 		}
 		else {
-			if (nowMap->GetValue(posX - 1, posZ) != 1) {
+			if (nowMap->GetValue(posX - 1, posZ) == 0) {
 				moveDown(nowMap);
 			}
 			else {
-				if (nowMap->GetValue(posX, posZ - 1) != 1) {
+				if (nowMap->GetValue(posX, posZ - 1) == 0) {
 					moveLeft(nowMap);
 				}
 				else {
@@ -183,7 +183,7 @@ void Enemy::moveUp(LevelMap* nowMap) {
 }
 
 void Enemy::moveDown(LevelMap* nowMap) {
-	if (nowMap->GetValue(posX - 1, posZ) != 1) {
+	if (nowMap->GetValue(posX - 1, posZ) == 0) {
 		//update map positions
 		nowMap->SetValue(posX - 1, posZ, 3);
 		nowMap->SetValue(posX, posZ, 0);
@@ -192,15 +192,15 @@ void Enemy::moveDown(LevelMap* nowMap) {
 	}
 	else {
 		//check directions clockwise
-		if (nowMap->GetValue(posX, posZ - 1) != 1) {
+		if (nowMap->GetValue(posX, posZ - 1) == 0) {
 			moveLeft(nowMap);
 		}
 		else {
-			if (nowMap->GetValue(posX + 1, posZ) != 1) {
+			if (nowMap->GetValue(posX + 1, posZ) == 0) {
 				moveUp(nowMap);
 			}
 			else {
-				if (nowMap->GetValue(posX, posZ + 1) != 1) {
+				if (nowMap->GetValue(posX, posZ + 1) == 0) {
 					moveRight(nowMap);
 				}
 				else {
@@ -212,7 +212,7 @@ void Enemy::moveDown(LevelMap* nowMap) {
 }
 
 void Enemy::moveLeft(LevelMap* nowMap) {
-	if (nowMap->GetValue(posX, posZ - 1) != 1) {
+	if (nowMap->GetValue(posX, posZ - 1) == 0) {
 		//update map positions
 		nowMap->SetValue(posX, posZ - 1, 3);
 		nowMap->SetValue(posX, posZ, 0);
@@ -221,15 +221,15 @@ void Enemy::moveLeft(LevelMap* nowMap) {
 	}
 	else {
 		//check directions clockwise
-		if (nowMap->GetValue(posX + 1, posZ) != 1) {
+		if (nowMap->GetValue(posX + 1, posZ) == 0) {
 			moveUp(nowMap);
 		}
 		else {
-			if (nowMap->GetValue(posX, posZ + 1) != 1) {
+			if (nowMap->GetValue(posX, posZ + 1) == 0) {
 				moveRight(nowMap);
 			}
 			else {
-				if (nowMap->GetValue(posX - 1, posZ) != 1) {
+				if (nowMap->GetValue(posX - 1, posZ) == 0) {
 					moveDown(nowMap);
 				}
 				else {
@@ -241,7 +241,7 @@ void Enemy::moveLeft(LevelMap* nowMap) {
 }
 
 void Enemy::moveRight(LevelMap* nowMap) {
-	if (nowMap->GetValue(posX, posZ + 1) != 1) {
+	if (nowMap->GetValue(posX, posZ + 1) == 0) {
 		//update map positions
 		nowMap->SetValue(posX, posZ + 1, 3);
 		nowMap->SetValue(posX, posZ, 0);
@@ -250,15 +250,15 @@ void Enemy::moveRight(LevelMap* nowMap) {
 	}
 	else {
 		//check directions clockwise
-		if (nowMap->GetValue(posX - 1, posZ) != 1) {
+		if (nowMap->GetValue(posX - 1, posZ) == 0) {
 			moveDown(nowMap);
 		}
 		else {
-			if (nowMap->GetValue(posX, posZ - 1) != 1) {
+			if (nowMap->GetValue(posX, posZ - 1) == 0) {
 				moveLeft(nowMap);
 			}
 			else {
-				if (nowMap->GetValue(posX, posZ + 1) != 1) {
+				if (nowMap->GetValue(posX, posZ + 1) == 0) {
 					moveRight(nowMap);
 				}
 				else {
@@ -269,63 +269,58 @@ void Enemy::moveRight(LevelMap* nowMap) {
 	}
 }
 
-bool Enemy::checkRange(EntityAbility range, LevelMap* nowMap) {
-	for (int i = range.getRange(); i > 0; i--) {
-		//x axis
-		if (posX + i < nowMap->GetX()) {
-			if (nowMap->GetValue(posX + i, posZ) == 2) {
-				//printf("%d\n", fieldGrid[posX + i][posZ]);
-				return true;
-			}
+bool Enemy::checkRange(vector<Player> playerList) {
+	int lowestRange = -1;
+	int pX;
+	int pZ;
+	int disX;
+	int disZ;
+	for (int i = 0; i < playerList.size(); i++)
+	{
+		pX = playerList[i].getPosX();
+		pZ = playerList[i].getPosZ();
+		disX = pX - posX;
+		disZ = pZ - posZ;
+		if (disX < 0)
+		{
+			disX *= -1;
 		}
-		if (posX - i > 0) {
-			if (nowMap->GetValue(posX - i, posZ) == 2) {
-				//printf("%d\n", fieldGrid[posX - i][posZ]);
-				return true;
-			}
+		if (disZ < 0)
+		{
+			disZ *= -1;
 		}
-
-		// z axis
-		if (posZ + i < nowMap->GetZ()) {
-			if (nowMap->GetValue(posX, posZ + i) == 2) {
-				//printf("%d\n", fieldGrid[posX][posZ + i]);
-				return true;
-			}
+		if (lowestRange == -1)
+		{
+			lowestRange = disX + disZ;
 		}
-		if (posZ - i > 0) {
-			if (nowMap->GetValue(posX, posZ - i) == 2) {
-				//printf("%d\n", fieldGrid[posX][posZ - i]);
-				return true;
-			}
+		else if (lowestRange > (disX + disZ))
+		{
+			lowestRange = disX + disZ;
 		}
-
-		//diagonals
-		for (int s = range.getRange(); s > 0; s--) {
-			if (posX + i < nowMap->GetX() || posZ + s < nowMap->GetZ()) {
-				if (nowMap->GetValue(posX + i, posZ + s) == 2) {
-					return true;
-				}
-			}
-			if (posX + i < nowMap->GetX() || posZ - s > 0) {
-				if (nowMap->GetValue(posX + i, posZ - s) == 2) {
-					return true;
-				}
-			}
-			if (posX - i < 0 || posZ + s < nowMap->GetZ()) {
-				if (nowMap->GetValue(posX - i, posZ + s) == 2) {
-					return true;
-				}
-			}
-			if (posX - i < 0 || posZ - s > 0) {
-				if (nowMap->GetValue(posX - i, posZ - s) == 2) {
-					return true;
-				}
-			}
+	}
+	int maxRange = -1;
+	int tempRange;
+	for (int i = 0; i < abilities.size(); i++)
+	{
+		tempRange = abilities[i].getRange();
+		if (maxRange == -1)
+		{
+			maxRange = tempRange;
 		}
-
+		else if (maxRange < tempRange)
+		{
+			maxRange = tempRange;
+		}
 	}
 
-	return false;
+	if (maxRange >= lowestRange)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 int*Enemy::getTargetPos(vector<Player> playerList) {
@@ -369,8 +364,8 @@ int Enemy::moveToTarget(int tempMove, LevelMap* nowMap, vector<Player> playerLis
 	////move x first
 	while (tempMove > 0 && inRange == false) {
 		//move x 1 times
-		//printf("%d , %d\n", disToTar[0], disToTar[1]);
-		if (disToTar[0] >= disToTar[1]) {
+		printf("%d , %d\n", disToTar[0], disToTar[1]);
+		//if (disToTar[0] >= disToTar[1]) {
 			if (disToTar[0] > 0) {
 				moveUp(nowMap);
 				//printf("Up: %d\n", tempMove);
@@ -379,8 +374,8 @@ int Enemy::moveToTarget(int tempMove, LevelMap* nowMap, vector<Player> playerLis
 				moveDown(nowMap);
 				//printf("Down\n");
 			}
-		}
-		else if (disToTar[1] > disToTar[0]) {
+		//}
+		//else if (disToTar[1] >= disToTar[0]) {
 			if (disToTar[1] > 0) {
 				moveRight(nowMap);
 				//printf("Right\n");
@@ -389,7 +384,7 @@ int Enemy::moveToTarget(int tempMove, LevelMap* nowMap, vector<Player> playerLis
 				moveLeft(nowMap);
 				//printf("Left\n");
 			}
-		}
+		//}
 
 		//disToTar = getTargetPos
 		distanceToTarget = getTargetPos(playerList);
@@ -400,7 +395,7 @@ int Enemy::moveToTarget(int tempMove, LevelMap* nowMap, vector<Player> playerLis
 		tempMove--;
 		for (int i = 0; i < abilities.size(); i++) {
 			//checkRange
-			inRangeTemp = checkRange(abilities[i], nowMap);
+			inRangeTemp = checkRange(playerList);
 			if (inRangeTemp) {
 				inRange = true;
 			}
@@ -427,7 +422,8 @@ void Enemy::AITurn(LevelMap* nowMap, vector<Player> playerList) {
 		//for each ability
 		for (int i = 0; i < abilities.size(); i++) {
 			//checkRange
-			inRangeTemp = checkRange(abilities[i], nowMap);
+			cout << "ability: " << abilities[i].getName() << endl;
+			inRangeTemp = checkRange(playerList);
 			if (inRangeTemp) {
 				inRange = true;
 			}
@@ -438,6 +434,7 @@ void Enemy::AITurn(LevelMap* nowMap, vector<Player> playerList) {
 			//3 Use acquire distance to move
 			tempMove = moveToTarget(tempMove, nowMap, playerList);
 		}
+		cout << inRange << "::" << tempMove << endl;
 	}
 
 }

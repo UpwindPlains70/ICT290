@@ -95,7 +95,7 @@ private:
 	void moveLeft(LevelMap* nowMap);
 	void moveRight(LevelMap* nowMap);
 	//ai
-	bool checkRange(EntityAbility range, LevelMap* nowMap);
+	bool checkRange(vector<Player> playerList);
 	int* getTargetPos(vector<Player> p);
 	int moveToTarget(int tempMove, LevelMap* nowMap, vector<Player> playerList);
 };

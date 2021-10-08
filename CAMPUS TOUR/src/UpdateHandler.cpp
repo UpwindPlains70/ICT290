@@ -99,7 +99,7 @@ void Update()
 
 				//Assign Enemies for current level
 				nowLM = enemyLevelMap[currLevel];
-				randNum = rand() % (nowLM.max - nowLM.min) + nowLM.min;
+				randNum = random_int(nowLM.min, nowLM.max);
 				for (int i = 0; i < randNum; i++)
 				{
 					nowEnemies.push_back(nowLM.presetList[rand() % nowLM.presetList.size()]);
@@ -224,8 +224,8 @@ void Update()
 
 			//set player turn
 
-			if (isPCTurnMap.find(turn) != isPCTurnMap.end())
-				isPCTurnMap[turn] = true;
+			//pc turn doesnt turn 0
+			cout << "PC turn: " << isPCTurnMap[turn] << endl;
 
 			if (turnDeadMap[turn] == false)
 			{
@@ -391,6 +391,8 @@ void enemyTurn(Enemy ai)
 {
 	EntityAbility ability;
 	
+	cout << "ENEMY TURN HAPPENED: " << ai.getName() << endl;
+
 	if (ai.getStun() == 1)
 	{
 		/// <Task 13> (Jason)
@@ -826,7 +828,7 @@ void updatePopUpMessage()
 int rollTheDice(int bonus, int AC)
 {
 	// 0 = no damage, 1 = damage, 2 = critical
-	int roll = rand() % (19) + 1;
+	int roll = random_int(1, 20);
 	if (roll == 1)
 	{
 		return 0;
@@ -887,4 +889,9 @@ void abilityPressed(int id)
 			gameState = Attack;
 		}
 	}
+}
+
+int random_int(int min, int max)
+{
+	return min + rand() % (max + 1 - min);
 }
