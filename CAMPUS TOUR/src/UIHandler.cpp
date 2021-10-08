@@ -303,7 +303,7 @@ void turnOrderUI()
 						playerList[playerTurnCount].setTurn(prevSelectedTurn);
 							//turn pointing to player index
 						turnIDMap[prevSelectedTurn] = playerTurnCount;
-						isPCTurnMap[prevSelectedTurn] = false;
+						isPCTurnMap[prevSelectedTurn] = true;
 						++playerTurnCount;
 							//Force click for every player (Keep???)
 						break;
@@ -321,6 +321,7 @@ void turnOrderUI()
 					turnList.erase(turnList.begin() + i);
 					nowEnemies[enemyTurnCount].setTurn(prevSelectedTurn);
 					turnIDMap[prevSelectedTurn] = enemyTurnCount;
+					isPCTurnMap[prevSelectedTurn] = false;
 					++enemyTurnCount;
 					i = 0;
 				}
