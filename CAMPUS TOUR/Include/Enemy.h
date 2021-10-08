@@ -74,8 +74,16 @@ public:
 
 	void reset();
 
+	void shield(int);
+
+	void unshield();
+
 	void AITurn(LevelMap* nowMap, vector<Player> playerList);
-	void AIAttack(LevelMap* nowMap);
+	void AIAttack(LevelMap* nowMap, vector<Player>& playerList, int& summon);
+	void attack(EntityAbility ability, Player& player, LevelMap* nowMap);
+	void kbAttack(EntityAbility ability, Player& player, LevelMap* nowMap);
+	int random_int(int min, int max);
+	int rollTheDice(int bonus, int AC);
 private:
 	string name;
 	int maxHP;
@@ -87,6 +95,7 @@ private:
 	int posZ;
 	int movement;
 	int turn;
+	int originalAC;
 	vector <EntityAbility> abilities;
 private:
 	//movement

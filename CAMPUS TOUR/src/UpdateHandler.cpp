@@ -229,7 +229,7 @@ void Update()
 			{
 				if (isPCTurnMap[turn] == false)
 				{
-					enemyTurn(nowEnemies[turnIDMap[turn]]);
+					enemyTurn();
 				}
 				else
 				{
@@ -384,19 +384,21 @@ void playerTurn()
 	gameState = Action;
 }
 
-void enemyTurn(Enemy ai)
+void enemyTurn()
 {
+	nowEnemies[turnIDMap[turn]].unshield();
+
 	EntityAbility ability;
 	
-	cout << "ENEMY TURN HAPPENED: " << ai.getName() << endl;
+	cout << "ENEMY TURN HAPPENED: " << nowEnemies[turnIDMap[turn]].getName() << endl;
 
-	if (ai.getStun() == 1)
+	if (nowEnemies[turnIDMap[turn]].getStun() == 1)
 	{
 		/// <Task 13> (Jason)
 		/// show stun being removed
 		/// </Task 13>
 	}
-	else if (ai.getStun() == 0.5)
+	else if (nowEnemies[turnIDMap[turn]].getStun() == 0.5)
 	{	
 		/// <Task 14> (Raymond)
 		/// randomly choose ability from enemy that is an ability in range of closest target
@@ -404,8 +406,18 @@ void enemyTurn(Enemy ai)
 		/// set as ability
 		/// attack
 		/// </Task 14>
-		ai.AIAttack(nowMap);
 		
+		int summon;
+		nowEnemies[turnIDMap[turn]].AIAttack(nowMap, playerList, summon);
+		if (summon > 0)
+		{
+			turnIDMap.insert(std::pair<int, int>(maxTurn, nowEnemies.size()));
+			isPCTurnMap.insert(std::pair<int, bool>(maxTurn, false));
+			turnDeadMap.insert(std::pair<int, bool>(maxTurn, false));
+			turnList.push_back(nowEnemies.size());
+			maxTurn++;
+			nowEnemies.push_back(enemyLevelMap[summon].presetList[rand() % enemyLevelMap[summon].presetList.size()]);
+		}
 		
 		/// <Task 13> (Jason)
 		/// show stun being removed
@@ -414,14 +426,34 @@ void enemyTurn(Enemy ai)
 	else
 	{
 		// move enemy
-		ai.AITurn(nowMap, playerList);
+		nowEnemies[turnIDMap[turn]].AITurn(nowMap, playerList);
 
 		/// randomly choose ability from enemy that is an ability in range of closest target
-		ai.AIAttack(nowMap);
+
+		int summon;
+		nowEnemies[turnIDMap[turn]].AIAttack(nowMap, playerList, summon);
+		if (summon > 0)
+		{
+			turnIDMap.insert(std::pair<int, int>(maxTurn, nowEnemies.size()));
+			isPCTurnMap.insert(std::pair<int, bool>(maxTurn, false));
+			turnDeadMap.insert(std::pair<int, bool>(maxTurn, false));
+			turnList.push_back(nowEnemies.size());
+			maxTurn++;
+			nowEnemies.push_back(enemyLevelMap[summon].presetList[rand() % enemyLevelMap[summon].presetList.size()]);
+		}
 	}
 	
-	ai.setStun(0);
-	nowEnemies[turnIDMap[turn]] = ai;
+	nowEnemies[turnIDMap[turn]].setStun(0);
+
+	for (int i = 0; i < playerList.size(); i++)
+	{
+		if (playerList[i].getHP() <= 0) 
+		{
+			turnDeadMap[playerList[i].getTurn()] = true;
+			playerList.erase(playerList.begin() + i);
+		}
+	}
+
 	endTurn();
 }
 

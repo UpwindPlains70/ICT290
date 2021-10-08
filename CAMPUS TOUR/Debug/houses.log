@@ -1,1 +1,32 @@
-﻿  houses.vcxproj -> C:\Users\markb\Documents\GitHub\ICT290\CAMPUS TOUR\Debug\houses.exe
+﻿  Enemy.cpp
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(294,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(320,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(352,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(413,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(440,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(476,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(502,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(544,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(554,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(567,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(577,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(753,6): warning C4101: 'dam': unreferenced local variable
+  UpdateHandler.cpp
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\Include\TextureHandler.h(42,58): warning C4091: 'extern ': ignored on left of 'popUpState' when no variable is declared
+  The contents of <filesystem> are available only with C++17 or later.
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(31,110): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(87,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(122,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(162,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(448,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(469,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(470,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(693,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(716,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(728,7): warning C4101: 'roll': unreferenced local variable
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(749,6): warning C4101: 'dam': unreferenced local variable
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(819,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(826,22): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\src\Enemy.cpp(365): warning C4172: returning address of local variable or temporary: tarPosA
+  houses.vcxproj -> C:\Users\MarkBurns\Documents\GitHub\ICT290\CAMPUS TOUR\Debug\houses.exe

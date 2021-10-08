@@ -13,6 +13,7 @@ Enemy::Enemy(string newName, int newMaxHP, int newArmor, int newStun, int newPos
 	name = newName;
 	maxHP = newMaxHP;
 	armor = newArmor;
+	originalAC = armor;
 	hp = maxHP;
 	stun = newStun;
 	posX = newPosX;
@@ -44,6 +45,7 @@ int Enemy::getMaxHP() {
 
 void Enemy::setArmor(int newArmor) {
 	armor = newArmor;
+	originalAC = armor;
 }
 
 int Enemy::getArmor() {
@@ -136,6 +138,19 @@ EntityAbility Enemy::getAbility(int num) {
 	return abilities[num];
 }
 
+
+
+void Enemy::shield(int AC)
+{
+	originalAC = armor;
+	armor = AC;
+}
+
+void Enemy::unshield()
+{
+	armor = originalAC;
+}
+
 void Enemy::reset()
 {
 	abilities.clear();
@@ -149,6 +164,7 @@ void Enemy::reset()
 	turn = 0;
 	armor = 0;
 	maxHP = 0;
+	originalAC = armor;
 }
 
 // 0 = empty, 1 = wall, 2 = ally, 3 = enemy.
@@ -447,24 +463,370 @@ void Enemy::AITurn(LevelMap* nowMap, vector<Player> playerList) {
 /// set as ability
 /// attack
 /// </Task 14>
-void Enemy::AIAttack(LevelMap* nowMap) {
-	/// randomly choose ability from enemy that is an ability in range of closest target
-	/// if there is an ability and it has no cooldown left
-	/// set as ability
-	/// attack
+void Enemy::AIAttack(LevelMap* nowMap, vector<Player>& playerList, int& summon) {
+	summon = 0;
+	vector<EntityAbility> availableAbilities;
+	EntityAbility nowAbility;
+	int lowestRange = -1;
+	int pX;
+	int pZ;
+	int disX;
+	int disZ;
+	int playerAttackedID;
+	for (int i = 0; i < playerList.size(); i++)
+	{
+		pX = playerList[i].getPosX();
+		pZ = playerList[i].getPosZ();
+		disX = pX - posX;
+		disZ = pZ - posZ;
+		if (disX < 0)
+		{
+			disX *= -1;
+		}
 
-	/*
-	//action if in range
-	bool inRangeTemp = false;
-	if (inRange) {
-		for (int i = 0; i < abilities.size(); i++) {
-			//checkRange
-			inRangeTemp = checkRange(abilities[i], nowMap);
-			if (inRangeTemp) {
-				//use abilities[i]
-				i = abilities.size();
+		if (disZ < 0)
+		{
+			disZ *= -1;
+		}
+		if (lowestRange == -1)
+		{
+			lowestRange = disX + disZ;
+			playerAttackedID = i;
+		}
+		else if (lowestRange > (disX + disZ))
+		{
+			lowestRange = disX + disZ;
+			playerAttackedID = i;
+		}
+	}
+	for (int i = 0; i < abilities.size(); i++)
+	{
+		if (abilities[i].getRange() <= lowestRange && abilities[i].getUnique() == false)
+		{
+			availableAbilities.push_back(abilities[i]);
+		}
+		if (abilities[i].getName() == "summonLevel1" || 
+			abilities[i].getName() == "barrierBoss" || 
+			abilities[i].getName() == "coneBoss" || 
+			abilities[i].getName() == "cone")
+		{
+			availableAbilities.push_back(abilities[i]);
+		}
+		if (lowestRange == 1 && abilities[i].getName() == "knockbackBoss")
+		{
+			availableAbilities.push_back(abilities[i]);
+		}
+		if (abilities[i].getName() == "grow" && hp < maxHP)
+		{
+			availableAbilities.push_back(abilities[i]);
+		}
+
+		nowAbility = availableAbilities[rand() % availableAbilities.size()];
+
+		if (nowAbility.getUnique() == false)
+		{
+			attack(nowAbility, playerList[playerAttackedID], nowMap);
+		}
+		if (nowAbility.getName() == "summonLevel1")
+		{
+			summon = 1;
+		}
+		if (nowAbility.getName() == "barrierBoss")
+		{
+			shield(armor + 5);
+		}
+		if (nowAbility.getName() == "coneBoss" || nowAbility.getName() == "cone")
+		{
+			if (playerList[playerAttackedID].getPosX() == posX)
+			{
+				if (playerList[playerAttackedID].getPosZ() > posZ)
+				{
+					for (int i = 0; i < playerList.size(); i++)
+					{
+						if (playerList[i].getPosX() == posX && playerList[i].getPosZ() > posZ)
+						{
+							attack(nowAbility, playerList[i], nowMap);
+						}
+					}
+				}
+				else
+				{
+					for (int i = 0; i < playerList.size(); i++)
+					{
+						if (playerList[i].getPosX() == posX && playerList[i].getPosZ() < posZ)
+						{
+							attack(nowAbility, playerList[i], nowMap);
+						}
+					}
+				}
+			}
+			else
+			{
+				if (playerList[playerAttackedID].getPosX() > posX)
+				{
+					for (int i = 0; i < playerList.size(); i++)
+					{
+						if (playerList[i].getPosZ() == posZ && playerList[i].getPosX() > posX)
+						{
+							attack(nowAbility, playerList[i], nowMap);
+						}
+					}
+				}
+				else
+				{
+					for (int i = 0; i < playerList.size(); i++)
+					{
+						if (playerList[i].getPosZ() == posZ && playerList[i].getPosX() < posX)
+						{
+							attack(nowAbility, playerList[i], nowMap);
+						}
+					}
+				}
+			}
+		}
+		if (nowAbility.getName() == "knockbackBoss")
+		{
+			kbAttack(nowAbility, playerList[playerAttackedID], nowMap);
+		}
+		if (nowAbility.getName() == "grow")
+		{
+			healEnemy(2);
+		}
+	}
+}
+
+void Enemy::kbAttack(EntityAbility ability, Player& player, LevelMap* nowMap)
+{
+	int toHit;
+	int dam;
+	toHit = ability.getToHit() + 2;
+	int smallX, smallZ, tempX, tempZ, bigX, bigZ;
+	smallX = posX;
+	smallZ = posZ;
+	bigX = player.getPosX();
+	bigZ = player.getPosZ();
+
+	if (smallX > bigX)
+	{
+		tempX = smallX;
+		bigX = smallX;
+		smallX = tempX;
+	}
+
+	if (smallZ > bigZ)
+	{
+		tempZ = smallZ;
+		bigZ = smallZ;
+		smallZ = tempZ;
+	}
+
+	for (int x = smallX; x <= bigX; x++)
+	{
+		for (int z = smallZ; z <= bigZ; z++)
+		{
+			if (nowMap->GetValue(x, z) > 0)
+			{
+				toHit--;
 			}
 		}
 	}
-	*/
+
+	if (player.getStun() > 0)
+	{
+		toHit += 5;
+	}
+	int oldPosX;
+	int oldPosZ;
+	int roll = rollTheDice(toHit, player.getArmor());
+	dam = roll * ability.getDamage();
+	player.damagePlayer(dam);
+	if ((roll > 0) && (player.getStun() < ability.getStun()))
+	{
+		player.setStun(ability.getStun());
+	}
+	if (roll > 0)
+	{
+		if (player.getPosX() == posX)
+		{
+			if (player.getPosZ() > posZ)
+			{
+				bool found = false;
+				for (int i = nowMap->GetZ(); i > player.getPosZ(); i--)
+				{
+					if (nowMap->GetValue(posX, i) == 0)
+					{
+						oldPosX = player.getPosX();
+						oldPosZ = player.getPosZ();
+						player.setPosX(posX);
+						player.setPosZ(i);
+						nowMap->SetValue(oldPosX, oldPosZ, 0);
+						nowMap->SetValue(posX, i, 2);
+						found = true;
+						break;
+					}
+				}
+				if (!found)
+				{
+					player.setStun(1);
+					player.damagePlayer(dam);
+				}
+			}
+			else
+			{
+				bool found = false;
+				for (int i = nowMap->GetZ(); i < player.getPosZ(); i++)
+				{
+					if (nowMap->GetValue(posX, i) == 0)
+					{
+						oldPosX = player.getPosX();
+						oldPosZ = player.getPosZ();
+						player.setPosX(posX);
+						player.setPosZ(i);
+						nowMap->SetValue(oldPosX, oldPosZ, 0);
+						nowMap->SetValue(posX, i, 2);
+						found = true;
+						break;
+					}
+				}
+				if (!found)
+				{
+					player.setStun(1);
+					player.damagePlayer(dam);
+				}
+			}
+		}
+		else
+		{
+			if (player.getPosX() > posX)
+			{
+				bool found = false;
+				for (int i = nowMap->GetX(); i > player.getPosX(); i--)
+				{
+					if (nowMap->GetValue(posZ, i) == 0)
+					{
+						oldPosX = player.getPosX();
+						oldPosZ = player.getPosZ();
+						player.setPosZ(posZ);
+						player.setPosX(i);
+						nowMap->SetValue(oldPosX, oldPosZ, 0);
+						nowMap->SetValue(i, posZ, 2);
+						found = true;
+						break;
+					}
+				}
+				if (!found)
+				{
+					player.setStun(1);
+					player.damagePlayer(dam);
+				}
+			}
+			else
+			{
+				bool found = false;
+				for (int i = nowMap->GetX(); i < player.getPosX(); i++)
+				{
+					if (nowMap->GetValue(posZ, i) == 0)
+					{
+						oldPosX = player.getPosX();
+						oldPosZ = player.getPosZ();
+						player.setPosZ(posZ);
+						player.setPosX(i);
+						nowMap->SetValue(oldPosX, oldPosZ, 0);
+						nowMap->SetValue(i, posZ, 2);
+						found = true;
+						break;
+					}
+				}
+				if (!found)
+				{
+					player.setStun(1);
+					player.damagePlayer(dam);
+				}
+			}
+		}
+	}
+}
+
+void Enemy::attack(EntityAbility ability, Player& player, LevelMap* nowMap)
+{
+	int toHit;
+	int dam;
+	toHit = ability.getToHit() + 2;
+	int smallX, smallZ, tempX, tempZ, bigX, bigZ;
+	smallX = posX;
+	smallZ = posZ;
+	bigX = player.getPosX();
+	bigZ = player.getPosZ();
+
+	if (smallX > bigX)
+	{
+		tempX = smallX;
+		bigX = smallX;
+		smallX = tempX;
+	}
+
+	if (smallZ > bigZ)
+	{
+		tempZ = smallZ;
+		bigZ = smallZ;
+		smallZ = tempZ;
+	}
+
+	for (int x = smallX; x <= bigX; x++)
+	{
+		for (int z = smallZ; z <= bigZ; z++)
+		{
+			if (nowMap->GetValue(x, z) > 0)
+			{
+				toHit--;
+			}
+		}
+	}
+
+	if (player.getStun() > 0)
+	{
+		toHit += 5;
+	}
+
+	for (int i = 0; i < ability.getDuplicate(); i++)
+	{
+		int roll = rollTheDice(toHit, player.getArmor());
+		int dam = roll * ability.getDamage();
+		player.damagePlayer(dam);
+		if ((roll > 0) && (player.getStun() < ability.getStun()))
+		{
+			player.setStun(ability.getStun());
+		}
+	}
+}
+
+int Enemy::rollTheDice(int bonus, int AC)
+{
+	// 0 = no damage, 1 = damage, 2 = critical
+	int roll = random_int(1, 20);
+	if (roll == 1)
+	{
+		return 0;
+	}
+	else if (roll == 20)
+	{
+		return 2;
+	}
+	else
+	{
+		roll += bonus;
+		if (roll >= AC)
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+}
+
+int Enemy::random_int(int min, int max)
+{
+	return min + rand() % (max + 1 - min);
 }

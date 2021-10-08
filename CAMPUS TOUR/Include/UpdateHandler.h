@@ -53,7 +53,7 @@ extern int sessionRound;
 void DisplayLinup();
 void Update();
 void endTurn();
-void enemyTurn(Enemy);
+void enemyTurn();
 void playerTurn();
 void upgrade();
 void uniqueAbility();
