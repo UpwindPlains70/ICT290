@@ -117,7 +117,7 @@ Object3D skeleton;
 Object3D wizard;
 Object3D zombie;
 Object3D samurai; 
-Object3D beserker; 
+Object3D berserker; 
 Object3D shield;
 Object3D monk;
 Object3D swashbuckler;
@@ -211,9 +211,9 @@ void ReadObjectModels(vector<string>& fileNames) {
 	characterModelMap["Samurai"] = samurai;
 	modelTextureMap["Samurai"] = 254;
 
-	ReadOBJfile("data/3D Objects/CharacterModels/beserker.obj", &beserker);
-	characterModelMap["Beserker"] = beserker;
-	modelTextureMap["Beserker"] = 255;
+	ReadOBJfile("data/3D Objects/CharacterModels/berserker.obj", &berserker);
+	characterModelMap["Berserker"] = berserker;
+	modelTextureMap["Berserker"] = 255;
 
 	ReadOBJfile("data/3D Objects/CharacterModels/shield.obj", &shield);
 	characterModelMap["Shield"] = shield;

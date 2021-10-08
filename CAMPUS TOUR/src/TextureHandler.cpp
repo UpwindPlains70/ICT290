@@ -768,7 +768,7 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/Characters/samurai.raw", 1024, 1024);
 	tp.CreateTexture(253, image, 1024, 1024);
 
-	image = tp.LoadTexture("data/Object Textures/Characters/beserker.raw", 1024, 1024);
+	image = tp.LoadTexture("data/Object Textures/Characters/berserker.raw", 1024, 1024);
 	tp.CreateTexture(254, image, 1024, 1024);
 
 	image = tp.LoadTexture("data/Object Textures/Characters/shield.raw", 1024, 1024);

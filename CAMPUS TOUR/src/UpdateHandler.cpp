@@ -40,7 +40,7 @@ void DisplayLinup()
 	DisplayPlayerModel("FireGolum", 440, 9000, -21);
 	DisplayPlayerModel("EarthGolum", 60, 9000, -21);
 	DisplayPlayerModel("WaterGolum", -20, 9000, -21);
-	DisplayPlayerModel("Beserker", -100, 9000, -21);
+	DisplayPlayerModel("Berserker", -100, 9000, -21);
 	DisplayPlayerModel("Shield", -190, 9000, -21);
 	DisplayPlayerModel("Monk", -270, 9000, -21);
 	DisplayPlayerModel("Swashbuckler", -350, 9000, -21);
@@ -773,7 +773,7 @@ void updateModels() { // called at the end of the update function
 	/// <Task 16> (Jason)
 				/// start drawing players and enemies in their positions
 
-	//DisplayPlayerModel("Beserker", 123, 9000, -21);  // example usage with a zombie 
+	//DisplayPlayerModel("Berserker", 123, 9000, -21);  // example usage with a zombie 
 
 	if (displayCharacters) { // displayCharacters is a boolean value that is either set true or false in the Update() function
 
