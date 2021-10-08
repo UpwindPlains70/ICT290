@@ -1,5 +1,5 @@
-#ifndef DATAHANDLER_H
-#define DATAHANDLER_H
+#ifndef UPDATEHANDLER_H
+#define UPDATEHANDLER_H
 #pragma once
 
 #include <string>
