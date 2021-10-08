@@ -139,7 +139,7 @@ void classSelectionUI()
 
 				tempPlayer.setAbilities(allClasses[classID].abilityList);
 				playerList.push_back(tempPlayer);
-				cout << playerList.size() << endl;
+				//cout << playerList.size() << endl;
 				//clear player name when saved
 				memset(playerName, 0, sizeof playerName);
 			}
@@ -282,7 +282,8 @@ void turnOrderUI()
 	// 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
 	{
 		ImGui::Begin("Decide Turn Order", NULL, window_flags);    // Create a window
-	
+
+		srand(time(NULL));
 			//Font size 150 (set in initialise UI)
 		ImGui::PushFont(io.Fonts->Fonts[1]); 
 			ImGui::Text("  %d", prevSelectedTurn);
@@ -296,7 +297,6 @@ void turnOrderUI()
 		ImGui::PushFont(io.Fonts->Fonts[2]);
 		if (ImGui::Button("Spin"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
 		{
-			srand(time(NULL));
 			for (i = 0; i < turnList.size(); ++i)
 			{		//Define game info (level no. & turn no.)
 				if (i == (rand() % turnList.size())) {

@@ -99,7 +99,7 @@ void Update()
 
 				//Assign Enemies for current level
 				nowLM = enemyLevelMap[currLevel];
-				randNum = rand() % (nowLM.max - nowLM.min) + nowLM.min;
+				randNum = rand() % nowLM.max + nowLM.min;
 				for (int i = 0; i < randNum; i++)
 				{
 					nowEnemies.push_back(nowLM.presetList[rand() % nowLM.presetList.size()]);
