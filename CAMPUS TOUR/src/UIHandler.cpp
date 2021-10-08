@@ -247,12 +247,9 @@ void enemyStats()
 
 		for(int i = 0; i < nowEnemies.size(); ++i)
 		{
-			ImGui::BeginChild("EnemyTitles", ImVec2(ImGui::GetContentRegionAvail().x, 55), false);
+			ImGui::BeginChild("EnemyTitles" + i, ImVec2(ImGui::GetContentRegionAvail().x, 70), false, ImGuiWindowFlags_NoScrollbar);
 			ImGui::Text("Enemy Name: %s", nowEnemies[i].getName().c_str());
 			ImGui::Text("Turn pos:\t%d", nowEnemies[i].getTurn());
-			ImGui::EndChild();
-
-			ImGui::BeginChild("EnemyStatsInfo", ImVec2(ImGui::GetContentRegionAvail().x, 55), false);
 			ImGui::Text("Health:  \t%d", nowEnemies[i].getHP());               // Display some text (you can use a format strings too)
 			ImGui::Text("Armour:  \t%d", nowEnemies[i].getArmor());               // Display some text (you can use a format strings too)
 			ImGui::Text("Movement:\t%d", nowEnemies[i].getMovement());               // Display some text (you can use a format strings too)
@@ -377,7 +374,7 @@ void playerActionUI()
 			{		//Define game info (level no. & turn no.)
 				if (i == (rand() % 20 + 1)) {
 					actionNumber = i;
-					cout << actionNumber << endl;
+					//cout << actionNumber << endl;
 						//Limits to one roll per turn
 					allowedToRoll = false;
 					break;
@@ -402,6 +399,7 @@ void playerActionUI()
 			for (int i = 0; i < playerList[turnIDMap[turn]].getNumAbilities(); ++i)
 			{
 				ImGui::SameLine();
+
 				if (ImGui::Button(playerList[turnIDMap[turn]].getAbility(i).getName().c_str())) {
 					if (playerList[turnIDMap[turn]].canMove()) {
 						if (playerList[0].getAbility(i).isAOE()) {}
@@ -437,7 +435,7 @@ void displayEnemyListUI()
 		ImGui::SameLine();
 		if (ImGui::Button(nowEnemies[i].getName().c_str())) {
 			//attack this enemy
-			cout << "Attacked: " << nowEnemies[i].getName() << endl;
+			attack(i);
 			displayListOfEnemies = false;
 			endTurn();
 		}

@@ -278,7 +278,7 @@ bool Enemy::checkRange(EntityAbility range, LevelMap* nowMap) {
 				return true;
 			}
 		}
-		if (posX - i > 0) {
+		if (posX - i >= 0) {
 			if (nowMap->GetValue(posX - i, posZ) == 2) {
 				//printf("%d\n", fieldGrid[posX - i][posZ]);
 				return true;
@@ -292,7 +292,7 @@ bool Enemy::checkRange(EntityAbility range, LevelMap* nowMap) {
 				return true;
 			}
 		}
-		if (posZ - i > 0) {
+		if (posZ - i >= 0) {
 			if (nowMap->GetValue(posX, posZ - i) == 2) {
 				//printf("%d\n", fieldGrid[posX][posZ - i]);
 				return true;
@@ -301,22 +301,22 @@ bool Enemy::checkRange(EntityAbility range, LevelMap* nowMap) {
 
 		//diagonals
 		for (int s = range.getRange(); s > 0; s--) {
-			if (posX + i < nowMap->GetX() || posZ + s < nowMap->GetZ()) {
+			if (posX + i < nowMap->GetX() && posZ + s < nowMap->GetZ()) {
 				if (nowMap->GetValue(posX + i, posZ + s) == 2) {
 					return true;
 				}
 			}
-			if (posX + i < nowMap->GetX() || posZ - s > 0) {
+			if (posX + i < nowMap->GetX() && posZ - s > 0) {
 				if (nowMap->GetValue(posX + i, posZ - s) == 2) {
 					return true;
 				}
 			}
-			if (posX - i < 0 || posZ + s < nowMap->GetZ()) {
+			if (posX - i >= 0 && posZ + s < nowMap->GetZ()) {
 				if (nowMap->GetValue(posX - i, posZ + s) == 2) {
 					return true;
 				}
 			}
-			if (posX - i < 0 || posZ - s > 0) {
+			if (posX - i >= 0 && posZ - s >= 0) {
 				if (nowMap->GetValue(posX - i, posZ - s) == 2) {
 					return true;
 				}

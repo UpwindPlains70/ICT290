@@ -68,8 +68,6 @@ void Update()
 			
 			displayEnt = false;
 
-			//nowMap = new LevelMap(mapList[level].at(rand() % mapList[level].size()));
-
 			break;
 		case Ready:
 			/// <Task 4> (Anyone)
@@ -298,10 +296,9 @@ void Update()
 			{
 				/// show currLevel win screen
 				popUpMessageState = LevelWin; 
-
 					//increase random player stat
 				upgrade();
-				currLevel++;
+				++currLevel;
 				gameState = Initialising;
 			}
 			break;
@@ -338,18 +335,18 @@ void endTurn()
 	{
 		gameState = Win;
 	}
-	if (playerList.size() == 0)
+	else if (playerList.size() == 0)
 	{
 		gameState = Lose;
-	}
+	}else
+		gameState = StartTurn;
 
 	displayActionMenu = false;
 	++turn;
-	++sessionRound;
-	gameState = StartTurn;
 	if (turn > maxTurn)
 	{
 		turn = 1;
+		++sessionRound;
 	}
 	allowedToRoll = true;
 }
@@ -435,6 +432,7 @@ void upgrade()
 	int randMax;
 	EntityAbility ability;
 	int upgrades;
+	srand(time(NULL));
 	for (int i = 0; i < playerList.size(); i++)
 	{
 		Player player = playerList[i];
@@ -760,11 +758,17 @@ void attack(int id)
 		{
 			dam *= 2;
 		}
+
 		nowEnemies[id].damageEnemy(dam);
 		if ((roll > 0) && (nowEnemies[id].getStun() < ability.getStun()))
 		{
 			nowEnemies[id].setStun(ability.getStun());
 		}
+	}
+
+	if (nowEnemies[id].getHP() <= 0) {
+		turnDeadMap[nowEnemies[id].getTurn()] = true;
+		nowEnemies.erase(nowEnemies.begin() + id);
 	}
 }
 

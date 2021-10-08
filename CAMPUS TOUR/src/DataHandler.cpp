@@ -91,7 +91,8 @@ EntityAbility GetAbility(string name)
 	for (int i = 0; i < allAbilities.size(); i++)
 	{
 		anAbility = allAbilities.at(i);
-		if (name == anAbility.getName())
+		if(name == anAbility.getName())
+		//if (name.compare(anAbility.getName()))
 		{
 			return anAbility;
 		}
@@ -253,6 +254,8 @@ void GetAbilityData()
 		cout << "Error: get ability data" << endl;
 		return;
 	}
+	//trash first line
+	getline(abilityFile, tmp);
 	while (!abilityFile.eof())
 	{
 		getline(abilityFile, tmp);
