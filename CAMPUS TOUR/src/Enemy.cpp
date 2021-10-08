@@ -369,22 +369,26 @@ int Enemy::moveToTarget(int tempMove, LevelMap* nowMap, vector<Player> playerLis
 	////move x first
 	while (tempMove > 0 && inRange == false) {
 		//move x 1 times
-		printf("%d , %d\n", disToTar[0], disToTar[1]);
-		if (disToTar[0] > 0) {
-			moveUp(nowMap);
-			//printf("Up: %d\n", tempMove);
+		//printf("%d , %d\n", disToTar[0], disToTar[1]);
+		if (disToTar[0] >= disToTar[1]) {
+			if (disToTar[0] > 0) {
+				moveUp(nowMap);
+				//printf("Up: %d\n", tempMove);
+			}
+			else if (disToTar[0] < 0) {
+				moveDown(nowMap);
+				//printf("Down\n");
+			}
 		}
-		else if (disToTar[0] < 0) {
-			moveDown(nowMap);
-			//printf("Down\n");
-		}
-		else if (disToTar[1] > 0) {
-			moveRight(nowMap);
-			//printf("Right\n");
-		}
-		else if (disToTar[1] < 0) {
-			moveLeft(nowMap);
-			//printf("Left\n");
+		else if (disToTar[1] > disToTar[0]) {
+			if (disToTar[1] > 0) {
+				moveRight(nowMap);
+				//printf("Right\n");
+			}
+			else if (disToTar[1] < 0) {
+				moveLeft(nowMap);
+				//printf("Left\n");
+			}
 		}
 
 		//disToTar = getTargetPos
