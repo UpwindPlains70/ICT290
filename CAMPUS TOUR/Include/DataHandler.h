@@ -1,7 +1,6 @@
-#pragma once
-
 #ifndef DATAHANDLER_H
 #define DATAHANDLER_H
+#pragma once
 
 #include <fstream>
 #include <iostream>
