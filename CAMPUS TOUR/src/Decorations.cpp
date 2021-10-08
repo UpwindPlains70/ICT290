@@ -220,7 +220,7 @@ void ReadObjectModels(vector<string>& fileNames) {
 	modelTextureMap["Shield"] = 256;
 
 	characterModelMap["Mage"] = wizard;
-	modelTextureMap["Mage"] = 248;
+	modelTextureMap["Mage"] = 249;
 
 	ReadOBJfile("data/3D Objects/CharacterModels/monk.obj", &monk);
 	characterModelMap["Monk"] = monk;

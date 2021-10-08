@@ -237,7 +237,10 @@ void Update()
 				{
 					playerTurn();
 				}
-				//endTurn();
+			}
+			else
+			{
+				endTurn();
 			}
 			
 			break;
@@ -286,10 +289,10 @@ void Update()
 		case Win:
 			if (currLevel == 10)
 			{
-				/// <Task 21> (Jason)
+				
 				/// show final win screen
 				popUpMessageState = TotalWin;
-				/// </Task 21>
+				
 			}
 			else
 			{
@@ -770,7 +773,7 @@ void updateModels() { // called at the end of the update function
 	/// <Task 16> (Jason)
 				/// start drawing players and enemies in their positions
 
-	//DisplayPlayerModel("Zombie", 123, 9000, -21);  // example usage with a zombie 
+	//DisplayPlayerModel("Beserker", 123, 9000, -21);  // example usage with a zombie 
 
 	if (displayCharacters) { // displayCharacters is a boolean value that is either set true or false in the Update() function
 
