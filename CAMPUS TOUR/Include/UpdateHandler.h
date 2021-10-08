@@ -65,6 +65,7 @@ void updatePopUpMessage();
 int rollTheDice(int, int);
 void movePlayer(int, int);
 void abilityPressed(int);
+int random_int(int, int);
 
 
 #endif
