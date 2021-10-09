@@ -225,13 +225,13 @@ void CreateDoors()
 	front.speed = 2000.0;
 	front.openPos.x = 0.0f;
 	front.openPos.y = 0.0f;
-	front.openPos.z = 37520.0f;
+	front.openPos.z = 38020.0f;
 	front.closePos.x = 0.0f;
 	front.closePos.y = 0.0f;
-	front.closePos.z = 36920.0f;
+	front.closePos.z = 36600.0f;
 	front.pos.x = 34330.0f;
-	front.pos.y = 10450.0f;
-	front.pos.z = 36920.0f;
+	front.pos.y = 10000.0f;
+	front.pos.z = 36600.0f;
 	front.scale.x = 50.0f;
 	front.scale.y = 1500.0f;
 	front.scale.z = 560.0f;
@@ -244,7 +244,7 @@ void CreateDoors()
 	backL.roOrientation = 90.0;
 	backL.state = 0;
 	backL.moving = false;
-	backL.speed = 20.0;
+	backL.speed = 30.0;
 	backL.pos.x = 37570.0f;
 	backL.pos.y = 10000.0f;
 	backL.pos.z = 37505.0f;
@@ -258,7 +258,7 @@ void CreateDoors()
 	backR.roOrientation = -90;
 	backR.state = 0;
 	backR.moving = false;
-	backR.speed = 20.0;
+	backR.speed = 30.0;
 	backR.pos.x = 37570.0f;
 	backR.pos.y = 10000.0f;
 	backR.pos.z = 38990.0f;
@@ -278,7 +278,12 @@ void DisplayDoors()
 	glTranslatef(front.pos.x, front.pos.y, front.pos.z);
 	glRotatef(front.orientation, 0.0f, 1.0f, 0.0f);
 	glScalef(front.scale.x, front.scale.y, front.scale.z);
-	glutSolidCube(1.0f);
+	glBegin(GL_POLYGON);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 15, 0);
+	glVertex3f(0, 15, 2);
+	glVertex3f(0, 0, 2);
+	glEnd();
 	glPopMatrix();
 
 	//Back Double Doors
@@ -291,6 +296,8 @@ void DisplayDoors()
 	//scale?
 	//glTranslatef(0.0f, 0.0f, backL.scale.z * 0.5f);
 	glScalef(backL.scale.x, backL.scale.y, backL.scale.z);
+
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
 	glBegin(GL_POLYGON);
 	glVertex3f(0, 0, 0);
 	glVertex3f(0, 15, 0);
@@ -305,6 +312,7 @@ void DisplayDoors()
 	glRotatef(backR.orientation, 0.0f, 1.0f, 0.0f);
 	glScalef(backR.scale.x, backR.scale.y, backR.scale.z);
 	//glutSolidCube(1.0f);
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
 	glBegin(GL_POLYGON);
 	glVertex3f(0, 0, 0);
 	glVertex3f(0, 15, 0);
