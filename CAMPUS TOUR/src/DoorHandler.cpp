@@ -237,6 +237,7 @@ void CreateDoors()
 	front.scale.z = 560.0f;
 
 	//Back Double Doors
+	////L
 	backL.orientation = 0.0;
 	backL.loOrientation = -90.0;
 	backL.cOrientation = 0.0;
@@ -244,25 +245,26 @@ void CreateDoors()
 	backL.state = 0;
 	backL.moving = false;
 	backL.speed = 20.0;
-	backL.pos.x = 37560.0f;
-	backL.pos.y = 10450.0f;
-	backL.pos.z = 37900.0f;
+	backL.pos.x = 37570.0f;
+	backL.pos.y = 10000.0f;
+	backL.pos.z = 37505.0f;
 	backL.scale.x = 50.0f;
 	backL.scale.y = 1500.0f;
-	backL.scale.z = 420.0f;
-	backR.orientation = 0.0;
-	backR.loOrientation = -90.0;
-	backR.cOrientation = 0.0;
-	backR.roOrientation = 90.0;
+	backL.scale.z = 400.0f;
+	////R
+	backR.orientation = 180;
+	backR.loOrientation = 90;
+	backR.cOrientation = 180;
+	backR.roOrientation = -90;
 	backR.state = 0;
 	backR.moving = false;
 	backR.speed = 20.0;
-	backR.pos.x = 37560.0f;
-	backR.pos.y = 10450.0f;
-	backR.pos.z = 38740.0f;
+	backR.pos.x = 37570.0f;
+	backR.pos.y = 10000.0f;
+	backR.pos.z = 38990.0f;
 	backR.scale.x = 50.0f;
 	backR.scale.y = 1500.0f;
-	backR.scale.z = 420.0f;
+	backR.scale.z = 400.0f;
 }
 
 //--------------------------------------------------------------------------------------
@@ -280,18 +282,34 @@ void DisplayDoors()
 	glPopMatrix();
 
 	//Back Double Doors
+	///L
 	glPushMatrix();
+	//to position
 	glTranslatef(backL.pos.x, backL.pos.y, backL.pos.z);
+	//rotation
 	glRotatef(backL.orientation, 0.0f, 1.0f, 0.0f);
-	glTranslatef(0.0f, 0.0f, backL.scale.z * 0.5f);
+	//scale?
+	//glTranslatef(0.0f, 0.0f, backL.scale.z * 0.5f);
 	glScalef(backL.scale.x, backL.scale.y, backL.scale.z);
-	glutSolidCube(1.0f);
+	glBegin(GL_POLYGON);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 15, 0);
+	glVertex3f(0, 15, 2);
+	glVertex3f(0, 0, 2);
+	glEnd();
 	glPopMatrix();
+
+	/// R
 	glPushMatrix();
 	glTranslatef(backR.pos.x, backR.pos.y, backR.pos.z);
 	glRotatef(backR.orientation, 0.0f, 1.0f, 0.0f);
-	glTranslatef(0.0f, 0.0f, backR.scale.z * -0.5f);
 	glScalef(backR.scale.x, backR.scale.y, backR.scale.z);
-	glutSolidCube(1.0f);
+	//glutSolidCube(1.0f);
+	glBegin(GL_POLYGON);
+	glVertex3f(0, 0, 0);
+	glVertex3f(0, 15, 0);
+	glVertex3f(0, 15, 1.75);
+	glVertex3f(0, 0, 1.75);
+	glEnd();
 	glPopMatrix();
 }
