@@ -254,6 +254,8 @@ void ReadObjectModels(vector<string>& fileNames) {
 	modelTextureMap["Stun"] = Stun + 1;
 	characterModelMap["Stun"] = stun;
 
+	characterModelMap["Tree"] = treeObj;
+	modelTextureMap["Tree"] = Tree;
 
 }
 
