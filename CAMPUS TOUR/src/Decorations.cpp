@@ -127,6 +127,8 @@ Object3D bard;
 Object3D cleric;
 Object3D druid;
 
+Object3D LavaBoss;
+
 Object3D stun;
 
 int characterScale = 50;
@@ -255,7 +257,11 @@ void ReadObjectModels(vector<string>& fileNames) {
 	characterModelMap["Stun"] = stun;
 
 	characterModelMap["Tree"] = treeObj;
-	modelTextureMap["Tree"] = Tree;
+	modelTextureMap["Tree"] = Tree + 1;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/LavaBoss.obj", &LavaBoss);
+	characterModelMap["LavaBoss"] = LavaBoss;
+	modelTextureMap["LavaBoss"] = 269; 
 
 }
 

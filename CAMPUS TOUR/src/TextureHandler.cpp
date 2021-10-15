@@ -27,7 +27,7 @@ void CreateTextures()
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	// set texture count
-	tp.SetTextureCount(270);
+	tp.SetTextureCount(283);
 
 	// load and create textures
 	image = tp.LoadTexture("data/abovechanctext.raw", 128, 1024);
@@ -809,6 +809,9 @@ void CreateTextures()
 	
 	image = tp.LoadTexture("data/Object Textures/Portal.raw", 1024, 1024);
 	tp.CreateTexture(Portal, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/LavaBoss.raw", 1024, 1024);
+	tp.CreateTexture(268, image, 1024, 1024);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 		//For lights

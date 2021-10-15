@@ -50,6 +50,7 @@ void DisplayLinup()
 	DisplayPlayerModel("Cleric", -270, 9000, -150);
 	DisplayPlayerModel("Druid", -190, 9000, -150);
 	DisplayPlayerModel("Tree", -110, 9000, -150);
+	DisplayPlayerModel("LavaBoss", -30, 9000, -150);
 }
 
 void Update()
