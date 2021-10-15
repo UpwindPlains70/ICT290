@@ -52,9 +52,10 @@ void DisplayLinup()
 	DisplayPlayerModel("Tree", -110, 9000, -150);
 	DisplayPlayerModel("LavaBoss", -30, 9000, -150);
 	DisplayPlayerModel("EarthBoss", -30, 9000, -230);
-	DisplayPlayerModel("WaterBoss", -110, 9000, -230);
-	DisplayPlayerModel("AirBoss", -190, 9000, -230);
-	DisplayPlayerModel("AnimatedArmor", -270, 9000, -230);
+	DisplayPlayerModel("WaterBoss", 50, 9000, -230);
+	DisplayPlayerModel("AirBoss", 130, 9000, -230);
+	DisplayPlayerModel("AnimatedArmor", 180, 9000, -230);
+	DisplayPlayerModel("AirGolum", 260, 9000, -230);
 }
 
 void Update()

@@ -825,6 +825,9 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/Characters/AnimatedArmor.raw", 1024, 1024);
 	tp.CreateTexture(272, image, 1024, 1024);
 
+	image = tp.LoadTexture("data/Object Textures/Characters/AirGolum.raw", 1024, 1024);
+	tp.CreateTexture(273, image, 1024, 1024);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 		//For lights
 	//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
