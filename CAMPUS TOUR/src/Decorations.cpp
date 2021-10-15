@@ -136,6 +136,8 @@ Object3D AnimatedArmor;
 
 Object3D AirGolum;
 
+Object3D FireMage;
+
 Object3D stun;
 
 int characterScale = 50;
@@ -289,6 +291,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/AirGolum.obj", &AirGolum);
 	characterModelMap["AirGolum"] = AirGolum;
 	modelTextureMap["AirGolum"] = 274;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/FireMage.obj", &FireMage);
+	characterModelMap["FireMage"] = FireMage;
+	modelTextureMap["FireMage"] = 275;
 
 }
 
