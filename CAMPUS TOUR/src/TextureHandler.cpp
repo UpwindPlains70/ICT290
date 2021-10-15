@@ -837,6 +837,9 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/Characters/SummoningMage.raw", 1024, 1024);
 	tp.CreateTexture(276, image, 1024, 1024);
 
+	image = tp.LoadTexture("data/Object Textures/Characters/AirMage.raw", 1024, 1024);
+	tp.CreateTexture(277, image, 1024, 1024);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 		//For lights
 	//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);

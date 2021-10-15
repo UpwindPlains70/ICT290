@@ -139,6 +139,7 @@ Object3D AirGolum;
 Object3D FireMage;
 Object3D TelekineticMage;
 Object3D SummoningMage;
+Object3D AirMage;
 
 Object3D stun;
 
@@ -305,6 +306,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/SummoningMage.obj", &SummoningMage);
 	characterModelMap["SummoningMage"] = SummoningMage;
 	modelTextureMap["SummoningMage"] = 277;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/AirMage.obj", &AirMage);
+	characterModelMap["AirMage"] = AirMage;
+	modelTextureMap["AirMage"] = 278;
 
 }
 
