@@ -51,6 +51,7 @@ void DisplayLinup()
 	DisplayPlayerModel("Druid", -190, 9000, -150);
 	DisplayPlayerModel("Tree", -110, 9000, -150);
 	DisplayPlayerModel("LavaBoss", -30, 9000, -150);
+	DisplayPlayerModel("EarthBoss", -30, 9000, -230);
 }
 
 void Update()
