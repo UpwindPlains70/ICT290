@@ -215,12 +215,14 @@ void displayCharacterModels(vector<Enemy> nowEnemies, vector<Player> playerList)
 	if (playerList.size() > 0) {
 		for (int i = 0; i < playerList.size(); i++) {
 			//cout << "Player X: " << playerList[i].getPosX() << " Z: " << playerList[i].getPosZ() << endl;
+			playerEffects(playerList[i]);
 			DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX() * posOffset, 0, playerList[i].getPosZ() * posOffset);
 		}
 	}
 	if (nowEnemies.size() > 0) {
 		for (int i = 0; i < nowEnemies.size(); i++) {
 			//cout << "Eneemy X: " << nowEnemies[i].getPosX() << " Z: " << nowEnemies[i].getPosZ() << endl;
+			enemyEffects(nowEnemies[i]);
 			DisplayPlayerModel("Skeleton", nowEnemies[i].getPosX() * posOffset, 0, nowEnemies[i].getPosZ() * posOffset);
 		}
 	}

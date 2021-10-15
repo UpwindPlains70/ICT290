@@ -277,7 +277,7 @@ void playerEffects(Player& pc) {
 	if (pc.getStun() > 0)
 	{
 		glPushMatrix();
-			glTranslatef(pc.getPosX(), 9100, pc.getPosZ());
+			glTranslatef(pc.getPosX(), 1, pc.getPosZ());
 			glScalef(50.0, 50.0, 50.0);
 			glBindTexture(GL_TEXTURE_2D, modelTextureMap["Stun"]);
 			draw3DObject(stun);
@@ -290,7 +290,7 @@ void enemyEffects(Enemy& ec) {
 	if (ec.getStun() > 0)
 	{
 		glPushMatrix();
-			glTranslatef(ec.getPosX(), 9200, ec.getPosZ());
+			glTranslatef(ec.getPosX(),1, ec.getPosZ());
 			glScalef(50.0, 50.0, 50.0);
 			glBindTexture(GL_TEXTURE_2D, modelTextureMap["Stun"]);
 			draw3DObject(stun);
