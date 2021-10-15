@@ -114,6 +114,10 @@ int EntityAbility::getCooldown() {
 	return cooldown;
 }
 
+int EntityAbility::getCooldownCounter() {
+	return cooldownCounter;
+}
+
 void EntityAbility::resetCooldownCounter() {
 	cooldownCounter = 1;
 }

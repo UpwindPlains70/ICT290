@@ -56,6 +56,8 @@ public:
 
 	int getCooldown();
 
+	int getCooldownCounter();
+
 	void resetCooldownCounter();
 
 	void roundPassed();

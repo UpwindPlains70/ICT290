@@ -106,3 +106,4 @@ void displayEnemyListUI();
 extern bool playerSelection;
 extern bool assignTurnStage;
 
+extern bool displayListOfEnemies;

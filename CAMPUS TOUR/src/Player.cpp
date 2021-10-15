@@ -221,3 +221,17 @@ void Player::setDamageBoost(bool dB)
 {
 	damageBoost = dB;
 }
+
+int Player::checkRange(int x, int z) {
+	int disX = x - posX;
+	int disZ = z - posZ;
+	if (disX < 0)
+	{
+		disX *= -1;
+	}
+	if (disZ < 0)
+	{
+		disZ *= -1;
+	}
+	return disX + disZ;
+}

@@ -621,6 +621,7 @@ void uniqueAbility()
 	}
 	else if (ability.getName() == "wall")
 	{
+		/// redraw nowMap
 		int numOfSpots = 0;
 		int nowX = playerList[turnIDMap[turn]].getPosX();
 		int nowZ = playerList[turnIDMap[turn]].getPosZ();
@@ -671,7 +672,7 @@ void uniqueAbility()
 	else if (ability.getName() == "counter")
 	{
 		playerList[turnIDMap[turn]].shield(20);
-		gameState = Attack;
+		displayListOfEnemies = true;
 		ability.used();
 	}
 	else if (ability.getName() == "reload")
@@ -909,7 +910,7 @@ void movePlayer(int X, int Z)
 
 void abilityPressed(int id)
 {
-	nowAbilityID = id - 1;
+	nowAbilityID = id;// -1;
 	EntityAbility nowAbility = playerList[turnIDMap[turn]].getAbility(nowAbilityID);
 	if (nowAbility.canUseAbility())
 	{
@@ -919,11 +920,11 @@ void abilityPressed(int id)
 		}
 		else if(nowAbility.getAOE() > 1)
 		{
-			gameState = AttackAOE;
+			///gameState = AttackAOE;
 		}
 		else
 		{
-			gameState = Attack;
+			displayListOfEnemies = true;
 		}
 	}
 }

@@ -400,16 +400,15 @@ void playerActionUI()
 			for (int i = 0; i < playerList[turnIDMap[turn]].getNumAbilities(); ++i)
 			{
 				ImGui::SameLine();
-
-				if (ImGui::Button(playerList[turnIDMap[turn]].getAbility(i).getName().c_str())) {
-					if (playerList[turnIDMap[turn]].canMove()) {
-						if (playerList[0].getAbility(i).isAOE()) {}
-						//enable AOE movement system
-						else
-							displayListOfEnemies = true;
+				if (playerList[turnIDMap[turn]].getAbility(i).canUseAbility())
+				{
+					if (ImGui::Button(playerList[turnIDMap[turn]].getAbility(i).getName().c_str())) {
+						abilityPressed(i);
 					}
-					else
-						endTurn();
+				}
+				else
+				{
+					if (ImGui::Button(""+playerList[turnIDMap[turn]].getAbility(i).getCooldownCounter())) {}
 				}
 			}
 
@@ -434,11 +433,14 @@ void displayEnemyListUI()
 	for (int i = 0; i < nowEnemies.size(); ++i)
 	{
 		ImGui::SameLine();
-		if (ImGui::Button(nowEnemies[i].getName().c_str())) {
-			//attack this enemy
-			attack(i);
-			displayListOfEnemies = false;
-			endTurn();
+		
+		if (playerList[turnIDMap[turn]].getAbility(nowAbilityID).getRange() >= playerList[turnIDMap[turn]].checkRange(nowEnemies[i].getPosX(), nowEnemies[i].getPosZ())) {
+			if (ImGui::Button(nowEnemies[i].getName().c_str())) {
+				//attack this enemy
+				attack(i);
+				displayListOfEnemies = false;
+				endTurn();
+			}
 		}
 	}
 

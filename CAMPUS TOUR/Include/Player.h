@@ -107,6 +107,8 @@ public:
 
 	void setDamageBoost(bool);
 
+	int checkRange(int x, int z);
+
 private:
 	string name;
 	string classType;

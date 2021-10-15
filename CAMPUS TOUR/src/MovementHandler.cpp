@@ -154,8 +154,8 @@ void GameControls(unsigned char key, int x, int y)
 		}
 		break;
 		// characterLeft
-	case 'J':
-	case 'j':
+	case 'L':
+	case 'l':
 		if (canIJKL)
 		{
 			movePlayer(-1, 0);
@@ -170,8 +170,8 @@ void GameControls(unsigned char key, int x, int y)
 		}
 		break;
 		// characterRight
-	case 'L':
-	case 'l':
+	case 'J':
+	case 'j':
 		if (canIJKL)
 		{
 			movePlayer(1, 0);
