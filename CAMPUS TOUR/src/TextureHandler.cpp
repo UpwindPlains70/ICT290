@@ -819,6 +819,9 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/Characters/WaterBoss.raw", 1024, 1024);
 	tp.CreateTexture(270, image, 1024, 1024);
 
+	image = tp.LoadTexture("data/Object Textures/Characters/AirBoss.raw", 1024, 1024);
+	tp.CreateTexture(271, image, 1024, 1024);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 		//For lights
 	//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
