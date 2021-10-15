@@ -129,6 +129,8 @@ Object3D druid;
 
 Object3D LavaBoss;
 Object3D EarthBoss;
+Object3D WaterBoss;
+//Object3D AirBoss;
 
 Object3D stun;
 
@@ -267,6 +269,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/EarthBoss.obj", &EarthBoss);
 	characterModelMap["EarthBoss"] = EarthBoss;
 	modelTextureMap["EarthBoss"] = 270;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/WaterBoss.obj", &WaterBoss);
+	characterModelMap["WaterBoss"] = WaterBoss;
+	modelTextureMap["WaterBoss"] = 271;
 
 }
 
