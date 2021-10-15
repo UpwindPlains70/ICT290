@@ -57,6 +57,7 @@ void DisplayLinup()
 	DisplayPlayerModel("AnimatedArmor", 180, 9000, -230);
 	DisplayPlayerModel("AirGolum", 260, 9000, -230);
 	DisplayPlayerModel("FireMage", 340, 9000, -230);
+	DisplayPlayerModel("TelekineticMage", 440, 9000, -230);
 }
 
 void Update()
