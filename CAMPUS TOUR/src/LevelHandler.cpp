@@ -223,7 +223,7 @@ void displayCharacterModels(vector<Enemy> nowEnemies, vector<Player> playerList)
 		for (int i = 0; i < nowEnemies.size(); i++) {
 			//cout << "Eneemy X: " << nowEnemies[i].getPosX() << " Z: " << nowEnemies[i].getPosZ() << endl;
 			enemyEffects(nowEnemies[i]);
-			DisplayPlayerModel("AirBoss", nowEnemies[i].getPosX() * posOffset, 0, nowEnemies[i].getPosZ() * posOffset);
+			DisplayPlayerModel("AnimatedArmor", nowEnemies[i].getPosX() * posOffset, 0, nowEnemies[i].getPosZ() * posOffset);
 		}
 	}
 }

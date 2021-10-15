@@ -132,6 +132,8 @@ Object3D EarthBoss;
 Object3D WaterBoss;
 Object3D AirBoss;
 
+Object3D AnimatedArmor;
+
 Object3D stun;
 
 int characterScale = 50;
@@ -277,6 +279,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/AirBoss.obj", &AirBoss);
 	characterModelMap["AirBoss"] = AirBoss;
 	modelTextureMap["AirBoss"] = 272;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/AnimatedArmor.obj", &AnimatedArmor);
+	characterModelMap["AnimatedArmor"] = AnimatedArmor;
+	modelTextureMap["AnimatedArmor"] = 273;
 
 }
 
