@@ -141,6 +141,7 @@ Object3D TelekineticMage;
 Object3D SummoningMage;
 Object3D AirMage;
 Object3D WaterMage;
+Object3D EarthMage;
 
 Object3D stun;
 
@@ -315,6 +316,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/WaterMage.obj", &WaterMage);
 	characterModelMap["WaterMage"] = WaterMage;
 	modelTextureMap["WaterMage"] = 279;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/EarthMage.obj", &EarthMage);
+	characterModelMap["EarthMage"] = EarthMage;
+	modelTextureMap["EarthMage"] = 280;
 
 }
 
