@@ -846,6 +846,9 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/Characters/EarthMage.raw", 1024, 1024);
 	tp.CreateTexture(279, image, 1024, 1024);
 
+	image = tp.LoadTexture("data/Object Textures/Characters/WaterElemental.raw", 1024, 1024);
+	tp.CreateTexture(280, image, 1024, 1024);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 		//For lights
 	//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);

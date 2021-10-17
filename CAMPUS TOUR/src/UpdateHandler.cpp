@@ -61,6 +61,7 @@ void DisplayLinup()
 	DisplayPlayerModel("AirMage", 440, 9000, -360);
 	DisplayPlayerModel("WaterMage", 360, 9000, -360);
 	DisplayPlayerModel("EarthMage", 280, 9000, -360);
+	DisplayPlayerModel("WaterElemental", 200, 9000, -360);
 }
 
 void Update()

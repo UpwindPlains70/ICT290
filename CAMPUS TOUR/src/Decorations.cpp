@@ -143,6 +143,8 @@ Object3D AirMage;
 Object3D WaterMage;
 Object3D EarthMage;
 
+Object3D WaterElemental;
+
 Object3D stun;
 
 int characterScale = 50;
@@ -320,6 +322,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/EarthMage.obj", &EarthMage);
 	characterModelMap["EarthMage"] = EarthMage;
 	modelTextureMap["EarthMage"] = 280;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/WaterElemental.obj", &WaterElemental);
+	characterModelMap["WaterElemental"] = WaterElemental;
+	modelTextureMap["WaterElemental"] = 281;
 
 }
 
