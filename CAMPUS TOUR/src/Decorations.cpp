@@ -145,6 +145,7 @@ Object3D EarthMage;
 
 Object3D WaterElemental;
 Object3D EarthElemental;
+Object3D FireElemental;
 
 Object3D stun;
 
@@ -332,6 +333,9 @@ void ReadObjectModels(vector<string>& fileNames) {
 	characterModelMap["EarthElemental"] = EarthElemental;
 	modelTextureMap["EarthElemental"] = 282;
 
+	ReadOBJfile("data/3D Objects/CharacterModels/FireElemental.obj", &FireElemental);
+	characterModelMap["FireElemental"] = FireElemental;
+	modelTextureMap["FireElemental"] = 283;
 }
 
 void DisplayPlayerModel(string className, int posX, int posY, int posZ) {
