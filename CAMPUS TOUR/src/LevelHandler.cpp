@@ -1,6 +1,6 @@
 #include "LevelHandler.h"
 
-Point4 camPos = { -40.8753, 9500, -722.093, 180.0 };
+Point4 camPos = { -40.8753, 10000, -722.093, 180.0 };
 
 GLdouble currXPos;
 GLdouble currYPos;
@@ -29,6 +29,9 @@ void teleportCamera()
 
 	//change camera position
 	cam.Position(camPos[0], camPos[1], camPos[2], camPos[3]);
+
+	//change vertical rotation of camera
+	cam.lookatUD(-45);
 }
 
 ///UPDATE: make general function for new level

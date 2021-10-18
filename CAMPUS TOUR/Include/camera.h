@@ -100,6 +100,10 @@ public:
 	void DirectionRotateLR(GLdouble const & tempMove);
 	void DirectionLookUD(int const & tempMove);
 
+	////Raymond
+	// change vertical rotation of camera
+	void lookatUD(const int rotation);
+
 	// display map
 	void DisplayMap(const int & screenWidth, const int & screenHeight, 
 		            const GLuint & tempImage);

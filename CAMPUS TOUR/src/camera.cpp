@@ -370,6 +370,13 @@ void Camera::LookUD()
 	callGLLookAt();
 }
 
+//change vertical rotation of camera
+void Camera::lookatUD(const int rotation) {
+	m_rotateAngleUD = rotation;
+	m_lookY = sin(m_rotateAngleUD);
+	callGLLookAt();
+}
+
 //----------------------------------------------------------------------------------------
 // Positions camera at co-ordinates of parameters
 //----------------------------------------------------------------------------------------
