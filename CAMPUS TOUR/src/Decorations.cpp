@@ -148,6 +148,8 @@ Object3D EarthElemental;
 Object3D FireElemental;
 Object3D AirElemental;
 
+Object3D Shadow;
+
 Object3D stun;
 
 int characterScale = 50;
@@ -341,6 +343,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/AirElemental.obj", &AirElemental);
 	characterModelMap["AirElemental"] = AirElemental;
 	modelTextureMap["AirElemental"] = 284;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/Shadow.obj", &Shadow);
+	characterModelMap["Shadow"] = Shadow;
+	modelTextureMap["Shadow"] = 285;
 }
 
 void DisplayPlayerModel(string className, int posX, int posY, int posZ) {

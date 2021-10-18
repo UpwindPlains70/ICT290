@@ -858,6 +858,9 @@ void CreateTextures()
 	image = tp.LoadTexture("data/Object Textures/Characters/AirElemental.raw", 1024, 1024);
 	tp.CreateTexture(283, image, 1024, 1024);
 
+	image = tp.LoadTexture("data/Object Textures/Characters/Shadow.raw", 1024, 1024);
+	tp.CreateTexture(284, image, 1024, 1024);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 		//For lights
 	//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
