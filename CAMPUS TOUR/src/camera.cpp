@@ -273,6 +273,9 @@ void Camera::SetPlains(const int & moveX, const int & moveZ)
 	// store number of plains (stops from looping through linked list each time)
 	if (m_No_Plains == 0) m_No_Plains = m_Plain.GetListSize();
 
+	//bugfix for random sound during initial movement
+	m_plainHeight = 10450;
+
 	for (int i = 0;  i < m_No_Plains; i++)
 	{
 		// if camera is positioned on a plain
@@ -283,12 +286,11 @@ void Camera::SetPlains(const int & moveX, const int & moveZ)
 			if (m_Plain.GetType(i) == 0)
 			{
 				m_y = m_Plain.GetYstart(i);
-				
+
 				if ((m_plainNo != i) && m_plainHeight != m_Plain.GetYstart(i))
 				{
 					stepSound->Play();
 				}
-
 
 				m_plainNo = i;
 				m_plainHeight = m_Plain.GetYstart(i);
