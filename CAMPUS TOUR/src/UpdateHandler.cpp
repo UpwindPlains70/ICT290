@@ -64,6 +64,7 @@ void DisplayLinup()
 	DisplayPlayerModel("WaterElemental", 200, 9000, -360);
 	DisplayPlayerModel("EarthElemental", 120, 9000, -360);
 	DisplayPlayerModel("FireElemental", 40, 9000, -360);
+	DisplayPlayerModel("AirElemental", -40, 9000, -360);
 }
 
 void Update()
