@@ -18,8 +18,6 @@ int width, height;
 bool DisplayMap = false;
 // display welcome screen
 bool DisplayWelcome = true;
-// display exit screen
-bool DisplayExit = false;
 
 // display ECL block
 bool displayECL = true;
@@ -39,9 +37,9 @@ void keys(unsigned char key, int x, int y)
 	ImGui_ImplGLUT_KeyboardFunc(key, x, y);
 	
 	if (gameState != NotReady) {
-		//if (currLevel == 0)
+		if (currLevel == 0)
 			TourControls(key, x, y);
-		//else
+		else
 			GameControls(key, x, y);
 	}
 }
@@ -206,32 +204,38 @@ void movementKeys(int key, int x, int y)
 	GLdouble m_z = 0;
 	cam.getPosition(m_x, m_y, m_z);
 	cout << "Position: " << m_x << " " << m_y << " " << m_z << endl;
-	switch (key)
+	if (gameState != NotReady)
 	{
-	case GLUT_KEY_LEFT:
-		cam.DirectionRotateLR(-1);
-		break;
+		switch (key)
+		{
+		case GLUT_KEY_LEFT:
+			cam.DirectionRotateLR(-1);
+			break;
 
-	case GLUT_KEY_RIGHT:
-		cam.DirectionRotateLR(1);
-		break;
+		case GLUT_KEY_RIGHT:
+			cam.DirectionRotateLR(1);
+			break;
 
-	case GLUT_KEY_UP:
-		cam.DirectionFB(1);
-		break;
+		case GLUT_KEY_UP:
+			cam.DirectionFB(1);
+			break;
 
-	case GLUT_KEY_DOWN:
-		cam.DirectionFB(-1);
-		break;
+		case GLUT_KEY_DOWN:
+			cam.DirectionFB(-1);
+			break;
+		}
+
+		auto sprintCheck = glutGetModifiers();
+
+		if (sprintCheck == GLUT_ACTIVE_SHIFT) {
+			movementSpeed = 2.0;
+		}
+		else {
+			movementSpeed = 1.0;
+		}
 	}
-
-	auto sprintCheck = glutGetModifiers();
-	if (sprintCheck == GLUT_ACTIVE_SHIFT) {
-		movementSpeed = 2.0;
-	}
-	else {
-		movementSpeed = 1.0; 
-	}
+	else
+		releaseKey(key, x, y);
 }
 
 //--------------------------------------------------------------------------------------
@@ -291,13 +295,13 @@ void Mouse(int button, int state, int x, int y)
 			//DeleteImageFromMemory(image);
 			closing = true;
 		}
-		if ((x <= width / 2.0 + 256.0) && (x >= width / 2.0 - 256.0)
+		/*if ((x <= width / 2.0 + 256.0) && (x >= width / 2.0 - 256.0)
 			&& (y <= height / 2.0 + 256.0) && (y >= height / 2.0 - 256.0) && popUpMessageState != None)
 		{
 
 			popUpMessage = false; // closes the pop up message 
 			popUpMessageState = None;  // Stops the enum state from being anything else eg if it used to be TotalWin, it is now set to None
-		}
+		}*/
 	}
 }
 

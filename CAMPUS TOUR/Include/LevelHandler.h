@@ -33,6 +33,10 @@
 	 * @author Peter Neve
 	 * @version 05
 	 * @date 18/09/2021, floor generation for maps
+	 * 
+	 * @author Peter Neve
+	 * @version 06
+	 * @date 19/10/2021, teleport to spawn added
 	 */
 //extern enum levelStage;
 extern int currLevel;
@@ -71,6 +75,8 @@ void CreateMaps();
 void positionFloorObjects(vector<Enemy> nowEnemies, vector<Player> playerList);
 
 void displayCharacterModels(vector<Enemy> nowEnemies, vector<Player> playerList);
+
+void teleportToSpawn();
 #endif // !LEVELHANDLER_H
 
 

@@ -20,6 +20,9 @@ int playerTurnCount = 0;
 int enemyTurnCount = 0;
 int actionNumber = 0;
 
+// display exit screen
+bool DisplayExit = false;
+
 void intialiseUI()
 {
 #ifdef __FREEGLUT_EXT_H__
@@ -128,11 +131,7 @@ void classSelectionUI()
 				ImGui::Text("\t%s", allClasses[classID].abilityList[i].getName().c_str());
 		ImGui::EndChild();
 
-
-		//if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-		//	counter++;
-		//ImGui::Text("counter = %d", counter);
-
+			//Adds player to player List
 		if (ImGui::Button("Save Player")) {
 			if (strlen(playerName) != 0) {
 				Player tempPlayer(playerName, allClasses[classID].name, allClasses[classID].hp, allClasses[classID].movement, allClasses[classID].armor);
@@ -144,10 +143,12 @@ void classSelectionUI()
 				memset(playerName, 0, sizeof playerName);
 			}
 		}
+			//Removes all players from playerList
 		ImGui::SameLine();
 		if (ImGui::Button("Clear Players"))
 			playerList.clear();
 
+			//Finalisez player selection for the game
 		ImGui::SameLine();
 		if (ImGui::Button("Finish Selection"))
 		{
@@ -271,7 +272,7 @@ void turnOrderUI()
 		//ImGui::ShowDemoWindow(&show_demo_window);
 	ImGuiWindowFlags window_flags = 0;
 	window_flags |= ImGuiWindowFlags_NoScrollbar;
-	window_flags |= ImGuiWindowFlags_NoResize;
+	//window_flags |= ImGuiWindowFlags_NoResize;
 	window_flags |= ImGuiWindowFlags_NoCollapse;
 
 	ImGuiIO& io = ImGui::GetIO();
@@ -281,57 +282,85 @@ void turnOrderUI()
 		ImGui::Begin("Decide Turn Order", NULL, window_flags);    // Create a window
 
 		srand(time(NULL));
-			//Font size 150 (set in initialise UI)
-		ImGui::PushFont(io.Fonts->Fonts[1]); 
-			ImGui::Text("  %d", prevSelectedTurn);
-		ImGui::PopFont();
-
-		auto windowWidth = ImGui::GetWindowSize().x;
-		auto textWidth = ImGui::CalcTextSize("Spin").x;
-
-		ImGui::SetCursorPosX((windowWidth - textWidth) * 0.4f);
-			//Font size 50 (set in initialise UI)
-		ImGui::PushFont(io.Fonts->Fonts[2]);
-		if (ImGui::Button("Spin"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
+			//Restrict to single calculation
+		if (!turnList.empty()) 
 		{
-			for (i = 0; i < turnList.size(); ++i)
-			{		//Define game info (level no. & turn no.)
-				if (i == (rand() % turnList.size())) {
-					prevSelectedTurn = turnList[i];
-					turnList.erase(turnList.begin() + i);
-					if (playerTurnCount < playerList.size()) {
-						playerList[playerTurnCount].setTurn(prevSelectedTurn);
+			//Assign players order first
+			if (playerTurnCount < playerList.size())
+			{
+				for (i = 0; i < turnList.size(); ++i)
+				{		//Define game info (level no. & turn no.)
+					if (i == (rand() % turnList.size())) {
+						prevSelectedTurn = turnList[i];
+						if (playerTurnCount < playerList.size()) {
+							turnList.erase(turnList.begin() + i);
+							playerList[playerTurnCount].setTurn(prevSelectedTurn);
 							//turn pointing to player index
-						turnIDMap[prevSelectedTurn] = playerTurnCount;
-						isPCTurnMap[prevSelectedTurn] = true;
-						++playerTurnCount;
-							//Force click for every player (Keep???)
-						break;
+							turnIDMap[prevSelectedTurn] = playerTurnCount;
+							isPCTurnMap[prevSelectedTurn] = true;
+							++playerTurnCount;
+						}
 					}
 				}
 			}
 
 			//When all players are assigned, assign enemies
-		if (playerTurnCount >= playerList.size())
-		{
-			for (i = 0; i < turnList.size(); ++i)
-			{		//Define game info (level no. & turn no.)
-				prevSelectedTurn = turnList[i];
-				if (i == (rand() % turnList.size())) {
-					turnList.erase(turnList.begin() + i);
-					nowEnemies[enemyTurnCount].setTurn(prevSelectedTurn);
-					turnIDMap[prevSelectedTurn] = enemyTurnCount;
-					isPCTurnMap[prevSelectedTurn] = false;
-					++enemyTurnCount;
-					i = 0;
+			if (playerTurnCount >= playerList.size())
+			{
+				for (i = 0; i < turnList.size(); ++i)
+				{		//Define game info (level no. & turn no.)
+					
+					if (i == (rand() % turnList.size())) {
+						prevSelectedTurn = turnList[i];
+						//on match found remove from turn list
+						turnList.erase(turnList.begin() + i);
+						nowEnemies[enemyTurnCount].setTurn(prevSelectedTurn);
+						turnIDMap[prevSelectedTurn] = enemyTurnCount;
+						isPCTurnMap[prevSelectedTurn] = false;
+						++enemyTurnCount;
+					}
 				}
 			}
 		}
+		//Font size 150 (set in initialise UI)
+			//Display player & enemy name : turn number
 
-			if (turnList.empty())
-				assignTurnStage = false;
+		ImGui::BeginChild("turnOrder", ImVec2(ImGui::GetContentRegionAvail().x, 120));
+		ImGui::PushFont(io.Fonts->Fonts[3]);
+		for (int i = 0; i < playerList.size(); ++i)
+		{
+			ImGui::BeginChild("turnOrderP" + i, ImVec2(ImGui::GetContentRegionAvail().x, 40), false, ImGuiWindowFlags_NoScrollbar);
+			ImGui::Text("%s: %d", playerList[i].getName().c_str(), playerList[i].getTurn());
+			ImGui::EndChild();
+		}
+		for (int i = 0; i < nowEnemies.size(); ++i)
+		{
+			ImGui::BeginChild("turnOrderE" + i, ImVec2(ImGui::GetContentRegionAvail().x, 40), false, ImGuiWindowFlags_NoScrollbar);
+			ImGui::Text("%s: %d", nowEnemies[i].getName().c_str(), nowEnemies[i].getTurn());
+			ImGui::EndChild();
 		}
 		ImGui::PopFont();
+		ImGui::EndChild();
+
+		//Place 'okay' button in middle of UI frame
+		auto windowWidth = ImGui::GetWindowSize().x;
+		auto textWidth = ImGui::CalcTextSize("Okay").x;
+
+		ImGui::SetCursorPosX((windowWidth - textWidth) * 0.4f);
+		//Font size 50 (set in initialise UI)
+		//Okay button to close Turn order UI frame
+		ImGui::PushFont(io.Fonts->Fonts[2]);
+			//Only display okay button if all turns have been assigned
+		if (turnList.empty()) {
+			if (ImGui::Button("Okay"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
+			{
+				assignTurnStage = false;
+				enemyTurnCount = 0;
+				playerTurnCount = 0;
+			}
+		}
+		ImGui::PopFont();
+		
 		ImGui::End();
 	}
 
@@ -343,7 +372,7 @@ void turnOrderUI()
 	glutPostRedisplay();
 }
 
-//Turn roll
+//Player action menu (attack, move, end turn)
 void playerActionUI()
 {
 	ImGuiWindowFlags window_flags = 0;
@@ -356,7 +385,7 @@ void playerActionUI()
 
 	ImGuiIO& io = ImGui::GetIO();
 	//Roll 20 sides 'dice'
-	{
+	/*{
 		ImGui::Begin("Action Dice", NULL, window_flags);    // Create a window
 
 			//Font size 150 (set in initialise UI)
@@ -386,6 +415,7 @@ void playerActionUI()
 
 		ImGui::End();
 	}
+	*/
 
 	//Simple window to show player actions
 	{
@@ -439,7 +469,6 @@ void displayEnemyListUI()
 				//attack this enemy
 				attack(i);
 				displayListOfEnemies = false;
-				endTurn();
 			}
 		}
 	}
@@ -447,5 +476,160 @@ void displayEnemyListUI()
 	if (ImGui::Button("Cancel"))
 	{
 		displayListOfEnemies = false;
+	}
+}
+
+void LevelWinScreen()
+{
+	// Start the Dear ImGui frame
+	ImGui_ImplOpenGL2_NewFrame();
+	ImGui_ImplGLUT_NewFrame();
+
+	ImGuiIO& io = ImGui::GetIO();
+
+	ImGuiWindowFlags window_flags = 0;
+	window_flags |= ImGuiWindowFlags_NoScrollbar;
+	window_flags |= ImGuiWindowFlags_NoCollapse;
+	window_flags |= ImGuiWindowFlags_NoTitleBar;
+	window_flags |= ImGuiWindowFlags_NoMove;
+	window_flags |= ImGuiWindowFlags_NoResize;
+
+	ImGui::Begin("Level Cleared", NULL, window_flags);
+	//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Current_Level_Win_Screen));
+	ImGui::BeginChild("imageTextureC", ImVec2(ImGui::GetContentRegionAvail().x, 550));
+		ImGui::Image((void*)(intptr_t)tp.GetTexture(Current_Level_Win_Screen), ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y));
+	ImGui::EndChild();
+
+	ImGui::PushFont(io.Fonts->Fonts[3]);
+		//Teleport player back to bush court
+	LobbyButton();
+	QuitButton();
+	ImGui::SameLine();
+	if (ImGui::Button("Next Level")) {	
+		//increase random player stat
+		upgrade();
+		++currLevel;
+		assignTurnStage = true;
+		gameState = Initialising;
+		//Disable this screen
+		popUpMessage = false;
+		popUpMessageState = None;  // Stops the enum state from being anything else eg if it used to be TotalWin, it is now set to None
+	}
+	ImGui::PopFont();
+	ImGui::End();
+
+	// Rendering
+	ImGui::Render();
+	glViewport(0, 0, (GLsizei)io.DisplaySize.x, (GLsizei)io.DisplaySize.y);
+
+	glutPostRedisplay();
+}
+
+void LoseScreen()
+{
+	// Start the Dear ImGui frame
+	ImGui_ImplOpenGL2_NewFrame();
+	ImGui_ImplGLUT_NewFrame();
+
+	ImGuiIO& io = ImGui::GetIO();
+
+	ImGuiWindowFlags window_flags = 0;
+	window_flags |= ImGuiWindowFlags_NoScrollbar;
+	window_flags |= ImGuiWindowFlags_NoCollapse;
+	window_flags |= ImGuiWindowFlags_NoTitleBar;
+	window_flags |= ImGuiWindowFlags_NoMove;
+	window_flags |= ImGuiWindowFlags_NoResize;
+
+	ImGui::Begin("Level Cleared", NULL, window_flags);
+	//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Lost_Screen));
+	ImGui::BeginChild("imageTextureL", ImVec2(ImGui::GetContentRegionAvail().x, 550));
+		ImGui::Image((void*)(intptr_t)tp.GetTexture(Lost_Screen), ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y));
+	ImGui::EndChild();
+
+	ImGui::PushFont(io.Fonts->Fonts[3]);
+	//Teleport player back to bush court
+	LobbyButton();
+	QuitButton();
+
+	ImGui::PopFont();
+	ImGui::End();
+
+	// Rendering
+	ImGui::Render();
+	glViewport(0, 0, (GLsizei)io.DisplaySize.x, (GLsizei)io.DisplaySize.y);
+
+	glutPostRedisplay();
+}
+
+void GameWinScreen()
+{
+	// Start the Dear ImGui frame
+	ImGui_ImplOpenGL2_NewFrame();
+	ImGui_ImplGLUT_NewFrame();
+
+	ImGuiIO& io = ImGui::GetIO();
+
+	ImGuiWindowFlags window_flags = 0;
+	window_flags |= ImGuiWindowFlags_NoScrollbar;
+	window_flags |= ImGuiWindowFlags_NoCollapse;
+	window_flags |= ImGuiWindowFlags_NoTitleBar;
+	window_flags |= ImGuiWindowFlags_NoMove;
+	window_flags |= ImGuiWindowFlags_NoResize;
+
+	ImGui::Begin("Level Cleared", NULL, window_flags);
+	//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Final_Win_Screen));
+	ImGui::BeginChild("imageTextureF", ImVec2(ImGui::GetContentRegionAvail().x, 550));
+	ImGui::Image((void*)(intptr_t)tp.GetTexture(Final_Win_Screen), ImVec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y));
+	ImGui::EndChild();
+
+	ImGui::PushFont(io.Fonts->Fonts[3]);
+	//Teleport player back to bush court
+	if (ImGui::Button("Back to Lobby")) {
+		currLevel = 0;
+		teleportToSpawn();
+		//Disable this screen
+		popUpMessage = false;
+		popUpMessageState = None;  // Stops the enum state from being anything else eg if it used to be TotalWin, it is now set to None
+		gameState = NotGame;
+	}
+	ImGui::SameLine();
+	if (ImGui::Button("Quit Game")) {
+		//Enable quit screen
+		DisplayExit = true;
+		//Disable this screen
+		popUpMessage = false;
+		popUpMessageState = None;  // Stops the enum state from being anything else eg if it used to be TotalWin, it is now set to None
+	}
+	ImGui::PopFont();
+	ImGui::End();
+
+	// Rendering
+	ImGui::Render();
+	glViewport(0, 0, (GLsizei)io.DisplaySize.x, (GLsizei)io.DisplaySize.y);
+
+	glutPostRedisplay();
+}
+
+void QuitButton()
+{
+	ImGui::SameLine();
+	if (ImGui::Button("Quit Game")) {
+		//Enable quit screen
+		DisplayExit = true;
+		//Disable this screen
+		popUpMessage = false;
+		popUpMessageState = None;  // Stops the enum state from being anything else eg if it used to be TotalWin, it is now set to None
+	}
+}
+
+void LobbyButton()
+{
+	if (ImGui::Button("Back to Lobby")) {
+		currLevel = 0;
+		teleportToSpawn();
+		//Disable this screen
+		popUpMessage = false;
+		popUpMessageState = None;  // Stops the enum state from being anything else eg if it used to be TotalWin, it is now set to None
+		gameState = NotGame;
 	}
 }

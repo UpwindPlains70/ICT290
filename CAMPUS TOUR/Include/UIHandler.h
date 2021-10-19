@@ -25,6 +25,10 @@
  * @author Peter Neve
  * @version 02
  * @date 25/09/2021 add class image preview (issue: game crashes if image not found)
+ * 
+ * @author Peter Neve
+ * @version 03
+ * @date 19/10/2021 fixed turn order assignment (single confirmation click) & win/lose/final win screen with buttons
  */
 
  /**
@@ -107,3 +111,13 @@ extern bool playerSelection;
 extern bool assignTurnStage;
 
 extern bool displayListOfEnemies;
+
+/// display exit screen
+extern bool DisplayExit;
+
+void LevelWinScreen();
+void LoseScreen();
+void GameWinScreen();
+
+void QuitButton();
+void LobbyButton();

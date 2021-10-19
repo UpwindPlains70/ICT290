@@ -216,12 +216,7 @@ void Update()
 
 			}//	figure out turn order (Every level)
 			
-			if (assignTurnStage)
-			{
-				turnOrderUI();
-				ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
-			}
-			else 
+			if(!assignTurnStage) 
 			{
 				for (int i = 1; i <= maxTurn; i++)
 				{
@@ -240,7 +235,7 @@ void Update()
 			//set player turn
 
 			//pc turn doesnt turn 0
-			cout << "PC turn: " << isPCTurnMap[turn] << endl;
+			//cout << "PC turn: " << isPCTurnMap[turn] << endl;
 
 			if (turnDeadMap[turn] == false)
 			{
@@ -312,11 +307,7 @@ void Update()
 			else
 			{
 				/// show currLevel win screen
-				popUpMessageState = LevelWin; 
-					//increase random player stat
-				upgrade();
-				++currLevel;
-				gameState = Initialising;
+				popUpMessageState = LevelWin; 				
 			}
 			break;
 		case Lose:
@@ -333,11 +324,17 @@ void Update()
 			/// </Task 26>				
 			break;
 	}
-
 	if (gameState >= Initialising)
 		positionFloorObjects(nowEnemies, playerList);
 
-	if (gameState > 3) {
+	//Draw UI frame after floor to appear over not behind
+	if (gameState == Initialising && assignTurnStage)
+	{
+		turnOrderUI();
+		ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+	}
+
+	if (gameState > 3 && turnDeadMap[turn] != true && isPCTurnMap[turn] == true) {
 		playerHUD();
 		ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 	}
@@ -347,7 +344,7 @@ void Update()
 
 void endTurn()
 {
-	popUpMessage = true; 
+	popUpMessage = true;
 	if (nowEnemies.size() == 0)
 	{
 		gameState = Win;
@@ -389,6 +386,9 @@ void playerTurn()
 		/// </Task 13>
 		playerList[turnIDMap[turn]].noMovementLeft();
 	}
+	//if (nowEnemies.empty())
+	//	endTurn();
+
 	EntityAbility ability;
 	for (int i = 0; i < playerList[turnIDMap[turn]].getNumberOfAbilities(); i++)
 	{
@@ -462,11 +462,19 @@ void enemyTurn()
 	
 	nowEnemies[turnIDMap[turn]].setStun(0);
 
+		//Check each player
 	for (int i = 0; i < playerList.size(); i++)
 	{
 		if (playerList[i].getHP() <= 0) 
 		{
+				//Mark turn as dead, remove from turnID mapand now enemy list
 			turnDeadMap[playerList[i].getTurn()] = true;
+			turnIDMap.erase(playerList[i].getTurn());
+
+			for (int i = 0; i < playerList.size(); ++i)
+				if (turnIDMap[playerList[i].getTurn()] != 0)
+					turnIDMap[playerList[i].getTurn()] -= 1;
+			
 			playerList.erase(playerList.begin() + i);
 		}
 	}
@@ -818,8 +826,15 @@ void attack(int id)
 		}
 	}
 
+		//Mark turn as dead, remove from turnID map and now enemy list
 	if (nowEnemies[id].getHP() <= 0) {
 		turnDeadMap[nowEnemies[id].getTurn()] = true;
+		turnIDMap.erase(nowEnemies[id].getTurn());
+
+		for (int i = 0; i < nowEnemies.size(); ++i)
+			if(turnIDMap[nowEnemies[i].getTurn()] != 0)
+				turnIDMap[nowEnemies[i].getTurn()] -= 1;
+
 		nowEnemies.erase(nowEnemies.begin() + id);
 	}
 }
@@ -844,7 +859,7 @@ void updateModels() { // called at the end of the update function
 			for (int i = 0; i < nowEnemies.size(); i++) {
 				//cout << nowEnemies[i].getName() << endl;
 				enemyEffects(nowEnemies[i]);
-				DisplayPlayerModel("Skeleton", nowEnemies[i].getPosX(), 9000, nowEnemies[i].getPosZ());
+				DisplayPlayerModel(nowEnemies[i].getName(), nowEnemies[i].getPosX(), 9000, nowEnemies[i].getPosZ());
 			}
 		}
 	}
@@ -859,15 +874,21 @@ void updatePopUpMessage()
 		switch (popUpMessageState) {
 
 		case Lost: {
-			cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Lost_Screen));
+			LoseScreen();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+			//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Lost_Screen));
 			break;
 		}
 		case TotalWin: {
-			cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Final_Win_Screen));
+			GameWinScreen();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+			//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Final_Win_Screen));
 			break;
 		}
 		case LevelWin: {
-			cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Current_Level_Win_Screen));
+			LevelWinScreen();
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+			//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Current_Level_Win_Screen));
 			break;
 		}
 		case None: {

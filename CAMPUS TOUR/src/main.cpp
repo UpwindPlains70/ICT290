@@ -97,7 +97,7 @@ void myinit()
 	// set number of bounding boxes required
 	cam.SetNoBoundingBoxes(82);  // originally started with 19 
 	// set starting position of user
-	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
+	teleportToSpawn();
 	//cam.Position(0.0, 9500.0, 0.0, 180.0);//Level testing pos
 
 	CreatePlains();
@@ -179,13 +179,12 @@ void Display()
 		//DisplayEntities();
 	glPopMatrix();
 
-
-	if (cam.GetLR() > 35200 && gameState < NotReady)
+	if (cam.GetLR() > 33400 && gameState < NotReady)
 		gameState = NotReady;
 
 	if(gameState >= NotReady)
 		Update();
-	
+
 	glDisable(GL_TEXTURE_2D);
 	
 	//glDisable(GL_COLOR_MATERIAL);

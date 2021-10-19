@@ -5,6 +5,7 @@
 #include "DisplayHandler.h"
 #include "backends/imgui_impl_glut.h"
 #include "UpdateHandler.h"
+#include "UIHandler.h"
 
 	/**
 	 * @brief Handles all movement controls
@@ -42,8 +43,6 @@ extern int width, height;
 extern bool DisplayMap;
 /// display welcome screen
 extern bool DisplayWelcome;
-/// display exit screen
-extern bool DisplayExit;
 
 /// display ECL block
 extern bool displayECL;

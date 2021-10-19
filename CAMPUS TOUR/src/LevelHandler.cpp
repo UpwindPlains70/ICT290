@@ -22,6 +22,13 @@ int mapID = 0;
 bool firstTime = true;
 
 float posOffset = 2.08;
+
+void teleportToSpawn()
+{
+	cam.Position(32720.0, 10500.0, 37000.0, 90.0);
+	//cam.lookatUD(0);
+}
+
 void teleportCamera()
 {
 	//Change background colour to black
@@ -219,14 +226,17 @@ void displayCharacterModels(vector<Enemy> nowEnemies, vector<Player> playerList)
 		for (int i = 0; i < playerList.size(); i++) {
 			//cout << "Player X: " << playerList[i].getPosX() << " Z: " << playerList[i].getPosZ() << endl;
 			playerEffects(playerList[i]);
-			DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX() * posOffset, 0, playerList[i].getPosZ() * posOffset);
+			if(playerList[i].getClassName() == "God")
+				DisplayPlayerModel("Monk", playerList[i].getPosX() * posOffset, 0, playerList[i].getPosZ() * posOffset);
+			else
+				DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX() * posOffset, 0, playerList[i].getPosZ() * posOffset);
 		}
 	}
 	if (nowEnemies.size() > 0) {
 		for (int i = 0; i < nowEnemies.size(); i++) {
-			//cout << "Eneemy X: " << nowEnemies[i].getPosX() << " Z: " << nowEnemies[i].getPosZ() << endl;
+			//cout << "Name: " << nowEnemies[i].getName() << "  Eneemy X: " << nowEnemies[i].getPosX() << " Z: " << nowEnemies[i].getPosZ() << endl;
 			enemyEffects(nowEnemies[i]);
-			DisplayPlayerModel("Shadow", nowEnemies[i].getPosX() * posOffset, 0, nowEnemies[i].getPosZ() * posOffset);
+			DisplayPlayerModel(nowEnemies[i].getName(), nowEnemies[i].getPosX() * posOffset, 0, nowEnemies[i].getPosZ() * posOffset);
 		}
 	}
 }
