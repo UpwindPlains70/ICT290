@@ -1,6 +1,6 @@
 #include "LevelHandler.h"
 
-Point4 camPos = { -40.8753, 10000, -722.093, 180.0 };
+Point4 camPos = { -43.0, 10000, -987.68, 180.0 };
 
 GLdouble currXPos;
 GLdouble currYPos;

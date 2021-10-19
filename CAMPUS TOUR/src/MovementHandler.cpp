@@ -191,6 +191,14 @@ void GameControls(unsigned char key, int x, int y)
 	case '`':
 		endTurn();
 		break;
+		// exit tour (escape key)
+	case 27:
+	{
+		cam.SetRotateSpeed(0.0f);
+		cam.SetMoveSpeed(0.0f);
+		DisplayExit = true;
+	}
+	break;
 	}
 }
 
@@ -204,8 +212,8 @@ void movementKeys(int key, int x, int y)
 	GLdouble m_z = 0;
 	cam.getPosition(m_x, m_y, m_z);
 	cout << "Position: " << m_x << " " << m_y << " " << m_z << endl;
-	if (gameState != NotReady)
-	{
+	//if (currLevel == 0)
+	//{
 		switch (key)
 		{
 		case GLUT_KEY_LEFT:
@@ -233,9 +241,7 @@ void movementKeys(int key, int x, int y)
 		else {
 			movementSpeed = 1.0;
 		}
-	}
-	else
-		releaseKey(key, x, y);
+	//}
 }
 
 //--------------------------------------------------------------------------------------

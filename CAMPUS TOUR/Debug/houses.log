@@ -1,175 +1,30 @@
-﻿  DisplayHandler.cpp
+﻿  LevelHandler.cpp
 C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\TextureHandler.h(42,58): warning C4091: 'extern ': ignored on left of 'popUpState' when no variable is declared
-  The contents of <filesystem> are available only with C++17 or later.
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(31,110): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(64,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(65,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(66,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(67,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(69,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(75,53): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(75,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(82,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(88,53): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(88,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(145,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(171,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(188,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(375,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(463,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(475,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(530,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(534,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(599,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(599,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(604,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(608,32): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(614,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(618,36): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(625,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(629,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(635,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(652,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(656,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(662,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(666,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(697,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(704,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(715,30): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(722,35): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(745,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(759,33): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(759,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(779,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(808,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(816,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(823,23): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(836,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(844,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1137,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1206,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1221,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1237,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1257,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1280,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1284,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1303,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1307,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1327,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1331,31): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1351,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1355,21): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1433,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1433,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1437,22): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1437,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1460,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1487,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1501,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1529,28): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1529,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1556,17): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1570,27): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1711,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1745,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1776,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1819,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1824,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1903,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1914,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1926,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1960,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1971,29): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1983,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(1993,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2006,26): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2090,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2101,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2112,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2124,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2142,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2216,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2223,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2230,42): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2249,33): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2249,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2253,35): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2253,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2269,41): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2269,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2273,43): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2273,18): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2335,16): warning C4244: 'argument': conversion from 'GLdouble' to 'GLfloat', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2344,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2351,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2358,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2364,39): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2365,37): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2366,42): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2377,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2384,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2391,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2397,38): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2398,36): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DisplayHandler.cpp(2399,41): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-  DoorHandler.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\TextureHandler.h(42,58): warning C4091: 'extern ': ignored on left of 'popUpState' when no variable is declared
-  The contents of <filesystem> are available only with C++17 or later.
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(31,110): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DoorHandler.cpp(20,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\DoorHandler.cpp(27,9): warning C4552: '/': result of expression not used
-  main.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\TextureHandler.h(42,58): warning C4091: 'extern ': ignored on left of 'popUpState' when no variable is declared
-  The contents of <filesystem> are available only with C++17 or later.
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(31,110): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(77,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\main.cpp(130,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  MovementHandler.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\TextureHandler.h(42,58): warning C4091: 'extern ': ignored on left of 'popUpState' when no variable is declared
-  The contents of <filesystem> are available only with C++17 or later.
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(31,110): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(322,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(322,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(328,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(328,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(338,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(338,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(343,39): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\MovementHandler.cpp(343,25): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  UIHandler.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\TextureHandler.h(42,58): warning C4091: 'extern ': ignored on left of 'popUpState' when no variable is declared
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(31,110): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-  The contents of <filesystem> are available only with C++17 or later.
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(110,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(130,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(166,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(249,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(284,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(289,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(291,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(295,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(308,24): warning C4018: '>=': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(310,19): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(330,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(336,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(463,20): warning C4018: '<': signed/unsigned mismatch
-  UpdateHandler.cpp
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\TextureHandler.h(42,58): warning C4091: 'extern ': ignored on left of 'popUpState' when no variable is declared
-  The contents of <filesystem> are available only with C++17 or later.
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(31,110): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(104,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(139,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(179,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(466,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(474,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(494,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(495,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(719,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(742,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(754,7): warning C4101: 'roll': unreferenced local variable
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(834,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(775,6): warning C4101: 'dam': unreferenced local variable
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(852,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UpdateHandler.cpp(859,22): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(24,23): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(73,20): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(81,26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(91,19): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(99,25): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(117,34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(117,22): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(142,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(143,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(144,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(145,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(163,52): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(164,53): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(194,32): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(194,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(200,33): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(200,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(217,34): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(217,16): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(226,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(230,96): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(230,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(232,118): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(232,78): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(236,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(239,112): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\LevelHandler.cpp(239,72): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   houses.vcxproj -> C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\.\Debug\houses.exe
