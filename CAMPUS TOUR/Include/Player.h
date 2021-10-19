@@ -109,6 +109,9 @@ public:
 
 	int checkRange(int x, int z);
 
+	void setRotation(float);
+	float getRotation() const;
+	void rotatePlayer(int X, int Z);
 private:
 	string name;
 	string classType;
@@ -124,6 +127,7 @@ private:
 	int numAbilities;
 	int originalAC;
 	bool damageBoost;
+	float rotation;
 	vector<EntityAbility> abilities;
 };
 

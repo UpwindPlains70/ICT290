@@ -50,7 +50,7 @@ extern map<string, int> modelTextureMap;
 extern bool displayCharacters;
 
 void ReadObjectModels(vector<string>& fileNames);
-void DisplayPlayerModel(string className, int posX, int posY, int posZ);
+void DisplayPlayerModel(string className, int posX, int posY, int posZ, float rot);
 void getFileNames(vector<string>& fileNames, ifstream& inFile);
 void initPlayerModels();
 void playerEffects(Player &pc);

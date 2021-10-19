@@ -227,16 +227,16 @@ void displayCharacterModels(vector<Enemy> nowEnemies, vector<Player> playerList)
 			//cout << "Player X: " << playerList[i].getPosX() << " Z: " << playerList[i].getPosZ() << endl;
 			playerEffects(playerList[i]);
 			if(playerList[i].getClassName() == "God")
-				DisplayPlayerModel("Monk", playerList[i].getPosX() * posOffset, 0, playerList[i].getPosZ() * posOffset);
+				DisplayPlayerModel("Monk", playerList[i].getPosX() * posOffset, 0, playerList[i].getPosZ() * posOffset, playerList[i].getRotation());
 			else
-				DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX() * posOffset, 0, playerList[i].getPosZ() * posOffset);
+				DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX() * posOffset, 0, playerList[i].getPosZ() * posOffset, playerList[i].getRotation());
 		}
 	}
 	if (nowEnemies.size() > 0) {
 		for (int i = 0; i < nowEnemies.size(); i++) {
 			//cout << "Name: " << nowEnemies[i].getName() << "  Eneemy X: " << nowEnemies[i].getPosX() << " Z: " << nowEnemies[i].getPosZ() << endl;
 			enemyEffects(nowEnemies[i]);
-			DisplayPlayerModel(nowEnemies[i].getName(), nowEnemies[i].getPosX() * posOffset, 0, nowEnemies[i].getPosZ() * posOffset);
+			DisplayPlayerModel(nowEnemies[i].getName(), nowEnemies[i].getPosX() * posOffset, 0, nowEnemies[i].getPosZ() * posOffset, 0.0);
 		}
 	}
 }

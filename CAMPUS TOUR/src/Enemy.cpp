@@ -21,6 +21,7 @@ Enemy::Enemy(string newName, int newMaxHP, int newArmor, int newStun, int newPos
 	movement = newMovement;
 	turn = newTurn;
 	numAbilities = 0;
+	//rotation = 0.0;
 }
 
 Enemy::~Enemy() {
@@ -138,8 +139,6 @@ EntityAbility Enemy::getAbility(int num) {
 	return abilities[num];
 }
 
-
-
 void Enemy::shield(int AC)
 {
 	originalAC = armor;
@@ -165,6 +164,7 @@ void Enemy::reset()
 	armor = 0;
 	maxHP = 0;
 	originalAC = armor;
+	//rotation = 0.0;
 }
 
 // 0 = empty, 1 = wall, 2 = ally, 3 = enemy.
@@ -379,7 +379,7 @@ int Enemy::moveToTarget(int tempMove, LevelMap* nowMap, vector<Player> playerLis
 		disToTar[i] = distanceToTarget[i];
 	}
 
-	////move x first
+	////move x first (UPDATE: place in animate function to stop teleport & include rotation)
 	while (tempMove > 0 && inRange == false) {
 		//move x 1 times
 		printf("%d , %d\n", disToTar[0], disToTar[1]);
@@ -831,3 +831,25 @@ int Enemy::random_int(int min, int max)
 {
 	return min + rand() % (max + 1 - min);
 }
+
+/*float Enemy::getRotation()
+{
+	return rotation;
+}
+
+void Enemy::setRotation(float newRot)
+{
+	rotation = newRot;
+}
+
+void Enemy::rotateEnemy(int X, int Z)
+{
+	if (X == 0 && Z == 1)	//forward rot
+		rotation = 0;
+	else if (X == -1 && Z == 0)	//Right rot
+		rotation = 270.0;
+	else if (X == 0 && Z == -1)  //backward rot
+		rotation = 180.0;
+	else	//Left rot
+		rotation = 90.0;
+}*/

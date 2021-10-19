@@ -60,13 +60,11 @@ void upgrade();
 void uniqueAbility();
 void attack(int);
 
-void updateModels();
 void updatePopUpMessage();
 
 int rollTheDice(int, int);
 void movePlayer(int, int);
 void abilityPressed(int);
 int random_int(int, int);
-
 
 #endif

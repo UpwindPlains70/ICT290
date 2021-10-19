@@ -84,6 +84,11 @@ public:
 	void kbAttack(EntityAbility ability, Player& player, LevelMap* nowMap);
 	int random_int(int min, int max);
 	int rollTheDice(int bonus, int AC);
+	
+	/*float getRotation();
+	void setRotation(float newRot);
+	void rotateEnemy(int X, int Z);*/
+
 private:
 	string name;
 	int maxHP;
@@ -96,8 +101,9 @@ private:
 	int movement;
 	int turn;
 	int originalAC;
+	//float rotation;
 	vector <EntityAbility> abilities;
-private:
+//private:
 	//movement
 	void moveUp(LevelMap* nowMap);
 	void moveDown(LevelMap* nowMap);

@@ -33,39 +33,39 @@ using namespace std;
 
 void DisplayLinup() 
 {
-	DisplayPlayerModel("Samurai", 123, 9000, -21); // just for testing, can remove all these characters calls at any time
-	DisplayPlayerModel("Zombie", 200, 9000, -21);
-	DisplayPlayerModel("Wizard", 280, 9000, -21);
-	DisplayPlayerModel("Skeleton", 360, 9000, -21);
-	DisplayPlayerModel("FireGolum", 440, 9000, -21);
-	DisplayPlayerModel("EarthGolum", 60, 9000, -21);
-	DisplayPlayerModel("WaterGolum", -20, 9000, -21);
-	DisplayPlayerModel("Berserker", -100, 9000, -21);
-	DisplayPlayerModel("Shield", -190, 9000, -21);
-	DisplayPlayerModel("Monk", -270, 9000, -21);
-	DisplayPlayerModel("Swashbuckler", -350, 9000, -21);
-	DisplayPlayerModel("Archer", -430, 9000, -21);
-	DisplayPlayerModel("Artillery", -430, 9000, -150);
-	DisplayPlayerModel("Bard", -350, 9000, -150);
-	DisplayPlayerModel("Cleric", -270, 9000, -150);
-	DisplayPlayerModel("Druid", -190, 9000, -150);
-	DisplayPlayerModel("Tree", -110, 9000, -150);
-	DisplayPlayerModel("LavaBoss", -30, 9000, -150);
-	DisplayPlayerModel("EarthBoss", -30, 9000, -230);
-	DisplayPlayerModel("WaterBoss", 50, 9000, -230);
-	DisplayPlayerModel("AirBoss", 130, 9000, -230);
-	DisplayPlayerModel("AnimatedArmor", 180, 9000, -230);
-	DisplayPlayerModel("AirGolum", 260, 9000, -230);
-	DisplayPlayerModel("FireMage", 340, 9000, -230);
-	DisplayPlayerModel("TelekineticMage", 440, 9000, -230);
-	DisplayPlayerModel("AirMage", 440, 9000, -360);
-	DisplayPlayerModel("WaterMage", 360, 9000, -360);
-	DisplayPlayerModel("EarthMage", 280, 9000, -360);
-	DisplayPlayerModel("WaterElemental", 200, 9000, -360);
-	DisplayPlayerModel("EarthElemental", 120, 9000, -360);
-	DisplayPlayerModel("FireElemental", 40, 9000, -360);
-	DisplayPlayerModel("AirElemental", -40, 9000, -360);
-	DisplayPlayerModel("Shadow", -120, 9000, -360);
+	DisplayPlayerModel("Samurai", 123, 9000, -21, 0); // just for testing, can remove all these characters calls at any time
+	DisplayPlayerModel("Zombie", 200, 9000, -21, 0);
+	DisplayPlayerModel("Wizard", 280, 9000, -21, 0);
+	DisplayPlayerModel("Skeleton", 360, 9000, -21, 0);
+	DisplayPlayerModel("FireGolum", 440, 9000, -21, 0);
+	DisplayPlayerModel("EarthGolum", 60, 9000, -21, 0);
+	DisplayPlayerModel("WaterGolum", -20, 9000, -21, 0);
+	DisplayPlayerModel("Berserker", -100, 9000, -21, 0);
+	DisplayPlayerModel("Shield", -190, 9000, -21, 0);
+	DisplayPlayerModel("Monk", -270, 9000, -21, 0);
+	DisplayPlayerModel("Swashbuckler", -350, 9000, -21, 0);
+	DisplayPlayerModel("Archer", -430, 9000, -21, 0);
+	DisplayPlayerModel("Artillery", -430, 9000, -150, 0);
+	DisplayPlayerModel("Bard", -350, 9000, -150, 0);
+	DisplayPlayerModel("Cleric", -270, 9000, -150, 0);
+	DisplayPlayerModel("Druid", -190, 9000, -150, 0);
+	DisplayPlayerModel("Tree", -110, 9000, -150, 0);
+	DisplayPlayerModel("LavaBoss", -30, 9000, -150, 0);
+	DisplayPlayerModel("EarthBoss", -30, 9000, -230, 0);
+	DisplayPlayerModel("WaterBoss", 50, 9000, -230, 0);
+	DisplayPlayerModel("AirBoss", 130, 9000, -230, 0);
+	DisplayPlayerModel("AnimatedArmor", 180, 9000, -230, 0);
+	DisplayPlayerModel("AirGolum", 260, 9000, -230, 0);
+	DisplayPlayerModel("FireMage", 340, 9000, -230, 0);
+	DisplayPlayerModel("TelekineticMage", 440, 9000, -230, 0);
+	DisplayPlayerModel("AirMage", 440, 9000, -360, 0);
+	DisplayPlayerModel("WaterMage", 360, 9000, -360, 0);
+	DisplayPlayerModel("EarthMage", 280, 9000, -360, 0);
+	DisplayPlayerModel("WaterElemental", 200, 9000, -360, 0);
+	DisplayPlayerModel("EarthElemental", 120, 9000, -360, 0);
+	DisplayPlayerModel("FireElemental", 40, 9000, -360, 0);
+	DisplayPlayerModel("AirElemental", -40, 9000, -360, 0);
+	DisplayPlayerModel("Shadow", -120, 9000, -360, 0);
 }
 
 void Update()
@@ -117,7 +117,7 @@ void Update()
 				randNum = random_int(nowLM.min, nowLM.max);
 				for (int i = 0; i < randNum; i++)
 				{
-					nowEnemies.push_back(nowLM.presetList[rand() % nowLM.presetList.size()]);
+					nowEnemies.push_back(nowLM.presetList[0]);
 				}
 
 				maxTurn = playerList.size() + nowEnemies.size();
@@ -338,7 +338,7 @@ void Update()
 		playerHUD();
 		ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 	}
-	//updateModels(); 
+
 	updatePopUpMessage();
 }
 
@@ -839,33 +839,6 @@ void attack(int id)
 	}
 }
 
-void updateModels() { // called at the end of the update function
-
-	/// <Task 16> (Jason)
-				/// start drawing players and enemies in their positions
-
-	//DisplayPlayerModel("Berserker", 123, 9000, -21);  // example usage with a zombie 
-
-	if (displayCharacters) { // displayCharacters is a boolean value that is either set true or false in the Update() function
-
-		if (playerList.size() > 0) {
-			for (int i = 0; i < playerList.size(); i++) {
-				//cout << "X: " << playerList[i].getPosX() << " Z: " << playerList[i].getPosZ() << endl;
-				playerEffects(playerList[i]);
-				DisplayPlayerModel(playerList[i].getClassName(), playerList[i].getPosX(), 9000, playerList[i].getPosZ());
-			}
-		}
-		if (nowEnemies.size() > 0) {
-			for (int i = 0; i < nowEnemies.size(); i++) {
-				//cout << nowEnemies[i].getName() << endl;
-				enemyEffects(nowEnemies[i]);
-				DisplayPlayerModel(nowEnemies[i].getName(), nowEnemies[i].getPosX(), 9000, nowEnemies[i].getPosZ());
-			}
-		}
-	}
-	/// </Task 16>
-}
-
 void updatePopUpMessage()
 {
 	if (popUpMessage) {
@@ -932,10 +905,12 @@ void movePlayer(int X, int Z)
 	int posZ = playerList[turnIDMap[turn]].getPosZ();
 	int newPosX = playerList[turnIDMap[turn]].getPosX() + X;
 	int newPosZ = playerList[turnIDMap[turn]].getPosZ() + Z;
+
 	if (newPosX >= 0 && newPosX < nowMap->GetX() && newPosZ >= 0 && newPosZ < nowMap->GetZ())
 	{
 		if (nowMap->GetValue(newPosX, newPosZ) == 0)
 		{
+			playerList[turnIDMap[turn]].rotatePlayer(X, Z);
 			playerList[turnIDMap[turn]].setPosX(newPosX);
 			playerList[turnIDMap[turn]].setPosZ(newPosZ);
 			playerList[turnIDMap[turn]].movePlayer();

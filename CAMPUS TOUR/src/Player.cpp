@@ -17,6 +17,7 @@ Player::Player() {
 	movement = 0;
 	maxHP = 0;
 	armor = 0;
+	rotation = 0.0;
 	damageBoost = false;
 }
 
@@ -34,6 +35,7 @@ Player::Player(string newName, string newclassType, int newMaxHP, int newMovemen
 	armor = newArmor;
 	originalAC = armor;
 	numAbilities = 0;
+	rotation = 0.0;
 	damageBoost = false;
 }
 
@@ -234,4 +236,26 @@ int Player::checkRange(int x, int z) {
 		disZ *= -1;
 	}
 	return disX + disZ;
+}
+
+void Player::setRotation(float newRot)
+{
+	rotation = newRot;
+}
+
+float Player::getRotation() const
+{
+	return rotation;
+}
+
+void Player::rotatePlayer(int X, int Z)
+{
+	if (X == 0 && Z == 1)	//forward rot
+		rotation = 0;
+	else if (X == -1 && Z == 0)	//Right rot
+		rotation = 270.0;
+	else if (X == 0 && Z == -1)  //backward rot
+		rotation = 180.0;
+	else	//Left rot
+		rotation = 90.0;
 }

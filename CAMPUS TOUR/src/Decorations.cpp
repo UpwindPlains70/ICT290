@@ -349,13 +349,14 @@ void ReadObjectModels(vector<string>& fileNames) {
 	modelTextureMap["Shadow"] = 285;
 }
 
-void DisplayPlayerModel(string className, int posX, int posY, int posZ) {
+void DisplayPlayerModel(string className, int posX, int posY, int posZ, float rot) {
 
 	//cout << modelTextureMap[className] << endl;
 
 	glPushMatrix();
 		glTranslatef(posX, posY, posZ);
 	//	glScalef(characterScale, characterScale, characterScale);
+		glRotatef(rot, 0, 1, 0);
 		glBindTexture(GL_TEXTURE_2D, modelTextureMap[className]); // change this once all the textures are ready
 		draw3DObject(characterModelMap[className]);
 	glPopMatrix();
