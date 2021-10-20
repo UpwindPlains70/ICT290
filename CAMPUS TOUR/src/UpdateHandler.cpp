@@ -99,6 +99,7 @@ void Update()
 		case Initialising:
 			
 			if (firstRun) {
+				assignTurnStage = true;
 				firstRun = false;
 					//Load copy of current level
 				srand(time(NULL));
@@ -114,7 +115,7 @@ void Update()
 
 				//Assign Enemies for current level
 				nowLM = enemyLevelMap[currLevel];
-				randNum = random_int(nowLM.min, nowLM.max);
+				randNum = 2;// random_int(nowLM.min, nowLM.max);
 				for (int i = 0; i < randNum; i++)
 				{
 					nowEnemies.push_back(nowLM.presetList[0]);
@@ -806,6 +807,8 @@ void attack(int id)
 
 		nowEnemies.erase(nowEnemies.begin() + id);
 	}
+	ability.used(); 
+	playerList[turnIDMap[turn]].setAbility(ability, nowAbilityID);
 }
 
 void updatePopUpMessage()

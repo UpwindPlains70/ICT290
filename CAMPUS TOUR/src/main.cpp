@@ -98,7 +98,7 @@ void myinit()
 	cam.SetNoBoundingBoxes(82);  // originally started with 19 
 	// set starting position of user
 	teleportToSpawn();
-	//cam.Position(0.0, 9500.0, 0.0, 180.0);//Level testing pos
+	//cam.Position(-43.0, 10000, -987.68, 180.0);//Level testing pos
 
 	CreatePlains();
 

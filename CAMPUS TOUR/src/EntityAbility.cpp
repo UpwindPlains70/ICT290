@@ -24,7 +24,7 @@ EntityAbility::EntityAbility(string newName, int newRange, int newAOE, int newDu
 	duplicate = newDuplicate;
 	stun = newStun;
 	cooldown = newCooldown;
-	cooldownCounter = 1;
+	cooldownCounter = 0;
 	tohit = newToHit;
 	damage = newDamage;
 	unique = newUnique;
@@ -125,14 +125,14 @@ void EntityAbility::resetCooldownCounter() {
 void EntityAbility::roundPassed()
 {
 	cooldownCounter--;
-	if (cooldownCounter < 1)
+	if (cooldownCounter < 0)
 	{
-		cooldownCounter = 1;
+		cooldownCounter = 0;
 	}
 }
 
 bool EntityAbility::canUseAbility() {
-	if (cooldownCounter == 1)
+	if (cooldownCounter == 0)
 	{
 		return true;
 	}
