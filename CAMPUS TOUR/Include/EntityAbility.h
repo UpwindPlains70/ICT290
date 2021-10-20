@@ -64,6 +64,8 @@ public:
 
 	bool canUseAbility();
 
+	void zeroCooldownCounter();
+
 private:
 	string name;
 	int range;

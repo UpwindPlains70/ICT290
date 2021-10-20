@@ -430,15 +430,15 @@ void playerActionUI()
 			for (int i = 0; i < playerList[turnIDMap[turn]].getNumAbilities(); ++i)
 			{
 				ImGui::SameLine();
-				if (playerList[turnIDMap[turn]].getAbility(i).canUseAbility())
+				if (playerList[turnIDMap[turn]].getAbility(i).canUseAbility() && canAction)
 				{
-					if (ImGui::Button(playerList[turnIDMap[turn]].getAbility(i).getName().c_str())) {
+					if (ImGui::Button((playerList[turnIDMap[turn]].getAbility(i).getName()).c_str())) {
 						abilityPressed(i);
 					}
 				}
 				else
 				{
-					if (ImGui::Button(""+playerList[turnIDMap[turn]].getAbility(i).getCooldownCounter())) {}
+					ImGui::Button((playerList[turnIDMap[turn]].getAbility(i).getName()+": "+to_string(playerList[turnIDMap[turn]].getAbility(i).getCooldownCounter())).c_str());
 				}
 			}
 

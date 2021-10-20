@@ -108,6 +108,7 @@ int EntityAbility::getStun() {
 
 void EntityAbility::setCooldown(int newCooldown) {
 	cooldown = newCooldown;
+	cooldownCounter = cooldown;
 }
 
 int EntityAbility::getCooldown() {
@@ -119,20 +120,20 @@ int EntityAbility::getCooldownCounter() {
 }
 
 void EntityAbility::resetCooldownCounter() {
-	cooldownCounter = 1;
+	cooldownCounter = cooldown;
 }
 
 void EntityAbility::roundPassed()
 {
 	cooldownCounter--;
-	if (cooldownCounter < 1)
+	if (cooldownCounter < 0)
 	{
-		cooldownCounter = 1;
+		cooldownCounter = 0;
 	}
 }
 
 bool EntityAbility::canUseAbility() {
-	if (cooldownCounter == 1)
+	if (cooldownCounter == 0)
 	{
 		return true;
 	}
@@ -140,4 +141,8 @@ bool EntityAbility::canUseAbility() {
 	{
 		return false;
 	}
+}
+
+void EntityAbility::zeroCooldownCounter() {
+	cooldownCounter = 0;
 }

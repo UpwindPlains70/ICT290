@@ -203,18 +203,18 @@ void Update()
 						}
 						playerList[i].setPosX(randX);
 						playerList[i].setPosZ(randZ);
+						for (int c = 0; c < playerList[i].getNumAbilities(); c++)
+						{
+							EntityAbility ability = playerList[i].getAbility(c);
+							ability.zeroCooldownCounter();
+							playerList[i].setAbility(ability, i);
+						}
 						nowMap->SetValue(randX, randZ, 2);
 					}
 				}
-
-				/// <Task 16> (Jason)
-				/// start drawing players and enemies in their positions
 				
 				displayCharacters = true; 
-		
-				/// </Task 16>
-
-			}//	figure out turn order (Every level)
+			}
 			
 			if(!assignTurnStage) 
 			{
@@ -499,17 +499,17 @@ void upgrade()
 		bonusHP += playerList[i].getMaxHP();
 		playerList[i].setMaxHP(bonusHP);
 		playerList[i].resetHP();
+		for (int c = 0; c < player.getNumAbilities(); c++)
+		{
+			ability = player.getAbility(c);
+			ability.zeroCooldownCounter();
+			player.setAbility(ability, c);
+		}
 		upgrades = 2;
+		int abilityNum;
 		while (upgrades > 0)
 		{
 			upgradeUsed = false;
-			//range
-			//AOE
-			//Duplicate
-			//damage
-			//tohit
-			//stun
-			//Cooldown
 			roll = random_int(1, (7 * player.getNumAbilities()) + 2);
 
 			switch (roll) {
@@ -526,16 +526,19 @@ void upgrade()
 				{
 					ability = player.getAbility(0);
 					roll -= 2;
+					abilityNum = 0;
 				}
 				else if (roll > 9 && roll < 17)
 				{
 					ability = player.getAbility(1);
 					roll -= 9;
+					abilityNum = 1;
 				}
 				else if (roll > 16 && roll < 24)
 				{
 					ability = player.getAbility(2);
 					roll -= 16;
+					abilityNum = 2;
 				}
 
 				if (roll == 1)
@@ -544,6 +547,7 @@ void upgrade()
 					{
 						upgradeUsed = true;
 						ability.setRange(ability.getRange() + 1);
+						player.setAbility(ability, abilityNum);
 					}
 				}
 				else if (roll == 2)
@@ -552,12 +556,14 @@ void upgrade()
 					{
 						upgradeUsed = true;
 						ability.setAOE(ability.getAOE() + 1);
+						player.setAbility(ability, abilityNum);
 					}
 				}
 				else if (roll == 3)
 				{
 					upgradeUsed = true;
 					ability.setDuplicate(ability.getDuplicate() + 1);
+					player.setAbility(ability, abilityNum);
 				}
 				else if (roll == 4)
 				{
@@ -565,12 +571,14 @@ void upgrade()
 					{
 						upgradeUsed = true;
 						ability.setDamage(ability.getDamage() + 1);
+						player.setAbility(ability, abilityNum);
 					}
 				}
 				else if (roll == 5)
 				{
 					upgradeUsed = true;
 					ability.setToHit(ability.getToHit() + 1);
+					player.setAbility(ability, abilityNum);
 				}
 				else if (roll == 6)
 				{
@@ -578,6 +586,7 @@ void upgrade()
 					{
 						upgradeUsed = true;
 						ability.setStun(1);
+						player.setAbility(ability, abilityNum);
 					}
 				}
 				else if (roll == 7)
@@ -586,6 +595,7 @@ void upgrade()
 					{
 						upgradeUsed = true;
 						ability.setCooldown(ability.getCooldown() - 1);
+						player.setAbility(ability, abilityNum);
 					}
 				}
 				break;
@@ -596,6 +606,7 @@ void upgrade()
 				upgrades--;
 			}
 		}
+		playerList[i] = player;
 	}
 }
 
@@ -740,6 +751,8 @@ void attack(int id)
 {
 	pcHasAction = false;
 	EntityAbility ability = playerList[turnIDMap[turn]].getAbility(nowAbilityID);
+	ability.used();
+	playerList[turnIDMap[turn]].setAbility(ability, nowAbilityID);
 	int toHit;
 	int dam;
 	toHit = ability.getToHit() + 2;
@@ -893,20 +906,17 @@ void abilityPressed(int id)
 {
 	nowAbilityID = id;// -1;
 	EntityAbility nowAbility = playerList[turnIDMap[turn]].getAbility(nowAbilityID);
-	if (nowAbility.canUseAbility())
+	if (nowAbility.getUnique())
 	{
-		if (nowAbility.getUnique())
-		{
-			uniqueAbility();
-		}
-		else if(nowAbility.getAOE() > 1)
-		{
-			///gameState = AttackAOE;
-		}
-		else
-		{
-			displayListOfEnemies = true;
-		}
+		uniqueAbility();
+	}
+	else if(nowAbility.getAOE() > 1)
+	{
+		///gameState = AttackAOE;
+	}
+	else
+	{
+		displayListOfEnemies = true;
 	}
 }
 
