@@ -498,128 +498,97 @@ void upgrade()
 		bonusHP = upgradeHP[player.getClassName()];
 		bonusHP += playerList[i].getMaxHP();
 		playerList[i].setMaxHP(bonusHP);
+		playerList[i].resetHP();
 		upgrades = 2;
 		while (upgrades > 0)
 		{
 			upgradeUsed = false;
-			roll = rand() % (playerList[i].getNumAbilities() + 2);
-			if (roll == 0)
-			{
-				playerList[i].setArmor(playerList[i].getArmor() + 1);
-				upgradeUsed = true;
-			}
-			else if (roll == 1)
-			{
-				playerList[i].setMovement(playerList[i].getMovement() + 1);
-				upgradeUsed = true;
-			}
-			else
-			{
-				abilityID = roll - 2;
-				ability = playerList[i].getAbility(abilityID);
-				randMax = 1;
+			//range
+			//AOE
+			//Duplicate
+			//damage
+			//tohit
+			//stun
+			//Cooldown
+			roll = random_int(1, (7 * player.getNumAbilities()) + 2);
 
-				if (ability.getRange() > 1)
+			switch (roll) {
+			case 1:
+				player.setMovement(player.getMovement() + 1);
+				upgradeUsed = true;
+				break;
+			case 2:
+				player.setArmor(player.getArmor() + 1);
+				upgradeUsed = true;
+				break;
+			default:
+				if (roll > 2 && roll < 10)
 				{
-					randMax++;
+					ability = player.getAbility(0);
+					roll -= 2;
 				}
-				if (ability.getAOE() > 1)
+				else if (roll > 9 && roll < 17)
 				{
-					randMax++;
+					ability = player.getAbility(1);
+					roll -= 9;
 				}
-				if (ability.getDuplicate() > 1)
+				else if (roll > 16 && roll < 24)
 				{
-					randMax++;
-				}
-				if (ability.getCooldown() > 1)
-				{
-					randMax++;
-				}
-				if (ability.getDamage() > 0)
-				{
-					randMax++;
+					ability = player.getAbility(2);
+					roll -= 16;
 				}
 
-				roll = rand() % (randMax);
-				if (ability.getRange() > 1)
+				if (roll == 1)
 				{
-					if (roll == 0)
+					if (ability.getRange() > 1)
 					{
+						upgradeUsed = true;
 						ability.setRange(ability.getRange() + 1);
-						upgradeUsed = true;
-					}
-					else
-					{
-						roll--;
 					}
 				}
-
-				if (ability.getAOE() > 1 && upgradeUsed == false)
+				else if (roll == 2)
 				{
-					if (roll == 0)
+					if (ability.getAOE() > 0)
 					{
+						upgradeUsed = true;
 						ability.setAOE(ability.getAOE() + 1);
-						upgradeUsed = true;
-					}
-					else
-					{
-						roll--;
 					}
 				}
-
-				if (ability.getDuplicate() > 1 && upgradeUsed == false)
+				else if (roll == 3)
 				{
-					if (roll == 0)
-					{
-						ability.setDuplicate(ability.getDuplicate() + 1);
-						upgradeUsed = true;
-					}
-					else
-					{
-						roll--;
-					}
+					upgradeUsed = true;
+					ability.setDuplicate(ability.getDuplicate() + 1);
 				}
-
-				if (ability.getDamage() > 0 && upgradeUsed == false)
+				else if (roll == 4)
 				{
-					if (roll == 0)
+					if (ability.getDamage() > 0)
 					{
+						upgradeUsed = true;
 						ability.setDamage(ability.getDamage() + 1);
-						upgradeUsed = true;
-					}
-					else
-					{
-						roll--;
 					}
 				}
-
-				if (upgradeUsed == false)
+				else if (roll == 5)
 				{
-					if (roll == 0)
+					upgradeUsed = true;
+					ability.setToHit(ability.getToHit() + 1);
+				}
+				else if (roll == 6)
+				{
+					if (ability.getStun() == 0.5)
 					{
-						ability.setToHit(ability.getToHit() + 1);
 						upgradeUsed = true;
-					}
-					else
-					{
-						roll--;
+						ability.setStun(1);
 					}
 				}
-
-				if (ability.getCooldown() > 1 && upgradeUsed == false)
+				else if (roll == 7)
 				{
-					if (roll == 0)
+					if (ability.getCooldown() > 1)
 					{
+						upgradeUsed = true;
 						ability.setCooldown(ability.getCooldown() - 1);
-						upgradeUsed = true;
-					}
-					else
-					{
-						roll--;
 					}
 				}
-
-				playerList[i].setAbility(ability, abilityID);
+				break;
 			}
 
 			if (upgradeUsed == true)
