@@ -297,12 +297,21 @@ void DisplayDoors()
 	//glTranslatef(0.0f, 0.0f, backL.scale.z * 0.5f);
 	glScalef(backL.scale.x, backL.scale.y, backL.scale.z);
 
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(285));   // WALL_BRICK_YZ
 	glBegin(GL_POLYGON);
+
+	glTexCoord2f(0, 0);
 	glVertex3f(0, 0, 0);
+
+	glTexCoord2f(0, 15);
 	glVertex3f(0, 15, 0);
+
+	glTexCoord2f(1, 15);
 	glVertex3f(0, 15, 2);
+
+	glTexCoord2f(1, 0);
 	glVertex3f(0, 0, 2);
+
 	glEnd();
 	glPopMatrix();
 
@@ -312,11 +321,15 @@ void DisplayDoors()
 	glRotatef(backR.orientation, 0.0f, 1.0f, 0.0f);
 	glScalef(backR.scale.x, backR.scale.y, backR.scale.z);
 	//glutSolidCube(1.0f);
-	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_YZ));
+	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(285)); // WALL_BRICK_YZ
 	glBegin(GL_POLYGON);
+	glTexCoord2f(0, 0);
 	glVertex3f(0, 0, 0);
+	glTexCoord2f(0, 15);
 	glVertex3f(0, 15, 0);
+	glTexCoord2f(1, 15);
 	glVertex3f(0, 15, 1.75);
+	glTexCoord2f(1, 0);
 	glVertex3f(0, 0, 1.75);
 	glEnd();
 	glPopMatrix();
