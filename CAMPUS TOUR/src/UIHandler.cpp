@@ -160,6 +160,7 @@ void classSelectionUI()
 			}
 		}
 
+			//List all saved player names
 		ImGui::Text("Player List (%d): ", playerList.size());
 		ImGui::SameLine();
 		ImGui::BeginChild("playerListChild", ImVec2(ImGui::GetContentRegionAvail().x, 25), false,  ImGuiWindowFlags_HorizontalScrollbar);
@@ -427,10 +428,10 @@ void playerActionUI()
 			displayEnemyListUI();
 		else
 		{
-			for (int i = 0; i < playerList[turnIDMap[turn]].getNumAbilities(); ++i)
+			if (pcHasAction)
 			{
 				ImGui::SameLine();
-				if (playerList[turnIDMap[turn]].getAbility(i).canUseAbility() && canAction)
+				if (playerList[turnIDMap[turn]].getAbility(i).canUseAbility())
 				{
 					if (ImGui::Button((playerList[turnIDMap[turn]].getAbility(i).getName()).c_str())) {
 						abilityPressed(i);
@@ -441,6 +442,8 @@ void playerActionUI()
 					ImGui::Button((playerList[turnIDMap[turn]].getAbility(i).getName()+": "+to_string(playerList[turnIDMap[turn]].getAbility(i).getCooldownCounter())).c_str());
 				}
 			}
+			else
+				ImGui::Text("Action Used!");
 
 			ImGui::Text("Remaining Movement: %d", playerList[turnIDMap[turn]].getMovementLeft());
 		}
@@ -462,9 +465,9 @@ void displayEnemyListUI()
 {
 	for (int i = 0; i < nowEnemies.size(); ++i)
 	{
-		ImGui::SameLine();
-		
-		if (playerList[turnIDMap[turn]].getAbility(nowAbilityID).getRange() >= playerList[turnIDMap[turn]].checkRange(nowEnemies[i].getPosX(), nowEnemies[i].getPosZ())) {
+		if (playerList[turnIDMap[turn]].getAbility(nowAbilityID).getRange() >= playerList[turnIDMap[turn]].checkRange(nowEnemies[i].getPosX(), nowEnemies[i].getPosZ())) 
+		{
+			ImGui::SameLine();
 			if (ImGui::Button(nowEnemies[i].getName().c_str())) {
 				//attack this enemy
 				attack(i);
@@ -509,7 +512,6 @@ void LevelWinScreen()
 		//increase random player stat
 		upgrade();
 		++currLevel;
-		assignTurnStage = true;
 		gameState = Initialising;
 		//Disable this screen
 		popUpMessage = false;

@@ -29,6 +29,10 @@
  * @author Peter Neve
  * @version 03
  * @date 19/10/2021 fixed turn order assignment (single confirmation click) & win/lose/final win screen with buttons
+ * 
+ * @author Peter Neve
+ * @version 04
+ * @date 20/10/2021 cooldown actions, & single action
  */
 
  /**

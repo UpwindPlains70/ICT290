@@ -27,7 +27,7 @@ void CreateTextures()
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	// set texture count
-	tp.SetTextureCount(286);
+	tp.SetTextureCount(287);
 
 	// load and create textures
 	image = tp.LoadTexture("data/abovechanctext.raw", 128, 1024);
@@ -863,6 +863,9 @@ void CreateTextures()
 
 	image = tp.LoadTexture("data/Object Textures/IronDoor.raw", 1024, 1024);
 	tp.CreateTexture(285, image, 1024, 1024);
+
+	image = tp.LoadTexture("data/Object Textures/Characters/LavaGoblin.raw", 1024, 1024);
+	tp.CreateTexture(286, image, 1024, 1024);
 
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 		//For lights

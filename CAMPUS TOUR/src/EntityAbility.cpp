@@ -24,7 +24,7 @@ EntityAbility::EntityAbility(string newName, int newRange, int newAOE, int newDu
 	duplicate = newDuplicate;
 	stun = newStun;
 	cooldown = newCooldown;
-	cooldownCounter = 1;
+	cooldownCounter = 0;
 	tohit = newToHit;
 	damage = newDamage;
 	unique = newUnique;

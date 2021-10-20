@@ -37,6 +37,10 @@
 	 * @author Peter Neve
 	 * @version 06
 	 * @date 19/10/2021, teleport to spawn added
+	 * 
+	 * @author Peter Neve
+	 * @version 07
+	 * @date 20/10/2021, fixed level 6 floor (issues with X-14, Z-5 & Z-6)
 	 */
 //extern enum levelStage;
 extern int currLevel;

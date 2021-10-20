@@ -27,6 +27,10 @@
  * @author Peter Neve
  * @version 02
  * @date 25/09/2021 implented UI (added displayActionMenu, allowedToRoll bools)
+ * 
+ * @author Peter Neve
+ * @version 03
+ * @date 20/10/2021, normal attack use, popupmessage change to UI frame
  */
 extern enum state { NotGame, NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE };
 extern state gameState;
@@ -50,6 +54,7 @@ extern bool canAction;
 extern bool canEndTurn;
 extern int nowAbilityID;
 extern int sessionRound;
+extern bool pcHasAction;
 
 void DisplayLinup();
 void Update();

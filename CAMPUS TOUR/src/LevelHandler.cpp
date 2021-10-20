@@ -183,8 +183,11 @@ void displayMap()
 					floorValZ -= (floorValZ / floorScale) * 5;
 					floorValX += (floorValX / floorScale) * 3;
 				}
-				else
-					floorValZ += (floorValZ / floorScale) * 7;
+				else 
+				{
+					floorValZ += (floorValZ / floorScale) * 9;
+					floorValX += (floorValX / floorScale) * 10;
+				}
 			}
 		}
 	}
