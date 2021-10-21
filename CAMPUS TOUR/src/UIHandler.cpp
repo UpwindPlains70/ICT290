@@ -218,6 +218,14 @@ void playerHUD()
 			ImGui::Text("Movement:\t%d", playerList[turnIDMap[turn]].getMovement());               // Display some text (you can use a format strings too)
 		ImGui::EndChild();
 
+		if (ImGui::TreeNode("Abilities"))
+		{
+			for (int i = 0; i < playerList[turnIDMap[turn]].getNumAbilities(); i++)
+			{
+				ImGui::Text(playerList[turnIDMap[turn]].getAbility(i).getName().c_str());
+			}
+			ImGui::TreePop();
+		}
 		ImGui::End();
 	}
 
@@ -422,24 +430,27 @@ void playerActionUI()
 	{
 		ImGui::Begin("Player Actions Menu", NULL, window_flags);    // Create a window
 
-
 		ImGui::PushFont(io.Fonts->Fonts[3]);
 		if (displayListOfEnemies)
 			displayEnemyListUI();
 		else
 		{
+			
 			if (pcHasAction)
 			{
-				ImGui::SameLine();
-				if (playerList[turnIDMap[turn]].getAbility(i).canUseAbility())
+				for (int i = 0; i < playerList[turnIDMap[turn]].getNumAbilities(); ++i)
 				{
-					if (ImGui::Button((playerList[turnIDMap[turn]].getAbility(i).getName()).c_str())) {
-						abilityPressed(i);
+					ImGui::SameLine();
+					if (playerList[turnIDMap[turn]].getAbility(i).canUseAbility())
+					{
+						if (ImGui::Button((playerList[turnIDMap[turn]].getAbility(i).getName()).c_str())) {
+							abilityPressed(i);
+						}
 					}
-				}
-				else
-				{
-					ImGui::Button((playerList[turnIDMap[turn]].getAbility(i).getName()+": "+to_string(playerList[turnIDMap[turn]].getAbility(i).getCooldownCounter())).c_str());
+					else
+					{
+						ImGui::Button((playerList[turnIDMap[turn]].getAbility(i).getName() + ": " + to_string(playerList[turnIDMap[turn]].getAbility(i).getCooldownCounter())).c_str());
+					}
 				}
 			}
 			else
