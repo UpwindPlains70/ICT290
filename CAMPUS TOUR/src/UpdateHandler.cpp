@@ -14,6 +14,11 @@ int turn;
 int sessionRound = 1;
 LevelMap* nowMap = nullptr;
 
+int AOEArrowPosX;
+int AOEArrowPosZ;
+int originalArrowPosX;
+int originalAOEArrowPosZ;
+
 vector<int> turnList;
 
 bool firstRun = true;
@@ -618,11 +623,13 @@ void uniqueAbility()
 	{
 		playerList[turnIDMap[turn]].shield(20);
 		ability.used();
+		pcHasAction = false;
 	}
 	else if (ability.getName() == "shield")
 	{
 		playerList[turnIDMap[turn]].shield(playerList[turnIDMap[turn]].getArmor() + 3);
 		ability.used();
+		pcHasAction = false;
 	}
 	else if (ability.getName() == "wall")
 	{
@@ -672,6 +679,7 @@ void uniqueAbility()
 			}
 			nowMap->SetValue(nowX, nowZ, 1);
 			ability.used();
+			pcHasAction = false;
 		}
 	}
 	else if (ability.getName() == "counter")
@@ -679,6 +687,7 @@ void uniqueAbility()
 		playerList[turnIDMap[turn]].shield(20);
 		displayListOfEnemies = true;
 		ability.used();
+		pcHasAction = false;
 	}
 	else if (ability.getName() == "reload")
 	{
@@ -690,6 +699,7 @@ void uniqueAbility()
 			playerList[turnIDMap[turn]].setAbility(tempAbility, i);
 		}
 		ability.used();
+		pcHasAction = false;
 	}
 	else if (ability.getName() == "heal")
 	{
@@ -715,6 +725,7 @@ void uniqueAbility()
 			}
 		}
 		ability.used();
+		pcHasAction = false;
 	}
 	else if (ability.getName() == "revive")
 	{
@@ -729,6 +740,8 @@ void uniqueAbility()
 			}
 		}
 		playerList[minID].resetHP();
+		ability.used();
+		pcHasAction = false;
 	}
 	else if (ability.getName() == "damageBoost")
 	{
@@ -744,6 +757,7 @@ void uniqueAbility()
 			}
 		}
 		ability.used();
+		pcHasAction = false;
 	}
 	playerList[turnIDMap[turn]].setAbility(ability, nowAbilityID);
 }
@@ -820,7 +834,8 @@ void attack(int id)
 
 		nowEnemies.erase(nowEnemies.begin() + id);
 	}
-	ability.used(); 
+	ability.used();
+	pcHasAction = false;
 	playerList[turnIDMap[turn]].setAbility(ability, nowAbilityID);
 }
 
@@ -905,6 +920,26 @@ void movePlayer(int X, int Z)
 	}
 }
 
+void moveArrow(int X, int Z)
+{
+	int rangeX = originalArrowPosX - AOEArrowPosX;
+	int rangeZ = originalArrowPosZ - AOEArrowPosZ;
+	EntityAbility nowAbility = playerList[turnIDMap[turn]].getAbility(nowAbilityID);
+	if (rangeX < 0)
+	{
+		rangeX *= -1;
+	}
+	if (rangeZ < 0)
+	{
+		rangeZ *= -1;
+	}
+	if ((rangeX + rangeZ) <= nowAbility.getRange())
+	{
+		AOEArrowPosX += X;
+		AOEArrowPosZ += Z;
+	}
+}
+
 void abilityPressed(int id)
 {
 	nowAbilityID = id;// -1;
@@ -915,11 +950,37 @@ void abilityPressed(int id)
 	}
 	else if(nowAbility.getAOE() > 1)
 	{
-		///gameState = AttackAOE;
+		displayAOE = true;
+		AOEArrowPosX = playerList[turnIDMap[turn]].getPosX();
+		AOEArrowPosZ = playerList[turnIDMap[turn]].getPosZ();
 	}
 	else
 	{
 		displayListOfEnemies = true;
+	}
+}
+
+void AOEAbility()
+{
+	EntityAbility nowAbility = playerList[turnIDMap[turn]].getAbility(nowAbilityID);
+	int rangeX;
+	int rangeZ;
+	for (int i = 0; i < nowEnemies.size(); i++)
+	{
+		rangeX = nowEnemies[i].getPosX() - AOEArrowPosX;
+		rangeZ = nowEnemies[i].getPosZ() - AOEArrowPosZ;
+		if (rangeX < 0)
+		{
+			rangeX *= -1;
+		}
+		if (rangeZ < 0)
+		{
+			rangeZ *= -1;
+		}
+		if ((rangeX + rangeZ) <= nowAbility.getAOE())
+		{
+			attack(i);
+		}
 	}
 }
 

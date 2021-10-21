@@ -2,6 +2,8 @@
 #define LEVELHANDLER_H
 #pragma once
 #include "CollisionHandler.h"
+#include "UpdateHandler.h"
+#include "UIHandler.h"
 #include "MapLevel.h"
 #include "Player.h"
 #include "Enemy.h"

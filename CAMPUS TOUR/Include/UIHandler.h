@@ -110,11 +110,13 @@ void playerActionUI();
 
 	//Ends player turn if selected
 void displayEnemyListUI();
+void displayAOEUI();
 
 extern bool playerSelection;
 extern bool assignTurnStage;
 
 extern bool displayListOfEnemies;
+extern bool displayAOE;
 
 /// display exit screen
 extern bool DisplayExit;

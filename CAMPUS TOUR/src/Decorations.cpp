@@ -152,6 +152,8 @@ Object3D Shadow;
 
 Object3D LavaGoblin;
 
+Object3D Arrow;
+
 Object3D stun;
 
 int characterScale = 50;
@@ -353,6 +355,10 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/LavaGoblin.obj", &LavaGoblin);
 	characterModelMap["LavaGoblin"] = LavaGoblin;
 	modelTextureMap["LavaGoblin"] = 286;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/Arrow.obj", &Arrow);
+	characterModelMap["Arrow"] = Arrow;
+	modelTextureMap["Arrow"] = 287;
 }
 
 void DisplayPlayerModel(string className, int posX, int posY, int posZ, float rot) {

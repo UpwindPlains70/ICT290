@@ -38,9 +38,20 @@ void keys(unsigned char key, int x, int y)
 	
 	if (gameState != NotReady) {
 		if (currLevel == 0)
+		{
 			TourControls(key, x, y);
+		}
 		else
-			GameControls(key, x, y);
+		{
+			if (displayAOE)
+			{
+				ArrowControls(key, x, y);
+			}
+			else
+			{
+				GameControls(key, x, y);
+			}
+		}
 	}
 }
 
@@ -199,6 +210,32 @@ void GameControls(unsigned char key, int x, int y)
 		DisplayExit = true;
 	}
 	break;
+	}
+}
+
+void ArrowControls(unsigned char key, int x, int y)
+{
+	switch (key)
+	{	// characterUp
+	case 'I':
+	case 'i':
+		moveArrow(0, 1);
+		break;
+		// characterLeft
+	case 'L':
+	case 'l':
+		moveArrow(-1, 0);
+		break;
+		// characterDown
+	case 'K':
+	case 'k':
+		moveArrow(0, -1);
+		break;
+		// characterRight
+	case 'J':
+	case 'j':
+		moveArrow(1, 0);
+		break;
 	}
 }
 

@@ -55,6 +55,10 @@ extern bool canEndTurn;
 extern int nowAbilityID;
 extern int sessionRound;
 extern bool pcHasAction;
+extern int AOEArrowPosX;
+extern int AOEArrowPosZ;
+extern int originalArrowPosX;
+extern int originalArrowPosZ;
 
 void DisplayLinup();
 void Update();
@@ -64,11 +68,13 @@ void playerTurn();
 void upgrade();
 void uniqueAbility();
 void attack(int);
+void AOEAbility();
 
 void updatePopUpMessage();
 
 int rollTheDice(int, int);
 void movePlayer(int, int);
+void moveArrow(int, int);
 void abilityPressed(int);
 int random_int(int, int);
 

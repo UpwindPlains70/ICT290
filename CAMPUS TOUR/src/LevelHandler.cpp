@@ -242,6 +242,11 @@ void displayCharacterModels(vector<Enemy> nowEnemies, vector<Player> playerList)
 			DisplayPlayerModel(nowEnemies[i].getName(), nowEnemies[i].getPosX() * posOffset, 0, nowEnemies[i].getPosZ() * posOffset, 0.0);
 		}
 	}
+	//mark's edit
+	if (displayAOE)
+	{
+		DisplayPlayerModel("Arrow", AOEArrowPosX * posOffset, 0, AOEArrowPosZ * posOffset, 0);
+	}
 }
 
 void CreateMaps()

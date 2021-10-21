@@ -12,6 +12,7 @@ bool gameHUD = false;
 
 bool assignTurnStage = true;
 bool displayListOfEnemies = false;
+bool AOE = false;
 
 	//turn list index
 int i = 0;
@@ -433,6 +434,10 @@ void playerActionUI()
 		ImGui::PushFont(io.Fonts->Fonts[3]);
 		if (displayListOfEnemies)
 			displayEnemyListUI();
+		else if (displayAOE)
+		{
+			displayAOEUI();
+		}
 		else
 		{
 			
@@ -490,6 +495,20 @@ void displayEnemyListUI()
 	if (ImGui::Button("Cancel"))
 	{
 		displayListOfEnemies = false;
+	}
+}
+
+void displayAOEUI()
+{
+	ImGui::SameLine();
+	if (ImGui::Button("Attack"))
+	{
+		AOEAbility();
+		displayAOE = false;
+	}
+	if (ImGui::Button("Cancel"))
+	{
+		displayAOE = false;
 	}
 }
 
