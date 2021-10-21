@@ -17,7 +17,7 @@ LevelMap* nowMap = nullptr;
 int AOEArrowPosX;
 int AOEArrowPosZ;
 int originalArrowPosX;
-int originalAOEArrowPosZ;
+int originalArrowPosZ;
 
 vector<int> turnList;
 

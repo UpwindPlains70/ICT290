@@ -12,8 +12,7 @@ bool gameHUD = false;
 
 bool assignTurnStage = true;
 bool displayListOfEnemies = false;
-bool AOE = false;
-
+bool displayAOE = false;
 	//turn list index
 int i = 0;
 int prevSelectedTurn = 0;
