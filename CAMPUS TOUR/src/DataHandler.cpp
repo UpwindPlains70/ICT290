@@ -63,18 +63,7 @@ void GetCharacterData()
 		}
 
 			//add populated class to list
-		if (tempClass.hp <= 7)
-		{
-			bonus = 2;
-		}
-		else if (tempClass.hp <= 9)
-		{
-			bonus = 3;
-		}
-		else
-		{
-			bonus = 4;
-		}
+		bonus = tempClass.hp / 3;
 		upgradeHP.insert(std::pair<string, int>(tempClass.name, bonus));
 		allClasses.push_back(tempClass);
 
