@@ -94,6 +94,9 @@ void loadClassPreview();
 void playerHUD();
 //display select enemy stats
 void enemyStats();
+void gameLog();
+void addToLog(string add);
+void clearLog();
 
 /**
 		 * @brief  Turn order decider

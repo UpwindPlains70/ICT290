@@ -20,6 +20,8 @@ int playerTurnCount = 0;
 int enemyTurnCount = 0;
 int actionNumber = 0;
 
+vector<string> vectorLog;
+
 // display exit screen
 bool DisplayExit = false;
 
@@ -230,6 +232,7 @@ void playerHUD()
 	}
 
 	enemyStats();
+	gameLog();
 
 	if(displayActionMenu)
 		playerActionUI();
@@ -267,6 +270,37 @@ void enemyStats()
 		}
 		ImGui::End();
 	}
+}
+
+//display game log
+void gameLog()
+{
+	ImGuiWindowFlags window_flags = 0;
+	//window_flags |= ImGuiWindowFlags_NoResize;
+
+	{
+		ImGui::Begin("Gamelog", NULL, window_flags);    // Create a window
+
+		for (int i = 0; i < vectorLog.size(); ++i)
+		{
+			ImGui::Text(vectorLog[i].c_str());
+		}
+		ImGui::End();
+	}
+}
+
+void addToLog(string add)
+{
+	if (vectorLog.size() == 10)
+	{
+		vectorLog.erase(vectorLog.begin() + 0);
+	}
+	vectorLog.push_back(add);
+}
+
+void clearLog()
+{
+	vectorLog.clear();
 }
 
 //Turn order decider
