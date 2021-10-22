@@ -143,6 +143,8 @@ Object3D AirMage;
 Object3D WaterMage;
 Object3D EarthMage;
 
+Object3D mage;
+
 Object3D WaterElemental;
 Object3D EarthElemental;
 Object3D FireElemental;
@@ -246,9 +248,6 @@ void ReadObjectModels(vector<string>& fileNames) {
 	ReadOBJfile("data/3D Objects/CharacterModels/shield.obj", &shield);
 	characterModelMap["Shield"] = shield;
 	modelTextureMap["Shield"] = 256;
-
-	characterModelMap["Mage"] = wizard;
-	modelTextureMap["Mage"] = 249;
 
 	ReadOBJfile("data/3D Objects/CharacterModels/monk.obj", &monk);
 	characterModelMap["Monk"] = monk;
@@ -355,11 +354,15 @@ void ReadObjectModels(vector<string>& fileNames) {
 
 	ReadOBJfile("data/3D Objects/CharacterModels/LavaGoblin.obj", &LavaGoblin);
 	characterModelMap["LavaGoblin"] = LavaGoblin;
-	modelTextureMap["LavaGoblin"] = 286;
+	modelTextureMap["LavaGoblin"] = 287;
 
 	ReadOBJfile("data/3D Objects/CharacterModels/Arrow.obj", &Arrow);
 	characterModelMap["Arrow"] = Arrow;
 	modelTextureMap["Arrow"] = 287;
+
+	ReadOBJfile("data/3D Objects/CharacterModels/mage.obj", &mage);
+	characterModelMap["Mage"] = mage;
+	modelTextureMap["Mage"] = 289;
 }
 
 // drawing the player model on the screen. Created by Jason Botterill
