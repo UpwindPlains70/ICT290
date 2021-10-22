@@ -123,7 +123,7 @@ void Update()
 				randNum = random_int(nowLM.min, nowLM.max);
 				for (int i = 0; i < randNum; i++)
 				{
-					nowEnemies.push_back(nowLM.presetList[0]);
+					nowEnemies.push_back(nowLM.presetList[rand() % nowLM.presetList.size()]);
 				}
 
 				maxTurn = playerList.size() + nowEnemies.size();
@@ -340,7 +340,7 @@ void Update()
 		ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 	}
 
-	if (gameState > 3 && turnDeadMap[turn] != true && isPCTurnMap[turn] == true) {
+	if (gameState > 3 && turnDeadMap[turn] != true && isPCTurnMap[turn] == true && DisplayExit == false && popUpMessageState == None) {
 		playerHUD();
 		ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 	}

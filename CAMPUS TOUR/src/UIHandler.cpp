@@ -224,7 +224,7 @@ void playerHUD()
 			{
 				int AOE = playerList[turnIDMap[turn]].getAbility(i).getAOE();
 
-				if (ImGui::TreeNode((playerList[turnIDMap[turn]].getAbility(i).getName() + ( AOE > 1 ? " (AOE)" : "")).c_str()))
+				if (ImGui::TreeNode((playerList[turnIDMap[turn]].getAbility(i).getName() + ( AOE > 0 ? " (AOE)" : "")).c_str()))
 				{
 					string range = "Range: ";
 					string damage = "Damage: ";
@@ -236,7 +236,7 @@ void playerHUD()
 					ImGui::Text((range + to_string(playerList[turnIDMap[turn]].getAbility(i).getRange())).c_str());
 					ImGui::Text((damage + to_string(playerList[turnIDMap[turn]].getAbility(i).getDamage())).c_str());
 
-					if(AOE > 1)
+					if(AOE > 0)
 						ImGui::Text((AOERange + to_string(playerList[turnIDMap[turn]].getAbility(i).getAOE())).c_str());
 
 					if(playerList[turnIDMap[turn]].getAbility(i).getDuplicate() > 1)
@@ -480,9 +480,8 @@ void displayEnemyListUI()
 		if (playerList[turnIDMap[turn]].getAbility(nowAbilityID).getRange() >= playerList[turnIDMap[turn]].checkRange(nowEnemies[i].getPosX(), nowEnemies[i].getPosZ())) 
 		{
 			ImGui::SameLine();
-			if (ImGui::Button(nowEnemies[i].getName().c_str())) {
+			if (ImGui::Button((nowEnemies[i].getName() + "##"+ to_string(i)).c_str())) {
 				//attack this enemy
-				cout << "Enemy Select: " << i << endl;
 				attack(i);
 				displayListOfEnemies = false;
 			}
