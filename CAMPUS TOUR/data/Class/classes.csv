@@ -10,4 +10,4 @@ Swashbuckler,6,12,6,twinSlash,shield,combo
 Cleric,7,14,5,dagger,revive,heal
 Druid,7,12,5,mace,thorns,vineBind
 Bard,6,12,6,dagger,damageBoost,shield
-God,20,20,10,GodPunch,GodAOE,SuperGod
+God,999,999,999,GodPunch,GodAOE,SuperGod

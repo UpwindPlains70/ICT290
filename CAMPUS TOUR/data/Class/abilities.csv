@@ -38,10 +38,10 @@ airSlasher,2,0,2,1,0,0,1,0
 waterWhip,2,0,2,2,0,0,1,0
 petrify,2,0,1,2,-2,1,1,0
 pierce,2,0,1,12,-2,0,1,0
-airBossAttack,1,0,1,10,2,0,1,0
-waterBossAttack,1,0,1,11,1,0.5,1,0
-earthBossAttack,1,0,1,12,0,0.5,1,0
-fireBossAttack,1,0,1,13,0,0,1,0
+airAttackBoss,1,0,1,10,2,0,1,0
+waterAttackBoss,1,0,1,11,1,0.5,1,0
+earthAttackBoss,1,0,1,12,0,0.5,1,0
+fireAttackBoss,1,0,1,13,0,0,1,0
 knockbackBoss,2,0,1,4,2,0.5,1,1
 drownBoss,2,0,1,4,6,1,1,0
 barrierBoss,2,0,1,0,0,0,1,1

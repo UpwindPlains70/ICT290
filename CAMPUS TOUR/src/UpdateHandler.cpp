@@ -120,7 +120,7 @@ void Update()
 
 				//Assign Enemies for current level
 				nowLM = enemyLevelMap[currLevel];
-				randNum = 2;// random_int(nowLM.min, nowLM.max);
+				randNum = random_int(nowLM.min, nowLM.max);
 				for (int i = 0; i < randNum; i++)
 				{
 					nowEnemies.push_back(nowLM.presetList[0]);
@@ -213,7 +213,7 @@ void Update()
 						{
 							EntityAbility ability = playerList[i].getAbility(c);
 							ability.zeroCooldownCounter();
-							playerList[i].setAbility(ability, i);
+							playerList[i].setAbility(ability, c);
 						}
 						nowMap->SetValue(randX, randZ, 2);
 					}
