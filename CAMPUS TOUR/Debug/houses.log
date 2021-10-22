@@ -1,20 +1,19 @@
-﻿  UpdateHandler.cpp
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\Include\TextureHandler.h(42,58): warning C4091: 'extern ': ignored on left of 'popUpState' when no variable is declared
+﻿  UIHandler.cpp
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\TextureHandler.h(42,58): warning C4091: 'extern ': ignored on left of 'popUpState' when no variable is declared
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\Include\UpdateHandler.h(35,110): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
   The contents of <filesystem> are available only with C++17 or later.
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\Include\UpdateHandler.h(35,110): warning C4091: 'extern ': ignored on left of 'state' when no variable is declared
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(110,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(145,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(185,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(472,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(480,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(500,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(501,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(495,6): warning C4101: 'abilityID': unreferenced local variable
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(497,6): warning C4101: 'randMax': unreferenced local variable
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(710,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(734,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(748,7): warning C4101: 'roll': unreferenced local variable
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(831,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(772,6): warning C4101: 'dam': unreferenced local variable
-C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(968,20): warning C4018: '<': signed/unsigned mismatch
-  houses.vcxproj -> C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\Debug\houses.exe
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(110,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(130,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(167,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(287,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(322,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(327,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(329,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(333,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(346,24): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(348,19): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(368,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(374,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\src\UIHandler.cpp(478,20): warning C4018: '<': signed/unsigned mismatch
+imgui_impl_glut.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  houses.vcxproj -> C:\Users\Peter\Documents\GitHub\ICT290\CAMPUS TOUR\.\Debug\houses.exe

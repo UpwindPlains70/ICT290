@@ -195,7 +195,7 @@ void playerHUD()
 
 	ImGuiWindowFlags window_flags = 0;
 	window_flags |= ImGuiWindowFlags_NoScrollbar;
-	window_flags |= ImGuiWindowFlags_NoResize;
+	//window_flags |= ImGuiWindowFlags_NoResize;
 	
 	//Simple window to show player stats
 	{
@@ -224,7 +224,36 @@ void playerHUD()
 		{
 			for (int i = 0; i < playerList[turnIDMap[turn]].getNumAbilities(); i++)
 			{
-				ImGui::Text(playerList[turnIDMap[turn]].getAbility(i).getName().c_str());
+				int AOE = playerList[turnIDMap[turn]].getAbility(i).getAOE();
+
+				if (ImGui::TreeNode((playerList[turnIDMap[turn]].getAbility(i).getName() + ( AOE > 1 ? " (AOE)" : "")).c_str()))
+				{
+					string range = "Range: ";
+					string damage = "Damage: ";
+					string AOERange = "AOE Range: ";
+					string repeat = "Repeat: ";
+					string hitMod = "To Hit Mod: ";
+					string stun = "Stun: ";
+					string cooldown = "Cooldown: ";
+					ImGui::Text((range + to_string(playerList[turnIDMap[turn]].getAbility(i).getRange())).c_str());
+					ImGui::Text((damage + to_string(playerList[turnIDMap[turn]].getAbility(i).getDamage())).c_str());
+
+					if(AOE > 1)
+						ImGui::Text((AOERange + to_string(playerList[turnIDMap[turn]].getAbility(i).getAOE())).c_str());
+
+					if(playerList[turnIDMap[turn]].getAbility(i).getDuplicate() > 1)
+						ImGui::Text((repeat + to_string(playerList[turnIDMap[turn]].getAbility(i).getDuplicate())).c_str());
+
+					if(playerList[turnIDMap[turn]].getAbility(i).getToHit() != 0)
+					ImGui::Text((hitMod + to_string(playerList[turnIDMap[turn]].getAbility(i).getToHit())).c_str());
+					
+					if(playerList[turnIDMap[turn]].getAbility(i).getStun() > 0)
+						ImGui::Text((stun + to_string(playerList[turnIDMap[turn]].getAbility(i).getStun())).c_str());
+					
+					if(playerList[turnIDMap[turn]].getAbility(i).getCooldown() > 1)
+						ImGui::Text((cooldown + to_string(playerList[turnIDMap[turn]].getAbility(i).getCooldown())).c_str());
+					ImGui::TreePop();
+				}
 			}
 			ImGui::TreePop();
 		}
@@ -260,7 +289,7 @@ void enemyStats()
 
 		for(int i = 0; i < nowEnemies.size(); ++i)
 		{
-			ImGui::BeginChild("EnemyTitles" + i, ImVec2(ImGui::GetContentRegionAvail().x, 70), false, ImGuiWindowFlags_NoScrollbar);
+			ImGui::BeginChild("EnemyTitles" + i, ImVec2(ImGui::GetContentRegionAvail().x, 80), false, ImGuiWindowFlags_NoScrollbar);
 			ImGui::Text("Enemy Name: %s", nowEnemies[i].getName().c_str());
 			ImGui::Text("Turn pos:\t%d", nowEnemies[i].getTurn());
 			ImGui::Text("Health:  \t%d", nowEnemies[i].getHP());               // Display some text (you can use a format strings too)
@@ -427,38 +456,6 @@ void playerActionUI()
 	auto textWidth = ImGui::CalcTextSize("Spin").x;
 
 	ImGuiIO& io = ImGui::GetIO();
-	//Roll 20 sides 'dice'
-	/*{
-		ImGui::Begin("Action Dice", NULL, window_flags);    // Create a window
-
-			//Font size 150 (set in initialise UI)
-		ImGui::PushFont(io.Fonts->Fonts[1]);
-		ImGui::SetCursorPosX((windowWidth - textWidth) * 0.15f);
-		ImGui::Text("%d", actionNumber);
-		ImGui::PopFont();
-
-		ImGui::SetCursorPosX((windowWidth - textWidth) * 0.15f);
-		//Font size 50 (set in initialise UI)
-		ImGui::PushFont(io.Fonts->Fonts[2]);
-		if (ImGui::Button("Spin") && allowedToRoll)                            // Buttons return true when clicked (most widgets return true when edited/activated)
-		{
-			srand(time(NULL));
-			for (i = 1; i <= 20; ++i)
-			{		//Define game info (level no. & turn no.)
-				if (i == (rand() % 20 + 1)) {
-					actionNumber = i;
-					//cout << actionNumber << endl;
-						//Limits to one roll per turn
-					allowedToRoll = false;
-					break;
-				}
-			}
-		}
-		ImGui::PopFont();
-
-		ImGui::End();
-	}
-	*/
 
 	//Simple window to show player actions
 	{
@@ -519,6 +516,7 @@ void displayEnemyListUI()
 			ImGui::SameLine();
 			if (ImGui::Button(nowEnemies[i].getName().c_str())) {
 				//attack this enemy
+				cout << "Enemy Select: " << i << endl;
 				attack(i);
 				displayListOfEnemies = false;
 			}

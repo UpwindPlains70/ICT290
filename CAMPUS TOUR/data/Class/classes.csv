@@ -1,6 +1,6 @@
 Berserker,10,16,4,hammer,rage,earthTremer
 Shield,8,18,4,shieldBash,charge,castle
-Mage,7,12,6,mace,wall,shield
+Mage,7,12,6,mace,fireBall,shield
 Archer,7,12,6,arrow,deadEye,rapidFire
 Artillery,8,14,4,reload,powerShot,aoeShot
 Wizard,6,12,6,dagger,fireBall,lightning
