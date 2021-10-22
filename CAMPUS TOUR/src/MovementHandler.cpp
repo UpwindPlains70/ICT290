@@ -155,32 +155,32 @@ void GameControls(unsigned char key, int x, int y)
 {
 	switch (key)
 	{	// characterUp
-	case 'I':
-	case 'i':
+	case 'W':
+	case 'w':
 		if (canIJKL)
 		{
 			movePlayer(0, 1);
 		}
 		break;
 		// characterLeft
-	case 'L':
-	case 'l':
+	case 'D':
+	case 'd':
 		if (canIJKL)
 		{
 			movePlayer(-1, 0);
 		}
 		break;
 		// characterDown
-	case 'K':
-	case 'k':
+	case 'S':
+	case 's':
 		if (canIJKL)
 		{
 			movePlayer(0, -1);
 		}
 		break;
 		// characterRight
-	case 'J':
-	case 'j':
+	case 'A':
+	case 'a':
 		if (canIJKL)
 		{
 			movePlayer(1, 0);
@@ -217,23 +217,23 @@ void ArrowControls(unsigned char key, int x, int y)
 {
 	switch (key)
 	{	// characterUp
-	case 'I':
-	case 'i':
+	case 'W':
+	case 'w':
 		moveArrow(0, 1);
 		break;
 		// characterLeft
-	case 'L':
-	case 'l':
+	case 'D':
+	case 'd':
 		moveArrow(-1, 0);
 		break;
 		// characterDown
-	case 'K':
-	case 'k':
+	case 'S':
+	case 's':
 		moveArrow(0, -1);
 		break;
 		// characterRight
-	case 'J':
-	case 'j':
+	case 'A':
+	case 'a':
 		moveArrow(1, 0);
 		break;
 	}
