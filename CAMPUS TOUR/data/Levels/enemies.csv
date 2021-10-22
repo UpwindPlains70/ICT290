@@ -11,8 +11,8 @@ WaterGolum,28,16,3,waterAttack,shield,waterAttack
 EarthGolum,40,16,3,earthAttack,shield,earthAttack
 FireGolum,52,16,3,fireAttack,shield,fireAttack
 AirMage,10,14,5,airAttack,knockbackBoss,airSlasher
-WaterMage,20,14,5,waterAttack,wall,waterWhip
-EarthMage,30,14,5,earthAttack,wall,petrify
+WaterMage,20,14,5,waterAttack,knockbackBoss,waterWhip
+EarthMage,30,14,5,earthAttack,knockbackBoss,petrify
 FireMage,40,14,5,fireAttack,cone,pierce
 TelekineticMage,10,14,5,combo,mace1,mace1
 SummoningMage,20,14,5,summonLevel1,mace2,mace2
