@@ -267,15 +267,15 @@ void Enemy::moveRight(LevelMap* nowMap) {
 	}
 	else {
 		//check directions clockwise
-		if (nowMap->GetValue(posX - 1, posZ) == 0) {
+		if (nowMap->GetValue(posX - 1 >= 0 ? posX - 1 : posX, posZ) == 0) {
 			moveDown(nowMap);
 		}
 		else {
-			if (nowMap->GetValue(posX, posZ - 1) == 0) {
+			if (nowMap->GetValue(posX, posZ - 1 >= 0 ? posZ - 1 : posZ) == 0) {
 				moveLeft(nowMap);
 			}
 			else {
-				if (nowMap->GetValue(posX, posZ + 1) == 0) {
+				if (nowMap->GetValue(posX, posZ + 1 >= 0 ? posZ + 1 : posZ) == 0) {
 					moveRight(nowMap);
 				}
 				else {
