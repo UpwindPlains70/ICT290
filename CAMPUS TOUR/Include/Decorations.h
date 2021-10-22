@@ -58,11 +58,45 @@ extern map<string, Object3D> characterModelMap;
 extern map<string, int> modelTextureMap;
 extern bool displayCharacters;
 
+
+
+/**
+* @brief This function reads the OBJ file and stores the vertices, normals, and textures.
+* Store models into objects. Texture ID and model stored in the appropriate map structure.
+*
+*/
 void ReadObjectModels(vector<string>& fileNames);
+
+
+/**
+ * @brief Display the player model
+ * @param className
+ * @param posX
+ * @param posY
+ * @param posZ
+ * @param rot
+ */
 void DisplayPlayerModel(string className, int posX, int posY, int posZ, float rot);
+
+
 void getFileNames(vector<string>& fileNames, ifstream& inFile);
+
+
+/**
+ * @brief Reads the object files and stores them in the vector of object models.
+ */
 void initPlayerModels();
+
+/**
+* @brief Draws the player effects.
+* @param pc The player to see if they effects that need to be drawn.
+*/
 void playerEffects(Player &pc);
+
+/**
+* @brief Draws the enemy effects.
+* @param ec The enemy to see if they effects that need to be drawn.
+*/
 void enemyEffects(Enemy &ec);
 
 
