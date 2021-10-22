@@ -199,7 +199,8 @@ void getFileNames(vector<string>& fileNames, ifstream& inFile)
 }
 
 
-
+// Load model from file, put the model into a model object, add models + texture Id of the model into a map.
+// Created by Jason
 void ReadObjectModels(vector<string>& fileNames) {
 
 	//   data/3D Objects/CharacterModels/
@@ -361,6 +362,7 @@ void ReadObjectModels(vector<string>& fileNames) {
 	modelTextureMap["Arrow"] = 287;
 }
 
+// drawing the player model on the screen. Created by Jason Botterill
 void DisplayPlayerModel(string className, int posX, int posY, int posZ, float rot) {
 
 	//cout << modelTextureMap[className] << endl;
@@ -375,6 +377,7 @@ void DisplayPlayerModel(string className, int posX, int posY, int posZ, float ro
 
 }
 
+//draw the stun effect on the player. Created by Jason
 void playerEffects(Player& pc) {
 
 	if (pc.getStun() > 0)
@@ -388,6 +391,7 @@ void playerEffects(Player& pc) {
 	}
 }
 
+//draw the stun effect on the enemy. Created by Jason
 void enemyEffects(Enemy& ec) {
 
 	if (ec.getStun() > 0)

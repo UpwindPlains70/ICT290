@@ -42,6 +42,15 @@ extern Object3D portal;
 #include <cstring>
 
 
+/**
+	 * @brief defines all functions for reading, storing and displaying character model objects, 
+	 * i.e. Display the characters, their effects and their textures 
+	 *
+	 * @author Jason Botterill
+	 * @version 01
+	 * @date 6/09/2021, started
+	 *
+	 */
 
 //map<string, Object3D> characterModelMap;
 
