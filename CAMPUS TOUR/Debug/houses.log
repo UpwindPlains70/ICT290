@@ -17,5 +17,4 @@ C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(7
 C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(831,21): warning C4018: '<': signed/unsigned mismatch
 C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(772,6): warning C4101: 'dam': unreferenced local variable
 C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\src\UpdateHandler.cpp(968,20): warning C4018: '<': signed/unsigned mismatch
-imgui_impl_glut.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   houses.vcxproj -> C:\Users\Ray\OneDrive\Documents\GitHub\shays\CAMPUS TOUR\Debug\houses.exe
