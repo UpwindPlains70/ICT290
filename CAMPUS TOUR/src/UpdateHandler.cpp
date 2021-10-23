@@ -485,6 +485,10 @@ void enemyTurn()
 			turnDeadMap[playerList[i].getTurn()] = true;
 			turnIDMap.erase(playerList[i].getTurn());
 
+			nowMap->SetValue(playerList[i].getPosX(), playerList[i].getPosZ(), 0);
+			playerList[i].setPosX(NULL);
+			playerList[i].setPosZ(NULL);
+
 			for (int i = 0; i < playerList.size(); ++i)
 				if (turnIDMap[playerList[i].getTurn()] != 0)
 					turnIDMap[playerList[i].getTurn()] -= 1;
@@ -842,6 +846,10 @@ void attack(int id)
 	if (nowEnemies[id].getHP() <= 0) {
 		turnDeadMap[nowEnemies[id].getTurn()] = true;
 		turnIDMap.erase(nowEnemies[id].getTurn());
+
+		nowMap->SetValue(nowEnemies[id].getPosX(), nowEnemies[id].getPosZ(),0);
+		nowEnemies[id].setPosX(NULL);
+		nowEnemies[id].setPosZ(NULL);
 
 		for (int i = 0; i < nowEnemies.size(); ++i)
 			if(turnIDMap[nowEnemies[i].getTurn()] != 0)
