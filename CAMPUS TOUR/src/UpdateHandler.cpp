@@ -828,6 +828,10 @@ void attack(int id)
 		turnDeadMap[nowEnemies[id].getTurn()] = true;
 		turnIDMap.erase(nowEnemies[id].getTurn());
 
+		nowMap->SetValue(nowEnemies[id].getPosX(), nowEnemies[id].getPosZ(),0);
+		nowEnemies[id].setPosX(NULL);
+		nowEnemies[id].setPosZ(NULL);
+
 		for (int i = 0; i < nowEnemies.size(); ++i)
 			if(turnIDMap[nowEnemies[i].getTurn()] != 0)
 				turnIDMap[nowEnemies[i].getTurn()] -= 1;
