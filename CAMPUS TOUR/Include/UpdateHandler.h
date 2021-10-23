@@ -10,9 +10,7 @@
 #include "Player.h"
 #include "MapLevel.h"
 #include "LevelHandler.h"
-
 #include "UIHandler.h"
-
 #include "DataHandler.h"
 
 
@@ -32,20 +30,18 @@
  * @version 03
  * @date 20/10/2021, normal attack use, popupmessage change to UI frame
  */
+
+//Initialising
 extern enum state { NotGame, NotReady, Ready, Initialising, StartTurn, Action, Attack, Win, Lose, AttackAOE };
 extern state gameState;
-
 extern vector<Player> playerList;
 extern int turn;
 extern vector<Enemy> nowEnemies;
 extern vector<int> turnList;
 extern bool displayActionMenu;
 extern bool allowedToRoll;
-	///turnIDMap - (map<int, int>), maps turns to player/enemy indexes
 extern map<int, int> turnIDMap;
-	///isPCTurnMap - (map<int, bool>), maps players based on turn to have current turn
 extern map<int, bool> isPCTurnMap;
-
 extern bool displayEnt;
 extern vector<Player> playerList;
 extern vector<Enemy> nowEnemies;
@@ -59,7 +55,6 @@ extern int AOEArrowPosX;
 extern int AOEArrowPosZ;
 extern int originalArrowPosX;
 extern int originalArrowPosZ;
-
 void DisplayLinup();
 void Update();
 void endTurn();
@@ -69,9 +64,7 @@ void upgrade();
 void uniqueAbility();
 void attack(int);
 void AOEAbility();
-
 void updatePopUpMessage();
-
 int rollTheDice(int, int);
 void movePlayer(int, int);
 void moveArrow(int, int);

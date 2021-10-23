@@ -10,6 +10,7 @@
 #include <vector>
 #include "EntityAbility.h"
 #include "Enemy.h"
+
 /**
 	 * @brief Handles all character class, enemy, ability file reading
 	 *
@@ -21,8 +22,11 @@
 	 * @version 02
 	 * @date 24/09/2021, fixed minor issues (added tempNameList.clear & allowed for empty lines)
 	 */
+
 using namespace std;
 
+//store each which level will spawn which enemy
+//each level is in a struct
 struct LevelEnemy
 {
 	int min;
@@ -37,6 +41,7 @@ struct LevelEnemy
 	}
 };
 
+//store each class as a struct to be used for a classes class when making the player
 struct Class
 {
 	string name;
@@ -45,6 +50,7 @@ struct Class
 	int movement;
 	vector<EntityAbility> abilityList;
 
+	//reset data
 	void resetClass()
 	{
 		name = " ";
@@ -55,8 +61,8 @@ struct Class
 	}
 };
 
+//Initialising
 extern vector<Class> allClasses;
-
 extern vector<Enemy> allEnemies;
 void GetCharacterData();
 void GetEnemyData();

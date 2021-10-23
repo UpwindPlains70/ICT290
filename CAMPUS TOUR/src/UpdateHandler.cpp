@@ -1,6 +1,6 @@
 #include "UpdateHandler.h"
 
-
+//Initialising
 state gameState = NotGame;
 map<int, bool> isPCTurnMap;
 map<int, bool> turnDeadMap;
@@ -13,18 +13,14 @@ int nowAbilityID;
 int turn;
 int sessionRound = 1;
 LevelMap* nowMap = nullptr;
-
 int AOEArrowPosX;
 int AOEArrowPosZ;
 int originalArrowPosX;
 int originalArrowPosZ;
-
 vector<int> turnList;
-
 bool firstRun = true;
 bool displayActionMenu = false;
 bool allowedToRoll = true;
-
 bool displayEnt;
 LevelEnemy nowLM;
 int randNum;
@@ -36,9 +32,10 @@ bool canEndTurn;
 
 using namespace std;
 
+//Displays each model when needed
 void DisplayLinup() 
 {
-	DisplayPlayerModel("Samurai", 123, 9000, -21, 0); // just for testing, can remove all these characters calls at any time
+	DisplayPlayerModel("Samurai", 123, 9000, -21, 0);
 	DisplayPlayerModel("Zombie", 200, 9000, -21, 0);
 	DisplayPlayerModel("Wizard", 280, 9000, -21, 0);
 	DisplayPlayerModel("Skeleton", 360, 9000, -21, 0);
@@ -73,54 +70,53 @@ void DisplayLinup()
 	DisplayPlayerModel("Shadow", -120, 9000, -360, 0);
 }
 
+//Constant Update through animate openGL
 void Update()
 {
-	//DisplayLinup();
+	//Using a state system to keep track of what is happening
 	switch (gameState) {
-		case NotGame:
-			break;
 		case NotReady:
-				//stuck until finished button is pressed
+
+			//setup before game
 			classSelectionUI();
 			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
-
 			canIJKL = false;
 			canAction = false;
 			canEndTurn = false;
-			
 			displayEnt = false;
-
 			break;
 		case Ready:
-			/// <Task 4> (Anyone)
-			/// Keep back doors locked until now.
-			/// </Task 4>
-			//cout << "Ready" << endl;
+			
+			//start initialising game
 			if (currLevel != 0) {
-				//cout << "Change" << endl;
 				gameState = Initialising;
 			}
 			break;
 		case Initialising:
 			
+			//initialise the level
+
+			//only do once per level
 			if (firstRun) {
 				assignTurnStage = true;
 				firstRun = false;
-					//Load copy of current level
+
+				//get random map
 				srand(time(NULL));
 				mapID = rand() % mapList[currLevel].size();
 				nowMap = new LevelMap(mapList[currLevel].at(mapID));
 
-					//Clear list (turns, enemies)
+				//clear all previous data
 				isPCTurnMap.clear();
 				turnIDMap.clear();
 				turnDeadMap.clear();
 				nowEnemies.clear();
 
+				//log map
 				addToLog("Level: " + to_string(currLevel));
 				addToLog("Map Chosen: " + to_string(mapID));
 
-				//Assign Enemies for current level
+				//add to list of enemies for this level
 				nowLM = enemyLevelMap[currLevel];
 				randNum = random_int(nowLM.min, nowLM.max);
 				for (int i = 0; i < randNum; i++)
@@ -129,14 +125,13 @@ void Update()
 					addToLog("Enemy Added: " + nowEnemies[i].getName());
 				}
 
+				//make turn order
 				maxTurn = playerList.size() + nowEnemies.size();
-
 				for (int i = 1; i <= maxTurn; ++i)
 					turnList.push_back(i);
-
 				displayEnt = true;
 
-				//Position enemies
+				//find location for first enemy
 				do {
 					randX = rand() % nowMap->GetX();
 					randZ = rand() % nowMap->GetZ();
@@ -144,9 +139,12 @@ void Update()
 				nowEnemies[0].setPosX(randX);
 				nowEnemies[0].setPosZ(randZ);
 				nowMap->SetValue(randX, randZ, 3);
+
+				//place any other enemies into their places
 				if (nowEnemies.size() > 0) {
 					for (int i = 1; i < nowEnemies.size(); i++)
 					{
+						//find valid location
 						bool found = false;
 						while (!found) {
 							randX = rand() % nowMap->GetX();
@@ -170,6 +168,8 @@ void Update()
 								}
 							}
 						}
+
+						//place enemy
 						addToLog(nowEnemies[i].getName() + " is placed at (" + to_string(randX) + ", " + to_string(randZ) + ")");
 						nowEnemies[i].setPosX(randX);
 						nowEnemies[i].setPosZ(randZ);
@@ -177,7 +177,7 @@ void Update()
 					}
 				}
 
-				//Position players
+				//find location for first player
 				do {
 					randX = rand() % nowMap->GetX();
 					randZ = rand() % nowMap->GetZ();
@@ -188,6 +188,7 @@ void Update()
 				if (playerList.size() > 0) {
 					for (int i = 1; i < playerList.size(); i++)
 					{
+						//find valid location
 						bool found = false;
 						while (!found) {
 							randX = rand() % nowMap->GetX();
@@ -211,6 +212,8 @@ void Update()
 								}
 							}
 						}
+
+						//place player
 						playerList[i].setPosX(randX);
 						playerList[i].setPosZ(randZ); 
 						addToLog(playerList[i].getName() + " is placed at (" + to_string(randX) + ", " + to_string(randZ) + ")");
@@ -227,6 +230,7 @@ void Update()
 				displayCharacters = true; 
 			}
 			
+			//set up turn order
 			if(!assignTurnStage) 
 			{
 				for (int i = 1; i <= maxTurn; i++)
@@ -237,17 +241,11 @@ void Update()
 				firstRun = true;
 				turn = 1;
 			}
-				break;
+			break;
 		case StartTurn:
-				//Display player & enemy stats
-			//playerHUD();
-			//ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+			//Start of each turn
 
-			//set player turn
-
-			//pc turn doesnt turn 0
-			//cout << "PC turn: " << isPCTurnMap[turn] << endl;
-
+			//figure out if they are alive and if they are a player or enemy
 			if (turnDeadMap[turn] == false)
 			{
 				if (isPCTurnMap[turn] == false)
@@ -266,9 +264,9 @@ void Update()
 			
 			break;
 		case Action:
-				//Display player & enemy stats
-			//playerHUD();
-			//ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+			//when initialising player turn is over then they can start doing actions
+
+			//check if action is used or move is used up
 			if (playerList[turnIDMap[turn]].canMove())
 			{
 				canIJKL = true;
@@ -285,88 +283,63 @@ void Update()
 			{
 				canAction = false;
 			}
+
+			//if both is done then change turn
 			if (playerList[turnIDMap[turn]].canMove() == false && pcHasAction == false)
 			{
 				endTurn();
 			}
 			canEndTurn = true;
 			break;
-		case Attack:
-				//Display player & enemy stats
-			//playerHUD();
-			//ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
-
-			/// <Task 20> (Anyone)
-			/// show enemy select screen
-			/// get player to decide on enemy to hit
-			/// if decided:
-			///		playerList[turnIDMap[turn]].GetAbility(nowAbilityID).used()
-			///		if in range:
-			///			attack(enemy)
-			///			State = Action
-			/// </Task 20>
-
-			break;
 		case Win:
+			//If no more enemies
+
+			//check if it is end of game
 			if (currLevel == 10)
-			{
-				
-				/// show final win screen
 				popUpMessageState = TotalWin;
-				
-			}
 			else
 			{
-				/// show currLevel win screen
-				popUpMessageState = LevelWin; 				
+				popUpMessageState = LevelWin;
 			}
 			break;
 		case Lose:
-				//Display lose screen
+			//If no more players
 			popUpMessageState = Lost; 
 			break;
-		case AttackAOE:
-			/// <Task 26> (Anyone)
-			/// show aoe select screen
-			/// if decided
-			///		playerList[turnIDMap[turn]].GetAbility(nowAbilityID).used()
-			///		foreach enemy in aoe
-			///			attack(enemy)
-			/// </Task 26>				
-			break;
 	}
+
+	//display players and enemies if in game
 	if (gameState >= Initialising)
 		positionFloorObjects(nowEnemies, playerList);
 
-	//Draw UI frame after floor to appear over not behind
+	//display UI
 	if (gameState == Initialising && assignTurnStage)
 	{
 		turnOrderUI();
 		ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 	}
-
 	if (gameState > 3 && turnDeadMap[turn] != true && isPCTurnMap[turn] == true && DisplayExit == false && popUpMessageState == None) {
 		playerHUD();
 		ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 	}
-
 	updatePopUpMessage();
 }
 
+//what happens at the end of a turn
 void endTurn()
 {
 	popUpMessage = true;
-	if (nowEnemies.size() == 0)
-	{
-		gameState = Win;
-	}
-	else if (playerList.size() == 0)
-	{
-		gameState = Lose;
-	}else
-		gameState = StartTurn;
 
+	//look into end screens
+	if (nowEnemies.size() == 0)
+		gameState = Win;
+	else if (playerList.size() == 0)
+		gameState = Lose;
+	else
+		gameState = StartTurn;
 	displayActionMenu = false;
+
+	//next turn
 	++turn;
 	if (turn > maxTurn)
 	{
@@ -376,66 +349,60 @@ void endTurn()
 	allowedToRoll = true;
 }
 
+//if players turn, initialise
 void playerTurn()
 {
-		// display pc actions
+	//set anything that happens on start of turn
 	displayActionMenu = true;
 	playerList[turnIDMap[turn]].unshield();
 	playerList[turnIDMap[turn]].resetMovementLeft();
+
+	//check stun
 	if (playerList[turnIDMap[turn]].getStun() == 1)
 	{
-		/// <Task 13> (Jason)
-		/// show stun being removed
-		/// </Task 13>
 		playerList[turnIDMap[turn]].setStun(0);
 		endTurn();
 	}
 	else if (playerList[turnIDMap[turn]].getStun() == 0.5)
 	{
-		/// <Task 13> (Jason)
-		/// show stun being removed
-		/// </Task 13>
 		playerList[turnIDMap[turn]].noMovementLeft();
 	}
-	//if (nowEnemies.empty())
-	//	endTurn();
 
+	//lower cooldowns
 	EntityAbility ability;
-	for (int i = 0; i < playerList[turnIDMap[turn]].getNumberOfAbilities(); i++)
+	if (playerList[turnIDMap[turn]].getNumAbilities() > 0)
 	{
-		ability = playerList[turnIDMap[turn]].getAbility(i);
-		ability.roundPassed();
-		playerList[turnIDMap[turn]].setAbility(ability, i);
+		for (int i = 0; i < playerList[turnIDMap[turn]].getNumAbilities(); i++)
+		{
+			ability = playerList[turnIDMap[turn]].getAbility(i);
+			ability.roundPassed();
+			playerList[turnIDMap[turn]].setAbility(ability, i);
+		}
 	}
+	
+	//end stun
 	playerList[turnIDMap[turn]].setStun(0);
 	pcHasAction = true;
 	gameState = Action;
 }
 
+//if enemy turn, initialising
 void enemyTurn()
 {
+	//set anything that happens on start of turn
 	nowEnemies[turnIDMap[turn]].unshield();
-
 	EntityAbility ability;
-	
 	cout << "ENEMY TURN HAPPENED: " << nowEnemies[turnIDMap[turn]].getName() << endl;
 
+	//check stun
 	if (nowEnemies[turnIDMap[turn]].getStun() == 1)
 	{
-		/// <Task 13> (Jason)
-		/// show stun being removed
-		/// </Task 13>
+		//can't do anything
 	}
 	else if (nowEnemies[turnIDMap[turn]].getStun() == 0.5)
-	{	
-		/// <Task 14> (Raymond)
-		/// randomly choose ability from enemy that is an ability in range of closest target
-		/// if there is an ability and it has no cooldown left
-		/// set as ability
-		/// attack
-		/// </Task 14>
-		
-		addToLog(nowEnemies[turnIDMap[turn]].getName() + " Moved");
+	{
+		//can only attack
+		addToLog(nowEnemies[turnIDMap[turn]].getName() + " Attacked");
 
 		int summon;
 		nowEnemies[turnIDMap[turn]].AIAttack(nowMap, playerList, summon);
@@ -448,18 +415,12 @@ void enemyTurn()
 			maxTurn++;
 			nowEnemies.push_back(enemyLevelMap[summon].presetList[rand() % enemyLevelMap[summon].presetList.size()]);
 		}
-		
-		/// <Task 13> (Jason)
-		/// show stun being removed
-		/// </Task 13>
 	}
 	else
 	{
-		// move enemy
+		//can move and attack
 		addToLog(nowEnemies[turnIDMap[turn]].getName() + " Moved and Attacked");
 		nowEnemies[turnIDMap[turn]].AITurn(nowMap, playerList);
-
-		/// randomly choose ability from enemy that is an ability in range of closest target
 
 		int summon;
 		nowEnemies[turnIDMap[turn]].AIAttack(nowMap, playerList, summon);
@@ -476,12 +437,11 @@ void enemyTurn()
 	
 	nowEnemies[turnIDMap[turn]].setStun(0);
 
-		//Check each player
+	//check for dead players
 	for (int i = 0; i < playerList.size(); i++)
 	{
 		if (playerList[i].getHP() <= 0) 
 		{
-				//Mark turn as dead, remove from turnID mapand now enemy list
 			turnDeadMap[playerList[i].getTurn()] = true;
 			turnIDMap.erase(playerList[i].getTurn());
 
@@ -496,27 +456,32 @@ void enemyTurn()
 			playerList.erase(playerList.begin() + i);
 		}
 	}
-
 	endTurn();
 }
 
-void upgrade()
+//after each level the players upgrade
+void upgrade()        
 {
+	//Initialise
 	int bonusHP;
 	int roll;
 	int abilityID;
 	bool upgradeUsed;
 	int randMax;
 	EntityAbility ability;
+	Player player;
 	int upgrades;
 	srand(time(NULL));
+
+	//for each player
 	for (int i = 0; i < playerList.size(); i++)
 	{
-		Player player = playerList[i];
+		//increase hp anf reset cooldowns
+		player = playerList[i];
 		bonusHP = upgradeHP[player.getClassName()];
 		bonusHP += playerList[i].getMaxHP();
-		playerList[i].setMaxHP(bonusHP);
-		playerList[i].resetHP();
+		player.setMaxHP(bonusHP);
+		player.resetHP();
 		for (int c = 0; c < player.getNumAbilities(); c++)
 		{
 			ability = player.getAbility(c);
@@ -525,21 +490,26 @@ void upgrade()
 		}
 		upgrades = 2;
 		int abilityNum;
+		
+		//upgrade random stats twice
 		while (upgrades > 0)
 		{
+			cout << "upgrade" << endl;
 			upgradeUsed = false;
 			roll = random_int(1, (7 * player.getNumAbilities()) + 2);
 
-			switch (roll) {
-			case 1:
+			if (roll == 1)
+			{
 				player.setMovement(player.getMovement() + 1);
 				upgradeUsed = true;
-				break;
-			case 2:
+			}
+			else if (roll == 2)
+			{
 				player.setArmor(player.getArmor() + 1);
 				upgradeUsed = true;
-				break;
-			default:
+			}
+			else
+			{
 				if (roll > 2 && roll < 10)
 				{
 					ability = player.getAbility(0);
@@ -616,38 +586,42 @@ void upgrade()
 						player.setAbility(ability, abilityNum);
 					}
 				}
-				break;
 			}
 
-			if (upgradeUsed == true)
+			//repeat if no upgrade
+			if (upgradeUsed)
 			{
 				upgrades--;
+			}
+			else
+			{
+				cout << "no upgrade" << endl;
 			}
 		}
 		playerList[i] = player;
 	}
 }
 
+//if ability is a unique feature
 void uniqueAbility()
 {
 	EntityAbility ability = playerList[turnIDMap[turn]].getAbility(nowAbilityID);
-	if (ability.getName() == "castle")
+	if (ability.getName() == "castle") //for 1 round get 20 armor
 	{
 		playerList[turnIDMap[turn]].shield(20);
 		addToLog("Castle has been used, player's Armor is now 20");
 		ability.used();
 		pcHasAction = false;
 	}
-	else if (ability.getName() == "shield")
+	else if (ability.getName() == "shield") //for 1 round increase shield by 3
 	{
 		playerList[turnIDMap[turn]].shield(playerList[turnIDMap[turn]].getArmor() + 3);
 		addToLog("Shield has been used, player's Armor is now "+ to_string(playerList[turnIDMap[turn]].getArmor()));
 		ability.used();
 		pcHasAction = false;
 	}
-	else if (ability.getName() == "wall")
+	else if (ability.getName() == "wall") //create wall
 	{
-		/// redraw nowMap
 		int numOfSpots = 0;
 		int nowX = playerList[turnIDMap[turn]].getPosX();
 		int nowZ = playerList[turnIDMap[turn]].getPosZ();
@@ -696,7 +670,7 @@ void uniqueAbility()
 			pcHasAction = false;
 		}
 	}
-	else if (ability.getName() == "counter")
+	else if (ability.getName() == "counter") //castle but get to hit an enemy aswell
 	{
 		playerList[turnIDMap[turn]].shield(20);
 		displayListOfEnemies = true;
@@ -704,20 +678,20 @@ void uniqueAbility()
 		ability.used();
 		pcHasAction = false;
 	}
-	else if (ability.getName() == "reload")
+	else if (ability.getName() == "reload") //reset cooldowns
 	{
 		EntityAbility tempAbility;
 		for (int i = 0; i < playerList[turnIDMap[turn]].getNumberOfAbilities(); i++)
 		{
 			tempAbility = playerList[turnIDMap[turn]].getAbility(i);
-			tempAbility.resetCooldownCounter();
+			tempAbility.zeroCooldownCounter();
 			playerList[turnIDMap[turn]].setAbility(tempAbility, i);
 		}
 		addToLog("Reload has been used, all ability cooldowns are reset");
 		ability.used();
 		pcHasAction = false;
 	}
-	else if (ability.getName() == "heal")
+	else if (ability.getName() == "heal") //heal level amount of health
 	{
 		int nowDisX;
 		int nowDisZ;
@@ -737,14 +711,14 @@ void uniqueAbility()
 			}
 			if ((nowDisX + nowDisZ <= ability.getAOE()))
 			{
-				playerList[i].healPlayer(1);
+				playerList[i].healPlayer(currLevel);
 			}
 		}
 		addToLog("Players in facinity are healed by 1");
 		ability.used();
 		pcHasAction = false;
 	}
-	else if (ability.getName() == "revive")
+	else if (ability.getName() == "revive") //revive teammate
 	{
 		int min = playerList[0].getHP();
 		int minID = 0;
@@ -761,7 +735,7 @@ void uniqueAbility()
 		ability.used();
 		pcHasAction = false;
 	}
-	else if (ability.getName() == "damageBoost")
+	else if (ability.getName() == "damageBoost") // double players damage
 	{
 		int roll;
 		bool used = false;
@@ -781,8 +755,10 @@ void uniqueAbility()
 	playerList[turnIDMap[turn]].setAbility(ability, nowAbilityID);
 }
 
+//attack id: enemy id
 void attack(int id)
 {
+	//initialising
 	pcHasAction = false;
 	EntityAbility ability = playerList[turnIDMap[turn]].getAbility(nowAbilityID);
 	ability.used();
@@ -790,26 +766,25 @@ void attack(int id)
 	int toHit;
 	int dam;
 	toHit = ability.getToHit() + 2;
+
+	//get value of obstacles
 	int smallX, smallZ, tempX, tempZ, bigX, bigZ;
 	smallX = nowEnemies[id].getPosX();
 	smallZ = nowEnemies[id].getPosZ();
 	bigX = playerList[turnIDMap[turn]].getPosX();
 	bigZ = playerList[turnIDMap[turn]].getPosZ();
-
 	if (smallX > bigX)
 	{
 		tempX = smallX;
 		bigX = smallX;
 		smallX = tempX;
 	}
-
 	if (smallZ > bigZ)
 	{
 		tempZ = smallZ;
 		bigZ = smallZ;
 		smallZ = tempZ;
 	}
-
 	for (int x = smallX; x <= bigX; x++)
 	{
 		for (int z = smallZ; z <= bigZ; z++)
@@ -821,28 +796,36 @@ void attack(int id)
 		}
 	}
 
+	//if stunned increase chance of hit
 	if (nowEnemies[id].getStun() > 0)
 	{
 		toHit += 5;
 	}
 
+	//for each duplicate
 	for (int i = 0; i < ability.getDuplicate(); i++)
 	{
+		//check if hit and by how much
 		int roll = rollTheDice(toHit, nowEnemies[id].getArmor());
+
+		//check damage
 		int dam = roll * ability.getDamage();
 		if (playerList[turnIDMap[turn]].damageBoosted())
 		{
 			dam *= 2;
 		}
 
+		//deal damage
 		nowEnemies[id].damageEnemy(dam);
+
+		//check stun
 		if ((roll > 0) && (nowEnemies[id].getStun() < ability.getStun()))
 		{
 			nowEnemies[id].setStun(ability.getStun());
 		}
 	}
 
-		//Mark turn as dead, remove from turnID map and now enemy list
+	//check if dead
 	if (nowEnemies[id].getHP() <= 0) {
 		turnDeadMap[nowEnemies[id].getTurn()] = true;
 		turnIDMap.erase(nowEnemies[id].getTurn());
@@ -862,6 +845,7 @@ void attack(int id)
 	playerList[turnIDMap[turn]].setAbility(ability, nowAbilityID);
 }
 
+//update UI
 void updatePopUpMessage()
 {
 	if (popUpMessage) {
@@ -872,23 +856,19 @@ void updatePopUpMessage()
 		case Lost: {
 			LoseScreen();
 			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
-			//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Lost_Screen));
 			break;
 		}
 		case TotalWin: {
 			GameWinScreen();
 			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
-			//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Final_Win_Screen));
 			break;
 		}
 		case LevelWin: {
 			LevelWinScreen();
 			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
-			//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Current_Level_Win_Screen));
 			break;
 		}
 		case None: {
-			//cam.DisplayWelcomeScreen(641, 638, 1, tp.GetTexture(Lost_Screen));    // just for testing the screen code 
 			break;
 		}
 		}
@@ -896,23 +876,28 @@ void updatePopUpMessage()
 	}
 }
 
+//rolling the dice to see if hit
 int rollTheDice(int bonus, int AC)
 {
-	// 0 = no damage, 1 = damage, 2 = critical
+	//roll a 20 sided die
 	int roll = random_int(1, 20);
+
 	addToLog("You rolled a " + to_string(roll));
 	if (roll == 1)
 	{
+		//always miss on a 1
 		addToLog("Critical Miss!");
 		return 0;
 	}
 	else if (roll == 20)
 	{
+		//always hit on a 20 and do double damage
 		addToLog("Critical Hit!");
 		return 2;
 	}
 	else
 	{
+		//add bonus to check if it hit normally
 		roll += bonus;
 		addToLog("Your hit was a " + to_string(roll));
 		addToLog("The Armor is " + to_string(AC));
@@ -929,6 +914,7 @@ int rollTheDice(int bonus, int AC)
 	}
 }
 
+//move player by checking new chosen location
 void movePlayer(int X, int Z)
 {
 	int posX = playerList[turnIDMap[turn]].getPosX();
@@ -950,6 +936,7 @@ void movePlayer(int X, int Z)
 	}
 }
 
+//move arrow by checking if new location isn't out of range
 void moveArrow(int X, int Z)
 {
 	int rangeX = originalArrowPosX - AOEArrowPosX;
@@ -970,26 +957,34 @@ void moveArrow(int X, int Z)
 	}
 }
 
+//when a player uses ability
 void abilityPressed(int id)
 {
-	nowAbilityID = id;// -1;
+	nowAbilityID = id;
 	EntityAbility nowAbility = playerList[turnIDMap[turn]].getAbility(nowAbilityID);
 	if (nowAbility.getUnique())
 	{
+		//if unique the abilities need to be check throughly
 		uniqueAbility();
 	}
 	else if(nowAbility.getAOE() > 1)
 	{
-		displayAOE = true;
+		//if AOE a different select screen needs to be used
 		AOEArrowPosX = playerList[turnIDMap[turn]].getPosX();
 		AOEArrowPosZ = playerList[turnIDMap[turn]].getPosZ();
+		originalArrowPosX = AOEArrowPosX;
+		originalArrowPosZ = AOEArrowPosZ;
+		displayAOE = true;
+		
 	}
 	else
 	{
+		//choose enemy that is within range
 		displayListOfEnemies = true;
 	}
 }
 
+//when AOE location is chosen attack all enemies in the AOE
 void AOEAbility()
 {
 	EntityAbility nowAbility = playerList[turnIDMap[turn]].getAbility(nowAbilityID);
@@ -1014,6 +1009,7 @@ void AOEAbility()
 	}
 }
 
+//custom roll function
 int random_int(int min, int max)
 {
 	return min + rand() % (max + 1 - min);
