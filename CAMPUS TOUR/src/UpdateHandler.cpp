@@ -477,6 +477,10 @@ void enemyTurn()
 			turnDeadMap[playerList[i].getTurn()] = true;
 			turnIDMap.erase(playerList[i].getTurn());
 
+			nowMap->SetValue(playerList[i].getPosX(), playerList[i].getPosZ(), 0);
+			playerList[i].setPosX(NULL);
+			playerList[i].setPosZ(NULL);
+
 			for (int i = 0; i < playerList.size(); ++i)
 				if (turnIDMap[playerList[i].getTurn()] != 0)
 					turnIDMap[playerList[i].getTurn()] -= 1;
