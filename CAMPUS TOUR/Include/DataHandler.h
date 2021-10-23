@@ -21,6 +21,14 @@
 	 * @author Peter Neve
 	 * @version 02
 	 * @date 24/09/2021, fixed minor issues (added tempNameList.clear & allowed for empty lines)
+	 * 
+	 * @author Mark Burns
+	 * @version 03
+	 * @date 27/09/2021, add upgradable health
+	 * 
+	 * @author Mark Burns
+	 * @version 04
+	 * @date 22/10/2021, change health upgrade
 	 */
 
 using namespace std;
