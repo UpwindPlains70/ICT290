@@ -1,6 +1,5 @@
 #include "UIHandler.h"
 
-
 // Our state
 static int classID = 0;
 static const char* current_item = "";
@@ -309,7 +308,6 @@ void gameLog()
 
 	{
 		ImGui::Begin("Gamelog", NULL, window_flags);    // Create a window
-
 		for (int i = 0; i < vectorLog.size(); ++i)
 		{
 			ImGui::Text(vectorLog[i].c_str());
@@ -324,6 +322,7 @@ void addToLog(string add)
 	{
 		vectorLog.erase(vectorLog.begin() + 0);
 	}
+	cout << add << endl;
 	vectorLog.push_back(add);
 }
 

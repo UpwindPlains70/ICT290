@@ -109,7 +109,6 @@ void Update()
 					//Load copy of current level
 				srand(time(NULL));
 				mapID = rand() % mapList[currLevel].size();
-
 				nowMap = new LevelMap(mapList[currLevel].at(mapID));
 
 					//Clear list (turns, enemies)
@@ -118,12 +117,16 @@ void Update()
 				turnDeadMap.clear();
 				nowEnemies.clear();
 
+				addToLog("Level: " + to_string(currLevel));
+				addToLog("Map Chosen: " + to_string(mapID));
+
 				//Assign Enemies for current level
 				nowLM = enemyLevelMap[currLevel];
 				randNum = random_int(nowLM.min, nowLM.max);
 				for (int i = 0; i < randNum; i++)
 				{
 					nowEnemies.push_back(nowLM.presetList[rand() % nowLM.presetList.size()]);
+					addToLog("Enemy Added: " + nowEnemies[i].getName());
 				}
 
 				maxTurn = playerList.size() + nowEnemies.size();
@@ -167,6 +170,7 @@ void Update()
 								}
 							}
 						}
+						addToLog(nowEnemies[i].getName() + " is placed at (" + to_string(randX) + ", " + to_string(randZ) + ")");
 						nowEnemies[i].setPosX(randX);
 						nowEnemies[i].setPosZ(randZ);
 						nowMap->SetValue(randX, randZ, 3);
@@ -208,7 +212,8 @@ void Update()
 							}
 						}
 						playerList[i].setPosX(randX);
-						playerList[i].setPosZ(randZ);
+						playerList[i].setPosZ(randZ); 
+						addToLog(playerList[i].getName() + " is placed at (" + to_string(randX) + ", " + to_string(randZ) + ")");
 						for (int c = 0; c < playerList[i].getNumAbilities(); c++)
 						{
 							EntityAbility ability = playerList[i].getAbility(c);
@@ -430,6 +435,8 @@ void enemyTurn()
 		/// attack
 		/// </Task 14>
 		
+		addToLog(nowEnemies[turnIDMap[turn]].getName() + " Moved");
+
 		int summon;
 		nowEnemies[turnIDMap[turn]].AIAttack(nowMap, playerList, summon);
 		if (summon > 0)
@@ -449,6 +456,7 @@ void enemyTurn()
 	else
 	{
 		// move enemy
+		addToLog(nowEnemies[turnIDMap[turn]].getName() + " Moved and Attacked");
 		nowEnemies[turnIDMap[turn]].AITurn(nowMap, playerList);
 
 		/// randomly choose ability from enemy that is an ability in range of closest target
@@ -622,12 +630,14 @@ void uniqueAbility()
 	if (ability.getName() == "castle")
 	{
 		playerList[turnIDMap[turn]].shield(20);
+		addToLog("Castle has been used, player's Armor is now 20");
 		ability.used();
 		pcHasAction = false;
 	}
 	else if (ability.getName() == "shield")
 	{
 		playerList[turnIDMap[turn]].shield(playerList[turnIDMap[turn]].getArmor() + 3);
+		addToLog("Shield has been used, player's Armor is now "+ to_string(playerList[turnIDMap[turn]].getArmor()));
 		ability.used();
 		pcHasAction = false;
 	}
@@ -686,6 +696,7 @@ void uniqueAbility()
 	{
 		playerList[turnIDMap[turn]].shield(20);
 		displayListOfEnemies = true;
+		addToLog("Counter has been used, player's Armor is now 20");
 		ability.used();
 		pcHasAction = false;
 	}
@@ -698,6 +709,7 @@ void uniqueAbility()
 			tempAbility.resetCooldownCounter();
 			playerList[turnIDMap[turn]].setAbility(tempAbility, i);
 		}
+		addToLog("Reload has been used, all ability cooldowns are reset");
 		ability.used();
 		pcHasAction = false;
 	}
@@ -724,6 +736,7 @@ void uniqueAbility()
 				playerList[i].healPlayer(1);
 			}
 		}
+		addToLog("Players in facinity are healed by 1");
 		ability.used();
 		pcHasAction = false;
 	}
@@ -740,6 +753,7 @@ void uniqueAbility()
 			}
 		}
 		playerList[minID].resetHP();
+		addToLog("Anyone dead has been revived");
 		ability.used();
 		pcHasAction = false;
 	}
@@ -756,6 +770,7 @@ void uniqueAbility()
 				playerList[roll].setDamageBoost(true);
 			}
 		}
+		addToLog("Random player now does double damage");
 		ability.used();
 		pcHasAction = false;
 	}
@@ -877,23 +892,30 @@ int rollTheDice(int bonus, int AC)
 {
 	// 0 = no damage, 1 = damage, 2 = critical
 	int roll = random_int(1, 20);
+	addToLog("You rolled a " + to_string(roll));
 	if (roll == 1)
 	{
+		addToLog("Critical Miss!");
 		return 0;
 	}
 	else if (roll == 20)
 	{
+		addToLog("Critical Hit!");
 		return 2;
 	}
 	else
 	{
 		roll += bonus;
+		addToLog("Your hit was a " + to_string(roll));
+		addToLog("The Armor is " + to_string(AC));
 		if (roll >= AC)
 		{
+			addToLog("You hit");
 			return 1;
 		}
 		else
 		{
+			addToLog("You missed");
 			return 0;
 		}
 	}
