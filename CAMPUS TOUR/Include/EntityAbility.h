@@ -6,6 +6,17 @@
 #include <string>
 #include <iostream>
 using namespace std;
+/**
+ * @brief Defines class EntityAbility
+ *
+ * @author Mark Burns
+ * @version 01
+ * @date 17/09/2021, Started
+ * 
+ * @author Peter Neve
+ * @version 02
+ * @date 22/10/2021, changed cooldown to zero base
+ */
 
 class EntityAbility
 {

@@ -19,13 +19,22 @@
 	 * @author Peter Neve
 	 * @version 02
 	 * @date 29/08/2021, Refactor
+	 * 
+	 * @author Raymond Lau
+	 * @version 03
+	 * @date 09/10/2021, made doors planes instead of cubes
+	 * 
+	 * @author Jason Botterill
+	 * @version 04
+	 * @date 20/10/2021, textured doors
+	 * 
 	 */
 ///prevTime value for animation tracking
 extern float prevTime;
 ///currTime value for animation tracking
 extern float currTime;
 
-///Position
+///Position (Point3)
 class Position {
 	public:
 		GLfloat x;
@@ -33,7 +42,7 @@ class Position {
 		GLfloat z;
 };
 
-/// Door Turn
+/// Door Turn object
 class door2 {
 	public: 
 		float orientation;
@@ -48,7 +57,7 @@ class door2 {
 		Position scale;
 };
 
-/// Door Slide
+/// Door Slide object
 class door1 {
 	public:
 		float orientation;

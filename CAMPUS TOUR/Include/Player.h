@@ -20,15 +20,39 @@ using namespace std;
  * @author Peter Neve
  * @version 02
  * @date 25/09/2021, added getMovementLeft, setAbilities with existing vector
+ * 
+ * @author Peter Neve
+ * @version 03
+ * @date 20/10/2021, added rotation storage & funtionality
+ * 
  */
 
 class Player
 {
 public:
+		/**
+		 * @brief  Default constructor
+		 *
+		 */
 	Player();
 
+		/**
+		* @brief  Player constructor
+		*
+		* This contructor creates a player with values
+		*
+		* @param  string - name
+		* @param  string - class
+		* @param  int - max HP
+		* @param  int - max movement
+		* @param  int - max armour
+		* 
+		*/
 	Player(string, string, int, int, int);
-
+		/**
+		 * @brief  deconstructor
+		 *
+		 */
 	~Player();
 
 	void setName(string);
@@ -46,7 +70,12 @@ public:
 	void setArmor(int);
 
 	int getArmor();
-
+		/**
+		* @brief  return number of abilities the player has
+		* 
+		* return int
+		*
+		*/
 	int getNumAbilities();
 
 	void setStun(int);
@@ -70,11 +99,25 @@ public:
 	void setTurn(int);
 
 	int getTurn();
-
+		/**
+		 * @brief  add abilities to player
+		 *
+		 * return void
+		 */
 	void pushAbility(EntityAbility);
 
+		/**
+		 * @brief  remove abilities from player
+		 *
+		 * return void
+		 */
 	void popAbility();
 
+		/**
+		* @brief  set list of abilities to player
+		*
+		* return void
+		*/
 	void setAbilities(vector<EntityAbility> newList);
 
 	void setAbility(EntityAbility, int);
@@ -91,8 +134,17 @@ public:
 
 	void resetMovementLeft();
 	
+		/**
+		 * @brief  Edits the players remaining movement
+		 * 
+		 * return void
+		 */
 	void movePlayer();
-
+		/**
+		 * @brief Limits who much a player can move
+		 *
+		 * return bool
+		 */
 	bool canMove();
 
 	void noMovementLeft();

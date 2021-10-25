@@ -284,6 +284,14 @@ public:
 	*/
 	void AITurn(LevelMap* nowMap, vector<Player> playerList);
 
+	/**
+	* @brief  Activates enemy AI attack functions
+	*
+	* This function is called by AIturn when an player is within range to allow the enemy to attack the player with on of its abilities
+	*
+	* @param LevelMap* nowMap, vector<Player>& playerList, int& summon
+	*/
+	void AIAttack(LevelMap* nowMap, vector<Player>& playerList, int& summon);
 	/*float getRotation();
 	void setRotation(float newRot);
 	void rotateEnemy(int X, int Z);*/
@@ -389,15 +397,6 @@ private:
 	* @param EntityAbility ability, Player& player, LevelMap* nowMap
 	*/
 	void kbAttack(EntityAbility ability, Player& player, LevelMap* nowMap);
-
-	/**
-	* @brief  Activates enemy AI attack functions
-	*
-	* This function is called by AIturn when an player is within range to allow the enemy to attack the player with on of its abilities
-	*
-	* @param LevelMap* nowMap, vector<Player>& playerList, int& summon
-	*/
-	void AIAttack(LevelMap* nowMap, vector<Player>& playerList, int& summon);
 
 	/**
 	* @brief  Searches for a random number between a min and max number
