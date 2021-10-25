@@ -16,7 +16,7 @@ EarthMage,30,12,5,earthAttack,knockbackBoss,petrify
 FireMage,40,12,5,fireAttack,cone,pierce
 TelekineticMage,10,12,5,combo,mace1,mace1
 SummoningMage,20,12,5,summonLevel1,mace2,mace2
-TrapEnt,30,12,5,trap,mace3,mace3
+TrapEnt,30,12,5,earthAttack,aoe1,mace3
 LavaGoblin,8,12,5,grow,mace4,mace4
 AirBoss,60,16,7,airAttackBoss,knockbackBoss,airSlasherBoss
 WaterBoss,60,16,5,waterAttackBoss,drownBoss,waterWhipBoss
