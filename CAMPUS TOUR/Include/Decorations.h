@@ -91,13 +91,13 @@ void initPlayerModels();
 * @brief Draws the player effects.
 * @param pc The player to see if they effects that need to be drawn.
 */
-void playerEffects(Player &pc);
+void playerEffects(Player &pc, int posX, int posY, int posZ);
 
 /**
 * @brief Draws the enemy effects.
 * @param ec The enemy to see if they effects that need to be drawn.
 */
-void enemyEffects(Enemy &ec);
+void enemyEffects(Enemy &ec, int posX, int posY, int posZ);
 
 
 #endif // !DECORATIONS_H

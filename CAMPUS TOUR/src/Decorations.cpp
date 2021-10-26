@@ -381,13 +381,13 @@ void DisplayPlayerModel(string className, int posX, int posY, int posZ, float ro
 }
 
 //draw the stun effect on the player. Created by Jason
-void playerEffects(Player& pc) {
+void playerEffects(Player& pc, int posX, int posY, int posZ) {
 
 	if (pc.getStun() > 0)
 	{
 		glPushMatrix();
-			glTranslatef(pc.getPosX(), 1, pc.getPosZ());
-			glScalef(50.0, 50.0, 50.0);
+			glTranslatef(posX, posY + 3, posZ);
+			//glScalef(50.0, 50.0, 50.0);
 			glBindTexture(GL_TEXTURE_2D, modelTextureMap["Stun"]);
 			draw3DObject(stun);
 		glPopMatrix();
@@ -395,13 +395,13 @@ void playerEffects(Player& pc) {
 }
 
 //draw the stun effect on the enemy. Created by Jason
-void enemyEffects(Enemy& ec) {
+void enemyEffects(Enemy& ec, int posX, int posY, int posZ) {
 
 	if (ec.getStun() > 0)
 	{
 		glPushMatrix();
-			glTranslatef(ec.getPosX(),1, ec.getPosZ());
-			glScalef(50.0, 50.0, 50.0);
+			glTranslatef(posX, posY + 3 , posZ );
+			//glScalef(50.0, 50.0, 50.0);
 			glBindTexture(GL_TEXTURE_2D, modelTextureMap["Stun"]);
 			draw3DObject(stun);
 		glPopMatrix();
