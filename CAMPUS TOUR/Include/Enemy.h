@@ -215,7 +215,7 @@ public:
 	/**
 	* @brief  Adds an ability to a enemy
 	*
-	* This function allocates an ability to the enemy, for use in battle
+	* This function allocates an ability to the ability list
 	*
 	* @param EntityAbility
 	*/
@@ -224,14 +224,28 @@ public:
 	/**
 	* @brief  removes an ability to a enemy
 	*
-	* This function removes an ability from the enemy
+	* This function removes an ability from the ability list
 	*
 	* @param EntityAbility
 	*/
 	void popAbility();
 
+	/**
+	* @brief  sets the ability
+	*
+	* This function sets the ability for the enemy
+	*
+	* @param EntityAbility
+	*/
 	void setAbility(EntityAbility, int);
 
+	/**
+	* @brief  returns ability's identifier
+	*
+	* This function returns ability's identifier
+	*
+	* @return int
+	*/
 	EntityAbility getAbility(int);
 
 	/**
