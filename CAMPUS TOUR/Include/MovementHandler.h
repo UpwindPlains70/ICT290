@@ -30,6 +30,10 @@
 	 * @version 04
 	 * @date 20/10/2021, refactored movement into Tour and Game only available when in world
 	 * 
+	 * @author Peter Neve
+	 * @version 05
+	 * @date 28/10/2021, edited camera movement when in game level
+	 * 
 	 */
 
 	/**

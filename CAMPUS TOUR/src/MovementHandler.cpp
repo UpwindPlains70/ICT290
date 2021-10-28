@@ -59,15 +59,15 @@ void TourControls(unsigned char key, int x, int y)
 {
 	switch (key)
 	{
-		// step left
+		// look left
 	case 'Z':
 	case 'z':
-		cam.DirectionLR(-1);
+		cam.DirectionRotateLR(-1);
 		break;
-		// step right
+		// look right
 	case 'X':
 	case 'x':
-		cam.DirectionLR(1);
+		cam.DirectionRotateLR(1);
 		break;
 		// look up
 	case 'Q':
@@ -254,11 +254,11 @@ void movementKeys(int key, int x, int y)
 		switch (key)
 		{
 		case GLUT_KEY_LEFT:
-			cam.DirectionRotateLR(-1);
+				cam.DirectionLR(-1);
 			break;
 
 		case GLUT_KEY_RIGHT:
-			cam.DirectionRotateLR(1);
+				cam.DirectionLR(1);
 			break;
 
 		case GLUT_KEY_UP:
@@ -289,7 +289,7 @@ void releaseKey(int key, int x, int y)
 		// rotate left or right
 	case GLUT_KEY_LEFT:
 	case GLUT_KEY_RIGHT:
-		cam.DirectionRotateLR(0);
+		cam.DirectionLR(0);
 		break;
 		// move backwards or forwards
 	case GLUT_KEY_UP:
@@ -311,7 +311,7 @@ void releaseKeys(unsigned char key, int x, int y)
 	case 'X':
 	case 'z':
 	case 'Z':
-		cam.DirectionLR(0);
+		cam.DirectionRotateLR(0);
 		break;
 		// look left up or down
 	case 'a':
