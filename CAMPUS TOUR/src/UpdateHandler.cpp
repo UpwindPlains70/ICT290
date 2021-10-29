@@ -103,9 +103,12 @@ void Update()
 
 				//get random map
 				srand(time(NULL));
-				mapID = rand() % mapList[currLevel].size();
-				nowMap = new LevelMap(mapList[currLevel].at(mapID));
+				if (currLevel != 1)
+					mapID = rand() % mapList[currLevel].size();
+				else
+					mapID = 0;
 
+				nowMap = new LevelMap(mapList[currLevel].at(mapID));
 				//clear all previous data
 				isPCTurnMap.clear();
 				turnIDMap.clear();

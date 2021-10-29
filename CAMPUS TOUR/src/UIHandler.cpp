@@ -420,7 +420,7 @@ void turnOrderUI()
 		ImGui::SetCursorPosX((windowWidth - textWidth) * 0.4f);
 		//Font size 50 (set in initialise UI)
 		//Okay button to close Turn order UI frame
-		ImGui::PushFont(io.Fonts->Fonts[2]);
+		//ImGui::PushFont(io.Fonts->Fonts[2]);
 			//Only display okay button if all turns have been assigned
 		if (turnList.empty()) {
 			if (ImGui::Button("Okay"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
@@ -430,7 +430,7 @@ void turnOrderUI()
 				playerTurnCount = 0;
 			}
 		}
-		ImGui::PopFont();
+		//ImGui::PopFont();
 		
 		ImGui::End();
 	}

@@ -28,6 +28,10 @@
 	 * @version 04
 	 * @date 20/10/2021, textured doors
 	 * 
+	 * @author Peter Neve
+	 * @version 05
+	 * @date 29/10/2021, door y scale fix & front z scale
+	 * 
 	 */
 ///prevTime value for animation tracking
 extern float prevTime;

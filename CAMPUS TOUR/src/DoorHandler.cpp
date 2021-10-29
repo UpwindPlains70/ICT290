@@ -233,8 +233,8 @@ void CreateDoors()
 	front.pos.y = 10000.0f;
 	front.pos.z = 36600.0f;
 	front.scale.x = 50.0f;
-	front.scale.y = 1500.0f;
-	front.scale.z = 560.0f;
+	front.scale.y = 100.0f;
+	front.scale.z = 300.0f;
 
 	//Back Double Doors
 	////L
@@ -249,7 +249,7 @@ void CreateDoors()
 	backL.pos.y = 10000.0f;
 	backL.pos.z = 37505.0f;
 	backL.scale.x = 50.0f;
-	backL.scale.y = 1500.0f;
+	backL.scale.y = 100.0f;
 	backL.scale.z = 400.0f;
 	////R
 	backR.orientation = 180;
@@ -263,7 +263,7 @@ void CreateDoors()
 	backR.pos.y = 10000.0f;
 	backR.pos.z = 38990.0f;
 	backR.scale.x = 50.0f;
-	backR.scale.y = 1500.0f;
+	backR.scale.y = 100.0f;
 	backR.scale.z = 400.0f;
 }
 
@@ -280,8 +280,8 @@ void DisplayDoors()
 	glScalef(front.scale.x, front.scale.y, front.scale.z);
 	glBegin(GL_POLYGON);
 	glVertex3f(0, 0, 0);
-	glVertex3f(0, 15, 0);
-	glVertex3f(0, 15, 2);
+	glVertex3f(0, 10, 0);
+	glVertex3f(0, 10, 2);
 	glVertex3f(0, 0, 2);
 	glEnd();
 	glPopMatrix();
@@ -303,10 +303,10 @@ void DisplayDoors()
 	glTexCoord2f(0, 0);
 	glVertex3f(0, 0, 0);
 
-	glTexCoord2f(0, 15);
+	glTexCoord2f(0, 1);
 	glVertex3f(0, 15, 0);
 
-	glTexCoord2f(1, 15);
+	glTexCoord2f(1, 1);
 	glVertex3f(0, 15, 2);
 
 	glTexCoord2f(1, 0);
@@ -325,9 +325,9 @@ void DisplayDoors()
 	glBegin(GL_POLYGON);
 	glTexCoord2f(0, 0);
 	glVertex3f(0, 0, 0);
-	glTexCoord2f(0, 15);
+	glTexCoord2f(0, 1);
 	glVertex3f(0, 15, 0);
-	glTexCoord2f(1, 15);
+	glTexCoord2f(1, 1);
 	glVertex3f(0, 15, 1.75);
 	glTexCoord2f(1, 0);
 	glVertex3f(0, 0, 1.75);

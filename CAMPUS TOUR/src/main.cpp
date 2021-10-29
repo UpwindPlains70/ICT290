@@ -179,7 +179,7 @@ void Display()
 		//DisplayEntities();
 	glPopMatrix();
 
-	if (cam.GetLR() > 33400 && gameState < NotReady)
+	if (cam.GetLR() > 34450 && gameState < NotReady)
 		gameState = NotReady;
 
 	if(gameState >= NotReady)

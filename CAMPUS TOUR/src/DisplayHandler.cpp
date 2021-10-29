@@ -984,7 +984,7 @@ void DisplayRoom() {
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(WALL_BRICK_STEPS_TOP));
 	glCallList(676);		//main room roof
 	glCallList(677);		//enterance roof
-
+	
 	// New Textures ( pinboard ) Jason
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(PIN_BOARD_1));
 	glCallList(782);
@@ -998,11 +998,11 @@ void DisplayRoom() {
 	// Stairs wall once you walk up the stairs
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(STAIRS_TOP));
 	glCallList(785);
-
+	
 	// Window next to the right of the entrance door 
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(ENTRANCE_DOOR_1));
 	glCallList(786);
-
+	
 	// Floor level sign
 	glBindTexture(GL_TEXTURE_2D, tp.GetTexture(FLOOR_LEVEL_SIGN));
 	glCallList(787);

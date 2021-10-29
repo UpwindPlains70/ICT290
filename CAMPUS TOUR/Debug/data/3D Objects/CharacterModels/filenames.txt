@@ -1,0 +1,4 @@
+golum
+skeleton
+wizard
+zombie
