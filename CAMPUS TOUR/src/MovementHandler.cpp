@@ -34,15 +34,17 @@ GLdouble rotationSpeed = 0.005;
 void keys(unsigned char key, int x, int y)
 {
 	//Put in if condition to restrict controls
-	ImGui_ImplGLUT_KeyboardFunc(key, x, y);
+	//ImGui_ImplGLUT_KeyboardFunc(key, x, y);
 	
 	if (gameState != NotReady) {
 		if (currLevel == 0)
 		{
 			TourControls(key, x, y);
+			
 		}
 		else
 		{
+			
 			if (displayAOE)
 			{
 				ArrowControls(key, x, y);
@@ -52,6 +54,9 @@ void keys(unsigned char key, int x, int y)
 				GameControls(key, x, y);
 			}
 		}
+	}
+	else {
+		ImGui_ImplGLUT_KeyboardFunc(key, x, y);
 	}
 }
 
