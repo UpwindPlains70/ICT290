@@ -1,0 +1,46 @@
+WHAT WORKS
+Player selection
+attack
+AOE attack
+Enemy AI
+teleport to game level
+display group pic on quit
+restircted player movement
+
+DOES NOT WORK
+The Summoning feature, 
+the implementation of large buttons 
+hallway collisions not being properly implemented due to difficulty in 
+constraining the player.
+
+Testing details 
+Testing was focused on what the results would be of player input, 
+and if pressing a key/button to interact with the game would give the 
+desired result or not. Examples of what needed to be tested in our game 
+environment was player movement, user interactions with the GUI and player 
+abilities.
+
+Suggestions for improvement 
+Limiting the scope of the amount of playable characters/modelling + texturing. 
+This is due to the amount of time being spent to create the models is not 
+being spent on helping with making the basic core structure of the game. 
+This would be important as creating the proof of concept early on would 
+be very beneficial.
+
+How is code reuse taken care of? 
+We made good use of classes and functions by including header files 
+where they were needed in the program. This allowed for code reuse. 
+Perhaps there could’ve been better use of inheritance which would’ve 
+allowed for even more efficient code reuse within the program.
+Can the assets/objects/items be reused easily in other programs? 
+The objects/models were created using Blender and exported as wavefront 
+.obj files. These files could be reused as a basic model for creating 
+other programs. However, the texture files may not be as reusable due to use
+ .raw files being used with Shay’s code. Raw files aren’t the easiest to 
+reuse.
+
+How would this reuse happen?
+The class or function was created once, then used many times. 
+This can be seen in Updatehandler.cpp as many functions needed to be called 
+multiple times for the game to function. Many include statements were used 
+to get these functions.
