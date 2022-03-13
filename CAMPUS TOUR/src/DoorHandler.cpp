@@ -5,16 +5,21 @@
 float prevTime;
 float currTime;
 
+slider *health;
 door1 front;
 door2 backL;
 door2 backR;
 float angle = 0;
+
+int slide_num = 0;
+bool increase = true;
 
 using namespace std;
 
 //Made by Mark Burns
 void animate(int value)
 {
+
 	glutTimerFunc(TIMERSECS, animate, 0);
 	prevTime = currTime;
 	currTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
@@ -208,6 +213,32 @@ void animate(int value)
 		}
 	}
 	//Update();
+
+	slide_num = health->getNum();
+	int slide_max = health->getMax();
+	if (slide_num != slide_max && slide_num != 0)
+	{
+		if (increase)
+		{
+			slide_num++;
+		}
+		else
+		{
+			slide_num--;
+		}
+	}
+	else if (slide_num == 0)
+	{
+		increase = true;
+		slide_num++;
+	}
+	else if (slide_num == slide_max)
+	{
+		increase = false;
+		slide_num--;
+	}
+	health->setNum(slide_num);
+
 	glutPostRedisplay();
 }
 
@@ -265,6 +296,7 @@ void CreateDoors()
 	backR.scale.x = 50.0f;
 	backR.scale.y = 100.0f;
 	backR.scale.z = 400.0f;
+	CreateSlider();
 }
 
 //--------------------------------------------------------------------------------------
@@ -273,6 +305,7 @@ void CreateDoors()
 //--------------------------------------------------------------------------------------
 void DisplayDoors()
 {
+	health->setSlider();
 	//Front Slide Door
 	glPushMatrix();
 	glTranslatef(front.pos.x, front.pos.y, front.pos.z);
@@ -333,4 +366,95 @@ void DisplayDoors()
 	glVertex3f(0, 0, 1.75);
 	glEnd();
 	glPopMatrix();
+}
+
+
+slider::slider(Position temp_pos, int temp_x_scale, int temp_y_scale, int temp_colour_r, int temp_colour_g, int temp_colour_b, int temp_max)
+{
+	pos = temp_pos;
+	x_scale = temp_x_scale;
+	y_scale = temp_y_scale;
+	colour_r = temp_colour_r;
+	colour_b = temp_colour_b;
+	colour_g = temp_colour_g;
+	max = temp_max;
+	num = 0;
+	clearSlider();
+}
+
+void slider::setSlider()
+{
+	float length = (float)num / (float)max;
+	glDisable(GL_TEXTURE_2D);
+	glViewport(0, 0, 1280, 720);
+	glMatrixMode(GL_PROJECTION);
+	glPushMatrix();
+	glLoadIdentity();
+	//gluOrtho2D(0.0,1.0,1.0,0.0);
+	glOrtho(-250.0, 250.0, -250.0, 250.0, 250.0, -250.0);
+	glOrtho(-1.0, 1.0, -1.0, 1.0, 1.0, -1.0);
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glLoadIdentity();
+
+	glPushMatrix();
+	glTranslatef(pos.x, pos.y, pos.z);
+	glScalef(x_scale, y_scale, 1.0f);
+	glColor3f(0.0f, 0.0f, 0.0f);
+	glLineWidth(5.0f);
+	glBegin(GL_LINE_LOOP);
+	glVertex2f(0.0f, 0.0f);
+	glVertex2f(1.0f, 0.0f);
+	glVertex2f(1.0f, 1.0f);
+	glVertex2f(0.0f, 1.0f);
+	glEnd();
+	glColor3f(colour_r, colour_g, colour_b);
+	glLineWidth(1.0f);
+	glBegin(GL_POLYGON);
+	glVertex2f(0.0f, 0.0f);
+	glVertex2f(length, 0.0f);
+	glVertex2f(length, 1.0f);
+	glVertex2f(0.0f, 1.0f);
+	glEnd();
+	glPopMatrix();
+
+	glMatrixMode(GL_PROJECTION);
+	glPopMatrix();
+	glMatrixMode(GL_MODELVIEW);
+	glPopMatrix();
+	glEnable(GL_TEXTURE_2D);
+}
+
+int slider::getNum()
+{
+	return num;
+}
+
+void slider::maxSlider()
+{
+	num = max;
+}
+
+void slider::clearSlider()
+{
+	num = 0;
+}
+
+void CreateSlider()
+{
+	Position pos;
+	pos.x = 0;
+	pos.y = 0;
+	pos.z = 0;
+	health = new slider(pos, 100, 20, 1, 0, 0, 100);
+}
+
+void slider::setNum(int temp_num)
+{
+	num = temp_num;
+}
+
+int slider::getMax()
+{
+	return max;
 }

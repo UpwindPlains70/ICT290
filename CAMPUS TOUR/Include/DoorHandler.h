@@ -75,6 +75,26 @@ class door1 {
 		Position scale;
 };
 
+class slider {
+	private:
+	Position pos;
+	int x_scale;
+	int y_scale;
+	int colour_r;
+	int colour_g;
+	int colour_b;
+	int max;
+	int num;
+public:
+	slider(Position temp_pos, int temp_x_scale, int temp_y_scale, int temp_colour_r, int temp_colour_g, int temp_colour_b, int temp_max);
+	void setSlider();
+	int getNum();
+	void setNum(int temp_num);
+	int getMax();
+	void maxSlider();
+	void clearSlider();
+};
+
 /// front sliding door
 extern door1 front;
 /// back left swival door
@@ -96,6 +116,8 @@ void DisplayDoors();
 * @return void
 */
 void CreateDoors();
+
+void CreateSlider();
 
 /**
 * @brief Allows doors to turn/rotate
